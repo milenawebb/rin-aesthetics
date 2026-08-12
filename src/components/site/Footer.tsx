@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-[1.2fr_repeat(3,0.8fr)]">
           <div>
-            <Logo width={78} />
+            <Logo width={104} />
             <address className="mt-8 font-body not-italic text-[15px] leading-[1.75] text-greige">
               {practice.address}
               <br />

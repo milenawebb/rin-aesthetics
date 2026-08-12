@@ -17,7 +17,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-ink">
       <div className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-6 md:px-10">
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
-          <Logo width={92} />
+          <Logo width={118} />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex">

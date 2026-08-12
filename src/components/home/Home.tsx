@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
+import { Placeholder } from "@/components/site/Placeholder";
+import heroAsset from "@/assets/hero.jpg.asset.json";
 import { practice } from "@/data/site";
 import {
   bookingBand,
@@ -23,11 +24,10 @@ export function Home() {
   return (
     <>
       <section className="relative flex h-[82vh] min-h-[520px] items-center justify-center overflow-hidden">
-        <Placeholder
-          label={hero.placeholderLabel}
+        <img
+          src={heroAsset.url}
           alt={hero.imageAlt}
-          labelPosition="bottom-left"
-          className="absolute inset-0 h-full w-full rounded-none"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-[1240px] px-6 text-center">
