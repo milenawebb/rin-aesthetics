@@ -4,6 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-ink: #0d0d0c;
+  --color-champagne: #c9a961;
+  --color-walnut: #6b5646;
+  --color-greige: #cfc5b8;
+  --color-ivory: #f5f0e8;
+  --color-olive: #7d8a6a;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+}
+
 /*
  * Design system definition.
  *
