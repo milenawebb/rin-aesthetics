@@ -24,6 +24,7 @@ export function Home() {
         <Placeholder
           label={hero.placeholderLabel}
           alt={hero.imageAlt}
+          labelPosition="bottom-left"
           className="absolute inset-0 h-full w-full rounded-none"
         />
         <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
