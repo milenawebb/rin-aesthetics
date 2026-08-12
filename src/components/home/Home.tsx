@@ -15,7 +15,9 @@ import {
 } from "@/data/home";
 
 const section = "mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]";
-const heading = "font-display font-light text-[26px] md:text-[34px] leading-[1.2] text-ink";
+const heading = "display-tight font-display font-normal text-[28px] md:text-[34px] text-ink";
+const body = "measure font-body text-[16px] font-light leading-[1.75] text-walnut";
+const btn = "btn-label rounded-[2px]";
 
 export function Home() {
   return (
@@ -29,22 +31,24 @@ export function Home() {
         />
         <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-[1240px] px-6 text-center">
-          <h1 className="font-display text-[34px] font-light leading-[1.15] text-ivory md:text-[56px]">
+          <h1 className="display-tight font-display text-[34px] font-normal text-ivory md:text-[56px]">
             {hero.headline}
           </h1>
-          <p className="mt-6 text-[14px] tracking-[0.06em] text-greige">{practice.location}</p>
+          <p className="mt-6 font-body text-[14px] font-light tracking-[0.06em] text-greige">
+            {practice.location}
+          </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full rounded-[2px] bg-ivory px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-ink transition-colors hover:bg-champagne sm:w-auto"
+              className={`${btn} w-full bg-ivory px-8 py-4 text-ink transition-colors hover:bg-champagne sm:w-auto`}
             >
               {hero.primaryCta}
             </a>
             <Link
               to="/find-your-treatment"
-              className="w-full rounded-[2px] border border-greige px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-ivory transition-colors hover:border-champagne hover:text-champagne sm:w-auto"
+              className={`${btn} w-full border border-greige px-8 py-4 text-ivory transition-colors hover:border-champagne hover:text-champagne sm:w-auto`}
             >
               {hero.secondaryCta}
             </Link>
@@ -54,9 +58,7 @@ export function Home() {
 
       <Reveal as="section" className={section}>
         <h2 className={heading}>{concernsSection.heading}</h2>
-        <p className="measure mt-5 text-[16px] leading-[1.7] text-walnut">
-          {concernsSection.intro}
-        </p>
+        <p className={`${body} mt-5`}>{concernsSection.intro}</p>
         <ul className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {concerns.map((concern) => (
             <li key={concern.slug}>
@@ -66,7 +68,7 @@ export function Home() {
                 className="flex h-full flex-col justify-between rounded-[2px] border border-greige bg-white p-6 transition-colors hover:border-champagne md:p-8"
               >
                 <span className="label-xs text-olive">{concern.label}</span>
-                <span className="mt-10 font-display text-[20px] font-light leading-[1.25] text-ink">
+                <span className="mt-10 font-display text-[22px] font-normal leading-[1.15] text-ink">
                   {concern.name}
                 </span>
               </Link>
@@ -77,7 +79,7 @@ export function Home() {
 
       <Reveal as="section" className={section}>
         <h2 className={heading}>{resultsSection.heading}</h2>
-        <p className="measure mt-5 text-[16px] leading-[1.7] text-walnut">{resultsSection.intro}</p>
+        <p className={`${body} mt-5`}>{resultsSection.intro}</p>
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
           {Array.from({ length: resultsSection.count }).map((_, i) => (
             <Placeholder
@@ -99,16 +101,18 @@ export function Home() {
       <Reveal as="section" className="bg-ink">
         <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
           <p className="label-xs text-champagne">{signature.label}</p>
-          <h2 className="mt-6 font-display text-[26px] font-light leading-[1.2] text-ivory md:text-[34px]">
+          <h2 className="display-tight mt-6 font-display text-[30px] font-normal text-ivory md:text-[36px]">
             {signature.heading}
           </h2>
-          <p className="measure mt-6 text-[16px] leading-[1.7] text-greige">{signature.body}</p>
-          <p className="mt-8 font-display text-[26px] font-light text-champagne">
+          <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-greige">
+            {signature.body}
+          </p>
+          <p className="display-tight mt-8 font-display text-[30px] font-normal text-champagne">
             {signature.price}
           </p>
           <Link
             to="/treatments"
-            className="mt-10 inline-block rounded-[2px] border border-greige px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-ivory transition-colors hover:border-champagne hover:text-champagne"
+            className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors hover:border-champagne hover:text-champagne`}
           >
             {signature.cta}
           </Link>
@@ -124,11 +128,11 @@ export function Home() {
             className="aspect-[3/4] w-full"
           />
           <div className="self-center">
-            <h3 className="font-display text-[26px] font-light text-ink md:text-[34px]">
+            <h3 className="display-tight font-display text-[28px] font-normal text-ink md:text-[34px]">
               {provider.name}
             </h3>
             {provider.paragraphs.map((paragraph, i) => (
-              <p key={i} className="measure mt-6 text-[16px] leading-[1.7] text-walnut">
+              <p key={i} className={`${body} mt-6`}>
                 {paragraph}
               </p>
             ))}
@@ -147,10 +151,10 @@ export function Home() {
         <div className="mt-14 grid gap-14 md:grid-cols-3 md:gap-12">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name}>
-              <blockquote className="font-display text-[20px] font-light leading-[1.5] text-ink">
+              <blockquote className="font-display text-[22px] font-normal leading-[1.4] text-ink">
                 “{testimonial.quote}”
               </blockquote>
-              <figcaption className="mt-5 text-[13px] tracking-[0.06em] text-walnut">
+              <figcaption className="mt-5 font-body text-[13px] tracking-[0.06em] text-walnut">
                 {testimonial.name}
               </figcaption>
             </figure>
@@ -162,12 +166,12 @@ export function Home() {
         <div className="mx-auto flex max-w-[1240px] flex-col items-start gap-8 px-6 py-[72px] md:flex-row md:items-end md:justify-between md:px-10 md:py-[120px]">
           <div>
             <h2 className={heading}>{bookingBand.heading}</h2>
-            <p className="measure mt-5 text-[16px] leading-[1.7] text-walnut">{bookingBand.body}</p>
+            <p className={`${body} mt-5`}>{bookingBand.body}</p>
           </div>
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
             <a
               href={practice.phoneHref}
-              className="font-display text-[26px] font-light text-ink transition-colors hover:text-champagne"
+              className="font-body text-[20px] font-light text-ink transition-colors hover:text-champagne"
             >
               {practice.phone}
             </a>
@@ -175,7 +179,7 @@ export function Home() {
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className="rounded-[2px] bg-ink px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-walnut"
+              className={`${btn} bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut`}
             >
               {bookingBand.cta}
             </a>
