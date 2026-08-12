@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { footerColumns, practice } from "@/data/site";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
@@ -7,13 +8,8 @@ export function Footer() {
       <div className="mx-auto max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-[1.2fr_repeat(3,0.8fr)]">
           <div>
-            <span className="block font-display text-[30px] leading-none tracking-[0.14em] text-ivory">
-              {practice.wordmark}
-            </span>
-            <span className="mt-2 block text-[9px] uppercase leading-none tracking-[0.34em] text-greige">
-              {practice.wordmarkSub}
-            </span>
-            <address className="mt-8 not-italic text-[15px] leading-[1.7] text-greige">
+            <Logo width={78} />
+            <address className="mt-8 font-body not-italic text-[15px] leading-[1.75] text-greige">
               {practice.address}
               <br />
               <a href={practice.phoneHref} className="hover:text-champagne">
@@ -42,7 +38,7 @@ export function Footer() {
                   <li key={`${column.title}-${i}`}>
                     <Link
                       to={link.to}
-                      className="text-[15px] text-greige transition-colors hover:text-ivory"
+                      className="font-body text-[15px] text-greige transition-colors hover:text-ivory"
                     >
                       {link.label}
                     </Link>
@@ -54,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 border-t border-walnut pt-8">
-          <p className="text-[13px] text-walnut">
+          <p className="font-body text-[13px] text-walnut">
             © {new Date().getFullYear()} RIN Aesthetic Practice. {practice.location}.
           </p>
         </div>
