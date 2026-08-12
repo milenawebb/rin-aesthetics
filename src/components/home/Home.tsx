@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Placeholder } from "@/components/site/Placeholder";
-import heroAsset from "@/assets/hero.jpg.asset.json";
+import heroAsset from "@/assets/hero.png.asset.json";
 import { practice } from "@/data/site";
 import {
   bookingBand,
@@ -30,14 +30,25 @@ export function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6 text-center">
-          <h1 className="display-tight font-display text-[34px] font-normal text-ivory md:text-[56px]">
+        <div
+          className="absolute inset-0 hidden lg:block"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(13,13,12,0.45) 0%, rgba(13,13,12,0) 55%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 text-center lg:px-10 lg:text-left">
+          <h1 className="display-tight font-display text-[34px] font-normal text-ivory md:text-[56px] lg:hidden">
             {hero.headline}
           </h1>
-          <p className="mt-6 font-body text-[14px] font-light tracking-[0.06em] text-greige">
+          <h1 className="hidden font-body text-[22px] font-light leading-[1.4] text-ivory lg:block lg:max-w-[24ch]">
+            Medical aesthetics in Charlottesville
+          </h1>
+          <p className="mt-6 font-body text-[14px] font-light tracking-[0.06em] text-greige lg:hidden">
             {practice.location}
           </p>
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row lg:mt-10 lg:items-start lg:justify-start lg:gap-[28px]">
             <a
               href={practice.bookingUrl}
               target="_blank"
