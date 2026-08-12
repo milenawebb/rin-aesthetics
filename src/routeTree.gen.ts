@@ -10,33 +10,137 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConcernsRouteImport } from './routes/concerns'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FindYourTreatmentRouteImport } from './routes/find-your-treatment'
+import { Route as ResultsRouteImport } from './routes/results'
+import { Route as TreatmentsRouteImport } from './routes/treatments'
+import { Route as ConcernsIndexRouteImport } from './routes/concerns.index'
+import { Route as ConcernsSlugRouteImport } from './routes/concerns.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConcernsRoute = ConcernsRouteImport.update({
+  id: '/concerns',
+  path: '/concerns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FindYourTreatmentRoute = FindYourTreatmentRouteImport.update({
+  id: '/find-your-treatment',
+  path: '/find-your-treatment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreatmentsRoute = TreatmentsRouteImport.update({
+  id: '/treatments',
+  path: '/treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConcernsIndexRoute = ConcernsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ConcernsRoute,
+} as any)
+const ConcernsSlugRoute = ConcernsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ConcernsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/concerns': typeof ConcernsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/find-your-treatment': typeof FindYourTreatmentRoute
+  '/results': typeof ResultsRoute
+  '/treatments': typeof TreatmentsRoute
+  '/concerns/$slug': typeof ConcernsSlugRoute
+  '/concerns/': typeof ConcernsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/find-your-treatment': typeof FindYourTreatmentRoute
+  '/results': typeof ResultsRoute
+  '/treatments': typeof TreatmentsRoute
+  '/concerns/$slug': typeof ConcernsSlugRoute
+  '/concerns': typeof ConcernsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/concerns': typeof ConcernsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/find-your-treatment': typeof FindYourTreatmentRoute
+  '/results': typeof ResultsRoute
+  '/treatments': typeof TreatmentsRoute
+  '/concerns/$slug': typeof ConcernsSlugRoute
+  '/concerns/': typeof ConcernsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/concerns'
+    | '/contact'
+    | '/find-your-treatment'
+    | '/results'
+    | '/treatments'
+    | '/concerns/$slug'
+    | '/concerns/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/find-your-treatment'
+    | '/results'
+    | '/treatments'
+    | '/concerns/$slug'
+    | '/concerns'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/concerns'
+    | '/contact'
+    | '/find-your-treatment'
+    | '/results'
+    | '/treatments'
+    | '/concerns/$slug'
+    | '/concerns/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConcernsRoute: typeof ConcernsRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  FindYourTreatmentRoute: typeof FindYourTreatmentRoute
+  ResultsRoute: typeof ResultsRoute
+  TreatmentsRoute: typeof TreatmentsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +152,87 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concerns': {
+      id: '/concerns'
+      path: '/concerns'
+      fullPath: '/concerns'
+      preLoaderRoute: typeof ConcernsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/find-your-treatment': {
+      id: '/find-your-treatment'
+      path: '/find-your-treatment'
+      fullPath: '/find-your-treatment'
+      preLoaderRoute: typeof FindYourTreatmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treatments': {
+      id: '/treatments'
+      path: '/treatments'
+      fullPath: '/treatments'
+      preLoaderRoute: typeof TreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concerns/': {
+      id: '/concerns/'
+      path: '/'
+      fullPath: '/concerns/'
+      preLoaderRoute: typeof ConcernsIndexRouteImport
+      parentRoute: typeof ConcernsRoute
+    }
+    '/concerns/$slug': {
+      id: '/concerns/$slug'
+      path: '/$slug'
+      fullPath: '/concerns/$slug'
+      preLoaderRoute: typeof ConcernsSlugRouteImport
+      parentRoute: typeof ConcernsRoute
+    }
   }
 }
 
+interface ConcernsRouteChildren {
+  ConcernsSlugRoute: typeof ConcernsSlugRoute
+  ConcernsIndexRoute: typeof ConcernsIndexRoute
+}
+
+const ConcernsRouteChildren: ConcernsRouteChildren = {
+  ConcernsSlugRoute: ConcernsSlugRoute,
+  ConcernsIndexRoute: ConcernsIndexRoute,
+}
+
+const ConcernsRouteWithChildren = ConcernsRoute._addFileChildren(
+  ConcernsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConcernsRoute: ConcernsRouteWithChildren,
+  ContactRoute: ContactRoute,
+  FindYourTreatmentRoute: FindYourTreatmentRoute,
+  ResultsRoute: ResultsRoute,
+  TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
