@@ -165,13 +165,27 @@ export function Home() {
 
       <Reveal as="section" className={section}>
         <h2 className={heading}>{testimonialsSection.heading}</h2>
-        <div className="mt-14 grid gap-14 md:grid-cols-3 md:gap-12">
+        <div className="mt-14 grid gap-12 md:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <figure key={testimonial.name}>
-              <blockquote className="font-display text-[28px] font-extralight leading-[1.3] text-ink">
+            <figure key={testimonial.name} className="flex flex-col">
+              <div className="flex gap-[2px]" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    key={i}
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="#C9A961"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="mt-6 max-w-[30ch] font-body text-[19px] font-light leading-[1.6] text-ink">
                 “{testimonial.quote}”
               </blockquote>
-              <figcaption className="mt-5 font-body text-[13px] tracking-[0.06em] text-walnut">
+              <figcaption className="mt-auto pt-8 font-body text-[13px] tracking-[0.06em] text-walnut">
                 {testimonial.name}
               </figcaption>
             </figure>
