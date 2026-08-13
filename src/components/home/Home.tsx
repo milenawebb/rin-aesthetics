@@ -38,11 +38,11 @@ export function Home() {
               "linear-gradient(to right, rgba(13,13,12,0.45) 0%, rgba(13,13,12,0) 55%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[340px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[420px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
           <h1 className="font-body text-[26px] font-light leading-[1.3] text-ink md:hidden">
             Medical aesthetics in Charlottesville
           </h1>
-          <h1 className="hidden font-body text-[30px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch]">
+          <h1 className="hidden font-body text-[26px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch] lg:text-[30px]">
             Medical aesthetics
             <br />
             in Charlottesville
