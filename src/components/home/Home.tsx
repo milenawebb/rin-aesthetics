@@ -26,7 +26,7 @@ const btn = "btn-label rounded-[2px]";
 export function Home() {
   return (
     <>
-      <section className="relative bg-ivory md:flex md:h-[85vh] md:min-h-[520px] md:items-center md:justify-center md:overflow-hidden">
+      <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
         <picture className="aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
           <source media="(min-width: 1024px)" srcSet={heroAsset.url} />
           <source media="(min-width: 768px)" srcSet={heroTabletAsset.url} />
