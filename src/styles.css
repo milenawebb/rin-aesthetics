@@ -230,3 +230,20 @@
     transition: none;
   }
 }
+
+/* Numbered steps on the service template. */
+.step-counter {
+  counter-reset: step;
+}
+
+.step-counter > li {
+  counter-increment: step;
+}
+
+.step-counter .step-number::before {
+  content: counter(step, decimal-leading-zero);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
