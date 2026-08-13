@@ -17,7 +17,7 @@ export function PlaceholderPage({ title, blurb }: { title: string; blurb: string
     <PageShell>
       <section className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
         <p className="label-xs text-champagne">RIN</p>
-        <h1 className="display-tight mt-6 font-display text-[34px] font-normal text-ink md:text-[56px]">
+        <h1 className="display-tight opsz-md mt-6 font-display text-[34px] font-normal text-ink md:opsz-lg md:text-[56px]">
           {title}
         </h1>
         <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
