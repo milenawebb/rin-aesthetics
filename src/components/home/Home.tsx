@@ -23,45 +23,42 @@ const btn = "btn-label rounded-[2px]";
 export function Home() {
   return (
     <>
-      <section className="relative flex h-[85vh] min-h-[520px] items-center justify-center overflow-hidden">
+      <section className="relative bg-ivory md:flex md:h-[85vh] md:min-h-[520px] md:items-center md:justify-center md:overflow-hidden">
         <img
           src={heroAsset.url}
           alt={hero.imageAlt}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="h-[62vh] w-full object-cover object-[75%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
         />
-        <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
+        <div className="absolute inset-0 hidden bg-ink/45 md:block" aria-hidden="true" />
         <div
-          className="absolute inset-0 hidden lg:block"
+          className="absolute inset-0 hidden md:block"
           aria-hidden="true"
           style={{
             backgroundImage:
               "linear-gradient(to right, rgba(13,13,12,0.45) 0%, rgba(13,13,12,0) 55%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 text-center lg:px-10 lg:text-left">
-          <h1 className="display-tight font-display text-[34px] font-normal text-ivory md:text-[56px] lg:hidden">
-            {hero.headline}
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:px-10 md:py-0 md:text-left">
+          <h1 className="font-body text-[26px] font-light leading-[1.3] text-ink md:hidden">
+            Medical aesthetics in Charlottesville
           </h1>
-          <h1 className="hidden font-body text-[30px] font-light leading-[1.3] text-ivory lg:block lg:max-w-[24ch]">
+          <h1 className="hidden font-body text-[30px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch]">
             Medical aesthetics
             <br />
             in Charlottesville
           </h1>
-          <p className="mt-6 font-body text-[14px] font-light tracking-[0.06em] text-greige lg:hidden">
-            {practice.location}
-          </p>
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row lg:mt-10 lg:items-start lg:justify-start lg:gap-[28px]">
+          <div className="mt-10 flex flex-col gap-[10px] md:flex-row md:items-start md:gap-[28px]">
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full border border-transparent bg-ivory px-8 py-4 text-ink transition-colors hover:bg-champagne sm:w-auto`}
+              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:w-auto md:bg-ivory md:px-8 md:py-4 md:text-ink md:hover:bg-champagne`}
             >
               {hero.primaryCta}
             </a>
             <Link
               to="/find-your-treatment"
-              className={`${btn} w-full border border-greige px-8 py-4 text-ivory transition-colors hover:border-champagne hover:text-champagne sm:w-auto`}
+              className={`${btn} w-full border border-ink px-8 py-[14px] text-ink transition-colors hover:border-champagne hover:text-champagne md:w-auto md:border-greige md:px-8 md:py-4 md:text-ivory`}
             >
               {hero.secondaryCta}
             </Link>
