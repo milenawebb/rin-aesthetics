@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { Placeholder } from "@/components/site/Placeholder";
 import { practice } from "@/data/site";
@@ -36,10 +37,8 @@ export const Route = createFileRoute("/treatments/$slug")({
 
 const btnPrimary =
   "btn-label inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut";
-const btnGhost =
-  "btn-label inline-flex items-center justify-center rounded-[2px] border border-greige px-8 py-4 text-ink transition-colors hover:border-champagne";
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: ReactNode }) {
   return <p className="label-xs text-champagne">{children}</p>;
 }
 
