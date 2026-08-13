@@ -27,7 +27,7 @@ export function Home() {
         <img
           src={heroAsset.url}
           alt={hero.imageAlt}
-          className="h-[62vh] w-full object-cover object-[75%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
+          className="h-[48vh] w-full object-cover object-[22%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
         />
         <div className="absolute inset-0 hidden bg-ink/45 md:block" aria-hidden="true" />
         <div
@@ -38,7 +38,7 @@ export function Home() {
               "linear-gradient(to right, rgba(13,13,12,0.45) 0%, rgba(13,13,12,0) 55%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:px-10 md:py-0 md:text-left">
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:inset-0 md:flex md:max-w-[380px] md:flex-col md:justify-center md:px-10 md:py-0 md:text-left lg:max-w-[1240px]">
           <h1 className="font-body text-[26px] font-light leading-[1.3] text-ink md:hidden">
             Medical aesthetics in Charlottesville
           </h1>
@@ -47,18 +47,18 @@ export function Home() {
             <br />
             in Charlottesville
           </h1>
-          <div className="mt-10 flex flex-col gap-[10px] md:flex-row md:items-start md:gap-[28px]">
+          <div className="mt-10 flex flex-col gap-[10px] md:items-start md:gap-3 lg:flex-row lg:items-start lg:gap-[28px]">
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:w-auto md:bg-ivory md:px-8 md:py-4 md:text-ink md:hover:bg-champagne`}
+              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:w-auto md:bg-ivory md:px-8 md:py-4 md:text-ink md:hover:bg-champagne lg:px-8 lg:py-4`}
             >
               {hero.primaryCta}
             </a>
             <Link
               to="/find-your-treatment"
-              className={`${btn} w-full border border-ink px-8 py-[14px] text-ink transition-colors hover:border-champagne hover:text-champagne md:w-auto md:border-greige md:px-8 md:py-4 md:text-ivory`}
+              className={`${btn} w-full border border-ink px-8 py-[14px] text-ink transition-colors hover:border-champagne hover:text-champagne md:w-auto md:border-greige md:px-8 md:py-4 md:text-ivory lg:px-8 lg:py-4`}
             >
               {hero.secondaryCta}
             </Link>
