@@ -203,6 +203,15 @@
   line-height: 1.15;
 }
 
+/* Optical size axis for the display face. */
+@utility opsz-lg {
+  font-variation-settings: "opsz" 72;
+}
+
+@utility opsz-md {
+  font-variation-settings: "opsz" 28;
+}
+
 @utility measure {
   max-width: 64ch;
 }
