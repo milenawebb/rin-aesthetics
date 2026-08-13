@@ -60,7 +60,7 @@ export function Header() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="display-tight opsz-md border-b border-walnut py-6 font-display text-[28px] font-normal text-ivory"
+                className="display-tight border-b border-walnut py-6 font-display text-[28px] font-extralight text-ivory"
               >
                 {link.label}
               </Link>
