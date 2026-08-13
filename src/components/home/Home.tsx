@@ -19,7 +19,7 @@ import {
 
 const section = "mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]";
 const heading =
-  "display-tight font-display opsz-md font-normal text-[28px] md:text-[34px] text-ink";
+  "display-tight font-display font-normal text-[28px] md:text-[34px] text-ink";
 const body = "measure font-body text-[16px] font-light leading-[1.75] text-walnut";
 const btn = "btn-label rounded-[2px]";
 
@@ -118,13 +118,13 @@ export function Home() {
       <Reveal as="section" className="bg-ink">
         <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
           <p className="label-xs text-champagne">{signature.label}</p>
-          <h2 className="display-tight opsz-md mt-6 font-display text-[30px] font-normal text-ivory md:text-[36px]">
+          <h2 className="display-tight mt-6 font-display text-[30px] font-normal text-ivory md:text-[36px]">
             {signature.heading}
           </h2>
           <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-greige">
             {signature.body}
           </p>
-          <p className="display-tight opsz-md mt-8 font-display text-[30px] font-normal text-champagne">
+          <p className="display-tight mt-8 font-display text-[30px] font-normal text-champagne">
             {signature.price}
           </p>
           <Link
@@ -145,7 +145,7 @@ export function Home() {
             className="aspect-[3/4] w-full"
           />
           <div className="self-center">
-            <h3 className="display-tight opsz-md font-display text-[28px] font-normal text-ink md:text-[34px]">
+            <h3 className="display-tight font-display text-[28px] font-normal text-ink md:text-[34px]">
               {provider.name}
             </h3>
             {provider.paragraphs.map((paragraph, i) => (
@@ -168,7 +168,7 @@ export function Home() {
         <div className="mt-14 grid gap-14 md:grid-cols-3 md:gap-12">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name}>
-              <blockquote className="opsz-md font-display text-[28px] font-normal leading-[1.3] text-ink">
+              <blockquote className=" font-display text-[28px] font-normal leading-[1.3] text-ink">
                 “{testimonial.quote}”
               </blockquote>
               <figcaption className="mt-5 font-body text-[13px] tracking-[0.06em] text-walnut">
