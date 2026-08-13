@@ -27,7 +27,7 @@ export function Home() {
         <img
           src={heroAsset.url}
           alt={hero.imageAlt}
-          className="aspect-[4/3] w-full object-cover object-[70%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
+          className="aspect-[4/3] w-full object-cover object-[65%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
         />
         <div className="absolute inset-0 hidden bg-ink/45 md:block" aria-hidden="true" />
         <div
