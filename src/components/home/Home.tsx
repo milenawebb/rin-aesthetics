@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Placeholder } from "@/components/site/Placeholder";
 import heroAsset from "@/assets/hero.png.asset.json";
+import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
+import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { practice } from "@/data/site";
 import {
   bookingBand,
@@ -24,12 +26,16 @@ const btn = "btn-label rounded-[2px]";
 export function Home() {
   return (
     <>
-      <section className="relative bg-ivory md:flex md:h-[85vh] md:min-h-[520px] md:items-center md:justify-center md:overflow-hidden">
-        <img
-          src={heroAsset.url}
-          alt={hero.imageAlt}
-          className="aspect-[4/3] w-full object-cover object-[65%_center] md:absolute md:inset-0 md:h-full md:w-full md:object-center"
-        />
+      <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
+        <picture className="aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
+          <source media="(min-width: 1024px)" srcSet={heroAsset.url} />
+          <source media="(min-width: 768px)" srcSet={heroTabletAsset.url} />
+          <img
+            src={heroMobileAsset.url}
+            alt={hero.imageAlt}
+            className="h-full w-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 hidden bg-ink/45 md:block" aria-hidden="true" />
         <div
           className="absolute inset-0 hidden md:block"
