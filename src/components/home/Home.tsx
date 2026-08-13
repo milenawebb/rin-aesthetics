@@ -23,7 +23,7 @@ const btn = "btn-label rounded-[2px]";
 export function Home() {
   return (
     <>
-      <section className="relative flex h-[82vh] min-h-[520px] items-center justify-center overflow-hidden">
+      <section className="relative flex h-[85vh] min-h-[520px] items-center justify-center overflow-hidden">
         <img
           src={heroAsset.url}
           alt={hero.imageAlt}
@@ -42,8 +42,10 @@ export function Home() {
           <h1 className="display-tight font-display text-[34px] font-normal text-ivory md:text-[56px] lg:hidden">
             {hero.headline}
           </h1>
-          <h1 className="hidden font-body text-[22px] font-light leading-[1.4] text-ivory lg:block lg:max-w-[24ch]">
-            Medical aesthetics in Charlottesville
+          <h1 className="hidden font-body text-[30px] font-light leading-[1.3] text-ivory lg:block lg:max-w-[24ch]">
+            Medical aesthetics
+            <br />
+            in Charlottesville
           </h1>
           <p className="mt-6 font-body text-[14px] font-light tracking-[0.06em] text-greige lg:hidden">
             {practice.location}
@@ -53,7 +55,7 @@ export function Home() {
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full bg-ivory px-8 py-4 text-ink transition-colors hover:bg-champagne sm:w-auto`}
+              className={`${btn} w-full border border-transparent bg-ivory px-8 py-4 text-ink transition-colors hover:bg-champagne sm:w-auto`}
             >
               {hero.primaryCta}
             </a>
