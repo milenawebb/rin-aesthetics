@@ -92,9 +92,9 @@ export function Home() {
         <div className={grid}>
           <MaskedLines
             lines={concernsSection.headingLines as unknown as string[]}
-            className={`${heading} col-span-12 md:col-span-7`}
+            className={`${heading} col-span-12`}
           />
-          <p className={`${body} col-span-12 mt-6 md:col-start-2 md:col-span-6`}>
+          <p className={`${body} col-span-12 mt-6`}>
             {concernsSection.intro}
           </p>
         </div>
@@ -107,9 +107,9 @@ export function Home() {
           <div className={grid}>
             <MaskedLines
               lines={resultsSection.headingLines as unknown as string[]}
-              className={`${heading} col-span-12 md:col-span-6`}
+              className={`${heading} col-span-12`}
             />
-            <p className={`${body} col-span-12 mt-6 md:col-start-2 md:col-span-5`}>
+            <p className={`${body} col-span-12 mt-6`}>
               {resultsSection.intro}
             </p>
           </div>
@@ -141,13 +141,13 @@ export function Home() {
             <MaskedLines
               lines={signature.headingLines as unknown as string[]}
               delay={700}
-              className="col-span-12 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ivory md:col-span-7 md:text-[56px]"
+              className="col-span-12 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ivory md:text-[56px]"
             />
 
-            <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige md:col-start-2 md:col-span-6">
+            <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige">
               {signature.body}
             </p>
-            <p className="col-span-12 mt-7 font-body text-[32px] font-extralight text-champagne md:col-start-2 md:col-span-6">
+            <p className="col-span-12 mt-7 font-body text-[32px] font-extralight text-champagne">
               {signature.price}
             </p>
 
@@ -204,7 +204,7 @@ export function Home() {
         <SectionLabel>{testimonialsMeta.eyebrow}</SectionLabel>
         <MaskedLines
           lines={testimonialsMeta.headingLines as unknown as string[]}
-          className={`${heading} md:w-7/12`}
+          className={`${heading}`}
         />
         <div className="mt-14 grid gap-12 md:grid-cols-3">
           {testimonials.map((testimonial) => (
