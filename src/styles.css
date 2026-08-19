@@ -468,3 +468,36 @@
     animation: none;
   }
 }
+
+/* Mobile footer accordion */
+.footer-accordion > summary {
+  list-style: none;
+}
+
+.footer-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.footer-accordion-panel {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms var(--ease-editorial);
+}
+
+.footer-accordion[open] .footer-accordion-panel {
+  grid-template-rows: 1fr;
+}
+
+.footer-accordion-panel > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.footer-accordion[open] > summary .chevron {
+  transform: rotate(180deg);
+}
+
+.footer-accordion > summary:focus-visible {
+  outline: 1px solid var(--color-champagne);
+  outline-offset: 0;
+}
+
