@@ -5,6 +5,7 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ResultsRail } from "@/components/home/ResultsRail";
+import { resultCases } from "@/data/results";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
@@ -115,7 +116,7 @@ export function Home() {
         </div>
         <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
           <ResultsRail
-            count={resultsSection.count}
+            cases={resultCases}
             label={resultsSection.placeholderLabel}
           />
         </div>
