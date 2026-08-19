@@ -108,13 +108,13 @@ export function Home() {
               <Link
                 to="/concerns/$slug"
                 params={{ slug: concern.slug }}
-                className={`group flex h-full flex-col justify-between rounded-[2px] border border-greige bg-white px-6 py-6 transition-colors duration-400 hover:border-champagne ${
+                className={`group flex h-full flex-col justify-between rounded-[2px] border border-greige bg-white px-6 py-6 transition-colors duration-[400ms] hover:border-champagne ${
                   i === 0 ? "lg:py-10" : ""
                 }`}
                 style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
               >
                 <span className="eyebrow">{concern.label}</span>
-                <span className="mt-8 font-body text-[19px] font-medium leading-[1.35] text-ink transition-transform duration-400 group-hover:translate-x-[3px]">
+                <span className="mt-8 font-body text-[19px] font-medium leading-[1.35] text-ink transition-transform duration-[400ms] group-hover:translate-x-[3px]">
                   {concern.name}
                 </span>
               </Link>
@@ -145,7 +145,7 @@ export function Home() {
         <div className={`${container} mt-10`}>
           <Link
             to="/results"
-            className="eyebrow inline-block border-b border-champagne pb-1 text-ink transition-transform duration-400 hover:translate-x-[3px]"
+            className="eyebrow inline-block border-b border-champagne pb-1 text-ink transition-transform duration-[400ms] hover:translate-x-[3px]"
           >
             {resultsSection.linkLabel}
           </Link>
@@ -174,7 +174,7 @@ export function Home() {
           </div>
           <Link
             to="/treatments"
-            className={`${btn} mt-12 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-400 hover:border-champagne`}
+            className={`${btn} mt-12 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
           >
             {signature.cta}
           </Link>
@@ -209,7 +209,7 @@ export function Home() {
             ))}
             <Link
               to="/about"
-              className="eyebrow mt-10 inline-block border-b border-champagne pb-1 text-ink transition-transform duration-400 hover:translate-x-[3px]"
+              className="eyebrow mt-10 inline-block border-b border-champagne pb-1 text-ink transition-transform duration-[400ms] hover:translate-x-[3px]"
             >
               {provider.linkLabel}
             </Link>
@@ -268,7 +268,7 @@ export function Home() {
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} border border-ink bg-ink px-8 py-4 text-ivory transition-colors duration-400 hover:bg-walnut`}
+              className={`${btn} border border-ink bg-ink px-8 py-4 text-ivory transition-colors duration-[400ms] hover:bg-walnut`}
             >
               {bookingBand.cta}
             </a>
