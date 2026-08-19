@@ -183,7 +183,6 @@ export function Home() {
 
       <section className="relative pt-[110px] pb-[80px] md:pt-[160px] md:pb-[120px]">
         <div className={container}>
-          <SectionLabel>{provider.eyebrow}</SectionLabel>
           <p className="eyebrow">{provider.heading}</p>
         </div>
         <div className={`${grid} mx-auto mt-10 max-w-[1400px] items-start`}>
