@@ -89,7 +89,7 @@ export function AskRin() {
         aria-expanded={open}
         aria-label="Ask RIN"
         style={{ transitionTimingFunction: EASE }}
-        className={`group fixed right-7 bottom-7 z-50 flex h-14 items-center justify-center gap-2 overflow-hidden rounded-[2px] border border-champagne bg-ink px-0 transition-[width,opacity] duration-[400ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-ivory motion-reduce:transition-none w-14 hover:w-[168px] focus-visible:w-[168px] ${
+        className={`group fixed right-6 bottom-6 z-[60] sm:right-7 sm:bottom-7 flex h-14 items-center justify-center gap-2 overflow-hidden rounded-[2px] border border-champagne bg-ink px-0 transition-[width,opacity] duration-[400ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-ivory motion-reduce:transition-none w-14 hover:w-[168px] focus-visible:w-[168px] ${
           mounted ? "opacity-100" : "pointer-events-none opacity-0"
         } ${open ? "pointer-events-none opacity-0" : ""}`}
       >

@@ -1,15 +1,12 @@
 import type { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { AskRin } from "./AskRin";
-
 export function PageShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col overflow-x-clip bg-ivory">
       <Header />
       <main className="flex-1 overflow-x-clip">{children}</main>
       <Footer />
-      <AskRin />
     </div>
   );
 }
