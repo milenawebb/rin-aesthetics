@@ -73,7 +73,7 @@ export interface Product {
   name: string;
   category: string;
   description: string;
-  priceDisplay: string;
+  priceDisplay?: string;
 }
 
 export const services: Service[] = [
@@ -252,19 +252,17 @@ export const services: Service[] = [
 export const products: Product[] = [
   {
     id: "SB-08",
-    slug: "barrier-recovery-balm",
-    name: "Barrier Recovery Balm",
-    category: "Aftercare",
-    description: "The occlusive balm we send home after every light and laser session.",
-    priceDisplay: "$48",
+    slug: "sunbetter-sheer-spf-70",
+    name: "sunbetter SHEER SPF 70",
+    category: "Daily care",
+    description: "Sheer mineral protection worn every day after light and laser work.",
   },
   {
     id: "SB-04",
-    slug: "mineral-spf-50-fluid",
-    name: "Mineral SPF 50 Fluid",
+    slug: "alto-advanced-defense-and-repair-serum",
+    name: "Alto Advanced Defense and Repair Serum",
     category: "Daily care",
-    description: "Tinted zinc sunscreen that sits well over healing skin.",
-    priceDisplay: "$62",
+    description: "Antioxidant serum used to support and hold the result between sessions.",
   },
   {
     id: "PRD-01",
@@ -318,19 +316,19 @@ export const serviceSummaries: {
   },
   {
     id: "DEV-05",
-    slug: "microneedling-rf",
-    name: "Microneedling with radiofrequency",
+    slug: "candela-fractional-laser",
+    name: "Candela 1940 & 1550 Fractional Laser",
     category: "Device & Laser",
-    description: "Controlled injury and heat to firm the lower face and refine texture.",
-    priceDisplay: "From $650",
+    description: "Fractional resurfacing for texture, scarring and established lines.",
+    priceDisplay: "$675",
   },
   {
     id: "DEV-06",
-    slug: "frax-1550-resurfacing",
-    name: "Frax 1550 Resurfacing",
+    slug: "candela-swt-ipl-photofacial",
+    name: "Candela SWT IPL Photofacial",
     category: "Device & Laser",
-    description: "Deeper fractional resurfacing for scarring and established lines.",
-    priceDisplay: "From $600",
+    description: "Selective light for sun damage, pigment and diffuse redness.",
+    priceDisplay: "$450",
   },
 ];
 
