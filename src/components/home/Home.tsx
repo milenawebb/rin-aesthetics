@@ -26,7 +26,8 @@ import {
 const container = "relative mx-auto max-w-[1240px] px-6 md:px-10";
 const grid = "grid grid-cols-12 gap-x-6";
 const heading =
-  "font-body font-extralight text-[30px] md:text-[46px] tracking-[-0.03em] leading-[1.08] text-ink";
+  "font-body font-extralight text-[30px] md:text-[46px] tracking-[-0.03em] leading-[1.16] text-ink";
+
 const body =
   "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
 const btn = "btn-label rounded-[2px]";
@@ -139,19 +140,22 @@ export function Home() {
             <MaskedLines
               lines={signature.headingLines as unknown as string[]}
               delay={700}
-              className="col-span-12 font-body text-[34px] font-extralight leading-[1.08] tracking-[-0.03em] text-ivory md:col-span-7 md:text-[56px]"
+              className="col-span-12 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ivory md:col-span-7 md:text-[56px]"
             />
+
             <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige md:col-start-2 md:col-span-6">
-              {signature.body}{" "}
-              <span className="whitespace-nowrap font-extralight tracking-[-0.02em] text-champagne md:text-[32px]">
-                {signature.price}
-              </span>
+              {signature.body}
             </p>
+            <p className="col-span-12 mt-7 font-body text-[32px] font-extralight text-champagne md:col-start-2 md:col-span-6">
+              {signature.price}
+            </p>
+
           </div>
           <Link
             to="/treatments"
-            className={`${btn} mt-12 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
+            className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
           >
+
             {signature.cta}
           </Link>
         </div>
@@ -177,8 +181,9 @@ export function Home() {
             <MaskedLines
               as="h3"
               lines={[provider.name]}
-              className="font-body text-[30px] font-extralight leading-[1.08] tracking-[-0.03em] text-ink md:text-[46px]"
+              className="font-body text-[30px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[46px]"
             />
+
             {provider.paragraphs.map((paragraph, i) => (
               <p key={i} className={`${body} mt-8`}>
                 {paragraph}
