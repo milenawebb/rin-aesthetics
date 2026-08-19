@@ -59,9 +59,9 @@ export const resultsSection = {
 
 export const signature = {
   label: "Signature",
-  heading: "The Candela Light & Bright Experience",
-  headingLines: ["The Candela Light", "& Bright Experience"],
-  body: "Three Candela technologies combined into one customised session — SWT IPL, 1940nm and 1550nm fractional lasers — addressing pigmentation, redness, texture, fine lines, acne scars and collagen loss together. Exclusive to RIN.",
+  heading: "The Skin Refinery by RIN",
+  headingLines: ["The Skin Refinery", "by RIN"],
+  body: "Four technologies combined into one customised session — SWT IPL, SWT IPL for acne, and 1940nm and 1550nm fractional lasers — addressing pigmentation, redness, texture, fine lines, acne and scarring together. Exclusive to RIN.",
   price: "$900",
   cta: "Learn more",
 } as const;

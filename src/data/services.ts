@@ -1,8 +1,20 @@
-import treatmentRoom from "@/assets/treatment-room.jpg.asset.json";
+import deviceRefinery from "@/assets/device-refinery.png.asset.json";
+import srTech1 from "@/assets/sr-tech-1.png.asset.json";
+import srTech2 from "@/assets/sr-tech-2.png.asset.json";
+import srTech3 from "@/assets/sr-tech-3.png.asset.json";
+import srTech4 from "@/assets/sr-tech-4.png.asset.json";
 
 export interface ServiceVariant {
   marker: string;
   title: string;
+  body: string;
+  points?: string[];
+  /** Low-resolution reference photograph, rendered as a labelled placeholder. */
+  placeholderImage?: string;
+}
+
+export interface ServicePromise {
+  label: string;
   body: string;
 }
 
@@ -33,6 +45,10 @@ export interface Service {
   followUp?: string;
   concernTags: ConcernTag[];
   heroImage?: string;
+  eyebrow?: string;
+  headingSuffix?: string;
+  standfirst?: string;
+  promises?: ServicePromise[];
   intro: string[];
   helpsWith: string[];
   suitableFor: string[];
@@ -63,9 +79,12 @@ export interface Product {
 export const services: Service[] = [
   {
     id: "DEV-03",
-    slug: "candela-light-and-bright",
-    name: "Candela Light & Bright Experience",
-    heroImage: treatmentRoom.url,
+    slug: "skin-refinery",
+    name: "The Skin Refinery",
+    headingSuffix: "by RIN",
+    eyebrow: "RIN signature treatment",
+    standfirst: "Tone. Texture. Clarity. Luminosity.",
+    heroImage: deviceRefinery.url,
     category: "Device & Laser",
     isSignature: true,
     priceDisplay: "$900",
@@ -74,120 +93,179 @@ export const services: Service[] = [
     followUp: "Complimentary",
     concernTags: [
       { label: "Uneven tone", slug: "uneven-tone" },
+      { label: "Redness", slug: "redness" },
+      { label: "Texture and pores", slug: "texture-and-pores" },
       { label: "Lines and wrinkles", slug: "lines-and-wrinkles" },
-      { label: "Sun damage", slug: "sun-damage" },
+      { label: "Acne", slug: "acne" },
+      { label: "Acne scarring", slug: "acne-scarring" },
     ],
     intro: [
-      "The Light & Bright Experience combines three Candela platforms in a single appointment to address surface pigment, diffuse redness and the early loss of firmness that photographs read as tiredness. It is planned rather than packaged: the sequence and the settings are chosen in the room, for your skin, on the day.",
-      "Most people come to it after years of good skincare that has stopped making a visible difference. The intention is not a dramatic change but a clearer, more even canvas that makes everything else you do work harder.",
+      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin \u2014 in one customised session rather than across months of separate appointments.",
+      "Every session is set individually. Which technologies are used, and at what strength, depends on what your skin needs on the day.",
+    ],
+    promises: [
+      {
+        label: "Customised to you",
+        body: "Settings chosen for your skin, not a fixed protocol",
+      },
+      {
+        label: "Visible results",
+        body: "Change you can see, documented at your follow-up",
+      },
+      {
+        label: "Minimal downtime",
+        body: "A few quiet days, not a few quiet weeks",
+      },
+      {
+        label: "Broad suitability",
+        body: "Safe across a wide range of skin types",
+      },
     ],
     helpsWith: [
-      "Sun spots and uneven pigment across the cheeks and temples",
-      "Persistent facial redness and visible capillaries",
-      "Fine lines around the eyes and mouth",
-      "Enlarged pores and rough surface texture",
-      "Early laxity along the jawline",
+      "Uneven tone, sun spots and pigmentation",
+      "Persistent redness and rosacea",
+      "Rough texture and enlarged pores",
+      "Fine lines and deeper wrinkles",
+      "Active breakouts and oil control",
+      "Acne scarring at the surface and below it",
     ],
     suitableFor: [
-      "Healthy adults looking for a measured, natural result",
-      "Skin that has had sun exposure over many years",
-      "Anyone preparing for an event three to four weeks out",
-      "Patients who prefer one considered visit over a long course",
+      "Anyone who wants several concerns addressed in one visit",
+      "Skin that has stopped responding to skincare alone",
+      "Patients planning four to five weeks before an event",
+      "A wide range of skin types, confirmed individually at consultation",
     ],
     notSuitableNote:
-      "Not suitable during pregnancy or breastfeeding, on recently tanned skin, or within six months of oral isotretinoin. We will review your history at consultation and tell you plainly if this is not the right treatment for you.",
+      "Recent sun exposure, a very active breakout or travel within three weeks are all reasons to wait. Jyl will say so at consultation, and waiting produces a better result.",
     variantsLabel: "What's in it",
-    variantsHeading: "Three platforms, one appointment",
+    variantsHeading: "Four technologies. One session.",
     variantsIntro:
-      "Each device does one thing well. Used in sequence, they cover pigment, vascularity and collagen in a single sitting.",
+      "Each does something the others can't. Combining them is what separates this from a standard photofacial.",
     variants: [
       {
-        marker: "01",
-        title: "Vbeam Prima",
-        body: "Pulsed dye light for redness, flushing and broken capillaries. Calms the vascular tone that makes skin look irritated.",
+        marker: "SWT",
+        title: "SWT IPL Photofacial",
+        body: "Broadband light targeting the visible signs of sun exposure and time.",
+        points: [
+          "Evens skin tone",
+          "Reduces redness and rosacea",
+          "Improves pigmentation",
+          "Stimulates collagen",
+        ],
+        placeholderImage: srTech1.url,
       },
       {
-        marker: "02",
-        title: "Nordlys IPL",
-        body: "Selective light targeting surface pigment and sun damage. Spots lift and flake away over the following week.",
+        marker: "SWT",
+        title: "SWT IPL for Acne",
+        body: "The same light technology tuned to acne-causing bacteria and inflammation.",
+        points: [
+          "Reduces active breakouts",
+          "Calms inflammation",
+          "Helps control oil",
+          "Discourages future breakouts",
+        ],
+        placeholderImage: srTech2.url,
       },
       {
-        marker: "03",
-        title: "Frax 1940",
-        body: "Non-ablative fractional resurfacing to refine texture and stimulate collagen through the deeper layers.",
+        marker: "1940nm",
+        title: "Fractional Laser",
+        body: "Non-ablative resurfacing that works at the surface.",
+        points: [
+          "Improves fine lines and texture",
+          "Minimises enlarged pores",
+          "Softens acne scarring",
+          "Stimulates collagen and elastin",
+        ],
+        placeholderImage: srTech3.url,
+      },
+      {
+        marker: "1550nm",
+        title: "Fractional Laser",
+        body: "Deeper fractional energy that remodels and tightens.",
+        points: [
+          "Improves deeper wrinkles",
+          "Tightens lax skin",
+          "Reduces deeper acne scars",
+          "Enhances tone and firmness",
+        ],
+        placeholderImage: srTech4.url,
       },
     ],
     steps: [
       {
-        title: "Consultation and mapping",
-        body: "We review your history, photograph the skin in standardised light and agree the sequence and settings together before anything begins.",
+        title: "Consultation",
+        body: "Jyl assesses your skin and confirms this is the right treatment, or that something gentler should come first.",
       },
       {
-        title: "Preparation",
-        body: "The skin is cleansed and numbing cream is applied where needed. Comfort is planned for, not endured.",
+        title: "The week before",
+        body: "Preparation instructions arrive by email. Following them is what makes the session safe and effective.",
       },
       {
-        title: "Treatment",
-        body: "The three passes run in sequence over roughly ninety minutes. You will feel warmth and a series of quick snaps.",
+        title: "The session",
+        body: "Skin is cleansed and numbed, then each technology is applied in sequence at settings chosen for you.",
       },
       {
-        title: "Immediately after",
-        body: "Expect warmth and pinkness similar to mild sunburn. Cooling and a barrier balm are applied before you leave.",
-      },
-      {
-        title: "The following week",
-        body: "Pigment darkens then flakes away over three to seven days. Redness settles first, texture continues improving for weeks.",
-      },
-      {
-        title: "Review",
-        body: "A complimentary follow-up at six weeks lets us compare photographs and decide whether anything further is worth doing.",
+        title: "Afterwards",
+        body: "Aftercare arrives the same day, with follow-up guidance across the first week. Your complimentary review is booked for four to five weeks later.",
       },
     ],
     preCare: [
-      "Avoid deliberate sun exposure and self-tan for two weeks",
-      "Stop retinoids and exfoliating acids five days before",
-      "Tell us about any cold sore history so we can pre-treat",
-      "Arrive with clean skin and no make-up if possible",
+      "Avoid sun exposure, tanning beds and self-tanner",
+      "Stop retinol and retinoids",
+      "Stop exfoliating acids and chemical peels",
+      "Wear SPF daily",
+      "Arrive with clean skin, free of makeup or lotions",
     ],
-    postCare: [
-      "Keep the skin cool and use only the balm provided for 48 hours",
-      "No exercise, saunas or hot showers for two days",
-      "Do not pick or scrub flaking pigment — let it release",
-      "Broad-spectrum SPF 50 daily for at least four weeks",
-    ],
-    providerHeading: "Treated by Jyl",
+    postCare: [],
+    providerHeading: "Conservative settings, honest expectations",
     providerParagraphs: [
-      "Every Light & Bright appointment is performed by Jyl personally. She trained in aesthetic medicine after more than a decade in clinical nursing and has run device-based treatments for the last nine years.",
-      "Her approach is conservative by design. She would rather do slightly less and see you back than chase a result that does not suit your face.",
+      "Jyl will tell you plainly if your skin isn't ready. Recent sun, active breakouts, or a holiday in three weeks are all reasons to wait \u2014 and waiting produces a better result than pushing ahead.",
+      "She treats this as one thorough session rather than a package sold in threes. Most people need one, reviewed at five weeks, and only then a decision about whether a second would add anything.",
     ],
     faqs: [
       {
         q: "How much downtime should I plan for?",
-        a: "Most people are comfortable in public after two to three days. Pigment flaking is visible up close for about a week and covers well with mineral make-up after 48 hours.",
+        a: "A few days of redness and a sandpaper-like texture as the skin sheds. Most people are comfortable in public by day three.",
       },
       {
-        q: "Is it painful?",
-        a: "It is tolerable. Numbing cream is applied beforehand and the sensation is described as quick, hot snaps against the skin, easing immediately after each pass.",
+        q: "How is this different from a standard IPL photofacial?",
+        a: "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen \u2014 concerns IPL cannot address.",
       },
       {
-        q: "How many sessions will I need?",
-        a: "The Experience is designed as a single visit. Some patients choose to repeat it annually to maintain the result.",
+        q: "Will one session be enough?",
+        a: "Often, yes. Your complimentary follow-up is where that gets assessed properly.",
       },
       {
-        q: "When will I see results?",
-        a: "Clarity appears within one to two weeks as pigment sheds. Texture and firmness continue improving for up to three months as collagen remodels.",
+        q: "Is it suitable for darker skin tones?",
+        a: "The platform is designed for a wide range of skin types, and Jyl confirms suitability individually at consultation.",
       },
       {
-        q: "Can I have it in summer?",
-        a: "Yes, provided you have not been in the sun recently and you commit to daily SPF. We may adjust settings seasonally.",
+        q: "Can it treat acne as well as ageing?",
+        a: "Yes \u2014 one of the four technologies is tuned specifically for active acne, which is why the session can address both.",
       },
     ],
-    relatedServiceIds: ["DEV-01", "INJ-02"],
-    relatedProductIds: ["PRD-01", "PRD-02"],
+    relatedServiceIds: ["DEV-06", "DEV-05"],
+    relatedProductIds: ["SB-08", "SB-04"],
   },
 ];
 
 export const products: Product[] = [
+  {
+    id: "SB-08",
+    slug: "barrier-recovery-balm",
+    name: "Barrier Recovery Balm",
+    category: "Aftercare",
+    description: "The occlusive balm we send home after every light and laser session.",
+    priceDisplay: "$48",
+  },
+  {
+    id: "SB-04",
+    slug: "mineral-spf-50-fluid",
+    name: "Mineral SPF 50 Fluid",
+    category: "Daily care",
+    description: "Tinted zinc sunscreen that sits well over healing skin.",
+    priceDisplay: "$62",
+  },
   {
     id: "PRD-01",
     slug: "barrier-repair-balm",
@@ -232,11 +310,27 @@ export const serviceSummaries: {
   },
   {
     id: "DEV-03",
-    slug: "candela-light-and-bright",
-    name: "Candela Light & Bright Experience",
+    slug: "skin-refinery",
+    name: "The Skin Refinery",
     category: "Device & Laser",
-    description: "Three Candela platforms in one considered appointment.",
+    description: "Four technologies in one customised light and laser session.",
     priceDisplay: "$900",
+  },
+  {
+    id: "DEV-05",
+    slug: "microneedling-rf",
+    name: "Microneedling with radiofrequency",
+    category: "Device & Laser",
+    description: "Controlled injury and heat to firm the lower face and refine texture.",
+    priceDisplay: "From $650",
+  },
+  {
+    id: "DEV-06",
+    slug: "frax-1550-resurfacing",
+    name: "Frax 1550 Resurfacing",
+    category: "Device & Laser",
+    description: "Deeper fractional resurfacing for scarring and established lines.",
+    priceDisplay: "From $600",
   },
 ];
 
