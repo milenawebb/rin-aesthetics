@@ -79,16 +79,8 @@ export function BeforeAfterTile({ item, placeholderLabel }: Props) {
           }}
         />
 
-        {/* label over a soft scrim */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-24"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(13,13,12,0.45), rgba(13,13,12,0))",
-          }}
-        />
-        <div className="pointer-events-none absolute bottom-4 left-4 h-4">
+        <div className="pointer-events-none absolute bottom-0 left-0 flex h-14 w-full items-end bg-ink/45 px-4 pb-4">
+          <div className="relative h-4 w-full">
           <span
             className="label-xs absolute left-0 bottom-0 text-ivory"
             style={{ opacity: revealed ? 0 : 1, transition: "opacity 300ms linear" }}
@@ -101,6 +93,7 @@ export function BeforeAfterTile({ item, placeholderLabel }: Props) {
           >
             After
           </span>
+          </div>
         </div>
 
         {touch ? (
