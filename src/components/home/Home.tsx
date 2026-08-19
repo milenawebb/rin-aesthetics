@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
-import { Placeholder } from "@/components/site/Placeholder";
+import { GradedImage } from "@/components/site/GradedImage";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
@@ -190,9 +190,11 @@ export function Home() {
         <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
-              <Placeholder
-                label={provider.portraitLabel}
+              <GradedImage
+                src={providerPortrait.url}
                 alt={provider.portraitAlt}
+                width={960}
+                height={1280}
                 className="aspect-[3/4] w-full"
               />
             </WipeImage>
