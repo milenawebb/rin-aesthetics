@@ -9,7 +9,7 @@ import { resultCases } from "@/data/results";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
-import providerPortrait from "@/assets/provider-portrait.jpg.asset.json";
+import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { practice } from "@/data/site";
@@ -168,9 +168,9 @@ export function Home() {
             <WipeImage from="bottom">
               <GradedImage
                 src={providerPortrait.url}
-                alt={provider.portraitAlt}
-                width={960}
-                height={1280}
+                alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
+                width={1000}
+                height={1333}
                 className="aspect-[3/4] w-full"
               />
             </WipeImage>
