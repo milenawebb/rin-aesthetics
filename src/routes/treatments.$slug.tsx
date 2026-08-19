@@ -128,23 +128,66 @@ function ServicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Header block */}
-      <section className="mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px]">
-        <SectionLabel>
-          {service.eyebrow ?? `${service.category}${service.isSignature ? " · Signature treatment" : ""}`}
-        </SectionLabel>
-        <h1 className="display-tight mt-6 max-w-[18ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
-          {service.headingSuffix ? `${service.name} ${service.headingSuffix}` : `${service.name} in Charlottesville, VA`}
-        </h1>
+      {/* Hero band */}
+      <section className="bg-ivory">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-6 py-[56px] md:grid-cols-12 md:gap-16 md:px-10 md:py-[96px]">
+          <div className="md:col-span-7">
+            <SectionLabel>
+              {service.eyebrow ?? `${service.category}${service.isSignature ? " · Signature treatment" : ""}`}
+            </SectionLabel>
+            <h1 className="display-tight mt-6 max-w-[18ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
+              {service.headingSuffix ? `${service.name} ${service.headingSuffix}` : `${service.name} in Charlottesville, VA`}
+            </h1>
+            {service.standfirst ? (
+              <p className="mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
+                {service.standfirst}
+              </p>
+            ) : null}
+            <div className="measure mt-8 space-y-6">
+              {service.intro.map((paragraph, i) => (
+                <p key={i} className="font-body text-[18px] font-light leading-[1.75] text-walnut">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-col items-start gap-6">
+              <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnPrimary}>
+                Book a consultation
+              </a>
+              <Link
+                to="/find-your-treatment"
+                className="font-body text-[15px] text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink hover:decoration-champagne"
+              >
+                Not sure this is the right one? Take the treatment finder
+              </Link>
+            </div>
+          </div>
+          <div className="md:col-span-5">
+            {service.heroImage ? (
+              <img
+                src={service.heroImage}
+                alt={
+                  service.heroImageAlt ??
+                  `${service.name} at RIN Aesthetic Practice in Charlottesville, Virginia`
+                }
+                className="mx-auto h-auto max-h-[420px] w-auto max-w-full rounded-[2px] object-contain md:max-h-[560px]"
+              />
+            ) : (
+              <Placeholder
+                label="Treatment photography"
+                alt={`Photography of ${service.name} to follow`}
+                labelPosition="bottom-left"
+                className="aspect-[3/4] w-full"
+              />
+            )}
+          </div>
+        </div>
+      </section>
 
-        {service.standfirst ? (
-          <p className="mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
-            {service.standfirst}
-          </p>
-        ) : null}
-
+      {/* Chips and facts */}
+      <section className="mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[80px]">
         {service.concernTags.length ? (
-          <ul className="mt-8 flex flex-wrap gap-2">
+          <ul className="flex flex-wrap gap-2">
             {service.concernTags.map((tag) => (
               <li key={tag.slug}>
                 <Link
@@ -169,35 +212,10 @@ function ServicePage() {
         </dl>
       </section>
 
-      {/* Hero image */}
-      <section className="mx-auto mt-12 max-w-[1240px] px-6 md:mt-16 md:px-10">
-        {service.heroImage ? (
-          <GradedImage
-            src={service.heroImage}
-            alt={`${service.name} at RIN Aesthetic Practice in Charlottesville, Virginia`}
-            className="aspect-[16/9] w-full"
-          />
-        ) : (
-          <Placeholder
-            label="Treatment photography"
-            alt={`Photography of ${service.name} to follow`}
-            labelPosition="bottom-left"
-            className="aspect-[16/9] w-full"
-          />
-        )}
-      </section>
-
-      {/* Intro */}
+      {/* Promises */}
       <section className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
-        <div className="measure space-y-6">
-          {service.intro.map((paragraph, i) => (
-            <p key={i} className="font-body text-[18px] font-light leading-[1.75] text-walnut">
-              {paragraph}
-            </p>
-          ))}
-        </div>
         {service.promises && service.promises.length ? (
-          <div className="mt-16 grid border-t border-greige md:grid-cols-4">
+          <div className="grid border-t border-greige md:grid-cols-4">
             {service.promises.map((promise) => (
               <div
                 key={promise.label}
@@ -211,18 +229,6 @@ function ServicePage() {
             ))}
           </div>
         ) : null}
-
-        <div className="mt-10 flex flex-col items-start gap-6">
-          <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnPrimary}>
-            Book a consultation
-          </a>
-          <Link
-            to="/find-your-treatment"
-            className="font-body text-[15px] text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink hover:decoration-champagne"
-          >
-            Not sure this is the right one? Take the treatment finder
-          </Link>
-        </div>
       </section>
 
       {/* Two columns */}
