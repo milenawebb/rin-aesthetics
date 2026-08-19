@@ -266,7 +266,7 @@ function ConcernPage() {
               className="display-tight font-display text-[30px] font-extralight text-ink md:text-[46px]"
             />
             <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
-              Unretouched, consented photography from our own treatment room.
+              Unretouched photography from our own treatment room. Individual results vary.
             </p>
           </div>
           <div className="mt-12 w-full pl-6 md:pl-10">

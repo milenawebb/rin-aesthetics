@@ -51,7 +51,7 @@ export const resultsSection = {
   heading: "Results",
   eyebrow: "Results",
   headingLines: ["Results"],
-  intro: "Unretouched, consented photography from our own treatment room.",
+  intro: "Unretouched photography from our own treatment room. Individual results vary.",
   placeholderLabel: "Before / after",
   linkLabel: "View all results",
   count: 6,
