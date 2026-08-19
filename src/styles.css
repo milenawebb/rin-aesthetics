@@ -365,10 +365,15 @@
   }
 }
 
+.section-label {
+  display: none;
+}
+
 @media (min-width: 1280px) {
   .section-label {
+    display: block;
     position: absolute;
-    left: max(0px, min(12px, calc(50% - 50% + 12px)));
+    left: max(0px, 12px);
     top: 0;
     bottom: 0;
     width: 0;
