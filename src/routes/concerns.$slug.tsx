@@ -12,7 +12,6 @@ import { practice } from "@/data/site";
 import {
   getConcern,
   getConcernProducts,
-  getConcernResultsCount,
   getConcernTreatments,
   getRelatedConcerns,
   lowestPrice,
@@ -61,7 +60,10 @@ function ConcernPage() {
   const treatments = getConcernTreatments(concern);
   const productList = getConcernProducts(concern);
   const related = getRelatedConcerns(concern);
-  const resultsCount = getConcernResultsCount(concern);
+  const concernResults = getResultCasesByTags([
+    concern.tag,
+    ...(concern.relatedTags ?? []),
+  ]);
   const cheapest = lowestPrice(treatments);
 
   const faqSchema = {
@@ -254,7 +256,7 @@ function ConcernPage() {
       ) : null}
 
       {/* 7. Results */}
-      {resultsCount > 0 ? (
+      {concernResults.length > 0 ? (
         <section className="relative overflow-x-clip pb-[72px] md:pb-[120px]">
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <SectionLabel>Results</SectionLabel>
