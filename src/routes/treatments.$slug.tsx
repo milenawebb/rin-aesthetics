@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { Placeholder } from "@/components/site/Placeholder";
 import { GradedImage } from "@/components/site/GradedImage";
-import providerPortrait from "@/assets/provider-portrait.jpg.asset.json";
+import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
+import jylSquare from "@/assets/jyl-square.jpg.asset.json";
 import { practice } from "@/data/site";
 import { getService, products, serviceSummaries } from "@/data/services";
 
@@ -360,7 +361,8 @@ function ServicePage() {
           <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
             <GradedImage
               src={providerPortrait.url}
-              alt="Portrait of Jyl, provider at RIN Aesthetic Practice"
+              alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
+              loading="lazy"
               width={960}
               height={1280}
               className="aspect-[3/4] w-full"
@@ -419,62 +421,51 @@ function ServicePage() {
       {relatedServices.length || relatedProducts.length ? (
         <section className="mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
           <h2 className="display-tight font-display text-[28px] font-extralight text-ink md:text-[34px]">
-            Often considered together
+            Often considered alongside
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
-            {relatedServices.map((item) => (
-              <Link
-                key={item.id}
-                to="/treatments/$slug"
-                params={{ slug: item.slug }}
-                className="flex flex-col rounded-[2px] border border-greige bg-white p-7 transition-colors hover:border-champagne"
-              >
-                <span className="label-xs text-champagne">{item.category}</span>
-                <span className="mt-4 font-body text-[19px] font-medium leading-[1.35] text-ink">
-                  {item.name}
-                </span>
-                <span className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">
-                  {item.description}
-                </span>
-                <span className="mt-6 font-body text-[15px] text-ink">{item.priceDisplay}</span>
-              </Link>
-            ))}
-            {relatedProducts.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col rounded-[2px] border border-greige bg-white p-7"
-              >
-                <span className="label-xs text-champagne">{item.category}</span>
-                <span className="mt-4 font-body text-[19px] font-medium leading-[1.35] text-ink">
-                  {item.name}
-                </span>
-                <span className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">
-                  {item.description}
-                </span>
-                <span className="mt-6 font-body text-[15px] text-ink">{item.priceDisplay}</span>
-              </div>
+          <div className="mt-12 border-t border-greige">
+            {relatedItems.map((item) => (
+              <RelatedRow key={item.id} item={item} />
             ))}
           </div>
         </section>
       ) : null}
 
       {/* Booking band */}
-      <section className="border-y border-greige bg-white">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-[72px] md:flex-row md:items-center md:justify-between md:px-10 md:py-[96px]">
-          <h2 className="display-tight max-w-[20ch] font-display text-[28px] font-extralight text-ink md:text-[34px]">
-            Book a consultation with Jyl
-          </h2>
-          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-            <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnPrimary}>
-              Book now
-            </a>
-            <a
-              href={practice.phoneHref}
-              className="font-body text-[16px] text-walnut transition-colors hover:text-ink"
-            >
-              {practice.phone}
-            </a>
+      <section className="bg-ink">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-12 px-6 py-[72px] md:flex-row md:items-center md:justify-between md:gap-20 md:px-10 md:py-[96px]">
+          <div>
+            <h2 className="display-tight max-w-[20ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
+              Book a consultation with Jyl
+            </h2>
+            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
+              Consultations are unhurried and obligation-free.
+            </p>
+            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+              <a
+                href={practice.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-label inline-flex items-center justify-center rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory"
+              >
+                Book now
+              </a>
+              <a
+                href={practice.phoneHref}
+                className="font-body text-[16px] font-light text-greige transition-colors hover:text-ivory"
+              >
+                {practice.phone}
+              </a>
+            </div>
           </div>
+          <img
+            src={jylSquare.url}
+            alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
+            width={220}
+            height={220}
+            loading="lazy"
+            className="h-[220px] w-[220px] shrink-0 rounded-[2px] object-cover"
+          />
         </div>
       </section>
     </PageShell>
