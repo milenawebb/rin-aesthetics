@@ -53,7 +53,7 @@ export function BeforeAfterTile({ item, placeholderLabel }: Props) {
             setRevealed((v) => !v);
           }
         }}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] outline-none ring-offset-2 focus-visible:ring-1 focus-visible:ring-champagne"
+        className="ba-tile relative aspect-[4/5] w-full overflow-hidden rounded-[2px] outline-none ring-offset-2 focus-visible:ring-1 focus-visible:ring-champagne"
       >
         <div className="absolute inset-0">{face(item.beforeImage, "before")}</div>
 
