@@ -2,6 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { Placeholder } from "@/components/site/Placeholder";
+import { GradedImage } from "@/components/site/GradedImage";
+import providerPortrait from "@/assets/provider-portrait.jpg.asset.json";
 import { practice } from "@/data/site";
 import { getService, products, serviceSummaries } from "@/data/services";
 
@@ -117,11 +119,10 @@ function ServicePage() {
       {/* Hero image */}
       <section className="mx-auto mt-12 max-w-[1240px] px-6 md:mt-16 md:px-10">
         {service.heroImage ? (
-          <img
+          <GradedImage
             src={service.heroImage}
             alt={`${service.name} at RIN Aesthetic Practice in Charlottesville, Virginia`}
-            className="aspect-[16/9] w-full rounded-[2px] object-cover"
-            loading="lazy"
+            className="aspect-[16/9] w-full"
           />
         ) : (
           <Placeholder
@@ -310,9 +311,11 @@ function ServicePage() {
       {service.providerParagraphs && service.providerParagraphs.length ? (
         <section className="mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
           <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
-            <Placeholder
-              label="Portrait"
+            <GradedImage
+              src={providerPortrait.url}
               alt="Portrait of Jyl, provider at RIN Aesthetic Practice"
+              width={960}
+              height={1280}
               className="aspect-[3/4] w-full"
             />
             <div>

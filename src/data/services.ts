@@ -1,3 +1,5 @@
+import treatmentRoom from "@/assets/treatment-room.jpg.asset.json";
+
 export interface ServiceVariant {
   marker: string;
   title: string;
@@ -63,6 +65,7 @@ export const services: Service[] = [
     id: "DEV-03",
     slug: "candela-light-and-bright",
     name: "Candela Light & Bright Experience",
+    heroImage: treatmentRoom.url,
     category: "Device & Laser",
     isSignature: true,
     priceDisplay: "$900",
