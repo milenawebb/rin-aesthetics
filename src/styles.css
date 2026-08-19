@@ -446,3 +446,25 @@
     transition: none !important;
   }
 }
+
+.ask-rin-panel {
+  animation: ask-rin-in 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: bottom right;
+}
+
+@keyframes ask-rin-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ask-rin-panel {
+    animation: none;
+  }
+}
