@@ -7,6 +7,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
+import providerPortrait from "@/assets/provider-portrait.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { practice } from "@/data/site";
