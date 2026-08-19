@@ -172,8 +172,9 @@
     font-family: var(--font-display);
     font-weight: 200;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.16;
   }
+
 
   :focus-visible {
     outline: 2px solid var(--color-champagne);
@@ -201,8 +202,9 @@
 /* Large headings tighten slightly. */
 @utility display-tight {
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.16;
 }
+
 
 @utility measure {
   max-width: 64ch;
@@ -283,7 +285,10 @@
   .mask-line {
     display: block;
     overflow: hidden;
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
   }
+
 
   .mask-line-inner {
     display: block;
