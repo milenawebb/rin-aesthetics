@@ -488,10 +488,10 @@ function ServicePage() {
         <div className="mx-auto flex max-w-[1240px] flex-col gap-12 px-6 py-[72px] md:flex-row md:items-center md:justify-between md:gap-20 md:px-10 md:py-[96px]">
           <div>
             <h2 className="display-tight max-w-[20ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
-              Book a consultation with Jyl
+              Book a consultation
             </h2>
             <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
-              Consultations are unhurried and obligation-free.
+              Consultations are thorough and obligation-free.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <a

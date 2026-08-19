@@ -329,9 +329,14 @@ function ConcernPage() {
       {/* 10. Booking band */}
       <section className="border-y border-greige bg-white">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-[72px] md:flex-row md:items-center md:justify-between md:px-10 md:py-[96px]">
-          <h2 className="display-tight max-w-[20ch] font-display text-[28px] font-extralight text-ink md:text-[34px]">
-            Start with a conversation about {concern.label.toLowerCase()}.
-          </h2>
+          <div>
+            <h2 className="display-tight max-w-[20ch] font-display text-[28px] font-extralight text-ink md:text-[34px]">
+              Book a consultation
+            </h2>
+            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-walnut">
+              Consultations are thorough and obligation-free.
+            </p>
+          </div>
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
             <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnDark}>
               Book now
