@@ -148,6 +148,22 @@ function ServicePage() {
             </p>
           ))}
         </div>
+        {service.promises && service.promises.length ? (
+          <div className="mt-16 grid border-t border-greige md:grid-cols-4">
+            {service.promises.map((promise) => (
+              <div
+                key={promise.label}
+                className="border-b border-greige py-7 md:border-b-0 md:border-r md:px-8 md:py-0 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+              >
+                <p className="label-xs text-ink">{promise.label}</p>
+                <p className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">
+                  {promise.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
         <div className="mt-10 flex flex-col items-start gap-6">
           <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnPrimary}>
             Book a consultation
