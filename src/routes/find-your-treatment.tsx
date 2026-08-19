@@ -14,10 +14,14 @@ export const Route = createFileRoute("/find-your-treatment")({
       { property: "og:description", content: description },
     ],
   }),
-  component: () => (
+  component: FindYourTreatmentPage,
+});
+
+function FindYourTreatmentPage() {
+  return (
     <PlaceholderPage
       title="Find your treatment"
       blurb="A guided path to the right treatment is being built. Until then, a consultation is the best place to start."
     />
-  ),
-});
+  );
+}
