@@ -270,7 +270,7 @@ function ConcernPage() {
             </p>
           </div>
           <div className="mt-12 w-full pl-6 md:pl-10">
-            <ResultsRail cases={concernResults} label="Before / after" />
+            <ResultsRail cases={concernResults} />
           </div>
         </section>
       ) : null}

@@ -115,10 +115,7 @@ export function Home() {
           </div>
         </div>
         <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
-          <ResultsRail
-            cases={resultCases}
-            label={resultsSection.placeholderLabel}
-          />
+          <ResultsRail cases={resultCases} />
         </div>
         <div className={`${container} mt-10`}>
           <Link
