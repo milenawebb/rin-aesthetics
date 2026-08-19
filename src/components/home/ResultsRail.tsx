@@ -2,13 +2,7 @@ import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react"
 import { BeforeAfterTile } from "@/components/home/BeforeAfterTile";
 import type { ResultCase } from "@/data/results";
 
-export function ResultsRail({
-  cases,
-  label,
-}: {
-  cases: ResultCase[];
-  label: string;
-}) {
+export function ResultsRail({ cases }: { cases: ResultCase[] }) {
   const railRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const drag = useRef<{ x: number; left: number } | null>(null);
@@ -50,7 +44,7 @@ export function ResultsRail({
         className="rail flex items-start gap-6 overflow-x-auto overscroll-x-contain pr-6 md:pr-10"
       >
         {cases.map((item) => (
-          <BeforeAfterTile key={item.id} item={item} placeholderLabel={label} />
+          <BeforeAfterTile key={item.id} item={item} />
         ))}
       </div>
       <div
