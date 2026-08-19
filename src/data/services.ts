@@ -1,4 +1,4 @@
-import deviceRefinery from "@/assets/device-refinery.png.asset.json";
+import nordlysFull from "@/assets/nordlys-full.jpg.asset.json";
 import srTech1 from "@/assets/sr-tech-1.png.asset.json";
 import srTech2 from "@/assets/sr-tech-2.png.asset.json";
 import srTech3 from "@/assets/sr-tech-3.png.asset.json";
@@ -45,6 +45,7 @@ export interface Service {
   followUp?: string;
   concernTags: ConcernTag[];
   heroImage?: string;
+  heroImageAlt?: string;
   eyebrow?: string;
   headingSuffix?: string;
   standfirst?: string;
@@ -84,7 +85,9 @@ export const services: Service[] = [
     headingSuffix: "by RIN",
     eyebrow: "RIN signature treatment",
     standfirst: "Tone. Texture. Clarity. Luminosity.",
-    heroImage: deviceRefinery.url,
+    heroImage: nordlysFull.url,
+    heroImageAlt:
+      "The Candela Nordlys platform used for The Skin Refinery at RIN Aesthetic Practice",
     category: "Device & Laser",
     isSignature: true,
     priceDisplay: "$900",
