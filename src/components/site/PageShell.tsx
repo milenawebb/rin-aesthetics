@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { BackToTop } from "./BackToTop";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
@@ -8,9 +9,11 @@ export function PageShell({ children }: { children: ReactNode }) {
       <Header />
       <main className="flex-1 overflow-x-clip">{children}</main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
+
 
 export function PlaceholderPage({ title, blurb }: { title: string; blurb: string }) {
   return (
