@@ -138,7 +138,7 @@ export function Home() {
             </p>
           </div>
         </div>
-        <div className="mt-14 pl-6 md:pl-[max(2.5rem,calc((100vw-1240px)/2+2.5rem))]">
+        <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
           <ResultsRail
             count={resultsSection.count}
             label={resultsSection.placeholderLabel}
@@ -187,7 +187,7 @@ export function Home() {
         <div className={container}>
           <p className="eyebrow">{provider.heading}</p>
         </div>
-        <div className={`${grid} mx-auto mt-10 max-w-[1400px] items-start`}>
+        <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
               <Placeholder

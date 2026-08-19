@@ -365,10 +365,10 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .section-label {
     position: absolute;
-    left: 12px;
+    left: max(0px, min(12px, calc(50% - 50% + 12px)));
     top: 0;
     bottom: 0;
     width: 0;
