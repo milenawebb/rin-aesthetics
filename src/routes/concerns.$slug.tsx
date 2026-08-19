@@ -106,12 +106,8 @@ function ConcernPage() {
             <div className="flex items-baseline justify-between gap-6 border-b border-greige py-5">
               <dt className="label-xs text-walnut">Starting from</dt>
               <dd className="font-body text-[19px] font-medium text-ink">
-                {cheapest ? cheapest.priceDisplay : "On consultation"}
+                {cheapest ? cheapest.priceDisplay.replace(/^From /, "") : "On consultation"}
               </dd>
-            </div>
-            <div className="flex items-baseline justify-between gap-6 border-b border-greige py-5">
-              <dt className="label-xs text-walnut">Results on file</dt>
-              <dd className="font-body text-[19px] font-medium text-ink">{resultsCount}</dd>
             </div>
           </dl>
         </div>
