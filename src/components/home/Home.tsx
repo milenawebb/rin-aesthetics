@@ -102,7 +102,9 @@ export function Home() {
               className={
                 i === 0
                   ? "col-span-12 sm:col-span-6 lg:col-span-4"
-                  : "col-span-6 sm:col-span-6 lg:col-span-2"
+                  : i === concerns.length - 1
+                    ? "col-span-6 sm:col-span-6 lg:col-span-4"
+                    : "col-span-6 sm:col-span-6 lg:col-span-2"
               }
             >
               <Link
