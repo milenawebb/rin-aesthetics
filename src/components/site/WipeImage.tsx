@@ -13,11 +13,8 @@ export function WipeImage({
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
-    <div
-      ref={ref}
-      className={`wipe wipe-${from} ${inView ? "is-in" : ""} ${className}`}
-    >
-      {children}
+    <div ref={ref} className={className}>
+      <div className={`wipe wipe-${from} ${inView ? "is-in" : ""}`}>{children}</div>
     </div>
   );
 }
