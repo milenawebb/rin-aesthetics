@@ -41,21 +41,26 @@ export const hero = {
 
 export const concernsSection = {
   heading: "What's on your mind?",
+  eyebrow: "Concerns",
+  headingLines: ["What's on", "your mind?"],
   intro:
     "Start with the thing you notice in the mirror. Every plan begins with a conversation, not a menu.",
 } as const;
 
 export const resultsSection = {
   heading: "Results",
+  eyebrow: "Results",
+  headingLines: ["Results"],
   intro: "Unretouched, consented photography from our own treatment room.",
   placeholderLabel: "Before / after",
   linkLabel: "View all results",
-  count: 4,
+  count: 6,
 } as const;
 
 export const signature = {
   label: "Signature",
   heading: "The Candela Light & Bright Experience",
+  headingLines: ["The Candela Light", "& Bright Experience"],
   body: "Three Candela technologies combined into one customised session — SWT IPL, 1940nm and 1550nm fractional lasers — addressing pigmentation, redness, texture, fine lines, acne scars and collagen loss together. Exclusive to RIN.",
   price: "$900",
   cta: "Learn more",
@@ -63,6 +68,7 @@ export const signature = {
 
 export const provider = {
   heading: "Meet your provider",
+  eyebrow: "Provider",
   name: "Jyl",
   portraitLabel: "Portrait",
   portraitAlt: "Portrait of Jyl, provider at RIN Aesthetic Practice",
@@ -74,6 +80,11 @@ export const provider = {
 } as const;
 
 export const testimonialsSection = { heading: "From our clients" } as const;
+
+export const testimonialsMeta = {
+  eyebrow: "In their words",
+  headingLines: ["From our clients"],
+} as const;
 
 export const bookingBand = {
   heading: "Book your refined experience",
