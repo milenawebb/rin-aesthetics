@@ -7,6 +7,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
 import { ResultsRail } from "@/components/home/ResultsRail";
+import { getResultCasesByTags } from "@/data/results";
 import { practice } from "@/data/site";
 import {
   getConcern,
@@ -267,7 +268,7 @@ function ConcernPage() {
             </p>
           </div>
           <div className="mt-12 w-full pl-6 md:pl-10">
-            <ResultsRail count={resultsCount} label="Before / after" />
+            <ResultsRail cases={concernResults} label="Before / after" />
           </div>
         </section>
       ) : null}

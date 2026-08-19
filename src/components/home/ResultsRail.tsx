@@ -1,8 +1,14 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { Placeholder } from "@/components/site/Placeholder";
-import { WipeImage } from "@/components/site/WipeImage";
+import { BeforeAfterTile } from "@/components/home/BeforeAfterTile";
+import type { ResultCase } from "@/data/results";
 
-export function ResultsRail({ count, label }: { count: number; label: string }) {
+export function ResultsRail({
+  cases,
+  label,
+}: {
+  cases: ResultCase[];
+  label: string;
+}) {
   const railRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const drag = useRef<{ x: number; left: number } | null>(null);
@@ -43,18 +49,8 @@ export function ResultsRail({ count, label }: { count: number; label: string }) 
         onPointerCancel={endDrag}
         className="rail flex items-start gap-6 overflow-x-auto overscroll-x-contain pr-6 md:pr-10"
       >
-        {Array.from({ length: count }).map((_, i) => (
-          <WipeImage
-            key={i}
-            from={i % 2 === 0 ? "left" : "bottom"}
-            className="w-[64vw] shrink-0 sm:w-[38vw] lg:w-[292px]"
-          >
-            <Placeholder
-              label={label}
-              alt={`Before and after treatment photograph ${i + 1}`}
-              className="aspect-[4/5] w-full"
-            />
-          </WipeImage>
+        {cases.map((item) => (
+          <BeforeAfterTile key={item.id} item={item} placeholderLabel={label} />
         ))}
       </div>
       <div
