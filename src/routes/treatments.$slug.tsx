@@ -83,12 +83,17 @@ function ServicePage() {
       {/* Header block */}
       <section className="mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px]">
         <SectionLabel>
-          {service.category}
-          {service.isSignature ? " · Signature treatment" : ""}
+          {service.eyebrow ?? `${service.category}${service.isSignature ? " · Signature treatment" : ""}`}
         </SectionLabel>
         <h1 className="display-tight mt-6 max-w-[18ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
-          {service.name} in Charlottesville, VA
+          {service.headingSuffix ? `${service.name} ${service.headingSuffix}` : `${service.name} in Charlottesville, VA`}
         </h1>
+
+        {service.standfirst ? (
+          <p className="mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
+            {service.standfirst}
+          </p>
+        ) : null}
 
         {service.concernTags.length ? (
           <ul className="mt-8 flex flex-wrap gap-2">
