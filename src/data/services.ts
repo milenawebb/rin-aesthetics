@@ -1,4 +1,4 @@
-import nordlysFull from "@/assets/nordlys-full.jpg.asset.json";
+import nordlysDevice from "@/assets/nordlys-device.png.asset.json";
 import srTech1 from "@/assets/sr-tech-1.png.asset.json";
 import srTech2 from "@/assets/sr-tech-2.png.asset.json";
 import srTech3 from "@/assets/sr-tech-3.png.asset.json";
@@ -85,7 +85,7 @@ export const services: Service[] = [
     headingSuffix: "by RIN",
     eyebrow: "RIN signature treatment",
     standfirst: "Tone. Texture. Clarity. Luminosity.",
-    heroImage: nordlysFull.url,
+    heroImage: nordlysDevice.url,
     heroImageAlt:
       "The Candela Nordlys platform used for The Skin Refinery at RIN Aesthetic Practice",
     category: "Device & Laser",

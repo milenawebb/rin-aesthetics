@@ -162,7 +162,7 @@ function ServicePage() {
               </Link>
             </div>
           </div>
-          <div className="md:col-span-5">
+          <div className="flex items-center justify-center p-10 md:col-span-5">
             {service.heroImage ? (
               <img
                 src={service.heroImage}
@@ -170,7 +170,7 @@ function ServicePage() {
                   service.heroImageAlt ??
                   `${service.name} at RIN Aesthetic Practice in Charlottesville, Virginia`
                 }
-                className="mx-auto h-auto max-h-[420px] w-auto max-w-full rounded-[2px] object-contain md:max-h-[560px]"
+                className="mx-auto h-auto max-h-[420px] w-auto max-w-full object-contain md:max-h-[620px]"
               />
             ) : (
               <Placeholder
