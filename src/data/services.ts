@@ -1,3 +1,5 @@
+import treatmentRoom from "@/assets/treatment-room.jpg.asset.json";
+
 export interface ServiceVariant {
   marker: string;
   title: string;
