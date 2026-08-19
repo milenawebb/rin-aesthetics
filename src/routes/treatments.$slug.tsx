@@ -153,7 +153,7 @@ function ServicePage() {
             {service.promises.map((promise) => (
               <div
                 key={promise.label}
-                className="border-b border-greige py-7 md:border-b-0 md:border-r md:px-8 md:py-0 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                className="border-b border-greige py-7 md:border-b-0 md:border-r md:px-8 md:pb-0 md:pt-8 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
               >
                 <p className="label-xs text-ink">{promise.label}</p>
                 <p className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">
@@ -237,21 +237,47 @@ function ServicePage() {
                 {service.variantsIntro}
               </p>
             ) : null}
-            <div className="mt-14 grid border-t border-walnut md:grid-cols-3">
+            <div className="mt-14 grid border-t border-walnut md:grid-cols-2 lg:grid-cols-4">
               {service.variants.map((variant) => (
                 <div
-                  key={variant.title}
-                  className="border-b border-walnut px-0 py-10 md:border-b-0 md:border-r md:px-10 md:py-0 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                  key={`${variant.marker}-${variant.title}`}
+                  className="border-b border-walnut px-0 py-10 md:border-r md:px-8 md:first:pl-0 lg:border-b-0 lg:last:border-r-0 lg:last:pr-0 md:[&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:pr-0 lg:[&:nth-child(2)]:border-r lg:[&:nth-child(2)]:pr-8 lg:[&:nth-child(3)]:pl-8"
                 >
-                  <p className="font-display text-[34px] font-extralight text-champagne">
+                  <p className="label-xs text-champagne">
                     {variant.marker}
                   </p>
-                  <h3 className="mt-5 font-body text-[19px] font-medium text-ivory">
+                  <h3 className="mt-4 font-body text-[19px] font-medium text-ivory">
                     {variant.title}
                   </h3>
                   <p className="mt-3 font-body text-[15px] font-light leading-[1.75] text-greige">
                     {variant.body}
                   </p>
+                  {variant.points && variant.points.length ? (
+                    <ul className="mt-5 space-y-2">
+                      {variant.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex gap-3 font-body text-[14px] font-light leading-[1.6] text-greige"
+                        >
+                          <span aria-hidden className="mt-[11px] h-px w-3 shrink-0 bg-champagne" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {variant.placeholderImage ? (
+                    <figure className="mt-7">
+                      <img
+                        src={variant.placeholderImage}
+                        alt={`${variant.title} in use — low-resolution reference image`}
+                        loading="lazy"
+                        className="aspect-[16/9] w-full rounded-[2px] border border-walnut object-cover"
+                      />
+                      <figcaption className="label-xs mt-3 text-walnut">
+                        Placeholder image
+                      </figcaption>
+                    </figure>
+                  ) : null}
                 </div>
               ))}
             </div>
