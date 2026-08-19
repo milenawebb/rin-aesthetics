@@ -12,6 +12,7 @@ export const practice = {
   phoneHref: "tel:+14342175300",
   email: "info@rinaestheticsva.com",
   address: "340 Towncenter Ln, Suite 200B, Charlottesville, VA 22911",
+  addressLines: ["340 Towncenter Ln, Suite 200B", "Charlottesville, VA 22911"],
   instagram: "https://www.instagram.com/rinaestheticsva",
   bookingUrl: "https://www.vagaro.com/rinaesthetics",
 } as const;
