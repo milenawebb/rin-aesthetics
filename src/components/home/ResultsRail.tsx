@@ -41,7 +41,7 @@ export function ResultsRail({ count, label }: { count: number; label: string }) 
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
-        className="rail flex gap-6 overflow-x-auto overscroll-x-contain pr-6 md:pr-10"
+        className="rail flex items-start gap-6 overflow-x-auto overscroll-x-contain pr-6 md:pr-10"
       >
         {Array.from({ length: count }).map((_, i) => (
           <WipeImage
