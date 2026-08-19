@@ -82,7 +82,6 @@ function ConcernPage() {
 
       {/* 1. Header */}
       <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[72px] md:px-10 md:pt-[104px] md:pb-[96px]">
-        <SectionLabel>Concern</SectionLabel>
         <p className="eyebrow">Concern</p>
         <div className="mt-6 grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
