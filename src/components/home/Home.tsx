@@ -150,7 +150,8 @@ export function Home() {
 
           </div>
           <Link
-            to="/treatments"
+            to="/treatments/$slug"
+            params={{ slug: "skin-refinery" }}
             className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
           >
 
