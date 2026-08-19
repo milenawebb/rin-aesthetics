@@ -5,6 +5,7 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ResultsRail } from "@/components/home/ResultsRail";
+import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
 import providerPortrait from "@/assets/provider-portrait.jpg.asset.json";
@@ -13,7 +14,6 @@ import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { practice } from "@/data/site";
 import {
   bookingBand,
-  concerns,
   concernsSection,
   hero,
   provider,
@@ -96,34 +96,7 @@ export function Home() {
             {concernsSection.intro}
           </p>
         </div>
-        <ul className={`${grid} mt-14 gap-y-6`}>
-          {concerns.map((concern, i) => (
-            <li
-              key={concern.slug}
-              className={
-                i === 0
-                  ? "col-span-12 sm:col-span-6 lg:col-span-4"
-                  : i === concerns.length - 1
-                    ? "col-span-6 sm:col-span-6 lg:col-span-4"
-                    : "col-span-6 sm:col-span-6 lg:col-span-2"
-              }
-            >
-              <Link
-                to="/concerns/$slug"
-                params={{ slug: concern.slug }}
-                className={`group flex h-full flex-col justify-between rounded-[2px] border border-greige bg-white px-6 py-6 transition-colors duration-[400ms] hover:border-champagne ${
-                  i === 0 ? "lg:py-10" : ""
-                }`}
-                style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
-              >
-                <span className="eyebrow">{concern.label}</span>
-                <span className="mt-8 font-body text-[19px] font-medium leading-[1.35] text-ink transition-transform duration-[400ms] group-hover:translate-x-[3px]">
-                  {concern.name}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <ConcernRows />
       </section>
 
       <section className="relative pb-[80px] md:pb-[120px]">
