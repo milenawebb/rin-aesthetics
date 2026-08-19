@@ -45,6 +45,48 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return <p className="label-xs text-champagne">{children}</p>;
 }
 
+interface RelatedItem {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  description: string;
+  priceDisplay?: string;
+  href?: string;
+}
+
+function RelatedRow({ item }: { item: RelatedItem }) {
+  const inner = (
+    <div className="grid grid-cols-1 items-baseline gap-2 px-4 py-8 transition-colors duration-300 group-hover:bg-white md:grid-cols-[200px_1fr_auto] md:gap-10 md:px-6">
+      <span className="label-xs text-olive">{item.category}</span>
+      <span className="flex flex-col gap-2 md:flex-row md:items-baseline md:gap-10">
+        <span className="font-body text-[22px] font-extralight leading-[1.25] tracking-[-0.02em] text-ink transition-transform duration-300 group-hover:translate-x-2 md:min-w-[280px]">
+          {item.name}
+        </span>
+        <span className="font-body text-[15px] font-light leading-[1.7] text-walnut">
+          {item.description}
+        </span>
+      </span>
+      <span className="font-body text-[15px] font-light text-ink md:text-right">
+        {item.priceDisplay ?? ""}
+      </span>
+    </div>
+  );
+
+  if (item.href) {
+    return (
+      <Link
+        to="/treatments/$slug"
+        params={{ slug: item.slug }}
+        className="group -mx-4 block border-b border-greige md:-mx-6"
+      >
+        {inner}
+      </Link>
+    );
+  }
+  return <div className="group -mx-4 block border-b border-greige md:-mx-6">{inner}</div>;
+}
+
 function ServicePage() {
   const { slug } = Route.useParams();
   const service = getService(slug);
@@ -56,6 +98,11 @@ function ServicePage() {
   const relatedProducts = service.relatedProductIds
     .map((id) => products.find((p) => p.id === id))
     .filter((p): p is (typeof products)[number] => Boolean(p));
+
+  const relatedItems: RelatedItem[] = [
+    ...relatedServices.map((s) => ({ ...s, href: getService(s.slug) ? s.slug : undefined })),
+    ...relatedProducts,
+  ];
 
   const facts = [
     { label: "Price", value: service.priceDisplay },
@@ -362,7 +409,6 @@ function ServicePage() {
             <GradedImage
               src={providerPortrait.url}
               alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
-              loading="lazy"
               width={960}
               height={1280}
               className="aspect-[3/4] w-full"
