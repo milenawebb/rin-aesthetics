@@ -64,7 +64,7 @@ export function Home() {
           </h1>
           <MaskedLines
             as="h1"
-            lines={["Medical aesthetics", "in Charlottesville"]}
+            lines={["Medical aesthetics", "in Charlottesville, VA"]}
             delay={200}
             className="hidden font-body text-[26px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch] lg:text-[44px] lg:font-extralight lg:tracking-[-0.02em] lg:leading-[1.15]"
           />
