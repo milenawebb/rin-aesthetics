@@ -54,67 +54,75 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const container = "mx-auto max-w-[1240px] px-6 md:px-10";
+// One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
+const wrap =
+  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 px-6 md:grid-cols-6 md:px-10 lg:grid-cols-12 lg:px-16";
+const pad = "py-[72px] md:py-[96px] lg:py-[120px]";
+const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
 
 function AboutPage() {
   return (
     <PageShell>
-      <section className={`${container} pt-[72px] md:pt-[120px]`}>
-        <p className="eyebrow">About</p>
-        <MaskedLines
-          as="h1"
-          lines={["Jyl"]}
-          className="mt-6 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[56px]"
-        />
-        <p className="mt-4 font-body text-[20px] font-light text-walnut">
-          Founder and nurse injector
-        </p>
-      </section>
-
-      <section className="pt-[56px] md:pt-[96px]">
-        <div className="grid grid-cols-12 items-start gap-x-6 gap-y-12">
-          <div className="col-span-12 lg:sticky lg:top-[100px] lg:col-span-5">
+function AboutPage() {
+  return (
+    <PageShell>
+      <section className={pad}>
+        <div className={`${wrap} gap-y-0`}>
+          <div className="col-span-full lg:col-span-8">
+            <p className="eyebrow">About</p>
+            <MaskedLines
+              as="h1"
+              lines={["Jyl"]}
+              className="mt-6 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[56px]"
+            />
+            <p className="mt-6 font-body text-[20px] font-light text-walnut">
+              Founder and nurse injector
+            </p>
+          </div>
+        </div>
+        <div className={`${wrap} mt-16 items-start gap-y-12 md:mt-20`}>
+          <div className="col-span-full md:col-span-3 lg:sticky lg:top-[120px] lg:col-span-5">
             <WipeImage from="bottom">
-              <picture className="block overflow-hidden lg:rounded-r-[2px]">
+              <picture className="block overflow-hidden rounded-[2px]">
                 <source
                   type="image/webp"
                   srcSet={`${j480w.url} 480w, ${j720w.url} 720w, ${j960w.url} 960w`}
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 480px"
                 />
                 <img
                   src={j720.url}
                   srcSet={`${j480.url} 480w, ${j720.url} 720w, ${j960.url} 960w`}
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 480px"
                   width={720}
                   height={960}
                   loading="eager"
                   fetchPriority="high"
                   alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
-                  className="aspect-[3/4] w-full object-cover lg:aspect-auto lg:h-[min(86vh,880px)]"
+                  className="aspect-[3/4] w-full object-cover object-[50%_30%]"
                 />
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-12 px-6 md:px-10 lg:col-span-7 lg:pl-10 lg:pr-[max(2.5rem,calc((100vw-1240px)/2+2.5rem))] lg:pt-10">
+          <div className="col-span-full md:col-span-3 md:col-start-4 lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className={body}>
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
                 Jyl is an accomplished nurse injector with a career spanning over a decade in
                 healthcare, focusing initially on perioperative services before making a seamless
                 transition to aesthetic medicine in 2020. Trained by some of the leading injectors
                 on the East Coast, she has developed an exceptional understanding of facial
                 anatomy, which enhances her skills as an injector.
               </p>
-              <p className={`${body} mt-8`}>
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
                 As founder of RIN Aesthetic Practice, Jyl is driven by a passion for aesthetic
                 medicine and a commitment to achieving outstanding patient outcomes. She places a
                 strong emphasis on continuous education and safety, ensuring that her clients
                 receive the highest standard of care in their aesthetic journeys.
               </p>
             </Reveal>
-            <Reveal className="mt-[56px]">
+            <Reveal className="mt-14">
               <p className="eyebrow">Away from the practice</p>
-              <p className={`${body} mt-6`}>
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-6">
                 In her free time, Jyl enjoys spending time with her family, whether on a beach or
                 in a mineral spring, traveling, and reading healthcare articles.
               </p>
@@ -123,22 +131,19 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-[72px] bg-ivory md:mt-[96px]">
-        <div className={`${container} grid grid-cols-12 gap-x-6`}>
-          <MaskedLines
-            as="p"
-            lines={[
-              "Conservative by design. Built on anatomy and on the long view, rather than the trend of the season.",
-            ]}
-            className="col-span-12 max-w-[24ch] font-body text-[30px] font-extralight leading-[1.22] tracking-[-0.02em] text-ink md:col-start-2 md:col-span-11 md:text-[42px]"
-          />
-        </div>
-      </section>
-
-      <section className={`${container} mt-[48px]`}>
-        <div className="grid grid-cols-12 gap-x-6">
-          <Reveal className="col-span-12 lg:col-span-7">
-            <p className={body}>
+      <section className={`bg-ivory ${pad}`}>
+        <div className={wrap}>
+          <div className="col-span-full md:px-12 lg:col-span-10 lg:col-start-2 lg:px-0">
+            <MaskedLines
+              as="p"
+              lines={[
+                "Conservative by design. Built on anatomy and on the long view, rather than the trend of the season.",
+              ]}
+              className="mx-auto max-w-[24ch] text-center font-body text-[30px] font-extralight leading-[1.22] tracking-[-0.02em] text-ink md:text-[42px]"
+            />
+          </div>
+          <Reveal className="col-span-full mt-12 lg:col-span-12">
+            <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
               Jyl treats one person at a time, without rushing, and will tell you plainly when the
               answer is to do less. Most clients arrive on a recommendation from someone they
               trust, and stay for years.
@@ -147,20 +152,20 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`${container} py-[72px] md:py-[96px]`}>
-        <div className="grid grid-cols-12 items-center gap-x-6 gap-y-10">
-          <div className="col-span-12 md:col-span-5">
+      <section className={pad}>
+        <div className={`${wrap} items-center gap-y-10`}>
+          <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
                 <source
                   type="image/webp"
                   srcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 1023px) 100vw, 560px"
                 />
                 <img
                   src={bp1000.url}
                   srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 1023px) 100vw, 560px"
                   width={1000}
                   height={750}
                   loading="lazy"
@@ -170,14 +175,11 @@ function AboutPage() {
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-12 md:col-span-6 md:col-start-7">
+          <div className="col-span-full lg:col-span-5 lg:col-start-8">
             <p className="eyebrow text-olive">Why RIN</p>
-            <MaskedLines
-              lines={["Building the practice"]}
-              className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
-            />
+            <MaskedLines lines={["Building the practice"]} className={`mt-5 ${h2}`} />
             <Reveal>
-              <p className={`${body} mt-6`}>
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-6">
                 [Placeholder: two or three sentences from Jyl on why she opened her own practice.
                 To be supplied.]
               </p>
@@ -186,38 +188,37 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ivory pt-[72px] pb-[80px] md:pt-[96px] md:pb-[112px]">
-        <div className={container}>
-          <p className="eyebrow text-olive">The space</p>
-          <MaskedLines
-            lines={["Where you will be"]}
-            className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
-          />
-          <p className="mt-4 font-body text-[16px] font-light text-walnut">
-            A quiet suite in Charlottesville, built to feel unhurried.
-          </p>
-        </div>
-        <div className="rail mt-12 overflow-x-auto pl-6 md:mx-auto md:max-w-[1240px] md:overflow-visible md:px-10">
-          <div className="flex gap-3 md:grid md:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="flex aspect-[4/5] w-[78vw] shrink-0 items-center justify-center rounded-[2px] bg-greige md:w-auto"
-              >
-                <span className="eyebrow text-walnut">Practice photo</span>
-              </div>
-            ))}
+      <section className={`bg-ivory ${pad}`}>
+        <div className={wrap}>
+          <div className="col-span-full">
+            <p className="eyebrow text-olive">The space</p>
+            <MaskedLines lines={["Where you will be"]} className={`mt-5 ${h2}`} />
+            <p className="mt-6 font-body text-[16px] font-light text-walnut">
+              A quiet suite in Charlottesville, built to feel unhurried.
+            </p>
+          </div>
+          <div className="rail col-span-full -mr-6 mt-12 overflow-x-auto md:mr-0 md:overflow-visible">
+            <div className="flex gap-3 md:grid md:grid-cols-3">
+              {[1, 2, 3].map((n) => (
+                <div
+                  key={n}
+                  className="flex aspect-[4/5] w-[78%] shrink-0 items-center justify-center rounded-[2px] bg-greige md:w-auto"
+                >
+                  <span className="eyebrow text-walnut">Practice photo</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className={`${container} pt-[72px] pb-[72px] md:pt-[96px] md:pb-[96px]`}>
-        <p className="eyebrow text-olive">In their words</p>
-        <MaskedLines
-          lines={["What clients say about Jyl"]}
-          className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
-        />
-        <div className="mt-12 grid gap-14 md:grid-cols-2">
+      <section className={pad}>
+        <div className={wrap}>
+          <div className="col-span-full">
+            <p className="eyebrow text-olive">In their words</p>
+            <MaskedLines lines={["What clients say about Jyl"]} className={`mt-5 ${h2}`} />
+          </div>
+        <div className="col-span-full mt-12 grid gap-14 lg:grid-cols-2">
           {aboutReviews.map((r) => (
             <Reveal key={r.name} as="figure" className="flex flex-col border-t border-greige pt-8">
               <div className="flex gap-[2px]" aria-hidden="true">
@@ -245,16 +246,18 @@ function AboutPage() {
           href={GOOGLE_REVIEWS_URL}
           target="_blank"
           rel="noopener"
-          className="mt-9 inline-block font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
+          className="col-span-full mt-9 justify-self-start font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
         >
           Read more reviews on Google
         </a>
+        </div>
       </section>
 
-      <section className={`${container} pb-[72px] md:pb-[96px]`}>
-        <Reveal className="rounded-[2px] border border-greige bg-white p-8">
+      <section className="pb-[72px] md:pb-[96px] lg:pb-[120px]">
+        <div className={wrap}>
+        <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
-          <p className="pretty mt-4 font-body text-[15px] font-light leading-[26px] text-walnut">
+          <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
             All clinical providers at RIN Aesthetic Practice operate under the oversight of our
             Medical Director in accordance with Virginia requirements. To contact our Medical
             Director for any reason, please email our office at{" "}
@@ -267,6 +270,7 @@ function AboutPage() {
             . We will respond within 72 hours.
           </p>
         </Reveal>
+        </div>
       </section>
 
       <section className="bg-ink">
