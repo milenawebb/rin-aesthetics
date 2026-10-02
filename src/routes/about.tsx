@@ -10,6 +10,10 @@ import j480 from "@/assets/jyl-480.jpg.asset.json";
 import j720 from "@/assets/jyl-720.jpg.asset.json";
 import j960 from "@/assets/jyl-960.jpg.asset.json";
 import jylSquare from "@/assets/jyl-square.jpg.asset.json";
+import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
+import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
+import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
+import bp1000 from "@/assets/rin-blueprints-1000.jpg.asset.json";
 import { practice } from "@/data/site";
 
 const title = "About Jyl | RIN Aesthetic Practice";
@@ -131,7 +135,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`${container} mt-[48px] pb-[72px] md:pb-[96px]`}>
+      <section className={`${container} mt-[48px]`}>
         <div className="grid grid-cols-12 gap-x-6">
           <Reveal className="col-span-12 lg:col-span-7">
             <p className={body}>
@@ -141,7 +145,74 @@ function AboutPage() {
             </p>
           </Reveal>
         </div>
-        <Reveal className="mt-[72px] rounded-[2px] border border-greige bg-white p-8 md:mt-[96px]">
+      </section>
+
+      <section className={`${container} py-[72px] md:py-[96px]`}>
+        <div className="grid grid-cols-12 items-center gap-x-6 gap-y-10">
+          <div className="col-span-12 md:col-span-5">
+            <WipeImage from="left">
+              <picture className="block overflow-hidden rounded-[2px]">
+                <source
+                  type="image/webp"
+                  srcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <img
+                  src={bp1000.url}
+                  srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                  alt="Jyl during the renovation of RIN Aesthetic Practice"
+                  className="aspect-[4/3] w-full object-cover object-[50%_45%]"
+                />
+              </picture>
+            </WipeImage>
+          </div>
+          <div className="col-span-12 md:col-span-6 md:col-start-7">
+            <p className="eyebrow text-olive">Why RIN</p>
+            <MaskedLines
+              lines={["Building the practice"]}
+              className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
+            />
+            <Reveal>
+              <p className={`${body} mt-6`}>
+                [Placeholder: two or three sentences from Jyl on why she opened her own practice.
+                To be supplied.]
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ivory pt-[72px] pb-[80px] md:pt-[96px] md:pb-[112px]">
+        <div className={container}>
+          <p className="eyebrow text-olive">The space</p>
+          <MaskedLines
+            lines={["Where you will be"]}
+            className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
+          />
+          <p className="mt-4 font-body text-[16px] font-light text-walnut">
+            A quiet suite in Charlottesville, built to feel unhurried.
+          </p>
+        </div>
+        <div className="rail mt-12 overflow-x-auto pl-6 md:mx-auto md:max-w-[1240px] md:overflow-visible md:px-10">
+          <div className="flex gap-3 md:grid md:grid-cols-3">
+            {[1, 2, 3].map((n) => (
+              <div
+                key={n}
+                className="flex aspect-[4/5] w-[78vw] shrink-0 items-center justify-center rounded-[2px] bg-greige md:w-auto"
+              >
+                <span className="eyebrow text-walnut">Practice photo</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={`${container} pt-[72px] pb-[72px] md:pt-[96px] md:pb-[96px]`}>
+        <Reveal className="rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-4 font-body text-[15px] font-light leading-[26px] text-walnut">
             All clinical providers at RIN Aesthetic Practice operate under the oversight of our
