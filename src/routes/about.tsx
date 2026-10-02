@@ -56,7 +56,7 @@ export const Route = createFileRoute("/about")({
 
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
-  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-10 lg:grid-cols-12 lg:px-16";
+  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-8 lg:grid-cols-12 lg:px-16";
 const pad = "py-12 md:py-16 lg:py-[88px]";
 const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
@@ -64,7 +64,8 @@ const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8]
 function AboutPage() {
   return (
     <PageShell>
-      <section className={pad}>
+      <div className="md:max-lg:pb-24">
+      <section className={`${pad} scroll-mt-[104px] md:max-lg:pt-[104px]`}>
         <div className={wrap}>
           <div className="col-span-full lg:col-span-8">
             <p className="eyebrow">About</p>
@@ -79,18 +80,18 @@ function AboutPage() {
           </div>
         </div>
         <div className={`${wrap} mt-6 items-start md:mt-8 lg:mt-10`}>
-          <div className="col-span-full md:col-span-3 lg:sticky lg:top-[120px] lg:col-span-5">
+          <div className="col-span-full md:max-w-[460px] lg:max-w-none lg:sticky lg:top-[120px] lg:col-span-5">
             <WipeImage from="bottom">
               <picture className="block overflow-hidden rounded-[2px]">
                 <source
                   type="image/webp"
                   srcSet={`${j480w.url} 480w, ${j720w.url} 720w, ${j960w.url} 960w`}
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 480px"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 460px, 480px"
                 />
                 <img
                   src={j720.url}
                   srcSet={`${j480.url} 480w, ${j720.url} 720w, ${j960.url} 960w`}
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 480px"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 460px, 480px"
                   width={720}
                   height={900}
                   loading="eager"
@@ -101,7 +102,7 @@ function AboutPage() {
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-full md:col-span-3 md:col-start-4 lg:col-span-6 lg:col-start-7">
+          <div className="col-span-full lg:col-span-6 lg:col-start-7">
             <Reveal>
               <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
                 Jyl is an accomplished nurse injector with a career spanning over a decade in
@@ -125,7 +126,7 @@ function AboutPage() {
               </p>
             </Reveal>
             <Reveal className="mt-10 mb-6">
-              <p className="pretty font-body text-[20px] font-extralight leading-[1.35] text-ink md:text-[24px]">
+              <p className="pretty font-body text-[20px] [font-weight:200] leading-[1.35] text-ink md:text-[22px] md:leading-[1.4] lg:text-[24px] lg:leading-[1.35]">
                 Conservative by design. Built on anatomy and on the long view, rather than the
                 trend of the season.
               </p>
@@ -298,6 +299,7 @@ function AboutPage() {
           />
         </div>
       </section>
+    </div>
     </PageShell>
   );
 }
