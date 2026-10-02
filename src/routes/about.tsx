@@ -308,3 +308,17 @@ function AboutPage() {
     </PageShell>
   );
 }
+
+const aboutReviews: { quote: string; name: string; source?: string }[] = [
+  {
+    quote:
+      "I have been seeing Jyl at RIN for years now and I won't go anywhere else. She is really passionate about doing continued ed, and if I want to try something she doesn't think will look right she gives me that advice rather than just accepting my money. She really cares about her work. And she is so much fun to chat with and such a lovely human!",
+    name: "Julia Gilchrist",
+    source: "via Google",
+  },
+  {
+    quote:
+      "I've been seeing Jyl throughout most of her injecting career and she is not only an incredible provider but an amazing person. She is so knowledgeable and talented, especially when she is explaining procedures and injections and the physiology behind it. I was hesitant to leave a review because I want to keep her all to myself.",
+    name: "Carly Lundgren",
+  },
+];
