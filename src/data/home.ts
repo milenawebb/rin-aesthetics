@@ -73,7 +73,7 @@ export const provider = {
   portraitLabel: "Portrait",
   portraitAlt: "Portrait of Jyl, provider at RIN Aesthetic Practice",
   paragraphs: [
-    "Jyl has spent her career learning faces — how they move, how they age, and how little it takes to bring someone back to looking like themselves. Her approach is conservative by design, built on anatomy and on the long view rather than the trend of the season.",
+    "Jyl is a nurse injector with over a decade in healthcare, who moved from perioperative services into aesthetic medicine in 2020. She trained with some of the leading injectors on the East Coast, and her understanding of facial anatomy is what shapes her work.",
     "She treats one person at a time, without rushing, and will tell you plainly when the answer is to do less. Most clients arrive on a recommendation from someone they trust, and stay for years.",
   ],
   linkLabel: "More about Jyl",
