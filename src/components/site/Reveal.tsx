@@ -8,7 +8,7 @@ export function Reveal({
 }: {
   children: ReactNode;
   className?: string;
-  as?: "div" | "section" | "li" | "article";
+  as?: "div" | "section" | "li" | "article" | "figure";
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);

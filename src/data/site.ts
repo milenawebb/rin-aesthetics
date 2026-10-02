@@ -15,6 +15,8 @@ export const practice = {
   addressLines: ["340 Towncenter Ln, Suite 200B", "Charlottesville, VA 22911"],
   instagram: "https://www.instagram.com/rinaestheticsva",
   bookingUrl: "https://www.vagaro.com/rinaesthetics",
+  googleReviewsUrl:
+    "https://www.google.com/search?q=RIN+Aesthetic+Practice+Charlottesville+reviews",
 } as const;
 
 export const navLinks: NavLink[] = [
