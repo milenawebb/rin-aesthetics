@@ -128,19 +128,20 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-10 lg:py-14">
+      <section className={`bg-ivory ${pad}`}>
         <div className={wrap}>
-          <div className="col-span-full md:px-12 lg:col-span-10 lg:col-start-2 lg:px-0">
+          <div aria-hidden className="col-span-full h-px bg-greige" />
+          <div className="col-span-full mt-4 md:mt-2 lg:col-span-7 lg:col-start-1 lg:mt-0">
             <MaskedLines
               as="p"
               lines={[
                 "Conservative by design. Built on anatomy and on the long view, rather than the trend of the season.",
               ]}
-              className="mx-auto max-w-[24ch] text-center font-body text-[30px] font-extralight leading-[1.22] tracking-[-0.02em] text-ink md:text-[42px]"
+              className="m-0 max-w-[18ch] text-left font-body text-[30px] font-extralight leading-[1.22] tracking-[-0.02em] text-ink md:text-[42px]"
             />
           </div>
-          <Reveal className="col-span-full lg:col-span-12">
-            <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
+          <Reveal className="col-span-full lg:col-span-4 lg:col-start-9 lg:self-end">
+            <p className="pretty m-0 max-w-[62ch] text-left font-body text-[17px] font-light leading-[1.8] text-walnut">
               Jyl treats one person at a time, without rushing, and will tell you plainly when the
               answer is to do less. Most clients arrive on a recommendation from someone they
               trust, and stay for years.
