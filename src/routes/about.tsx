@@ -212,6 +212,46 @@ function AboutPage() {
       </section>
 
       <section className={`${container} pt-[72px] pb-[72px] md:pt-[96px] md:pb-[96px]`}>
+        <p className="eyebrow text-olive">In their words</p>
+        <MaskedLines
+          lines={["What clients say about Jyl"]}
+          className="mt-5 font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink"
+        />
+        <div className="mt-12 grid gap-14 md:grid-cols-2">
+          {aboutReviews.map((r) => (
+            <Reveal key={r.name} as="figure" className="flex flex-col border-t border-greige pt-8">
+              <div className="flex gap-[2px]" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} width="13" height="13" viewBox="0 0 24 24" className="fill-champagne">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="hanging-quote pretty mt-6 font-body text-[17px] font-light leading-[1.75] text-ink">
+                “{r.quote}”
+              </blockquote>
+              <figcaption className="mt-auto pt-8">
+                <span className="block font-body text-[14px] font-light text-walnut">{r.name}</span>
+                {r.source ? (
+                  <span className="mt-1 block font-body text-[12px] font-light text-greige">
+                    {r.source}
+                  </span>
+                ) : null}
+              </figcaption>
+            </Reveal>
+          ))}
+        </div>
+        <a
+          href={practice.googleReviewsUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-12 inline-block font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
+        >
+          Read more reviews on Google
+        </a>
+      </section>
+
+      <section className={`${container} pb-[72px] md:pb-[96px]`}>
         <Reveal className="rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-4 font-body text-[15px] font-light leading-[26px] text-walnut">
