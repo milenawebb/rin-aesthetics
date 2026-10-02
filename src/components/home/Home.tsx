@@ -204,9 +204,9 @@ export function Home() {
           lines={testimonialsMeta.headingLines as unknown as string[]}
           className={`${heading}`}
         />
-        <div className="mt-14 grid gap-12 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 items-stretch gap-12 md:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <figure key={testimonial.name} className="flex flex-col">
+            <figure key={testimonial.name} className="flex h-full flex-col border-t border-greige pt-6">
               <div className="flex gap-[2px]" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg
@@ -221,16 +221,17 @@ export function Home() {
                   </svg>
                 ))}
               </div>
-              <blockquote className="hanging-quote pretty mt-6 max-w-[30ch] font-body text-[19px] font-light leading-[1.6] text-ink">
+              <blockquote className="hanging-quote mt-6 max-w-[30ch] font-body text-[19px] font-light leading-[1.6] text-ink [text-wrap:balance]">
                 “{testimonial.quote}”
               </blockquote>
-              <figcaption className="mt-auto pt-8 font-body text-[14px] font-light tracking-[0.06em] text-walnut">
+              <div className="flex-1" aria-hidden="true" />
+              <figcaption className="pt-8 font-body text-[14px] font-light tracking-[0.06em] text-walnut">
                 {testimonial.name}
               </figcaption>
             </figure>
           ))}
         </div>
-        <div className="mt-9 flex flex-col items-center text-center">
+        <div className="mt-12 flex w-full flex-col items-center text-center">
           <p className="font-body text-[13px] font-light text-walnut">Reviews from Google</p>
           <a
             href={GOOGLE_REVIEWS_URL}
