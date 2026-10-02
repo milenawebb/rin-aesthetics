@@ -3,6 +3,9 @@ export interface NavLink {
   to: string;
 }
 
+export const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps/place/RIN+Aesthetic+Practice/@38.1258994,-78.447908,16z/data=!4m8!3m7!1s0x89b477c50d4a7623:0xb61646e41a874814!8m2!3d38.1258994!4d-78.4453277!9m1!1b1!16s%2Fg%2F11lw05935c";
+
 export const practice = {
   wordmark: "RIN",
   wordmarkSub: "Aesthetic Practice",
@@ -15,8 +18,6 @@ export const practice = {
   addressLines: ["340 Towncenter Ln, Suite 200B", "Charlottesville, VA 22911"],
   instagram: "https://www.instagram.com/rinaestheticsva",
   bookingUrl: "https://www.vagaro.com/rinaesthetics",
-  googleReviewsUrl:
-    "https://www.google.com/search?q=RIN+Aesthetic+Practice+Charlottesville+reviews",
 } as const;
 
 export const navLinks: NavLink[] = [

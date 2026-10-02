@@ -19,15 +19,15 @@ export const concerns: Concern[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-  { quote: "I don't trust anyone else with my face.", name: "Leanne" },
+  { quote: "As someone completely new to injections, I feel so at ease with her.", name: "Ann Humphries" },
   {
     quote:
-      "She takes the time to listen to my concerns and goals, ensuring that I understand every step of the process.",
-    name: "Ashley",
+      "She was incredibly thorough, explained everything along the way, and was so gentle that the injections were much easier than I expected.",
+    name: "Natasha Randolph",
   },
   {
-    quote: "She knows exactly how to give you a natural look that enhances your features.",
-    name: "Logan",
+    quote: "I was hesitant to leave a review because I want to keep her all to myself.",
+    name: "Carly Lundgren",
   },
 ];
 

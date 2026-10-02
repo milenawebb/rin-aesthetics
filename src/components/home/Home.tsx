@@ -12,7 +12,7 @@ import heroAsset from "@/assets/hero.png.asset.json";
 import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
-import { practice } from "@/data/site";
+import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import {
   bookingBand,
   concernsSection,
@@ -229,6 +229,17 @@ export function Home() {
               </figcaption>
             </figure>
           ))}
+        </div>
+        <div className="mt-9 flex flex-col items-center text-center">
+          <p className="font-body text-[13px] font-light text-walnut">Reviews from Google</p>
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener"
+            className="mt-2 font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
+          >
+            Read all reviews on Google
+          </a>
         </div>
       </section>
 
