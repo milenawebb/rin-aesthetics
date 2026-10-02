@@ -135,7 +135,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`${container} mt-[48px] pb-[72px] md:pb-[96px]`}>
+      <section className={`${container} mt-[48px]`}>
         <div className="grid grid-cols-12 gap-x-6">
           <Reveal className="col-span-12 lg:col-span-7">
             <p className={body}>
