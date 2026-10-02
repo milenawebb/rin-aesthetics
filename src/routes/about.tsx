@@ -170,9 +170,27 @@ function AboutPage() {
             <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
             <Reveal>
               <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
-                [Placeholder: two or three sentences from Jyl on why she opened her own practice.
-                To be supplied.]
+                RIN is named for my daughter, Korynne. We call her Ryn. She is my why, and the
+                reason I wanted to build something of my own rather than keep working the way
+                everyone else does.
               </p>
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-4">
+                Her name became the standard I hold myself to.
+              </p>
+              <div className="mt-8">
+                <p className="font-body text-[22px] font-extralight leading-[1.3] text-ink md:text-[28px]">
+                  Refined.
+                </p>
+                <p className="font-body text-[22px] font-extralight leading-[1.3] text-ink md:text-[28px]">
+                  Intentional.
+                </p>
+                <p className="font-body text-[22px] font-extralight leading-[1.3] text-ink md:text-[28px]">
+                  Natural.
+                </p>
+                <p className="mt-8 font-body text-[11px] font-medium uppercase tracking-[0.16em] text-walnut">
+                  Jyl
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>
