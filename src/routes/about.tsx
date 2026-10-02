@@ -14,7 +14,7 @@ import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
 import bp1000 from "@/assets/rin-blueprints-1000.jpg.asset.json";
-import { practice } from "@/data/site";
+import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 
 const title = "About Jyl | RIN Aesthetic Practice";
 const description =
@@ -242,10 +242,10 @@ function AboutPage() {
           ))}
         </div>
         <a
-          href={practice.googleReviewsUrl}
+          href={GOOGLE_REVIEWS_URL}
           target="_blank"
-          rel="noreferrer"
-          className="mt-12 inline-block font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
+          rel="noopener"
+          className="mt-9 inline-block font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
         >
           Read more reviews on Google
         </a>
@@ -312,13 +312,14 @@ function AboutPage() {
 const aboutReviews: { quote: string; name: string; source?: string }[] = [
   {
     quote:
-      "I have been seeing Jyl at RIN for years now and I won't go anywhere else. She is really passionate about doing continued ed, and if I want to try something she doesn't think will look right she gives me that advice rather than just accepting my money. She really cares about her work. And she is so much fun to chat with and such a lovely human!",
-    name: "Julia Gilchrist",
+      "I've been getting aesthetic treatments done for almost 10 years at just about every med spa in Charlottesville and was never truly satisfied until I went to Jyl! Her knowledge about the face is unmatched and I wouldn't trust anyone else! She takes her time and really studies your face before doing anything.",
+    name: "Brooke Hutton",
     source: "via Google",
   },
   {
     quote:
-      "I've been seeing Jyl throughout most of her injecting career and she is not only an incredible provider but an amazing person. She is so knowledgeable and talented, especially when she is explaining procedures and injections and the physiology behind it. I was hesitant to leave a review because I want to keep her all to myself.",
-    name: "Carly Lundgren",
+      "I have been seeing Jyl at RIN for years now and I won't go anywhere else. … She is really passionate about doing continued ed and if I want to try something she doesn't think will look right she gives me that advice rather than just accepting my money. She really cares about her work.",
+    name: "Julia Gilchrist",
+    source: "via Google",
   },
 ];
