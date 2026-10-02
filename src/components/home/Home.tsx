@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
-import { GradedImage } from "@/components/site/GradedImage";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
