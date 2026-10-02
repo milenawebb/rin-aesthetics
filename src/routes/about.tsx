@@ -3,12 +3,12 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
-import j480w from "@/assets/jyl-480.webp.asset.json";
-import j720w from "@/assets/jyl-720.webp.asset.json";
-import j960w from "@/assets/jyl-960.webp.asset.json";
-import j480 from "@/assets/jyl-480.jpg.asset.json";
-import j720 from "@/assets/jyl-720.jpg.asset.json";
-import j960 from "@/assets/jyl-960.jpg.asset.json";
+import j480w from "@/assets/jyl-4x5-480.webp.asset.json";
+import j720w from "@/assets/jyl-4x5-720.webp.asset.json";
+import j960w from "@/assets/jyl-4x5-960.webp.asset.json";
+import j480 from "@/assets/jyl-4x5-480.jpg.asset.json";
+import j720 from "@/assets/jyl-4x5-720.jpg.asset.json";
+import j960 from "@/assets/jyl-4x5-960.jpg.asset.json";
 import jylSquare from "@/assets/jyl-square.jpg.asset.json";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
@@ -56,8 +56,8 @@ export const Route = createFileRoute("/about")({
 
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
-  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 px-6 md:grid-cols-6 md:px-10 lg:grid-cols-12 lg:px-16";
-const pad = "py-[72px] md:py-[96px] lg:py-[120px]";
+  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-10 lg:grid-cols-12 lg:px-16";
+const pad = "py-12 md:py-16 lg:py-[88px]";
 const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
 
@@ -65,20 +65,20 @@ function AboutPage() {
   return (
     <PageShell>
       <section className={pad}>
-        <div className={`${wrap} gap-y-0`}>
+        <div className={wrap}>
           <div className="col-span-full lg:col-span-8">
             <p className="eyebrow">About</p>
             <MaskedLines
               as="h1"
               lines={["Jyl"]}
-              className="mt-6 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[56px]"
+              className="mt-3 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[56px]"
             />
-            <p className="mt-6 font-body text-[20px] font-light text-walnut">
+            <p className="mt-5 font-body text-[20px] font-light text-walnut">
               Founder and nurse injector
             </p>
           </div>
         </div>
-        <div className={`${wrap} mt-16 items-start gap-y-12 md:mt-20`}>
+        <div className={`${wrap} mt-6 items-start md:mt-8 lg:mt-10`}>
           <div className="col-span-full md:col-span-3 lg:sticky lg:top-[120px] lg:col-span-5">
             <WipeImage from="bottom">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -92,11 +92,11 @@ function AboutPage() {
                   srcSet={`${j480.url} 480w, ${j720.url} 720w, ${j960.url} 960w`}
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 480px"
                   width={720}
-                  height={960}
+                  height={900}
                   loading="eager"
                   fetchPriority="high"
                   alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
-                  className="aspect-[3/4] w-full object-cover object-[50%_30%]"
+                  className="aspect-[4/5] w-full object-cover object-[50%_30%]"
                 />
               </picture>
             </WipeImage>
@@ -110,16 +110,16 @@ function AboutPage() {
                 on the East Coast, she has developed an exceptional understanding of facial
                 anatomy, which enhances her skills as an injector.
               </p>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-4">
                 As founder of RIN Aesthetic Practice, Jyl is driven by a passion for aesthetic
                 medicine and a commitment to achieving outstanding patient outcomes. She places a
                 strong emphasis on continuous education and safety, ensuring that her clients
                 receive the highest standard of care in their aesthetic journeys.
               </p>
             </Reveal>
-            <Reveal className="mt-14">
+            <Reveal className="mt-8">
               <p className="eyebrow">Away from the practice</p>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-6">
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-3">
                 In her free time, Jyl enjoys spending time with her family, whether on a beach or
                 in a mineral spring, traveling, and reading healthcare articles.
               </p>
@@ -128,7 +128,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`bg-ivory ${pad}`}>
+      <section className="bg-ivory py-10 lg:py-14">
         <div className={wrap}>
           <div className="col-span-full md:px-12 lg:col-span-10 lg:col-start-2 lg:px-0">
             <MaskedLines
@@ -139,7 +139,7 @@ function AboutPage() {
               className="mx-auto max-w-[24ch] text-center font-body text-[30px] font-extralight leading-[1.22] tracking-[-0.02em] text-ink md:text-[42px]"
             />
           </div>
-          <Reveal className="col-span-full mt-12 lg:col-span-12">
+          <Reveal className="col-span-full lg:col-span-12">
             <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
               Jyl treats one person at a time, without rushing, and will tell you plainly when the
               answer is to do less. Most clients arrive on a recommendation from someone they
@@ -150,7 +150,7 @@ function AboutPage() {
       </section>
 
       <section className={pad}>
-        <div className={`${wrap} items-center gap-y-10`}>
+        <div className={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -174,9 +174,9 @@ function AboutPage() {
           </div>
           <div className="col-span-full lg:col-span-5 lg:col-start-8">
             <p className="eyebrow text-olive">Why RIN</p>
-            <MaskedLines lines={["Building the practice"]} className={`mt-5 ${h2}`} />
+            <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
             <Reveal>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-6">
+              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
                 [Placeholder: two or three sentences from Jyl on why she opened her own practice.
                 To be supplied.]
               </p>
@@ -189,12 +189,12 @@ function AboutPage() {
         <div className={wrap}>
           <div className="col-span-full">
             <p className="eyebrow text-olive">The space</p>
-            <MaskedLines lines={["Where you will be"]} className={`mt-5 ${h2}`} />
-            <p className="mt-6 font-body text-[16px] font-light text-walnut">
+            <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
+            <p className="mt-5 font-body text-[16px] font-light text-walnut">
               A quiet suite in Charlottesville, built to feel unhurried.
             </p>
           </div>
-          <div className="rail col-span-full -mr-6 mt-12 overflow-x-auto md:mr-0 md:overflow-visible">
+          <div className="rail col-span-full -mr-6 overflow-x-auto md:mr-0 md:overflow-visible">
             <div className="flex gap-3 md:grid md:grid-cols-3">
               {[1, 2, 3].map((n) => (
                 <div
@@ -213,9 +213,9 @@ function AboutPage() {
         <div className={wrap}>
           <div className="col-span-full">
             <p className="eyebrow text-olive">In their words</p>
-            <MaskedLines lines={["What clients say about Jyl"]} className={`mt-5 ${h2}`} />
+            <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
-        <div className="col-span-full mt-12 grid gap-14 lg:grid-cols-2">
+        <div className="col-span-full grid gap-14 lg:grid-cols-2">
           {aboutReviews.map((r) => (
             <Reveal key={r.name} as="figure" className="flex flex-col border-t border-greige pt-8">
               <div className="flex gap-[2px]" aria-hidden="true">
@@ -243,14 +243,14 @@ function AboutPage() {
           href={GOOGLE_REVIEWS_URL}
           target="_blank"
           rel="noopener"
-          className="col-span-full mt-9 justify-self-start font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
+          className="col-span-full justify-self-start font-body text-[14px] font-light text-walnut underline underline-offset-4 transition-colors hover:text-ink"
         >
           Read more reviews on Google
         </a>
         </div>
       </section>
 
-      <section className="pb-[72px] md:pb-[96px] lg:pb-[120px]">
+      <section className="pb-12 md:pb-16 lg:pb-[88px]">
         <div className={wrap}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
