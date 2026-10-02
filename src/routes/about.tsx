@@ -64,9 +64,6 @@ const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8]
 function AboutPage() {
   return (
     <PageShell>
-function AboutPage() {
-  return (
-    <PageShell>
       <section className={pad}>
         <div className={`${wrap} gap-y-0`}>
           <div className="col-span-full lg:col-span-8">
