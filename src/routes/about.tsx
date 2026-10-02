@@ -104,14 +104,14 @@ function AboutPage() {
           </div>
           <div className="col-span-full lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut">
                 Jyl is an accomplished nurse injector with a career spanning over a decade in
                 healthcare, focusing initially on perioperative services before making a seamless
                 transition to aesthetic medicine in 2020. Trained by some of the leading injectors
                 on the East Coast, she has developed an exceptional understanding of facial
                 anatomy, which enhances her skills as an injector.
               </p>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-4">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-4">
                 As founder of RIN Aesthetic Practice, Jyl is driven by a passion for aesthetic
                 medicine and a commitment to achieving outstanding patient outcomes. She places a
                 strong emphasis on continuous education and safety, ensuring that her clients
@@ -120,7 +120,7 @@ function AboutPage() {
             </Reveal>
             <Reveal className="mt-8">
               <p className="eyebrow">Away from the practice</p>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-3">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-3">
                 In her free time, Jyl enjoys spending time with her family, whether on a beach or
                 in a mineral spring, traveling, and reading healthcare articles.
               </p>
@@ -132,7 +132,7 @@ function AboutPage() {
               </p>
             </Reveal>
             <Reveal>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut">
                 Jyl treats one person at a time, without rushing, and will tell you plainly when
                 the answer is to do less. Most clients arrive on a recommendation from someone
                 they trust, and stay for years.
@@ -169,7 +169,7 @@ function AboutPage() {
             <p className="eyebrow text-olive">Why RIN</p>
             <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
             <Reveal>
-              <p className="pretty max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
                 [Placeholder: two or three sentences from Jyl on why she opened her own practice.
                 To be supplied.]
               </p>
