@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
-import { GradedImage } from "@/components/site/GradedImage";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
@@ -9,7 +8,12 @@ import { resultCases } from "@/data/results";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
-import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
+import jyl4x5Webp480 from "@/assets/jyl-4x5-480.webp.asset.json";
+import jyl4x5Webp720 from "@/assets/jyl-4x5-720.webp.asset.json";
+import jyl4x5Webp960 from "@/assets/jyl-4x5-960.webp.asset.json";
+import jyl4x5Jpg480 from "@/assets/jyl-4x5-480.jpg.asset.json";
+import jyl4x5Jpg720 from "@/assets/jyl-4x5-720.jpg.asset.json";
+import jyl4x5Jpg960 from "@/assets/jyl-4x5-960.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
@@ -167,16 +171,26 @@ export function Home() {
         <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
-              <GradedImage
-                src={providerPortrait.url}
-                alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
-                width={1000}
-                height={1333}
-                className="aspect-[3/4] w-full"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${jyl4x5Webp480.url} 480w, ${jyl4x5Webp720.url} 720w, ${jyl4x5Webp960.url} 960w`}
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <img
+                  src={jyl4x5Jpg720.url}
+                  srcSet={`${jyl4x5Jpg480.url} 480w, ${jyl4x5Jpg720.url} 720w, ${jyl4x5Jpg960.url} 960w`}
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
+                  width={960}
+                  height={1200}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-[50%_25%]"
+                />
+              </picture>
             </WipeImage>
           </div>
-          <div className="col-span-12 px-6 lg:col-span-6 lg:col-start-7 lg:-ml-10 lg:px-0">
+          <div className="col-span-12 self-center px-6 lg:col-span-6 lg:col-start-7 lg:-ml-10 lg:px-0">
             <MaskedLines
               as="h3"
               lines={[provider.name]}
