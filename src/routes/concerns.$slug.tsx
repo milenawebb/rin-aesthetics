@@ -3,17 +3,16 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
-import { BookingBand } from "@/components/site/BookingBand";
+import { practice } from "@/data/site";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { getResultCasesByTags } from "@/data/results";
 import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
 import { redirects } from "@/data/redirects";
 import {
-  concernPathSlug,
   downtimeLabel,
   getConcernBySlug,
-  relatedConcerns,
+  sessionsLabel,
   servicesFor,
   splitSlug,
 } from "@/data/lookup";
@@ -53,7 +52,6 @@ function ConcernPage() {
   if (!concern) return null;
 
   const treatments = servicesFor(concern);
-  const related = relatedConcerns(concern);
   const concernProducts = products.filter((p) => p.concernTags.some((t) => concern.tags.includes(t)));
   const results = getResultCasesByTags(concern.tags);
 
@@ -76,68 +74,73 @@ function ConcernPage() {
         />
       ) : null}
 
-      <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[72px] md:px-10 md:pt-[104px] md:pb-[96px]">
+      <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[104px] md:pb-[80px]">
         <p className="eyebrow">Concern</p>
-        <div className="mt-6 grid gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-6">
-            <MaskedLines as="h1" lines={[concern.h1]} className={display} />
-            {concern.intro || concern.body.length ? (
-              <div className="measure mt-8 space-y-6">
-                {[concern.intro, ...concern.body].filter(Boolean).map((p, i) => (
-                  <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            ) : null}
-          </div>
-          <dl className="border-t border-greige lg:col-span-5 lg:col-start-8 lg:border-t-0">
-            <div className="flex items-baseline justify-between gap-6 border-b border-greige py-5 lg:border-t">
-              <dt className="label-xs text-walnut">Treatments that address it</dt>
-              <dd className="font-body text-[19px] font-medium text-ink">{treatments.length}</dd>
-            </div>
-            {treatments[0] ? (
-              <div className="flex items-baseline justify-between gap-6 border-b border-greige py-5">
-                <dt className="label-xs text-walnut">Starting from</dt>
-                <dd className="font-body text-[19px] font-medium text-ink">
-                  {treatments[0].priceDisplay.replace(/^From /, "")}
-                </dd>
-              </div>
-            ) : null}
-          </dl>
+        <div className="mt-6 max-w-[860px]">
+          <MaskedLines as="h1" lines={[concern.h1]} className={display} />
+          {concern.intro ? (
+            <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">{concern.intro}</p>
+          ) : null}
         </div>
       </section>
 
+      {concern.body.length ? (
+        <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[96px]">
+          <div className="measure space-y-6">
+            {concern.body.map((para, i) => (
+              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
+                {para}
+              </p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {treatments.length ? (
         <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
-          <SectionLabel>Treatments</SectionLabel>
-          <MaskedLines as="h2" lines={["Treatments that", "address it"]} className={display} />
-          <div className="mt-12 border-t border-greige">
+          <SectionLabel>Treatments for this</SectionLabel>
+          <MaskedLines
+            as="h2"
+            lines={[treatments.length === 1 ? "The treatment we recommend" : "Compare your options"]}
+            className={display}
+          />
+          <div className="mt-12" role="table" aria-label={`Treatments for ${concern.h1}`}>
+            <div
+              role="row"
+              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)] md:gap-8"
+            >
+              {["Treatment", "What it does", "Price", "Downtime", "Sessions"].map((h) => (
+                <span key={h} role="columnheader" className="label-xs text-walnut">
+                  {h}
+                </span>
+              ))}
+            </div>
             {treatments.map((item, i) => {
               const p = splitSlug(item.slug);
               return (
                 <Reveal key={item.id} delay={i * 60}>
-                  <Link
-                    to="/$category/$slug"
-                    params={{ category: p.category, slug: p.slug }}
-                    className="group grid items-baseline gap-3 border-b border-greige py-7 transition-colors hover:bg-white md:grid-cols-12 md:gap-8 md:py-8"
+                  <div
+                    role="row"
+                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)] md:items-baseline md:gap-8 md:py-8"
                   >
-                    <div className="md:col-span-4">
-                      <span className="block font-body text-[19px] font-medium leading-[1.35] text-ink transition-colors group-hover:text-walnut">
+                    <div role="cell">
+                      <Link
+                        to="/$category/$slug"
+                        params={{ category: p.category, slug: p.slug }}
+                        className="font-body text-[19px] font-medium leading-[1.35] text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
+                      >
                         {item.name}
-                      </span>
-                      <span className="label-xs mt-2 block text-champagne">{item.category}</span>
+                      </Link>
                     </div>
-                    <p className="font-body text-[16px] font-light leading-[1.75] text-walnut md:col-span-5">
+                    <p role="cell" className="font-body text-[16px] font-light leading-[1.75] text-walnut">
                       {item.shortDescription}
                     </p>
-                    <div className="md:col-span-3 md:text-right">
-                      <span className="block font-body text-[17px] text-ink">{item.priceDisplay}</span>
-                      <span className="mt-2 block font-body text-[14px] font-light text-walnut">
-                        Downtime: {downtimeLabel[item.downtime]}
-                      </span>
+                    <div className="mt-2 grid grid-cols-3 gap-4 md:contents">
+                      <Fact label="Price" value={item.priceDisplay} />
+                      <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
+                      <Fact label="Sessions" value={sessionsLabel(item.seriesSessions)} />
                     </div>
-                  </Link>
+                  </div>
                 </Reveal>
               );
             })}
@@ -147,9 +150,8 @@ function ConcernPage() {
 
       {concernProducts.length ? (
         <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
-          <SectionLabel>Daily care</SectionLabel>
-          <MaskedLines as="h2" lines={["Products for this"]} className={display} />
-          <div className="mt-12">
+          <h2 className="label-xs text-walnut">Products for this</h2>
+          <div className="mt-8">
             <ProductList items={concernProducts} />
           </div>
         </section>
@@ -193,26 +195,35 @@ function ConcernPage() {
         </section>
       ) : null}
 
-      {related.length ? (
-        <section className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[96px]">
-          <h2 className="label-xs text-walnut">Related concerns</h2>
-          <ul className="mt-6 flex flex-col gap-4 md:flex-row md:gap-10">
-            {related.map((item) => (
-              <li key={item.id}>
-                <Link
-                  to="/concerns/$slug"
-                  params={{ slug: concernPathSlug(item) }}
-                  className="font-body text-[19px] font-light text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
-                >
-                  {item.h1}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      <BookingBand />
+      <section className="bg-ink">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-10 px-6 py-[72px] md:flex-row md:items-end md:justify-between md:gap-20 md:px-10 md:py-[96px]">
+          <div>
+            <h2 className="display-tight max-w-[22ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
+              Not sure which of these is right?
+            </h2>
+            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
+              Jyl will assess your skin and recommend a plan. The consultation fee goes toward your treatment.
+            </p>
+          </div>
+          <a
+            href={practice.bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-label inline-flex shrink-0 items-center justify-center self-start rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory md:self-auto"
+          >
+            Book a consultation
+          </a>
+        </div>
+      </section>
     </PageShell>
+  );
+}
+
+function Fact({ label, value }: { label: string; value: string }) {
+  return (
+    <div role="cell">
+      <span className="label-xs block text-walnut md:hidden">{label}</span>
+      <span className="mt-1 block font-body text-[15px] text-ink md:mt-0 md:text-[16px]">{value}</span>
+    </div>
   );
 }
