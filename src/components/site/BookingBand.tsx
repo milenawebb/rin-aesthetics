@@ -56,7 +56,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             </a>
           ) : null}
         </div>
-        <picture className="block self-center lg:col-span-4 lg:col-start-9">
+        <picture className="block self-start lg:col-span-4 lg:col-start-9">
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
