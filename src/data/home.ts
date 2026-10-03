@@ -7,7 +7,7 @@ export const testimonials: Testimonial[] = [
   { quote: "As someone completely new to injections, I feel so at ease with her.", name: "Ann Humphries" },
   {
     quote:
-      "She was incredibly thorough, explained everything along the way ... the injections were much easier than I expected.",
+      "She was incredibly thorough, explained everything along the way ...",
     name: "Natasha Randolph",
   },
   {
