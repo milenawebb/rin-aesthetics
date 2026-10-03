@@ -65,7 +65,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
           <img
             src={jyl960.url}
             srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 300px, 100vw"
+            sizes="(min-width: 1024px) 240px, 100vw"
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={960}
             height={1200}
