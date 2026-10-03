@@ -30,30 +30,32 @@ export const navLinks: NavLink[] = [
 
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
-    title: "Treatments",
-    links: [
-      { label: "Injectables", to: "/treatments" },
-      { label: "Laser and light", to: "/treatments" },
-      { label: "Skin health", to: "/treatments" },
-      { label: "Consultations", to: "/treatments" },
-    ],
-  },
-  {
     title: "Concerns",
     links: [
       { label: "Lines and wrinkles", to: "/concerns" },
       { label: "Uneven tone", to: "/concerns" },
       { label: "Lost volume", to: "/concerns" },
       { label: "Under-eye area", to: "/concerns" },
+      { label: "All concerns", to: "/concerns" },
     ],
   },
   {
-    title: "Shop",
+    title: "Treatments",
     links: [
-      { label: "Medical-grade skincare", to: "/shop" },
-      { label: "Post-treatment kits", to: "/treatments" },
-      { label: "Gift cards", to: "/contact" },
-      { label: "All products", to: "/shop" },
+      { label: "Injectables", to: "/treatments" },
+      { label: "Laser and light", to: "/treatments" },
+      { label: "Skin health", to: "/treatments" },
+      { label: "Consultations", to: "/treatments" },
+      { label: "All treatments", to: "/treatments" },
+    ],
+  },
+  {
+    title: "Practice",
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Results", to: "/results" },
+      { label: "Shop", to: "/shop" },
+      { label: "Contact", to: "/contact" },
     ],
   },
   {
