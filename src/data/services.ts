@@ -767,15 +767,75 @@ export const services: Service[] = [
     pairsWith: ["INJ-03"],
     precareId: "PC-LASER",
     aftercareId: "AC-LASER",
-    shortDescription: "Refreshes the lip area and smooths lip lines without adding volume.",
+    shortDescription:
+      "Refreshes the lip area and smooths lip lines without adding volume.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "The fine vertical lines above the lip are a skin problem, not a volume problem. Filling the lip will not remove them, and often makes them more obvious.",
+      "This treats the skin itself. Fractional laser energy resurfaces the lip border and the area above it, softening the lines and improving the texture, without changing the size or shape of the lip at all.",
+    ],
+
+    helpsWith: [
+      "Fine vertical lines above the upper lip",
+      "A lip border that has lost its definition",
+      "Rough or crepey texture around the mouth",
+      "Lipstick that travels into the lines",
+    ],
+
+    whoItsFor: [
+      "Anyone bothered by lip lines rather than lip size",
+      "Patients who have had lip filler and still see the lines",
+      "Anyone who wants the area improved without adding anything",
+    ],
+
+    notFor:
+      "This adds no volume. If what you want is fuller lips, this is not it. It is often done alongside lip filler rather than instead of it, because the two address different things.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl confirms whether the lines are a texture problem, a volume problem, or both, because the answer changes the treatment.",
+      },
+      {
+        title: "The week before",
+        body: "Preparation instructions arrive by email. Sun exposure and retinoids both need stopping beforehand.",
+      },
+      {
+        title: "The session",
+        body: "Numbing first, then the treatment itself, which is quick because the area is small.",
+      },
+      {
+        title: "Afterwards",
+        body: "Redness and a rough texture for a few days as the skin renews. Aftercare arrives the same day.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl will often suggest this to someone who came in for more lip filler. If the complaint is the lines rather than the fullness, more filler is the wrong answer and she will say so.",
+
+    faqs: [
+      {
+        question: "Will this make my lips bigger?",
+        answer:
+          "No. It treats the skin around and on the lip border. The size and shape of the lip are unchanged.",
+      },
+      {
+        question: "Can I have it with lip filler?",
+        answer:
+          "Yes, and the two are often done together because they address different problems. Jyl will advise on the order and the spacing.",
+      },
+      {
+        question: "How much downtime?",
+        answer:
+          "A few days of redness and roughness around the mouth. Makeup is usually fine once the skin has settled.",
+      },
+      {
+        question: "How many sessions will I need?",
+        answer:
+          "NEEDS APPROVAL: confirm whether Jyl treats this as a single session or a short series.",
+      },
+    ],
   },
   {
     id: "DEV-03",
@@ -938,7 +998,7 @@ export const services: Service[] = [
     slug: "devices/fractional-laser",
     category: "Device & Laser",
     priceDisplay: "$675",
-    priceBand: "mid",
+    priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
     repeatWeeks: 26,
@@ -946,15 +1006,78 @@ export const services: Service[] = [
     pairsWith: ["DEV-04"],
     precareId: "PC-LASER",
     aftercareId: "AC-RESURFACE",
-    shortDescription: "Two fractional wavelengths working at different depths to renew skin from the inside out.",
+    shortDescription:
+      "Two fractional wavelengths working at different depths to renew skin from the inside out.",
+
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Two wavelengths, used in the same session, working at two depths. The 1940nm resurfaces at the surface, where texture, pores and pigment live. The 1550nm goes deeper, where wrinkles and scarring are, and prompts the skin to rebuild.",
+      "Doing both in one session is what separates this from a single wavelength treatment. The surface improves and the structure underneath improves with it.",
+    ],
+
+    helpsWith: [
+      "Rough or uneven texture",
+      "Enlarged pores",
+      "Acne scarring at the surface and below it",
+      "Fine lines and deeper wrinkles",
+      "Sun damage and uneven pigmentation",
+      "Loss of firmness",
+    ],
+
+    whoItsFor: [
+      "Anyone whose skin texture has stopped responding to skincare",
+      "Patients with acne scarring they have been told to live with",
+      "Anyone willing to accept a few quiet days for a substantial change",
+    ],
+
+    notFor:
+      "This has real downtime, which separates it from most of what RIN offers. If you cannot give it a few days, or there is an event inside three weeks, Jyl will tell you to wait rather than rush it.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl assesses the skin and confirms this rather than something gentler, and checks there is nothing in the next few weeks that the downtime would spoil.",
+      },
+      {
+        title: "The week before",
+        body: "Preparation instructions by email. Following them is what makes the session safe and effective.",
+      },
+      {
+        title: "The session",
+        body: "Cleansing and numbing, then both wavelengths applied at settings chosen for your skin.",
+      },
+      {
+        title: "The first week",
+        body: "Redness, then a sandpaper texture as the skin renews. Aftercare arrives the same day with guidance across the whole week.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl picks the depth and the settings rather than running a protocol, and she will treat conservatively on a first session to see how your skin responds. She would rather do two measured sessions than one aggressive one.",
+
+    faqs: [
+      {
+        question: "How much downtime should I plan for?",
+        answer:
+          "NEEDS APPROVAL: confirm what Jyl tells patients. Draft: a few days of redness and a rough texture, settling over roughly three to five days.",
+      },
+      {
+        question: "How is this different from the Skin Refinery?",
+        answer:
+          "The Skin Refinery combines these two wavelengths with IPL in one session, which adds the ability to treat redness and vascular concerns. This is the two lasers alone.",
+      },
+      {
+        question: "Will one session be enough?",
+        answer:
+          "Often, and the complimentary follow-up is where that gets assessed properly. Deeper scarring usually benefits from more than one.",
+      },
+      {
+        question: "Is it suitable for darker skin tones?",
+        answer:
+          "The platform is designed for a wide range of skin types, and Jyl confirms suitability individually at consultation.",
+      },
+    ],
   },
   {
     id: "DEV-06",
@@ -971,18 +1094,87 @@ export const services: Service[] = [
     pairsWith: ["DEV-04"],
     precareId: "PC-LASER",
     aftercareId: "AC-LASER",
-    shortDescription: "Evens tone by targeting sun damage, redness and broken capillaries. Treat a few spots or the whole face or chest.",
+    shortDescription:
+      "Evens tone by targeting sun damage, redness and broken capillaries. Treat a few spots or the whole face or chest.",
     options: [
-      { name: "Spot treatment", price: "$250", note: "A few specific spots rather than the whole area." },
-      { name: "Full face or chest", price: "$450", note: "Even tone across the whole area in one session." },
+      {
+        name: "Spot treatment",
+        price: "$250",
+        note: "A few specific spots rather than the whole area.",
+      },
+      {
+        name: "Full face or chest",
+        price: "$450",
+        note: "Even tone across the whole area in one session.",
+      },
     ],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Broadband light targets what has colour in it: sun spots, freckling, redness and broken capillaries. It passes over everything else, which is why tone evens out without the skin being resurfaced.",
+      "You can treat a handful of specific spots or the whole face or chest. The chest is worth mentioning, because it shows sun damage earlier than the face and is the area people forget until they see a photograph.",
+    ],
+
+    helpsWith: [
+      "Sun spots and age spots",
+      "Freckling from cumulative sun exposure",
+      "Persistent redness and rosacea",
+      "Broken capillaries",
+      "Uneven tone across the face, neck or chest",
+    ],
+
+    whoItsFor: [
+      "Anyone whose complaint is colour rather than texture",
+      "Patients who want visible change with little downtime",
+      "Anyone treating the chest, where sun damage shows first",
+    ],
+
+    notFor:
+      "IPL works on pigment and vessels. It does not resurface, so lines, scarring and texture need a laser instead. Recent sun exposure or a tan makes it unsafe, and Jyl will reschedule rather than treat.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl confirms that the concern is pigment or redness rather than texture, and checks for recent sun exposure.",
+      },
+      {
+        title: "The week before",
+        body: "Preparation instructions by email. No sun, no self-tanner, no exceptions.",
+      },
+      {
+        title: "The session",
+        body: "Cooling gel, then pulses across the area. Most people describe it as a brief snap.",
+      },
+      {
+        title: "The following week",
+        body: "Spots darken before they lift, usually flaking away over about a week. That darkening is the treatment working.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl will turn away a tan, including a self-tanner, because treating pigmented skin with light is how burns happen. If you have been in the sun she will move the appointment rather than adjust the settings and hope.",
+
+    faqs: [
+      {
+        question: "Why do my spots look darker afterwards?",
+        answer:
+          "Because that is how it works. The pigment comes to the surface, darkens, and flakes away over about a week. It looks worse before it looks better.",
+      },
+      {
+        question: "How many sessions will I need?",
+        answer:
+          "NEEDS APPROVAL: confirm Jyl's usual recommendation for a full face and for spot treatment.",
+      },
+      {
+        question: "Can I have this with a tan?",
+        answer:
+          "No, and that includes self-tanner. Light targets pigment, and tanned skin is pigmented everywhere. Jyl will reschedule.",
+      },
+      {
+        question: "What is the difference between spot and full face?",
+        answer:
+          "Area, not technique. Spot treatment addresses a few specific marks. Full face or chest evens the tone across the whole area.",
+      },
+    ],
   },
   {
     id: "SKN-01",
@@ -999,15 +1191,77 @@ export const services: Service[] = [
     pairsWith: ["SB-08"],
     precareId: "PC-PEEL",
     aftercareId: "AC-PEEL",
-    shortDescription: "A medical-grade peel suitable for all skin types. Includes a post-care kit to take home.",
+    shortDescription:
+      "A medical-grade peel suitable for all skin types. Includes a post-care kit to take home.",
+
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "A medical-grade peel that works across all skin types, including darker skin tones where many peels are a poor idea. It addresses pigment, texture and breakouts at the same time.",
+      "You go home with the post-care kit and the peeling happens over the following week. Knowing what that week looks like beforehand is the difference between a good experience and a worrying one.",
+    ],
+
+    helpsWith: [
+      "Uneven pigmentation and melasma",
+      "Sun damage",
+      "Rough or congested texture",
+      "Active breakouts and the marks they leave",
+      "Early acne scarring",
+    ],
+
+    whoItsFor: [
+      "Anyone wanting a reset rather than a gradual change",
+      "Patients with darker skin tones, where this peel is safer than most",
+      "Anyone who can give the peeling week some room",
+    ],
+
+    notFor:
+      "The peeling is visible and it is not subtle. Do not book this inside two weeks of anything you want to look your best for. Jyl will tell you to move it rather than let you find out on day three.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl confirms the peel is right for your skin and for your timing.",
+      },
+      {
+        title: "The appointment",
+        body: "Cleansing and then the peel itself, applied in layers. It takes about 30 minutes and you leave with the solution still on.",
+      },
+      {
+        title: "Day two to day five",
+        body: "The peeling starts. This is the part people are not ready for unless they have been told. Follow the kit instructions and do not pull anything that has not released.",
+      },
+      {
+        title: "The following weeks",
+        body: "New skin, and the tone keeps improving for several weeks. Usually a series of three for pigment.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl explains the peeling week in detail before you book, because the people who have a bad experience are almost always the ones who did not know what day three would look like.",
+
+    faqs: [
+      {
+        question: "How bad is the peeling?",
+        answer:
+          "Visible. It usually starts around day two or three and continues for several days. Plan around it rather than hoping it will be subtle.",
+      },
+      {
+        question: "Is it safe for darker skin?",
+        answer:
+          "Yes, which is one of the reasons Jyl uses this peel. Many peels are a poor idea on darker skin and this one is formulated differently.",
+      },
+      {
+        question: "How many will I need?",
+        answer:
+          "NEEDS APPROVAL: confirm Jyl's protocol. Usually a series of three for pigment, spaced several weeks apart.",
+      },
+      {
+        question: "What is in the kit?",
+        answer:
+          "NEEDS APPROVAL: confirm what the take-home post-care kit contains.",
+      },
+    ],
   },
   {
     id: "SKN-02",
@@ -1016,26 +1270,95 @@ export const services: Service[] = [
     slug: "skin-treatments/microneedling",
     category: "Skin Treatments",
     priceDisplay: "From $650",
-    priceBand: "mid",
+    priceBand: "high",
     downtime: "minimal",
     seriesSessions: 3,
     repeatWeeks: 6,
-    concernTags: ["texture", "scarring", "pores", "fine_lines", "laxity"],
+    concernTags: ["texture", "scarring", "pores", "fine_lines", "laxity", "hydration"],
     pairsWith: ["HY-05"],
     precareId: "PC-MICRO",
     aftercareId: "AC-RESURFACE",
-    shortDescription: "Controlled micro-injury that triggers your own repair response, paired with exosomes, PRP or a biphasic peel.",
+    shortDescription:
+      "Controlled micro-injury that triggers your own repair response, paired with exosomes, PRP or a biphasic peel.",
     options: [
-      { name: "With exosomes or PRP", price: "$675", note: "Growth factors applied straight after needling to amplify the repair response." },
-      { name: "With biphasic peel", price: "$650", note: "A peel layered with the needling for renewal plus radiance." },
+      {
+        name: "With exosomes or PRP",
+        price: "$675",
+        note: "Growth factors applied straight after needling to amplify the repair response.",
+      },
+      {
+        name: "With biphasic peel",
+        price: "$650",
+        note: "A peel layered with the needling for renewal plus radiance.",
+      },
     ],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Fine needles create controlled micro-injuries, and the skin responds by rebuilding collagen. The needling is only half of it. What goes on immediately afterwards, while those channels are open, is what decides the result.",
+      "Two options: exosomes or your own platelets, which push the healing response further, or a biphasic peel, which adds radiance alongside the renewal. Jyl will tell you which suits your skin.",
+    ],
+
+    helpsWith: [
+      "Acne scarring and other textural scarring",
+      "Enlarged pores",
+      "Rough or uneven texture",
+      "Fine lines",
+      "Loss of firmness",
+    ],
+
+    whoItsFor: [
+      "Anyone with scarring or texture that skincare will not reach",
+      "Patients who want real change with only a day or two of redness",
+      "Anyone prepared to do a series rather than a single session",
+    ],
+
+    notFor:
+      "Active breakouts need settling first, because needling through them spreads bacteria. Jyl will treat the acne before the scarring, in that order.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl assesses the scarring or texture and recommends which pairing suits your skin.",
+      },
+      {
+        title: "The session",
+        body: "Numbing, then needling at a depth chosen for the area, then the exosomes, platelets or peel applied straight afterwards.",
+      },
+      {
+        title: "The first days",
+        body: "Redness like a sunburn for a day or two, then normal. Aftercare arrives the same day.",
+      },
+      {
+        title: "The series",
+        body: "Usually three sessions spaced about six weeks apart, with collagen continuing to build between them.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl treats scarring as a series rather than a single appointment, and she will tell you up front how many it is likely to take. One session of microneedling on established scarring is not going to do it, and she would rather say that before you pay for one.",
+
+    faqs: [
+      {
+        question: "Exosomes or the peel? How do I choose?",
+        answer:
+          "Jyl chooses, based on what your skin needs. Broadly, the exosomes and platelets push the repair response further, which suits scarring. The peel adds radiance, which suits dullness and texture.",
+      },
+      {
+        question: "How many sessions will I need?",
+        answer:
+          "NEEDS APPROVAL: confirm Jyl's protocol. Usually three, spaced about six weeks apart, but hers is what should appear here.",
+      },
+      {
+        question: "How much downtime?",
+        answer:
+          "A day or two of redness, like a sunburn. Most people are back to normal makeup the next day.",
+      },
+      {
+        question: "Can I have it if I have active acne?",
+        answer:
+          "Not over active breakouts. Jyl will treat the acne first and the scarring afterwards.",
+      },
+    ],
   },
   {
     id: "HYD-01",
@@ -1052,15 +1375,77 @@ export const services: Service[] = [
     pairsWith: ["HY-01"],
     precareId: "",
     aftercareId: "AC-FACIAL",
-    shortDescription: "A 50-minute treatment covering analysis, cleanse, exfoliation, extractions, LED, boosters and SPF.",
+    shortDescription:
+      "A 50-minute treatment covering analysis, cleanse, exfoliation, extractions, LED, boosters and SPF.",
+
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Fifty minutes that covers analysis, cleansing, exfoliation, extractions, LED, boosters and SPF. No downtime at all, which makes it the one treatment here you can have on the day of an event rather than weeks before.",
+      "It is also the most useful first appointment for someone who has never had anything done. Nothing is injected, nothing peels, and you leave looking better than when you arrived.",
+    ],
+
+    helpsWith: [
+      "Dull, tired-looking skin",
+      "Congested or enlarged pores",
+      "Dryness and dehydration",
+      "Rough surface texture",
+      "Blackheads and congestion",
+    ],
+
+    whoItsFor: [
+      "Anyone who wants to look better today rather than in a month",
+      "Patients new to treatments who want somewhere gentle to start",
+      "Anyone maintaining results between stronger treatments",
+    ],
+
+    notFor:
+      "This is a surface treatment. It will not change lines, scarring or volume, and anyone promising otherwise is overselling it. For those, Jyl will point you to the treatments that actually address them.",
+
+    steps: [
+      {
+        title: "Analysis",
+        body: "Jyl looks at what your skin needs that day, which is not always what it needed last time.",
+      },
+      {
+        title: "Cleanse and exfoliate",
+        body: "The surface is cleared, then exfoliated to reach the congestion underneath.",
+      },
+      {
+        title: "Extractions and boosters",
+        body: "Congestion is drawn out, then boosters chosen for your skin are applied, followed by LED.",
+      },
+      {
+        title: "Afterwards",
+        body: "SPF, and straight back to your day. No downtime, no redness, nothing to plan around.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl uses this as an honest entry point rather than an upsell. If someone new is nervous about injectables, starting here and seeing how a consultation actually goes is better for them than being talked into something larger on a first visit.",
+
+    faqs: [
+      {
+        question: "Is there any downtime?",
+        answer:
+          "None. You can have this before an event the same day and look better for it.",
+      },
+      {
+        question: "How often should I have one?",
+        answer:
+          "Monthly suits most people, which is roughly how long the result holds.",
+      },
+      {
+        question: "Will it help my acne?",
+        answer:
+          "It clears congestion and that helps, but it is not an acne treatment on its own. For active acne Jyl will recommend something that addresses the cause.",
+      },
+      {
+        question: "What boosters do you use?",
+        answer:
+          "NEEDS APPROVAL: confirm which boosters Jyl carries and how she chooses between them.",
+      },
+    ],
   },
 ];
 
