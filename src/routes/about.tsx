@@ -4,6 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
+import { SectionLabel } from "@/components/site/SectionLabel";
 import j480w from "@/assets/jyl-4x5-480.webp.asset.json";
 import j720w from "@/assets/jyl-4x5-720.webp.asset.json";
 import j960w from "@/assets/jyl-4x5-960.webp.asset.json";
@@ -65,10 +66,10 @@ function AboutPage() {
   return (
     <PageShell>
       <div className="md:max-lg:pb-24">
-      <section className={`${pad} scroll-mt-[104px] md:max-lg:pt-[104px]`}>
+      <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
+        <SectionLabel>About</SectionLabel>
         <div className={wrap}>
           <div className="col-span-full lg:col-span-8">
-            <p className="eyebrow">About</p>
             <MaskedLines
               as="h1"
               lines={["Jyl"]}
@@ -142,7 +143,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={pad}>
+      <section className={`${pad} relative`}>
+        <SectionLabel>Why RIN</SectionLabel>
         <div className={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
