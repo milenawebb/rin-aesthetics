@@ -2,6 +2,10 @@
 // One record drives BOTH the email and the matching section of the service
 // page. They must never be allowed to disagree about aftercare.
 //
+// Bullets are split at sentence ends, never at commas. Clinical copy uses
+// commas inside a single instruction ("Avoid sun exposure, tanning beds and
+// self-tanner") and splitting there changes the meaning.
+//
 // body is empty on every series except PC-LASER. The provider owes that
 // clinical copy. An empty body renders nothing: no heading, no empty box.
 
@@ -36,7 +40,7 @@ export const careSeries: CareSeries[] = [
         sendOffsetHours: -168,
         subject: "Getting ready for your treatment next week",
         topicsToCover: "Her published one-week prep instruction, verbatim.",
-        body: ["Avoid sun exposure", "tanning beds and self-tanner. Stop retinol and retinoids", "exfoliating acids and chemical peels. Wear SPF daily. Arrive with clean skin", "free of makeup or lotions."],
+        body: ["Avoid sun exposure, tanning beds and self-tanner.", "Stop retinol and retinoids, exfoliating acids and chemical peels.", "Wear SPF daily.", "Arrive with clean skin, free of makeup or lotions."],
         productIds: ["SB-08"],
       },
       {
