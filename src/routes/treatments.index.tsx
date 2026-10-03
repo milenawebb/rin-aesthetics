@@ -4,7 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
-import { services } from "@/data/services";
+import { services, serviceBookingUrl } from "@/data/services";
 import { downtimeLabel, priceValue, splitSlug } from "@/data/lookup";
 
 const title = "Treatments | RIN Aesthetic Practice";
@@ -98,6 +98,17 @@ function TreatmentsIndex() {
                     <div className="mt-2 grid grid-cols-2 gap-4 md:contents">
                       <Fact label="Price" value={item.priceDisplay} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
+                    </div>
+                    <div role="cell" className="md:text-right">
+                      <a
+                        href={serviceBookingUrl(item)}
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`Book ${item.name}`}
+                        className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
+                      >
+                        Book
+                      </a>
                     </div>
                   </div>
                 </Reveal>
