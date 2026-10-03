@@ -1,3 +1,4 @@
+import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
@@ -266,30 +267,7 @@ export function Home() {
         </div>
       </section>
 
-      <Reveal as="section" className="border-t border-greige bg-ivory">
-        <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-8 px-6 py-[80px] text-center md:py-[100px] md:px-10">
-          <div className="flex flex-col items-center">
-            <h2 className={`${heading} balance`}>{bookingBand.heading}</h2>
-            <p className={`${body} mt-5`}>{bookingBand.body}</p>
-          </div>
-          <div className="flex flex-col items-center gap-6 sm:flex-row">
-            <a
-              href={practice.phoneHref}
-              className="font-body text-[20px] font-light text-ink transition-colors hover:text-champagne"
-            >
-              {practice.phone}
-            </a>
-            <a
-              href={practice.bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`${btn} border border-ink bg-ink px-8 py-4 text-ivory transition-colors duration-[400ms] hover:bg-walnut`}
-            >
-              {bookingBand.cta}
-            </a>
-          </div>
-        </div>
-      </Reveal>
+      <BookingBand />
     </>
   );
 }

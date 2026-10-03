@@ -1,3 +1,4 @@
+import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
@@ -105,6 +106,7 @@ function TreatmentsIndex() {
           </div>
         </section>
       ))}
+      <BookingBand />
     </PageShell>
   );
 }
