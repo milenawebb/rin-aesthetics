@@ -1,7 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { contactFormSchema } from "./contact-schema";
 
-const RECIPIENT = "info@rinaestheticsva.com";
+// Temporary testing recipient. Must return to info@rinaestheticsva.com before launch (see roadmap.md launch checklist).
+const RECIPIENT = "milena221@gmail.com";
 const RESEND_GATEWAY = "https://connector-gateway.lovable.dev/resend";
 
 function escapeHtml(value: string) {

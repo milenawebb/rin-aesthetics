@@ -15,3 +15,8 @@
 - [ ] Send each submission to the practice through Resend, blocked until the Resend connection is linked
 - [x] Add visible success and failure states with spam protection
 - [x] Verify desktop, mobile, persistence, failure behavior, and clean build
+
+# Launch checklist
+
+- [ ] Change the contact form recipient back from milena221@gmail.com to info@rinaestheticsva.com
+- [ ] Connect Resend and verify the rinaestheticsva.com sending domain so contact form email can be delivered
