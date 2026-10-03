@@ -46,7 +46,14 @@ function ConcernsIndex() {
             const more = treatments.length > 4;
             const prices = treatments.map((s) => priceValue(s.priceDisplay)).filter(Number.isFinite);
             const count = `${treatments.length} ${treatments.length === 1 ? "treatment" : "treatments"}`;
-            const summary = prices.length >= 2 ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}` : count;
+            // One treatment with a price shows the price alone; "from $X" only when at least two are priced.
+            const onlyPrice = treatments.length === 1 ? prices.at(0) : undefined;
+            const summary =
+              onlyPrice !== undefined
+                ? `${count}, $${onlyPrice.toLocaleString("en-US")}`
+                : prices.length >= 2
+                  ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}`
+                  : count;
             // Reserved for a single 88px square result image per concern, once real photos exist.
             const thumbnail: React.ReactNode = null;
             return (
