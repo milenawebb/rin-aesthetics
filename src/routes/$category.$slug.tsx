@@ -12,7 +12,7 @@ import { ResultsRail } from "@/components/home/ResultsRail";
 import { resultCases } from "@/data/results";
 import { bookingActions } from "@/data/services";
 import { concerns } from "@/data/concerns";
-import { hasContent, seriesById, type CareSeries } from "@/data/careEmails";
+import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
 import { serviceMedia, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
@@ -76,7 +76,7 @@ function LineList({ items }: { items: string[] }) {
 
 function careLines(series: CareSeries | undefined) {
   if (!series || !hasContent(series)) return [];
-  return [...series.touches].sort((a, b) => a.touch - b.touch).flatMap((t) => t.body);
+  return pageBullets(series);
 }
 
 function ServicePage() {
