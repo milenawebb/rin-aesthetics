@@ -45,8 +45,6 @@ export const Route = createFileRoute("/concerns/$slug")({
   component: ConcernPage,
 });
 
-const btnLight =
-  "btn-label inline-flex items-center justify-center rounded-[2px] bg-ivory px-8 py-4 text-ink transition-colors hover:bg-champagne";
 const display = "display-tight font-display text-[30px] font-extralight text-ink md:text-[46px]";
 
 function ConcernPage() {
@@ -156,25 +154,6 @@ function ConcernPage() {
           </div>
         </section>
       ) : null}
-
-      <section className="w-full bg-ink">
-        <div className="mx-auto max-w-[1240px] px-6 py-[96px] md:px-10 md:py-[140px]">
-          <div className="max-w-[760px]">
-            <MaskedLines
-              as="h2"
-              lines={["Not sure which of these", "is right for you?"]}
-              className="display-tight font-display text-[30px] font-extralight text-ivory md:text-[46px]"
-            />
-            <p className="measure mt-8 font-body text-[17px] font-light leading-[1.8] text-greige">
-              Six short questions about downtime, budget and timing will narrow these options down
-              to a plan we can talk through together.
-            </p>
-            <Link to="/find-your-treatment" className={`mt-10 ${btnLight}`}>
-              Find your treatment
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {results.length ? (
         <section className="relative overflow-x-clip py-[72px] md:py-[120px]">

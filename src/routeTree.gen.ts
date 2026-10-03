@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ConcernsRouteImport } from './routes/concerns'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FindYourTreatmentRouteImport } from './routes/find-your-treatment'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as CategorySlugRouteImport } from './routes/$category.$slug'
@@ -41,11 +40,6 @@ const ConcernsRoute = ConcernsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FindYourTreatmentRoute = FindYourTreatmentRouteImport.update({
-  id: '/find-your-treatment',
-  path: '/find-your-treatment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResultsRoute = ResultsRouteImport.update({
@@ -94,7 +88,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/concerns': typeof ConcernsRouteWithChildren
   '/contact': typeof ContactRoute
-  '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/shop': typeof ShopRoute
   '/$category/$slug': typeof CategorySlugRoute
@@ -108,7 +101,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/shop': typeof ShopRoute
   '/$category/$slug': typeof CategorySlugRoute
@@ -124,7 +116,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/concerns': typeof ConcernsRouteWithChildren
   '/contact': typeof ContactRoute
-  '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/shop': typeof ShopRoute
   '/$category/$slug': typeof CategorySlugRoute
@@ -141,7 +132,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/concerns'
     | '/contact'
-    | '/find-your-treatment'
     | '/results'
     | '/shop'
     | '/$category/$slug'
@@ -155,7 +145,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/find-your-treatment'
     | '/results'
     | '/shop'
     | '/$category/$slug'
@@ -170,7 +159,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/concerns'
     | '/contact'
-    | '/find-your-treatment'
     | '/results'
     | '/shop'
     | '/$category/$slug'
@@ -186,7 +174,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConcernsRoute: typeof ConcernsRouteWithChildren
   ContactRoute: typeof ContactRoute
-  FindYourTreatmentRoute: typeof FindYourTreatmentRoute
   ResultsRoute: typeof ResultsRoute
   ShopRoute: typeof ShopRoute
   CategorySlugRoute: typeof CategorySlugRoute
@@ -223,13 +210,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/find-your-treatment': {
-      id: '/find-your-treatment'
-      path: '/find-your-treatment'
-      fullPath: '/find-your-treatment'
-      preLoaderRoute: typeof FindYourTreatmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/results': {
@@ -310,7 +290,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ConcernsRoute: ConcernsRouteWithChildren,
   ContactRoute: ContactRoute,
-  FindYourTreatmentRoute: FindYourTreatmentRoute,
   ResultsRoute: ResultsRoute,
   ShopRoute: ShopRoute,
   CategorySlugRoute: CategorySlugRoute,
