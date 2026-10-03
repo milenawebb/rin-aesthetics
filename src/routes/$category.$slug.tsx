@@ -141,7 +141,7 @@ function ServicePage() {
       <section className="bg-ivory">
         <div className="mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[96px] md:pb-[80px]">
           <Label>{service.eyebrow ?? service.category}</Label>
-          <h1 className="display-tight mt-6 max-w-[22ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
+          <h1 className="display-tight mt-6 max-w-[28ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
             {service.name} in Charlottesville, VA
           </h1>
           <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
@@ -183,7 +183,9 @@ function ServicePage() {
       ) : null}
 
       {/* 3. Intro and actions */}
-      <section className="mx-auto max-w-[1240px] px-6 py-[56px] md:px-10 md:py-[88px]">
+      <section
+        className={`mx-auto max-w-[1240px] px-6 md:px-10 ${media || service.intro.length ? "py-[56px] md:py-[88px]" : "pt-[40px] pb-[56px] md:pt-[48px] md:pb-[88px]"}`}
+      >
         {service.intro.length ? (
           <div className="measure mb-10 space-y-6">
             {service.intro.map((p, i) => (
