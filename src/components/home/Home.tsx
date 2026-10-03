@@ -76,7 +76,7 @@ export function Home() {
         />
         <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[420px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
           <h1 className="font-body text-[26px] font-light leading-[1.3] text-ink md:hidden">
-            Medical aesthetics in Charlottesville
+            Medical aesthetics in Charlottesville, VA
           </h1>
           <MaskedLines
             as="h1"
