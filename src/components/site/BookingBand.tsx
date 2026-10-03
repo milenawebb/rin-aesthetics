@@ -60,7 +60,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 300px, 100vw"
+            sizes="(min-width: 1024px) 240px, 100vw"
           />
           <img
             src={jyl960.url}
