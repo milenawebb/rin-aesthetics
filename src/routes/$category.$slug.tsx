@@ -6,6 +6,8 @@ import { BookingBand } from "@/components/site/BookingBand";
 import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
+import { ProductList } from "@/components/site/ProductList";
+import { products } from "@/data/products";
 import { serviceMedia, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
@@ -77,6 +79,9 @@ function ServicePage() {
   const related = service.pairsWith
     .map((id) => getServiceById(id))
     .filter((s) => s !== undefined);
+  const relatedProducts = service.pairsWith
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p) => p !== undefined);
 
   const facts = [
     { label: "Price", value: service.priceDisplay },
@@ -366,10 +371,10 @@ function ServicePage() {
         </section>
       ) : null}
 
-      {related.length ? (
+      {related.length || relatedProducts.length ? (
         <section className={section}>
           <h2 className={h2}>Often considered alongside</h2>
-          <div className="mt-12 border-t border-greige">
+          {related.length ? (<div className="mt-12 border-t border-greige">
             {related.map((item) => {
               const p = splitSlug(item.slug);
               return (
@@ -396,7 +401,13 @@ function ServicePage() {
                 </Link>
               );
             })}
-          </div>
+          </div>) : null}
+          {relatedProducts.length ? (
+            <div className="mt-12">
+              <p className="label-xs mb-6 text-olive">Daily care</p>
+              <ProductList items={relatedProducts} />
+            </div>
+          ) : null}
         </section>
       ) : null}
 

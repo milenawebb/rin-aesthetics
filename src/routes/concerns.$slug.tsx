@@ -6,6 +6,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { getResultCasesByTags } from "@/data/results";
+import { ProductList } from "@/components/site/ProductList";
+import { products } from "@/data/products";
 import { redirects } from "@/data/redirects";
 import {
   concernPathSlug,
@@ -54,6 +56,7 @@ function ConcernPage() {
 
   const treatments = servicesFor(concern);
   const related = relatedConcerns(concern);
+  const concernProducts = products.filter((p) => p.concernTags.some((t) => concern.tags.includes(t)));
   const results = getResultCasesByTags(concern.tags);
 
   return (
@@ -140,6 +143,16 @@ function ConcernPage() {
                 </Reveal>
               );
             })}
+          </div>
+        </section>
+      ) : null}
+
+      {concernProducts.length ? (
+        <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
+          <SectionLabel>Daily care</SectionLabel>
+          <MaskedLines as="h2" lines={["Products for this"]} className={display} />
+          <div className="mt-12">
+            <ProductList items={concernProducts} />
           </div>
         </section>
       ) : null}
