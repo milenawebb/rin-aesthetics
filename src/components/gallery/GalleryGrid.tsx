@@ -13,7 +13,7 @@ import { ResultTile } from "@/components/gallery/ResultTile";
 
 // Every grid uses the same tile as the home rail: hover or focus wipe,
 // split fallback on touch and reduced motion (handled inside ResultTile).
-export function GalleryGrid({ items, expandable = false }: { items: GalleryItem[]; expandable?: boolean }) {
+export function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const [selected, setSelected] = useState<GalleryItem | null>(null);
   const selectedService = selected ? getServiceById(selected.serviceId) : undefined;
 
@@ -23,7 +23,7 @@ export function GalleryGrid({ items, expandable = false }: { items: GalleryItem[
         {items.map((item) => {
           const service = getServiceById(item.serviceId);
           if (!service) return null;
-          const canOpen = expandable && isDisplayable(item);
+          const canOpen = isDisplayable(item);
           return (
             <article key={item.id}>
               <ResultTile
@@ -38,7 +38,7 @@ export function GalleryGrid({ items, expandable = false }: { items: GalleryItem[
         })}
       </div>
 
-      <Dialog open={expandable && selected !== null} onOpenChange={(open) => !open && setSelected(null)}>
+      <Dialog open={selected !== null} onOpenChange={(open) => !open && setSelected(null)}>
         <DialogContent className="max-h-[92vh] max-w-[1200px] overflow-y-auto rounded-[2px] border-greige bg-ivory p-6 shadow-none md:p-10">
           <DialogTitle className="sr-only">
             {selectedService ? `${selectedService.name} before and after` : "Before and after result"}
