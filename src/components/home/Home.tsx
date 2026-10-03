@@ -1,3 +1,4 @@
+import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { MaskedLines } from "@/components/site/MaskedLines";
@@ -119,7 +120,7 @@ export function Home() {
               className={`${heading} col-span-12`}
             />
             <p className={`${body} col-span-12 mt-6`}>
-              {resultsSection.intro}
+              {resultsNotice(featuredResults)}
             </p>
           </div>
         </div>

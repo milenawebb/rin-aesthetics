@@ -1,3 +1,4 @@
+import { resultsNotice } from "@/data/gallery";
 import { serviceBookingUrl } from "@/data/services";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
@@ -182,7 +183,7 @@ function ConcernPage() {
             <SectionLabel>Results</SectionLabel>
             <MaskedLines as="h2" lines={["Results"]} className={display} />
             <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
-              Unretouched photography from our own treatment room. Individual results vary.
+              {resultsNotice(results)}
             </p>
           </div>
           <div className="mt-12">

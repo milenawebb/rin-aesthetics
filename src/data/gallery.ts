@@ -1,3 +1,10 @@
+import lips01Before from "@/assets/lips-01-before.jpg.asset.json";
+import lips01After from "@/assets/lips-01-after.jpg.asset.json";
+import lips02Before from "@/assets/lips-02-before.jpg.asset.json";
+import lips02After from "@/assets/lips-02-after.jpg.asset.json";
+import neck01Before from "@/assets/neck-01-before.jpg.asset.json";
+import neck01After from "@/assets/neck-01-after.jpg.asset.json";
+
 // Before and after gallery.
 //
 // One record per pair. The same record populates the Results page, the
@@ -25,6 +32,9 @@ export interface GalleryItem {
   consentOnFile: boolean;
   // True while this is a stand-in. Renders as a labelled greige block.
   placeholder: boolean;
+  // Example image with no patient in it, shown only to illustrate the
+  // layout. Needs no consent and is never presentable as a result.
+  standIn?: boolean;
   // Hand-picked for the home page strip. Keep this to six at most.
   featured: boolean;
 }
@@ -33,40 +43,43 @@ export const gallery: GalleryItem[] = [
   {
     id: "lips-01",
     serviceId: "INJ-03",
-    beforeSrc: "/images/results/lips-01-before.jpg",
-    afterSrc: "/images/results/lips-01-after.jpg",
+    beforeSrc: lips01Before.url,
+    afterSrc: lips01After.url,
     beforeAlt: "Lip filler result, before treatment",
     afterAlt: "Lip filler result, two weeks after one session",
     sessions: "1 session",
     interval: "2 weeks",
     consentOnFile: false,
-    placeholder: true,
+    placeholder: false,
+    standIn: true,
     featured: true,
   },
   {
     id: "lips-02",
     serviceId: "INJ-03",
-    beforeSrc: "/images/results/lips-02-before.jpg",
-    afterSrc: "/images/results/lips-02-after.jpg",
+    beforeSrc: lips02Before.url,
+    afterSrc: lips02After.url,
     beforeAlt: "Lip filler result, before treatment",
     afterAlt: "Lip filler result, two weeks after one session",
     sessions: "1 session",
     interval: "2 weeks",
     consentOnFile: false,
-    placeholder: true,
+    placeholder: false,
+    standIn: true,
     featured: true,
   },
   {
     id: "neck-01",
     serviceId: "DEV-05",
-    beforeSrc: "/images/results/neck-01-before.jpg",
-    afterSrc: "/images/results/neck-01-after.jpg",
+    beforeSrc: neck01Before.url,
+    afterSrc: neck01After.url,
     beforeAlt: "Neck texture, before treatment",
     afterAlt: "Neck texture, eight weeks after one session",
     sessions: "1 session",
     interval: "8 weeks",
     consentOnFile: false,
-    placeholder: true,
+    placeholder: false,
+    standIn: true,
     featured: true,
   },
   {
@@ -215,14 +228,33 @@ export const gallery: GalleryItem[] = [
 ];
 
 // A pair is publishable only when it has both photographs and written
-// consent. Everything else renders as a labelled placeholder block.
+// consent. Stand-ins can never pass, whatever their other fields say.
 export function isPublishable(item: GalleryItem): boolean {
   return (
+    !item.standIn &&
     !item.placeholder &&
     item.consentOnFile &&
     item.beforeSrc !== "" &&
     item.afterSrc !== ""
   );
+}
+
+// A real consented pair, or a stand-in with both images. Only these render
+// as images; everything else is a greige block.
+export function isDisplayable(item: GalleryItem): boolean {
+  if (isPublishable(item)) return true;
+  return item.standIn === true && item.beforeSrc !== "" && item.afterSrc !== "";
+}
+
+export const NOTICE_STAND_IN =
+  "Example images, shown to illustrate the layout. Final photography will be from the practice.";
+export const NOTICE_REAL =
+  "Unretouched photography from our own treatment room. Individual results vary.";
+
+// The line under a Results heading, chosen from what is actually displayed.
+export function resultsNotice(items: GalleryItem[]): string {
+  const anyStandIn = items.some((item) => isDisplayable(item) && !isPublishable(item));
+  return anyStandIn ? NOTICE_STAND_IN : NOTICE_REAL;
 }
 
 export function galleryForService(serviceId: string): GalleryItem[] {
