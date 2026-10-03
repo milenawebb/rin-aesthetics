@@ -1,6 +1,7 @@
 export interface NavLink {
   label: string;
   to: string;
+  hash?: string;
 }
 
 export const GOOGLE_REVIEWS_URL =
@@ -32,20 +33,20 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: "Concerns",
     links: [
-      { label: "Lines and wrinkles", to: "/concerns" },
-      { label: "Uneven tone", to: "/concerns" },
-      { label: "Lost volume", to: "/concerns" },
-      { label: "Under-eye area", to: "/concerns" },
+      { label: "Lines and wrinkles", to: "/concerns/lines-and-wrinkles" },
+      { label: "Pigmentation and sun damage", to: "/concerns/pigmentation" },
+      { label: "Volume loss", to: "/concerns/volume-loss" },
+      { label: "Under-eye area", to: "/concerns/under-eye-area" },
       { label: "All concerns", to: "/concerns" },
     ],
   },
   {
     title: "Treatments",
     links: [
-      { label: "Injectables", to: "/treatments" },
-      { label: "Laser and light", to: "/treatments" },
-      { label: "Skin health", to: "/treatments" },
-      { label: "Consultations", to: "/treatments" },
+      { label: "Injectables", to: "/treatments", hash: "injectables" },
+      { label: "Laser and light", to: "/treatments", hash: "device-and-laser" },
+      { label: "Skin treatments", to: "/treatments", hash: "skin-treatments" },
+      { label: "Hydrafacial", to: "/treatments", hash: "hydrafacials" },
       { label: "All treatments", to: "/treatments" },
     ],
   },

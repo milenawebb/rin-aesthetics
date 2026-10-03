@@ -85,6 +85,7 @@ function DesktopFooter() {
               <li key={`${column.title}-${i}`}>
                 <Link
                   to={link.to}
+                  {...(link.hash ? { hash: link.hash } : {})}
                   className="font-body text-[15px] text-greige transition-colors hover:text-ivory"
                 >
                   {link.label}
@@ -116,6 +117,7 @@ function MobileAccordion() {
                   <li key={`${column.title}-${i}`}>
                     <Link
                       to={link.to}
+                      {...(link.hash ? { hash: link.hash } : {})}
                       className="flex h-11 items-center font-body text-[15px] font-light text-ivory transition-colors hover:text-champagne"
                     >
                       {link.label}
