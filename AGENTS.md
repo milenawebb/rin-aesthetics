@@ -14,3 +14,5 @@
 
 - Service and concern content lives only in src/data (services.ts, concerns.ts); pages render a section only when its field is non-empty. Why: content is filled field by field and empty fields must never show placeholders.
 - Service URLs are /<category>/<slug> taken from Service.slug via one dynamic route; redirects.ts entries are 301s in that route; /book/* sends to Vagaro. Why: routes stay generated from data.
+
+- Gallery records are the single source for results placements; service and concern matches derive from service IDs, and every photograph rendering component must call isPublishable(). Why: treatment tags stay synchronized and patient consent is enforced at render time.

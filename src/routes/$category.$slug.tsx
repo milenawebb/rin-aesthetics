@@ -7,8 +7,8 @@ import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
-import { ResultsRail } from "@/components/home/ResultsRail";
-import { resultCases } from "@/data/results";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
@@ -95,7 +95,7 @@ function ServicePage() {
   const followUp = service.pairsWith
     .map((id) => bookingActions.find((b) => b.id === id))
     .find((b) => b !== undefined);
-  const results = resultCases.filter((r) => r.treatmentSlug === splitSlug(service.slug).slug);
+  const results = galleryForService(service.id);
 
   const pre = careLines(seriesById(service.precareId));
   const after = careLines(seriesById(service.aftercareId));
@@ -374,15 +374,15 @@ function ServicePage() {
 
       {/* 9. Results */}
       {results.length ? (
-        <section className="relative overflow-x-clip pb-[72px] md:pb-[120px]">
+        <section className={section}>
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <h2 className={h2}>Results</h2>
             <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
               Unretouched photography from our own treatment room. Individual results vary.
             </p>
           </div>
-          <div className="mt-12 w-full pl-6 md:pl-10">
-            <ResultsRail cases={results} />
+          <div className="mt-12">
+            <GalleryGrid items={results} />
           </div>
         </section>
       ) : null}

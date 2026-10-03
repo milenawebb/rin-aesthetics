@@ -4,7 +4,7 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ResultsRail } from "@/components/home/ResultsRail";
-import { resultCases } from "@/data/results";
+import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
@@ -36,6 +36,7 @@ const signatureLines = signatureService
     ? [signatureService.name.slice(0, -7), "by RIN"]
     : [signatureService.name]
   : [];
+const featuredResults = featured();
 
 
 const container = "relative mx-auto max-w-[1240px] px-6 md:px-10";
@@ -123,7 +124,7 @@ export function Home() {
           </div>
         </div>
         <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
-          <ResultsRail cases={resultCases} />
+          <ResultsRail cases={featuredResults} />
         </div>
         <div className={`${container} mt-10`}>
           <Link

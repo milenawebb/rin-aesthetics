@@ -5,8 +5,8 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
 import { practice } from "@/data/site";
-import { ResultsRail } from "@/components/home/ResultsRail";
-import { getResultCasesByTags } from "@/data/results";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { galleryForConcern } from "@/data/gallery";
 import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
 import { redirects } from "@/data/redirects";
@@ -14,6 +14,7 @@ import {
   concernPathSlug,
   downtimeLabel,
   getConcernBySlug,
+  getServiceById,
   relatedConcerns,
   sessionsLabel,
   servicesFor,
@@ -56,7 +57,10 @@ function ConcernPage() {
 
   const treatments = servicesFor(concern);
   const concernProducts = products.filter((p) => p.concernTags.some((t) => concern.tags.includes(t)));
-  const results = getResultCasesByTags(concern.tags);
+  const results = galleryForConcern(
+    concern.tags,
+    (serviceId) => getServiceById(serviceId)?.concernTags ?? [],
+  );
   const related = relatedConcerns(concern);
 
   return (
@@ -173,7 +177,7 @@ function ConcernPage() {
       ) : null}
 
       {results.length ? (
-        <section className="relative overflow-x-clip py-[72px] md:py-[120px]">
+        <section className="relative mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <SectionLabel>Results</SectionLabel>
             <MaskedLines as="h2" lines={["Results"]} className={display} />
@@ -181,8 +185,8 @@ function ConcernPage() {
               Unretouched photography from our own treatment room. Individual results vary.
             </p>
           </div>
-          <div className="mt-12 w-full pl-6 md:pl-10">
-            <ResultsRail cases={results} />
+          <div className="mt-12">
+            <GalleryGrid items={results} />
           </div>
         </section>
       ) : null}
