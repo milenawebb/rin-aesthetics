@@ -331,13 +331,6 @@
     transform: scale(1);
   }
 
-  /* Sticky section eyebrow */
-  .section-label-pin {
-    position: sticky;
-    top: 120px;
-    display: inline-block;
-  }
-
   /* Hanging punctuation on quotes */
   .hanging-quote {
     text-indent: -0.42em;
