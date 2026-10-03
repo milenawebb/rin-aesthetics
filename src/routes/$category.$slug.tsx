@@ -157,6 +157,16 @@ function ServicePage() {
               </div>
             ))}
           </dl>
+          {serviceInPackage(service.name) ? (
+            <p className="mt-6 font-body text-[15px] font-light text-walnut">
+              <Link
+                to="/shop"
+                className="text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
+              >
+                Also available as part of a package
+              </Link>
+            </p>
+          ) : null}
           {chips.length ? (
             <ul className="mt-8 flex flex-wrap gap-2">
               {chips.map((c) => (
