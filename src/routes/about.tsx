@@ -10,7 +10,6 @@ import j960w from "@/assets/jyl-4x5-960.webp.asset.json";
 import j480 from "@/assets/jyl-4x5-480.jpg.asset.json";
 import j720 from "@/assets/jyl-4x5-720.jpg.asset.json";
 import j960 from "@/assets/jyl-4x5-960.jpg.asset.json";
-import jylSquare from "@/assets/jyl-square.jpg.asset.json";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";

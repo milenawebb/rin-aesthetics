@@ -21,7 +21,6 @@ import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
 import {
-  bookingBand,
   concernsSection,
   hero,
   provider,
