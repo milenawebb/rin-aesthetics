@@ -18,7 +18,7 @@ export function ResultTile({
   item: GalleryItem;
   treatmentName: string;
   mode?: "wipe" | "split";
-  onOpen?: () => void;
+  onOpen?: (() => void) | undefined;
 }) {
   const [revealed, setRevealed] = useState(false);
   const [forceSplit, setForceSplit] = useState(false);
