@@ -67,9 +67,9 @@ function TreatmentsIndex() {
           <div className="mt-8" role="table" aria-label={group.category}>
             <div
               role="row"
-              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)] md:gap-8"
+              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:gap-8"
             >
-              {["Treatment", "What it does", "Price", "Downtime"].map((h) => (
+              {["Treatment", "What it does", "Price", "Downtime", ""].map((h) => (
                 <span key={h} role="columnheader" className="label-xs text-walnut">
                   {h}
                 </span>
@@ -81,7 +81,7 @@ function TreatmentsIndex() {
                 <Reveal key={item.id} delay={i * 60}>
                   <div
                     role="row"
-                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)] md:items-baseline md:gap-8 md:py-8"
+                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:items-baseline md:gap-8 md:py-8"
                   >
                     <div role="cell">
                       <Link
