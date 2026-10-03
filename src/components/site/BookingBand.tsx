@@ -70,7 +70,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             width={960}
             height={1200}
             loading="lazy"
-            className="mx-auto aspect-[4/5] h-auto w-full max-w-[300px] rounded-[2px] object-cover"
+            className="mx-auto aspect-square h-auto w-full max-w-[240px] rounded-[2px] object-cover object-[50%_20%]"
           />
         </picture>
       </div>
