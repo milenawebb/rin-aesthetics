@@ -1,42 +1,78 @@
-import jylSquare from "@/assets/jyl-square.jpg.asset.json";
+import jyl480 from "@/assets/jyl-4x5-480.jpg.asset.json";
+import jyl720 from "@/assets/jyl-4x5-720.jpg.asset.json";
+import jyl960 from "@/assets/jyl-4x5-960.jpg.asset.json";
+import jyl480w from "@/assets/jyl-4x5-480.webp.asset.json";
+import jyl720w from "@/assets/jyl-4x5-720.webp.asset.json";
+import jyl960w from "@/assets/jyl-4x5-960.webp.asset.json";
 import { practice } from "@/data/site";
 
-export function BookingBand() {
+type Props = {
+  /** Treatment-specific variant: pass the service name, price and booking URL. */
+  treatment?: { name: string; price: string; bookingUrl: string };
+  /** Horizontal padding matching the page's own container, so the band's left edge lines up with its H1. */
+  padding?: string;
+};
+
+/** The one closing booking band, used on every page except concern pages. */
+export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
+  const heading = treatment ? `Book your ${treatment.name}` : "Book a consultation";
+  const line = treatment ? treatment.price : "Consultations are thorough and obligation-free.";
   return (
-    <section className="bg-ink">
-      <div className="mx-auto flex max-w-[1240px] flex-col gap-12 px-6 py-[72px] md:flex-row md:items-center md:justify-between md:gap-20 md:px-10 md:py-[96px]">
-        <div>
-          <h2 className="display-tight max-w-[20ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
-            Book a consultation
+    <section className="border-t border-greige bg-ivory">
+      <div
+        className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-[72px] md:py-[96px] lg:grid-cols-12 lg:gap-x-8 ${padding}`}
+      >
+        <div className="lg:col-span-7 lg:self-center">
+          <h2 className="display-tight font-display text-[30px] font-extralight text-ink md:text-[38px]">
+            {heading}
           </h2>
-          <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
-            Consultations are thorough and obligation-free.
-          </p>
-          <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+          {line ? (
+            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
+          ) : null}
+          <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-6">
             <a
-              href={practice.bookingUrl}
+              href={treatment ? treatment.bookingUrl : practice.bookingUrl}
               target="_blank"
-              rel="noreferrer"
-              className="btn-label inline-flex items-center justify-center rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory"
+              rel="noopener"
+              className="btn-label inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut"
             >
-              Book now
+              {treatment ? "Book this treatment" : "Book a consultation"}
             </a>
             <a
               href={practice.phoneHref}
-              className="font-body text-[16px] font-light text-greige transition-colors hover:text-ivory"
+              className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne"
             >
               {practice.phone}
             </a>
           </div>
+          {treatment ? (
+            <a
+              href={practice.bookingUrl}
+              target="_blank"
+              rel="noopener"
+              className="mt-6 inline-block font-body text-[15px] font-light text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink"
+            >
+              or book a consultation first
+            </a>
+          ) : null}
         </div>
-        <img
-          src={jylSquare.url}
-          alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
-          width={220}
-          height={220}
-          loading="lazy"
-          className="h-[220px] w-[220px] shrink-0 rounded-[2px] object-cover"
-        />
+        <picture className="block lg:col-span-4 lg:col-start-9">
+          <source
+            type="image/webp"
+            srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
+            sizes="(min-width: 1024px) 380px, 100vw"
+          />
+          <img
+            src={jyl960.url}
+            srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
+            sizes="(min-width: 1024px) 380px, 100vw"
+            alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
+            width={960}
+            height={1200}
+            loading="lazy"
+            className="aspect-[4/5] h-auto w-full rounded-[2px] object-cover"
+          />
+        </picture>
       </div>
     </section>
   );

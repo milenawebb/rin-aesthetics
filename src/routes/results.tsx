@@ -1,3 +1,4 @@
+import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -71,6 +72,7 @@ function ResultsPage() {
           <GalleryGrid items={items} />
         </div>
       </main>
+      <BookingBand />
     </PageShell>
   );
 }

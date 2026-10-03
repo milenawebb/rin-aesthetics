@@ -1,3 +1,4 @@
+import { BookingBand } from "@/components/site/BookingBand";
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
@@ -274,6 +275,7 @@ function ContactPage() {
 
         <ContactForm />
       </div>
+      <BookingBand />
     </PageShell>
   );
 }

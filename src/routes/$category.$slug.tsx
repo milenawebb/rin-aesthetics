@@ -1,3 +1,4 @@
+import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import type { ReactNode } from "react";
@@ -475,35 +476,7 @@ function ServicePage() {
         </section>
       ) : null}
 
-      <section className="bg-ink">
-        <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[96px]">
-          <h2 className="display-tight max-w-[24ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
-            Book your {service.name}
-          </h2>
-          <p className="mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">{service.priceDisplay}</p>
-          <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
-            <a
-              href={serviceBookingUrl(service)}
-              target="_blank"
-              rel="noopener"
-              className="btn-label inline-flex items-center justify-center rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory"
-            >
-              Book this treatment
-            </a>
-            <a
-              href={practice.bookingUrl}
-              target="_blank"
-              rel="noopener"
-              className="font-body text-[16px] font-light text-greige underline decoration-walnut underline-offset-4 transition-colors hover:text-ivory"
-            >
-              or book a consultation first
-            </a>
-            <a href={practice.phoneHref} className="font-body text-[16px] font-light text-greige transition-colors hover:text-ivory">
-              {practice.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, bookingUrl: serviceBookingUrl(service) }} />
     </PageShell>
   );
 }
