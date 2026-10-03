@@ -168,7 +168,7 @@ function ContactForm() {
           <Button
             type="submit"
             disabled={isSending}
-            className="h-12 rounded-[2px] bg-ink px-7 text-sm font-normal text-ivory shadow-none hover:bg-walnut"
+            className="btn-label inline-flex h-auto items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory shadow-none transition-colors hover:bg-walnut"
           >
             {isSending ? "Sending..." : "Send"}
           </Button>
