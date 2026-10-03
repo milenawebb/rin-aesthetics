@@ -47,9 +47,10 @@ function ConcernsIndex() {
             const prices = treatments.map((s) => priceValue(s.priceDisplay)).filter(Number.isFinite);
             const count = `${treatments.length} ${treatments.length === 1 ? "treatment" : "treatments"}`;
             // One treatment with a price shows the price alone; "from $X" only when at least two are priced.
+            const onlyPrice = treatments.length === 1 ? prices.at(0) : undefined;
             const summary =
-              treatments.length === 1 && prices.length === 1
-                ? `${count}, $${prices[0].toLocaleString("en-US")}`
+              onlyPrice !== undefined
+                ? `${count}, $${onlyPrice.toLocaleString("en-US")}`
                 : prices.length >= 2
                   ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}`
                   : count;
