@@ -56,7 +56,7 @@ export function relatedConcerns(concern: Concern) {
     }))
     .filter((e) => e.shared > 0)
     .sort((a, b) => b.shared - a.shared)
-    .slice(0, 3)
+    .slice(0, 4)
     .map((e) => e.concern);
 }
 

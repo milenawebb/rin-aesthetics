@@ -10,8 +10,10 @@ import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
 import { redirects } from "@/data/redirects";
 import {
+  concernPathSlug,
   downtimeLabel,
   getConcernBySlug,
+  relatedConcerns,
   sessionsLabel,
   servicesFor,
   splitSlug,
@@ -54,6 +56,7 @@ function ConcernPage() {
   const treatments = servicesFor(concern);
   const concernProducts = products.filter((p) => p.concernTags.some((t) => concern.tags.includes(t)));
   const results = getResultCasesByTags(concern.tags);
+  const related = relatedConcerns(concern);
 
   return (
     <PageShell>
@@ -195,6 +198,26 @@ function ConcernPage() {
         </section>
       ) : null}
 
+      {related.length ? (
+        <section className="mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[96px]">
+          <h2 className="label-xs text-walnut">Also look at</h2>
+          <p className="mt-4 font-body text-[15px] font-light leading-[1.8] text-walnut">
+            {related.map((other, i) => (
+              <span key={other.id}>
+                {i > 0 ? ", " : ""}
+                <Link
+                  to="/concerns/$slug"
+                  params={{ slug: concernPathSlug(other) }}
+                  className="underline decoration-greige underline-offset-[4px] transition-colors hover:decoration-champagne"
+                >
+                  {other.h1}
+                </Link>
+              </span>
+            ))}
+          </p>
+        </section>
+      ) : null}
+
       <section className="bg-ink">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-10 px-6 py-[72px] md:flex-row md:items-end md:justify-between md:gap-20 md:px-10 md:py-[96px]">
           <div>
@@ -202,7 +225,7 @@ function ConcernPage() {
               Not sure which of these is right?
             </h2>
             <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
-              Jyl will assess your skin and recommend a plan. The consultation fee goes toward your treatment.
+              Jyl will look at your skin and tell you which of these is worth doing, and which is not. The consultation fee goes toward whatever you book.
             </p>
           </div>
           <a
