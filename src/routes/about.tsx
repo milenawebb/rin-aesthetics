@@ -4,6 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
+import { SectionLabel } from "@/components/site/SectionLabel";
 import j480w from "@/assets/jyl-4x5-480.webp.asset.json";
 import j720w from "@/assets/jyl-4x5-720.webp.asset.json";
 import j960w from "@/assets/jyl-4x5-960.webp.asset.json";
@@ -65,10 +66,10 @@ function AboutPage() {
   return (
     <PageShell>
       <div className="md:max-lg:pb-24">
-      <section className={`${pad} scroll-mt-[104px] md:max-lg:pt-[104px]`}>
+      <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
+        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>About</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full lg:col-span-8">
-            <p className="eyebrow">About</p>
             <MaskedLines
               as="h1"
               lines={["Jyl"]}
@@ -142,7 +143,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={pad}>
+      <section className={`${pad} relative`}>
+        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>Why RIN</SectionLabel></div>
         <div className={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
@@ -166,7 +168,6 @@ function AboutPage() {
             </WipeImage>
           </div>
           <div className="col-span-full lg:col-span-5 lg:col-start-8">
-            <p className="eyebrow text-olive">Why RIN</p>
             <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
             <Reveal>
               <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
@@ -196,10 +197,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`bg-ivory ${pad}`}>
+      <section className={`bg-ivory ${pad} relative`}>
+        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>The space</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full">
-            <p className="eyebrow text-olive">The space</p>
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
               A quiet suite in Charlottesville, built to feel unhurried.
@@ -220,10 +221,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={pad}>
+      <section className={`${pad} relative`}>
+        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>In their words</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full">
-            <p className="eyebrow text-olive">In their words</p>
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
         <div className="col-span-full grid gap-14 lg:grid-cols-2">
