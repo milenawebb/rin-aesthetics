@@ -144,7 +144,7 @@ function ServicePage() {
           <Label>{service.eyebrow ?? service.category}</Label>
           <h1 className="display-tight mt-6 max-w-[28ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
             <span>{service.name}</span>
-            <span className="whitespace-nowrap md:block">in Charlottesville, VA</span>
+            <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
           <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
             {service.tagline ?? service.shortDescription}
