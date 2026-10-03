@@ -50,10 +50,10 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: "Shop",
     links: [
-      { label: "Medical-grade skincare", to: "/treatments" },
+      { label: "Medical-grade skincare", to: "/shop" },
       { label: "Post-treatment kits", to: "/treatments" },
       { label: "Gift cards", to: "/contact" },
-      { label: "All products", to: "/treatments" },
+      { label: "All products", to: "/shop" },
     ],
   },
   {
