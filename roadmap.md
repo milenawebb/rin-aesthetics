@@ -14,4 +14,4 @@
 - [x] Store validated contact submissions in Lovable Cloud
 - [ ] Send each submission to the practice through Resend, blocked until the Resend connection is linked
 - [x] Add visible success and failure states with spam protection
-- [ ] Verify desktop, mobile, persistence, email behavior, and clean build
+- [x] Verify desktop, mobile, persistence, failure behavior, and clean build
