@@ -65,7 +65,7 @@ function ResultsPage() {
         </div>
 
         <div className="mt-14">
-          <GalleryGrid items={items} />
+          <GalleryGrid items={items} expandable />
         </div>
       </main>
     </PageShell>
