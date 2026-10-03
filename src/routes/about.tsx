@@ -168,7 +168,6 @@ function AboutPage() {
             </WipeImage>
           </div>
           <div className="col-span-full lg:col-span-5 lg:col-start-8">
-            <p className="eyebrow text-olive">Why RIN</p>
             <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
             <Reveal>
               <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
@@ -198,10 +197,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={`bg-ivory ${pad}`}>
+      <section className={`bg-ivory ${pad} relative`}>
+        <SectionLabel>The space</SectionLabel>
         <div className={wrap}>
           <div className="col-span-full">
-            <p className="eyebrow text-olive">The space</p>
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
               A quiet suite in Charlottesville, built to feel unhurried.
@@ -222,10 +221,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className={pad}>
+      <section className={`${pad} relative`}>
+        <SectionLabel>In their words</SectionLabel>
         <div className={wrap}>
           <div className="col-span-full">
-            <p className="eyebrow text-olive">In their words</p>
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
         <div className="col-span-full grid gap-14 lg:grid-cols-2">
