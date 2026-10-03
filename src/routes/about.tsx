@@ -78,9 +78,7 @@ function AboutPage() {
               Founder and nurse injector
             </p>
           </div>
-        </SectionLabel>
-        <div className={`${wrap} mt-6 items-start md:mt-8 lg:mt-10`}>
-          <div className="col-span-full md:max-w-[460px] lg:max-w-none lg:sticky lg:top-[120px] lg:col-span-5">
+          <div className="col-span-full mt-6 md:max-w-[460px] md:mt-8 lg:sticky lg:top-[120px] lg:col-span-6 lg:max-w-none lg:mt-10">
             <WipeImage from="bottom">
               <picture className="block overflow-hidden rounded-[2px]">
                 <source
@@ -102,7 +100,7 @@ function AboutPage() {
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-full lg:col-span-6 lg:col-start-7">
+          <div className="col-span-full lg:col-span-5 lg:col-start-8 lg:mt-10">
             <Reveal>
               <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut">
                 Jyl is an accomplished nurse injector with a career spanning over a decade in
@@ -139,7 +137,7 @@ function AboutPage() {
               </p>
             </Reveal>
           </div>
-        </div>
+        </SectionLabel>
       </section>
 
       <section className={`${pad} relative`}>
@@ -259,7 +257,7 @@ function AboutPage() {
       </section>
 
       <section className="pb-12 md:pb-16 lg:pb-[88px]">
-        <div className={wrap}>
+        <SectionLabel contentClassName={wrap}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
@@ -275,10 +273,10 @@ function AboutPage() {
             . We will respond within 72 hours.
           </p>
         </Reveal>
-        </div>
+        </SectionLabel>
       </section>
 
-      <BookingBand padding="px-6 md:px-8 lg:px-16" />
+      <BookingBand padding="px-6 md:px-8 lg:px-16 xl:px-0" />
     </div>
     </PageShell>
   );
