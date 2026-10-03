@@ -61,10 +61,10 @@ function TreatmentsIndex() {
       {groups.map((group) => (
         <section
           key={group.category}
-          className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]"
+          className="pb-[72px] md:pb-[120px]"
         >
-          <SectionLabel>{group.category}</SectionLabel>
-          <div className="mt-6 xl:mt-8" role="table" aria-label={group.category}>
+          <SectionLabel label={group.category} contentClassName="px-6 md:px-10 xl:px-0">
+          <div className="xl:mt-8" role="table" aria-label={group.category}>
             <div
               role="row"
               className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:gap-8"
@@ -115,6 +115,7 @@ function TreatmentsIndex() {
               );
             })}
           </div>
+          </SectionLabel>
         </section>
       ))}
       <BookingBand />

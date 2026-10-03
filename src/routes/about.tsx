@@ -57,7 +57,7 @@ export const Route = createFileRoute("/about")({
 
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
-  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-8 lg:grid-cols-12 lg:px-16 lg:[--content-pad:4rem]";
+  "grid grid-cols-1 gap-x-8 gap-y-6 px-6 md:grid-cols-6 md:gap-y-8 md:px-8 lg:grid-cols-12 lg:gap-y-10 lg:px-16 xl:px-0";
 const pad = "py-12 md:py-16 lg:py-[88px]";
 const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
@@ -67,8 +67,7 @@ function AboutPage() {
     <PageShell>
       <div className="md:max-lg:pb-24">
       <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
-        <div className={`${wrap} relative`}>
-          <SectionLabel>About</SectionLabel>
+        <SectionLabel label="About" contentClassName={wrap}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
@@ -79,7 +78,7 @@ function AboutPage() {
               Founder and nurse injector
             </p>
           </div>
-        </div>
+        </SectionLabel>
         <div className={`${wrap} mt-6 items-start md:mt-8 lg:mt-10`}>
           <div className="col-span-full md:max-w-[460px] lg:max-w-none lg:sticky lg:top-[120px] lg:col-span-5">
             <WipeImage from="bottom">
@@ -144,8 +143,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <div className={`${wrap} relative items-center`}>
-          <SectionLabel>Why RIN</SectionLabel>
+        <SectionLabel label="Why RIN" contentClassName={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -194,12 +192,11 @@ function AboutPage() {
               </div>
             </Reveal>
           </div>
-        </div>
+        </SectionLabel>
       </section>
 
       <section className={`bg-ivory ${pad} relative`}>
-        <div className={`${wrap} relative`}>
-          <SectionLabel>The space</SectionLabel>
+        <SectionLabel label="The space" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
@@ -218,12 +215,11 @@ function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
+        </SectionLabel>
       </section>
 
       <section className={`${pad} relative`}>
-        <div className={`${wrap} relative`}>
-          <SectionLabel>In their words</SectionLabel>
+        <SectionLabel label="In their words" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
@@ -259,7 +255,7 @@ function AboutPage() {
         >
           Read more reviews on Google
         </a>
-        </div>
+        </SectionLabel>
       </section>
 
       <section className="pb-12 md:pb-16 lg:pb-[88px]">

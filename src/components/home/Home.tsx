@@ -97,23 +97,27 @@ export function Home() {
         </div>
       </section>
 
-      <section className={`${container} pt-[96px] pb-[80px] md:pt-[140px] md:pb-[120px]`}>
-        <SectionLabel>{concernsSection.eyebrow}</SectionLabel>
-        <div className={grid}>
-          <MaskedLines
-            lines={concernsSection.headingLines as unknown as string[]}
-            className={`${heading} col-span-12`}
-          />
-          <p className={`${body} col-span-12 mt-6`}>
-            {concernsSection.intro}
-          </p>
-        </div>
-        <ConcernRows />
+      <section>
+        <SectionLabel
+          label={concernsSection.eyebrow}
+          className="pt-[96px] pb-[80px] md:pt-[140px] md:pb-[120px]"
+          contentClassName="px-6 md:px-10 xl:px-0"
+        >
+          <div className={grid}>
+            <MaskedLines
+              lines={concernsSection.headingLines as unknown as string[]}
+              className={`${heading} col-span-12`}
+            />
+            <p className={`${body} col-span-12 mt-6`}>
+              {concernsSection.intro}
+            </p>
+          </div>
+          <ConcernRows />
+        </SectionLabel>
       </section>
 
       <section className="relative pb-[80px] md:pb-[120px]">
-        <div className={container}>
-          <SectionLabel>{resultsSection.eyebrow}</SectionLabel>
+        <SectionLabel label={resultsSection.eyebrow} contentClassName="px-6 md:px-10 xl:px-0">
           <div className={grid}>
             <MaskedLines
               lines={resultsSection.headingLines as unknown as string[]}
@@ -125,7 +129,7 @@ export function Home() {
               </p>
             ) : null}
           </div>
-        </div>
+        </SectionLabel>
         <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
           <ResultsRail cases={featuredResults} />
         </div>
@@ -220,13 +224,17 @@ export function Home() {
         </div>
       </section>
 
-      <section className={`${container} pb-[80px] md:pb-[120px]`}>
-        <SectionLabel>{testimonialsMeta.eyebrow}</SectionLabel>
-        <MaskedLines
-          lines={testimonialsMeta.headingLines as unknown as string[]}
-          className={`${heading}`}
-        />
-        <div className="mt-14 grid grid-cols-1 items-stretch gap-12 md:grid-cols-3">
+      <section>
+        <SectionLabel
+          label={testimonialsMeta.eyebrow}
+          className="pb-[80px] md:pb-[120px]"
+          contentClassName="px-6 md:px-10 xl:px-0"
+        >
+          <MaskedLines
+            lines={testimonialsMeta.headingLines as unknown as string[]}
+            className={`${heading}`}
+          />
+          <div className="mt-14 grid grid-cols-1 items-stretch gap-12 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name} className="flex h-full flex-col border-t border-greige pt-6">
               <div className="flex gap-[2px]" aria-hidden="true">
@@ -252,8 +260,8 @@ export function Home() {
               </figcaption>
             </figure>
           ))}
-        </div>
-        <div className="mt-12 flex w-full flex-col items-center text-center">
+          </div>
+          <div className="mt-12 flex w-full flex-col items-center text-center">
           <p className="font-body text-[13px] font-light text-walnut">Reviews from Google</p>
           <a
             href={GOOGLE_REVIEWS_URL}
@@ -263,7 +271,8 @@ export function Home() {
           >
             Read all reviews on Google
           </a>
-        </div>
+          </div>
+        </SectionLabel>
       </section>
 
       <BookingBand />

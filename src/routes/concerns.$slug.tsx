@@ -106,8 +106,8 @@ function ConcernPage() {
       ) : null}
 
       {treatments.length ? (
-        <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
-          <SectionLabel>Treatments for this</SectionLabel>
+        <section className="pb-[72px] md:pb-[120px]">
+          <SectionLabel label="Treatments for this" contentClassName="px-6 md:px-10 xl:px-0">
           <MaskedLines
             as="h2"
             lines={[treatments.length === 1 ? "The treatment we recommend" : "Compare your options"]}
@@ -165,6 +165,7 @@ function ConcernPage() {
               );
             })}
           </div>
+          </SectionLabel>
         </section>
       ) : null}
 
@@ -178,25 +179,24 @@ function ConcernPage() {
       ) : null}
 
       {results.length ? (
-        <section className="relative mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
-          <div className="mx-auto max-w-[1240px] px-6 md:px-10">
-            <SectionLabel>Results</SectionLabel>
+        <section className="py-[72px] md:py-[120px]">
+          <SectionLabel label="Results" contentClassName="px-6 md:px-10 xl:px-0">
             <MaskedLines as="h2" lines={["Results"]} className={display} />
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
                 {resultsNotice(results)}
               </p>
             ) : null}
-          </div>
-          <div className="mt-12">
-            <GalleryGrid items={results} />
-          </div>
+            <div className="mt-12">
+              <GalleryGrid items={results} />
+            </div>
+          </SectionLabel>
         </section>
       ) : null}
 
       {concern.faqs.length ? (
-        <section className="relative mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
-          <SectionLabel>Questions</SectionLabel>
+        <section className="py-[72px] md:py-[120px]">
+          <SectionLabel label="Questions" contentClassName="px-6 md:px-10 xl:px-0">
           <MaskedLines as="h2" lines={["Questions"]} className={display} />
           <div className="mt-12 border-t border-greige">
             {concern.faqs.map((faq) => (
@@ -214,6 +214,7 @@ function ConcernPage() {
               </details>
             ))}
           </div>
+          </SectionLabel>
         </section>
       ) : null}
 
