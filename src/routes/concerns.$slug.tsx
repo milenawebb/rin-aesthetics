@@ -10,8 +10,10 @@ import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
 import { redirects } from "@/data/redirects";
 import {
+  concernPathSlug,
   downtimeLabel,
   getConcernBySlug,
+  relatedConcerns,
   sessionsLabel,
   servicesFor,
   splitSlug,
