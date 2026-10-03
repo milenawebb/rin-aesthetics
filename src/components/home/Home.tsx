@@ -91,12 +91,6 @@ export function Home() {
             >
               {hero.primaryCta}
             </a>
-            <Link
-              to="/find-your-treatment"
-              className={`${btn} w-full border border-ink px-8 py-[14px] text-ink transition-colors hover:border-champagne hover:text-champagne md:w-auto md:px-6 md:py-4 md:border-greige md:text-ivory lg:px-8 lg:py-4`}
-            >
-              {hero.secondaryCta}
-            </Link>
           </div>
         </div>
       </section>

@@ -21,7 +21,6 @@ export const hero = {
   placeholderLabel: "Hero image",
   headline: "Refined. Intentional. Natural.",
   primaryCta: "Book a consultation",
-  secondaryCta: "Find your treatment",
 } as const;
 
 export const concernsSection = {
