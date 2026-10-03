@@ -19,4 +19,4 @@
 # Launch checklist
 
 - [ ] Change the contact form recipient back from milena221@gmail.com to info@rinaestheticsva.com
-- [ ] Connect Resend and verify the rinaestheticsva.com sending domain so contact form email can be delivered
+- [ ] Connect Resend and verify a sending subdomain (root rinaestheticsva.com already has MX records for hosted mail). The From address in the send code must be on the exact verified domain, including subdomain: a verified send.rinaestheticsva.com cannot send From info@rinaestheticsva.com (403 domain mismatch). Reply-to stays the visitor's address.
