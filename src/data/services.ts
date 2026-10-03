@@ -21,6 +21,7 @@ export interface Service {
   slug: string;
   category: string;
   priceDisplay: string;
+  bookingUrl?: string;
   priceBand: string;
   downtime: Downtime;
   seriesSessions: number;
@@ -639,3 +640,8 @@ export const bookingActions: BookingAction[] = [
     shortDescription: "A complimentary review of your results and next steps, usually four to five weeks after treatment.",
   },
 ];
+
+/** Booking link for a service: its own Vagaro URL when set, otherwise the general booking page. */
+export function serviceBookingUrl(service: { bookingUrl?: string }): string {
+  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : "https://www.vagaro.com/rinaesthetics";
+}
