@@ -99,7 +99,9 @@ function ServicePage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: service.faqs.map((f) => ({
+              mainEntity: service.faqs
+                .filter((f) => !f.answer.startsWith("NEEDS APPROVAL"))
+                .map((f) => ({
                 "@type": "Question",
                 name: f.question,
                 acceptedAnswer: { "@type": "Answer", text: f.answer },
