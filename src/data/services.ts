@@ -18,6 +18,8 @@ export interface Faq {
 export interface Service {
   id: string;
   name: string;
+  /** Used wherever several treatments are listed together. */
+  shortName: string;
   slug: string;
   category: string;
   priceDisplay: string;
@@ -53,6 +55,7 @@ export const services: Service[] = [
   {
     id: "INJ-01",
     name: "Neurotoxin (Daxxify, Dysport, or Xeomin)",
+    shortName: "Neurotoxin",
     slug: "injectables/neurotoxin",
     category: "Injectables",
     priceDisplay: "From $95",
@@ -138,6 +141,7 @@ export const services: Service[] = [
   {
     id: "INJ-02",
     name: "Dermal Fillers",
+    shortName: "Dermal Fillers",
     slug: "injectables/dermal-fillers",
     category: "Injectables",
     priceDisplay: "Price on consultation",
@@ -162,6 +166,7 @@ export const services: Service[] = [
   {
     id: "INJ-03",
     name: "Lip Filler",
+    shortName: "Lip Filler",
     slug: "injectables/lip-filler",
     category: "Injectables",
     priceDisplay: "$800",
@@ -186,6 +191,7 @@ export const services: Service[] = [
   {
     id: "INJ-04",
     name: "Full Facial Balancing",
+    shortName: "Full Facial Balancing",
     slug: "injectables/full-facial-balancing",
     category: "Injectables",
     priceDisplay: "$2,100",
@@ -210,6 +216,7 @@ export const services: Service[] = [
   {
     id: "INJ-05",
     name: "Regenerative Medicine / Biostimulators (Sculptra, Radiesse)",
+    shortName: "Biostimulators",
     slug: "injectables/biostimulators",
     category: "Injectables",
     priceDisplay: "From $750",
@@ -234,6 +241,7 @@ export const services: Service[] = [
   {
     id: "INJ-07",
     name: "Platelet Rich Plasma Hair Restoration",
+    shortName: "PRP Hair Restoration",
     slug: "injectables/prp-hair-restoration",
     category: "Injectables",
     priceDisplay: "From $750",
@@ -258,6 +266,7 @@ export const services: Service[] = [
   {
     id: "INJ-08",
     name: "EZ Gel / PRP",
+    shortName: "EZ Gel and PRP",
     slug: "injectables/ez-gel-prp",
     category: "Injectables",
     priceDisplay: "From $750",
@@ -282,6 +291,7 @@ export const services: Service[] = [
   {
     id: "INJ-09",
     name: "Skin Booster Skinvive",
+    shortName: "Skinvive",
     slug: "injectables/skinvive",
     category: "Injectables",
     priceDisplay: "$600",
@@ -306,6 +316,7 @@ export const services: Service[] = [
   {
     id: "DEV-01",
     name: "Non-ablative Fractional Treatment (Lips)",
+    shortName: "Fractional Treatment for Lips",
     slug: "devices/fractional-lips",
     category: "Device & Laser",
     priceDisplay: "$250",
@@ -330,6 +341,7 @@ export const services: Service[] = [
   {
     id: "DEV-03",
     name: "The Skin Refinery by RIN",
+    shortName: "The Skin Refinery",
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
@@ -483,6 +495,7 @@ export const services: Service[] = [
   {
     id: "DEV-05",
     name: "Candela 1940 & 1550 Fractional Laser",
+    shortName: "Fractional Laser",
     slug: "devices/fractional-laser",
     category: "Device & Laser",
     priceDisplay: "$675",
@@ -507,6 +520,7 @@ export const services: Service[] = [
   {
     id: "DEV-06",
     name: "Candela SWT IPL",
+    shortName: "SWT IPL",
     slug: "devices/ipl",
     category: "Device & Laser",
     priceDisplay: "$250 spot, $450 full face or chest",
@@ -534,6 +548,7 @@ export const services: Service[] = [
   {
     id: "SKN-01",
     name: "VI Peel",
+    shortName: "VI Peel",
     slug: "skin-treatments/vi-peel",
     category: "Skin Treatments",
     priceDisplay: "From $350",
@@ -558,6 +573,7 @@ export const services: Service[] = [
   {
     id: "SKN-02",
     name: "Microneedling",
+    shortName: "Microneedling",
     slug: "skin-treatments/microneedling",
     category: "Skin Treatments",
     priceDisplay: "From $650",
@@ -585,6 +601,7 @@ export const services: Service[] = [
   {
     id: "HYD-01",
     name: "The Refinement Hydrafacial",
+    shortName: "The Refinement",
     slug: "hydrafacials/the-refinement",
     category: "Hydrafacials",
     priceDisplay: "$195",

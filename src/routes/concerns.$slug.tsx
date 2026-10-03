@@ -138,7 +138,7 @@ function ConcernPage() {
                         params={{ category: p.category, slug: p.slug }}
                         className="font-body text-[19px] font-medium leading-[1.35] text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
                       >
-                        {item.name}
+                        {item.shortName}
                       </Link>
                     </div>
                     <p role="cell" className="font-body text-[16px] font-light leading-[1.75] text-walnut">
@@ -154,7 +154,7 @@ function ConcernPage() {
                         href={serviceBookingUrl(item)}
                         target="_blank"
                         rel="noopener"
-                        aria-label={`Book ${item.name}`}
+                        aria-label={`Book ${item.shortName}`}
                         className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
                       >
                         Book

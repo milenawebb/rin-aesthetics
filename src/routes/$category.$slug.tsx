@@ -453,7 +453,7 @@ function ServicePage() {
                     <span className="label-xs text-olive">{item.category}</span>
                     <span className="flex flex-col gap-2 md:flex-row md:items-baseline md:gap-10">
                       <span className="font-body text-[22px] font-extralight leading-[1.25] tracking-[-0.02em] text-ink transition-transform duration-300 group-hover:translate-x-2 md:min-w-[280px]">
-                        {item.name}
+                        {item.shortName}
                       </span>
                       <span className="font-body text-[15px] font-light leading-[1.7] text-walnut">
                         {item.shortDescription}
