@@ -45,9 +45,11 @@ function ResultsPage() {
           <h1 className="display-tight mt-6 font-display text-[34px] font-extralight text-ink md:text-[48px]">
             Before and after
           </h1>
-          <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
-            {resultsNotice(items)}
-          </p>
+          {resultsNotice(items) ? (
+            <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
+              {resultsNotice(items)}
+            </p>
+          ) : null}
         </header>
 
         <div className="mt-12 flex flex-wrap gap-x-2 gap-y-3 border-y border-greige py-5" aria-label="Filter results by concern">

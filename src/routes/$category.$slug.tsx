@@ -378,9 +378,11 @@ function ServicePage() {
         <section className={section}>
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <h2 className={h2}>Results</h2>
-            <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
-              {resultsNotice(results)}
-            </p>
+            {resultsNotice(results) ? (
+              <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
+                {resultsNotice(results)}
+              </p>
+            ) : null}
           </div>
           <div className="mt-12">
             <GalleryGrid items={results} />

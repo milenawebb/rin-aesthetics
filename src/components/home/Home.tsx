@@ -119,9 +119,11 @@ export function Home() {
               lines={resultsSection.headingLines as unknown as string[]}
               className={`${heading} col-span-12`}
             />
-            <p className={`${body} col-span-12 mt-6`}>
-              {resultsNotice(featuredResults)}
-            </p>
+            {resultsNotice(featuredResults) ? (
+              <p className={`${body} col-span-12 mt-6`}>
+                {resultsNotice(featuredResults)}
+              </p>
+            ) : null}
           </div>
         </div>
         <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
