@@ -13,10 +13,12 @@ export function ResultTile({
   item,
   treatmentName,
   mode = "wipe",
+  onOpen,
 }: {
   item: GalleryItem;
   treatmentName: string;
   mode?: "wipe" | "split";
+  onOpen?: () => void;
 }) {
   const [revealed, setRevealed] = useState(false);
   const [forceSplit, setForceSplit] = useState(false);
@@ -50,7 +52,7 @@ export function ResultTile({
   );
 
   if (mode === "split" || forceSplit) {
-    return (
+    const split = (
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-greige">
         <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
           <img src={item.beforeSrc} alt={item.beforeAlt} loading="lazy" className="h-full w-full object-cover" />
@@ -65,13 +67,30 @@ export function ResultTile({
         {dot}
       </div>
     );
+    return onOpen ? (
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`Open larger ${treatmentName} before and after pair`}
+        className="block w-full rounded-[2px] text-left outline-none focus-visible:ring-1 focus-visible:ring-champagne focus-visible:ring-offset-2"
+      >
+        {split}
+      </button>
+    ) : (
+      split
+    );
   }
 
   return (
     <button
       type="button"
-      aria-label={`Show after image for ${treatmentName.toLowerCase()}`}
-      aria-pressed={revealed}
+      aria-label={
+        onOpen
+          ? `Open larger ${treatmentName} before and after pair`
+          : `Show after image for ${treatmentName.toLowerCase()}`
+      }
+      aria-pressed={onOpen ? undefined : revealed}
+      onClick={onOpen}
       onMouseEnter={() => setRevealed(true)}
       onMouseLeave={() => setRevealed(false)}
       onFocus={() => setRevealed(true)}
