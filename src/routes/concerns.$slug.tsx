@@ -1,3 +1,4 @@
+import { serviceBookingUrl } from "@/data/services";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
@@ -110,9 +111,9 @@ function ConcernPage() {
           <div className="mt-12" role="table" aria-label={`Treatments for ${concern.h1}`}>
             <div
               role="row"
-              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)] md:gap-8"
+              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)_minmax(0,0.8fr)] md:gap-8"
             >
-              {["Treatment", "What it does", "Price", "Downtime", "Sessions"].map((h) => (
+              {["Treatment", "What it does", "Price", "Downtime", "Sessions", ""].map((h) => (
                 <span key={h} role="columnheader" className="label-xs text-walnut">
                   {h}
                 </span>
@@ -124,7 +125,7 @@ function ConcernPage() {
                 <Reveal key={item.id} delay={i * 60}>
                   <div
                     role="row"
-                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)] md:items-baseline md:gap-8 md:py-8"
+                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,1.5fr)_minmax(0,0.8fr)] md:items-baseline md:gap-8 md:py-8"
                   >
                     <div role="cell">
                       <Link
@@ -142,6 +143,17 @@ function ConcernPage() {
                       <Fact label="Price" value={item.priceDisplay} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
                       <Fact label="Sessions" value={sessionsLabel(item.seriesSessions)} />
+                    </div>
+                    <div role="cell" className="md:text-right">
+                      <a
+                        href={serviceBookingUrl(item)}
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`Book ${item.name}`}
+                        className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
+                      >
+                        Book
+                      </a>
                     </div>
                   </div>
                 </Reveal>

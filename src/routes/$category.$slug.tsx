@@ -2,7 +2,6 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
-import { BookingBand } from "@/components/site/BookingBand";
 import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
@@ -10,7 +9,7 @@ import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { resultCases } from "@/data/results";
-import { bookingActions } from "@/data/services";
+import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
 import { serviceMedia, technologyMedia } from "@/data/service-media";
@@ -195,10 +194,20 @@ function ServicePage() {
             ))}
           </div>
         ) : null}
-        <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
-          <a href={practice.bookingUrl} target="_blank" rel="noreferrer" className={btnPrimary}>
-            Book a consultation
-          </a>
+        <div className="flex flex-col items-start gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href={serviceBookingUrl(service)} target="_blank" rel="noopener" className={btnPrimary}>
+              Book this treatment
+            </a>
+            <a
+              href={practice.bookingUrl}
+              target="_blank"
+              rel="noopener"
+              className="btn-label inline-flex items-center justify-center rounded-[2px] border border-greige px-8 py-4 text-ink transition-colors hover:border-ink"
+            >
+              Book a consultation
+            </a>
+          </div>
           {firstConcern ? (
             <Link
               to="/concerns/$slug"
@@ -463,7 +472,35 @@ function ServicePage() {
         </section>
       ) : null}
 
-      <BookingBand />
+      <section className="bg-ink">
+        <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[96px]">
+          <h2 className="display-tight max-w-[24ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
+            Book your {service.name}
+          </h2>
+          <p className="mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">{service.priceDisplay}</p>
+          <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
+            <a
+              href={serviceBookingUrl(service)}
+              target="_blank"
+              rel="noopener"
+              className="btn-label inline-flex items-center justify-center rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory"
+            >
+              Book this treatment
+            </a>
+            <a
+              href={practice.bookingUrl}
+              target="_blank"
+              rel="noopener"
+              className="font-body text-[16px] font-light text-greige underline decoration-walnut underline-offset-4 transition-colors hover:text-ivory"
+            >
+              or book a consultation first
+            </a>
+            <a href={practice.phoneHref} className="font-body text-[16px] font-light text-greige transition-colors hover:text-ivory">
+              {practice.phone}
+            </a>
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }
