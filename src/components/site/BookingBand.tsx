@@ -22,7 +22,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
       <div
         className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-12 md:py-14 lg:grid-cols-12 lg:gap-x-8 lg:py-[72px] ${padding}`}
       >
-        <div className="lg:col-span-7 lg:self-center">
+        <div className="lg:col-span-7 lg:self-start">
           <h2 className="display-tight font-display text-[34px] font-extralight text-ink">
             {heading}
           </h2>
@@ -56,21 +56,21 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             </a>
           ) : null}
         </div>
-        <picture className="block self-center lg:col-span-4 lg:col-start-9">
+        <picture className="block self-start lg:col-span-4 lg:col-start-9">
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 300px, 100vw"
+            sizes="(min-width: 1024px) 240px, 100vw"
           />
           <img
             src={jyl960.url}
             srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 300px, 100vw"
+            sizes="(min-width: 1024px) 240px, 100vw"
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={960}
             height={1200}
             loading="lazy"
-            className="mx-auto aspect-[4/5] h-auto w-full max-w-[300px] rounded-[2px] object-cover"
+            className="mx-auto aspect-square h-auto w-full max-w-[240px] rounded-[2px] object-cover object-[50%_20%]"
           />
         </picture>
       </div>
