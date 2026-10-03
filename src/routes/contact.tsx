@@ -208,7 +208,7 @@ function ContactPage() {
               Book now
             </a>
             <p className="mt-5 text-sm font-light text-ink/75">
-              For injectables and any treatment you already know you want.
+              For treatments you already know you want.
             </p>
           </div>
           <div>
