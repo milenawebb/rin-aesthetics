@@ -63,15 +63,76 @@ export const services: Service[] = [
     pairsWith: ["INJ-10", "SB-01"],
     precareId: "PC-INJECT",
     aftercareId: "AC-TOX",
-    shortDescription: "Softens expression lines in the forehead, brows and around the eyes.",
+    shortDescription:
+      "Softens expression lines in the forehead, brows and around the eyes.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+    intro: [
+      "Neurotoxin softens the lines that appear when you move your face: across the forehead, between the brows, and at the outer corners of the eyes. It eases the muscle underneath so the line has a chance to settle rather than deepen with every expression.",
+      "RIN carries Daxxify, Dysport and Xeomin. Which one suits you depends on how fast you want it to start working and how long you want it to last. That is decided at your appointment rather than picked from a menu.",
+    ],
+    helpsWith: [
+      "Horizontal lines across the forehead",
+      "The vertical lines between the brows",
+      "Crow's feet at the outer corners of the eyes",
+      "A brow that sits lower or heavier than it used to",
+      "Dimpling and texture across the chin",
+      "NEEDS APPROVAL: confirm which areas Jyl treats. Masseter, lip flip, bunny lines and underarm sweating are commonly offered and are not listed here because I cannot confirm she does them.",
+    ],
+    whoItsFor: [
+      "Anyone whose lines stay visible after the expression has stopped",
+      "First-time patients who want something that wears off rather than something permanent",
+      "Patients already having filler who want movement softened as well as volume restored",
+      "Anyone wanting to slow a line down before it sets in",
+    ],
+    notFor:
+      "Not during pregnancy or breastfeeding, and not with certain neuromuscular conditions. If a line is fully visible when your face is completely still, neurotoxin alone will not erase it, and Jyl will tell you that rather than treat it and hope.",
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl watches how your face moves, not only how it looks at rest. Where you hold tension decides where the product goes and how much of it you need.",
+      },
+      {
+        title: "The appointment",
+        body: "A series of small injections with a fine needle. Most people describe it as a quick pinch. Plan on about fifteen minutes and go straight back to your day afterwards.",
+      },
+      {
+        title: "The first two weeks",
+        body: "Movement eases gradually rather than all at once. Most people notice a change around day three or four, with the full result at about two weeks.",
+      },
+      {
+        title: "Your follow-up",
+        body: "A complimentary review between weeks two and three. If anything needs adjusting, that is when it gets adjusted, and it is included.",
+      },
+    ],
+    howJylApproaches:
+      "Jyl treats conservatively on a first visit and reviews at two weeks, rather than using more product up front and hoping it lands well. The aim is to soften movement, not remove it. Looking like you have had nothing done is the easier of the two outcomes to achieve, and it is the one she defaults to unless you ask for something stronger.",
+    faqs: [
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Around three to four months for most people, with Daxxify typically lasting longer. How long it lasts depends on the product, the dose and how strongly you use those muscles.",
+      },
+      {
+        question: "Will I look frozen?",
+        answer:
+          "Not at the doses Jyl uses on a first visit. She treats conservatively and reviews at two weeks, which means the result is adjusted upward if you want more rather than waiting out a result that went too far.",
+      },
+      {
+        question: "Does it hurt?",
+        answer:
+          "Most people find it very manageable. The needle is fine and each injection takes a second. There is no numbing required for most areas.",
+      },
+      {
+        question: "What is the difference between Daxxify, Dysport and Xeomin?",
+        answer:
+          "NEEDS APPROVAL: confirm how Jyl explains this. Draft: They are all neurotoxins and they all work the same way. They differ in how quickly they take effect and how long they last. Jyl will recommend one based on what you want and how you have responded to treatment before.",
+      },
+      {
+        question: "What does the price include?",
+        answer:
+          "NEEDS APPROVAL: the catalog says From $95 but does not say what that buys. Confirm whether this is per unit, per area, or a minimum, and whether a typical first treatment costs more. The page must say, or the price misleads.",
+      },
+    ],
   },
   {
     id: "INJ-02",
