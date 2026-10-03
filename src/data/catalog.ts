@@ -28,7 +28,7 @@ export const catalog: CatalogItem[] = [
     name: "The Skin Refinery",
     category: "Device & Laser",
     type: "service",
-    description: "Four technologies in one customised light and laser session.",
+    description: "Four technologies in one customized light and laser session.",
     priceFrom: 900,
     priceDisplay: "$900",
     downtime: "A few days",

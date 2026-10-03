@@ -323,7 +323,7 @@ function ServicePage() {
                     <figure className="mt-7">
                       <img
                         src={variant.placeholderImage}
-                        alt={`${variant.title} in use (low-resolution reference image)`}
+                        alt={`${variant.title} in use`}
                         loading="lazy"
                         className="aspect-[16/9] w-full rounded-[2px] border border-walnut object-cover"
                       />

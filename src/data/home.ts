@@ -61,7 +61,7 @@ export const signature = {
   label: "Signature",
   heading: "The Skin Refinery by RIN",
   headingLines: ["The Skin Refinery", "by RIN"],
-  body: "Four technologies combined into one customised session: SWT IPL, SWT IPL for acne, and 1940nm and 1550nm fractional lasers. Together they address pigmentation, redness, texture, fine lines, acne and scarring. Exclusive to RIN.",
+  body: "Four technologies combined into one customized session: SWT IPL, SWT IPL for acne, and 1940nm and 1550nm fractional lasers. Together they address pigmentation, redness, texture, fine lines, acne and scarring. Exclusive to RIN.",
   price: "$900",
   cta: "Learn more",
 } as const;

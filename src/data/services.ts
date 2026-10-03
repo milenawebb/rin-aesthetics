@@ -9,7 +9,7 @@ export interface ServiceVariant {
   title: string;
   body: string;
   points?: string[];
-  /** Low-resolution reference photograph, rendered as a labelled placeholder. */
+  /** Low-resolution reference photograph, rendered as a labeled placeholder. */
   placeholderImage?: string;
 }
 
@@ -103,12 +103,12 @@ export const services: Service[] = [
       { label: "Acne scarring", slug: "acne-scarring" },
     ],
     intro: [
-      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin \u2014 in one customised session rather than across months of separate appointments.",
+      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin \u2014 in one customized session rather than across months of separate appointments.",
       "Every session is set individually. Which technologies are used, and at what strength, depends on what your skin needs on the day.",
     ],
     promises: [
       {
-        label: "Customised to you",
+        label: "Customized to you",
         body: "Settings chosen for your skin, not a fixed protocol",
       },
       {
@@ -175,7 +175,7 @@ export const services: Service[] = [
         body: "Non-ablative resurfacing that works at the surface.",
         points: [
           "Improves fine lines and texture",
-          "Minimises enlarged pores",
+          "Minimizes enlarged pores",
           "Softens acne scarring",
           "Stimulates collagen and elastin",
         ],
@@ -243,7 +243,7 @@ export const services: Service[] = [
         a: "The platform is designed for a wide range of skin types, and Jyl confirms suitability individually at consultation.",
       },
       {
-        q: "Can it treat acne as well as ageing?",
+        q: "Can it treat acne as well as aging?",
         a: "Yes \u2014 one of the four technologies is tuned specifically for active acne, which is why the session can address both.",
       },
     ],
@@ -314,7 +314,7 @@ export const serviceSummaries: {
     slug: "skin-refinery",
     name: "The Skin Refinery",
     category: "Device & Laser",
-    description: "Four technologies in one customised light and laser session.",
+    description: "Four technologies in one customized light and laser session.",
     priceDisplay: "$900",
   },
   {
