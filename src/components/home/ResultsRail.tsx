@@ -1,8 +1,8 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { BeforeAfterTile } from "@/components/home/BeforeAfterTile";
-import type { ResultCase } from "@/data/results";
+import type { GalleryItem } from "@/data/gallery";
 
-export function ResultsRail({ cases }: { cases: ResultCase[] }) {
+export function ResultsRail({ cases }: { cases: GalleryItem[] }) {
   const railRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const drag = useRef<{ x: number; left: number } | null>(null);
