@@ -1,3 +1,4 @@
+import { resultsNotice } from "@/data/gallery";
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
@@ -45,7 +46,7 @@ function ResultsPage() {
             Before and after
           </h1>
           <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
-            Photographs are unretouched and taken in the same lighting and position. Results vary between people.
+            {resultsNotice(items)}
           </p>
         </header>
 

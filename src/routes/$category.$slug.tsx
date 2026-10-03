@@ -1,3 +1,4 @@
+import { resultsNotice } from "@/data/gallery";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
@@ -378,7 +379,7 @@ function ServicePage() {
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <h2 className={h2}>Results</h2>
             <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
-              Unretouched photography from our own treatment room. Individual results vary.
+              {resultsNotice(results)}
             </p>
           </div>
           <div className="mt-12">
