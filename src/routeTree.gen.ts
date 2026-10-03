@@ -19,6 +19,7 @@ import { Route as CategorySlugRouteImport } from './routes/$category.$slug'
 import { Route as BookSlugRouteImport } from './routes/book.$slug'
 import { Route as ConcernsIndexRouteImport } from './routes/concerns.index'
 import { Route as ConcernsSlugRouteImport } from './routes/concerns.$slug'
+import { Route as PoliciesSlugRouteImport } from './routes/policies.$slug'
 import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
 import { Route as TreatmentsSlugRouteImport } from './routes/treatments.$slug'
 
@@ -72,6 +73,11 @@ const ConcernsSlugRoute = ConcernsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ConcernsRoute,
 } as any)
+const PoliciesSlugRoute = PoliciesSlugRouteImport.update({
+  id: '/policies/$slug',
+  path: '/policies/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TreatmentsIndexRoute = TreatmentsIndexRouteImport.update({
   id: '/treatments/',
   path: '/treatments/',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
+  '/policies/$slug': typeof PoliciesSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/concerns/': typeof ConcernsIndexRoute
   '/treatments/': typeof TreatmentsIndexRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
+  '/policies/$slug': typeof PoliciesSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/concerns': typeof ConcernsIndexRoute
   '/treatments': typeof TreatmentsIndexRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
+  '/policies/$slug': typeof PoliciesSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/concerns/': typeof ConcernsIndexRoute
   '/treatments/': typeof TreatmentsIndexRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
+    | '/policies/$slug'
     | '/treatments/$slug'
     | '/concerns/'
     | '/treatments/'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
+    | '/policies/$slug'
     | '/treatments/$slug'
     | '/concerns'
     | '/treatments'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
+    | '/policies/$slug'
     | '/treatments/$slug'
     | '/concerns/'
     | '/treatments/'
@@ -178,6 +190,7 @@ export interface RootRouteChildren {
   ShopRoute: typeof ShopRoute
   CategorySlugRoute: typeof CategorySlugRoute
   BookSlugRoute: typeof BookSlugRoute
+  PoliciesSlugRoute: typeof PoliciesSlugRoute
   TreatmentsSlugRoute: typeof TreatmentsSlugRoute
   TreatmentsIndexRoute: typeof TreatmentsIndexRoute
 }
@@ -254,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConcernsSlugRouteImport
       parentRoute: typeof ConcernsRoute
     }
+    '/policies/$slug': {
+      id: '/policies/$slug'
+      path: '/policies/$slug'
+      fullPath: '/policies/$slug'
+      preLoaderRoute: typeof PoliciesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/treatments/': {
       id: '/treatments/'
       path: '/treatments'
@@ -294,6 +314,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShopRoute: ShopRoute,
   CategorySlugRoute: CategorySlugRoute,
   BookSlugRoute: BookSlugRoute,
+  PoliciesSlugRoute: PoliciesSlugRoute,
   TreatmentsSlugRoute: TreatmentsSlugRoute,
   TreatmentsIndexRoute: TreatmentsIndexRoute,
 }
