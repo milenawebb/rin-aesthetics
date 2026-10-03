@@ -1,340 +1,444 @@
-import nordlysDevice from "@/assets/nordlys-device.png.asset.json";
-import srTech1 from "@/assets/sr-tech-1.png.asset.json";
-import srTech2 from "@/assets/sr-tech-2.png.asset.json";
-import srTech3 from "@/assets/sr-tech-3.png.asset.json";
-import srTech4 from "@/assets/sr-tech-4.png.asset.json";
+// Generated from rin-catalog-and-quiz.xlsx. Do not hand-edit structure.
+// Content fields left empty are filled in Stage 3. Any section whose field is
+// empty must render nothing at all, never an empty heading or a placeholder.
 
-export interface ServiceVariant {
-  marker: string;
-  title: string;
-  body: string;
-  points?: string[];
-  /** Low-resolution reference photograph, rendered as a labeled placeholder. */
-  placeholderImage?: string;
+export type Downtime = "none" | "minimal" | "days";
+
+export interface ServiceOption {
+  name: string;
+  price: string;
+  note: string;
 }
 
-export interface ServicePromise {
-  label: string;
-  body: string;
-}
-
-export interface ServiceStep {
-  title: string;
-  body: string;
-}
-
-export interface ServiceFaq {
-  q: string;
-  a: string;
-}
-
-export interface ConcernTag {
-  label: string;
-  slug: string;
+export interface Faq {
+  question: string;
+  answer: string;
 }
 
 export interface Service {
   id: string;
-  slug: string;
   name: string;
+  slug: string;
   category: string;
-  isSignature?: boolean;
   priceDisplay: string;
-  downtime: string;
-  sessions: string;
-  followUp?: string;
-  concernTags: ConcernTag[];
-  heroImage?: string;
-  heroImageAlt?: string;
-  eyebrow?: string;
-  headingSuffix?: string;
-  standfirst?: string;
-  promises?: ServicePromise[];
+  priceBand: string;
+  downtime: Downtime;
+  seriesSessions: number;
+  repeatWeeks: number | null;
+  concernTags: string[];
+  pairsWith: string[];
+  precareId: string;
+  aftercareId: string;
+  shortDescription: string;
+  options: ServiceOption[];
+  // Stage 3 content. Empty until written and approved by the provider.
   intro: string[];
   helpsWith: string[];
-  suitableFor: string[];
-  notSuitableNote?: string;
-  variantsLabel?: string;
-  variantsHeading?: string;
-  variantsIntro?: string;
-  variants?: ServiceVariant[];
-  steps: ServiceStep[];
-  preCare: string[];
-  postCare: string[];
-  providerHeading?: string;
-  providerParagraphs?: string[];
-  faqs: ServiceFaq[];
-  relatedServiceIds: string[];
-  relatedProductIds: string[];
-}
-
-export interface Product {
-  id: string;
-  slug: string;
-  name: string;
-  category: string;
-  description: string;
-  priceDisplay?: string;
+  whoItsFor: string[];
+  notFor: string;
+  steps: { title: string; body: string }[];
+  howJylApproaches: string;
+  faqs: Faq[];
 }
 
 export const services: Service[] = [
   {
-    id: "DEV-03",
-    slug: "skin-refinery",
-    name: "The Skin Refinery",
-    headingSuffix: "by RIN",
-    eyebrow: "RIN signature treatment",
-    standfirst: "Tone. Texture. Clarity. Luminosity.",
-    heroImage: nordlysDevice.url,
-    heroImageAlt:
-      "The Candela Nordlys platform used for The Skin Refinery at RIN Aesthetic Practice",
-    category: "Device & Laser",
-    isSignature: true,
-    priceDisplay: "$900",
-    downtime: "A few days",
-    sessions: "Single visit",
-    followUp: "Complimentary",
-    concernTags: [
-      { label: "Uneven tone", slug: "uneven-tone" },
-      { label: "Redness", slug: "redness" },
-      { label: "Texture and pores", slug: "texture-and-pores" },
-      { label: "Lines and wrinkles", slug: "lines-and-wrinkles" },
-      { label: "Acne", slug: "acne" },
-      { label: "Acne scarring", slug: "acne-scarring" },
-    ],
-    intro: [
-      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin in one customized session, rather than across months of separate appointments.",
-      "Every session is set individually. Which technologies are used, and at what strength, depends on what your skin needs on the day.",
-    ],
-    promises: [
-      {
-        label: "Customized to you",
-        body: "Settings chosen for your skin, not a fixed protocol",
-      },
-      {
-        label: "Visible results",
-        body: "Change you can see, documented at your follow-up",
-      },
-      {
-        label: "Minimal downtime",
-        body: "A few quiet days, not a few quiet weeks",
-      },
-      {
-        label: "Broad suitability",
-        body: "Safe across a wide range of skin types",
-      },
-    ],
-    helpsWith: [
-      "Uneven tone, sun spots and pigmentation",
-      "Persistent redness and rosacea",
-      "Rough texture and enlarged pores",
-      "Fine lines and deeper wrinkles",
-      "Active breakouts and oil control",
-      "Acne scarring at the surface and below it",
-    ],
-    suitableFor: [
-      "Anyone who wants several concerns addressed in one visit",
-      "Skin that has stopped responding to skincare alone",
-      "Patients planning four to five weeks before an event",
-      "A wide range of skin types, confirmed individually at consultation",
-    ],
-    notSuitableNote:
-      "Recent sun exposure, a very active breakout or travel within three weeks are all reasons to wait. Jyl will say so at consultation, and waiting produces a better result.",
-    variantsLabel: "What's in it",
-    variantsHeading: "Four technologies. One session.",
-    variantsIntro:
-      "Each does something the others can't. Combining them is what separates this from a standard photofacial.",
-    variants: [
-      {
-        marker: "SWT",
-        title: "SWT IPL Photofacial",
-        body: "Broadband light targeting the visible signs of sun exposure and time.",
-        points: [
-          "Evens skin tone",
-          "Reduces redness and rosacea",
-          "Improves pigmentation",
-          "Stimulates collagen",
-        ],
-        placeholderImage: srTech1.url,
-      },
-      {
-        marker: "SWT",
-        title: "SWT IPL for Acne",
-        body: "The same light technology tuned to acne-causing bacteria and inflammation.",
-        points: [
-          "Reduces active breakouts",
-          "Calms inflammation",
-          "Helps control oil",
-          "Discourages future breakouts",
-        ],
-        placeholderImage: srTech2.url,
-      },
-      {
-        marker: "1940nm",
-        title: "Fractional Laser",
-        body: "Non-ablative resurfacing that works at the surface.",
-        points: [
-          "Improves fine lines and texture",
-          "Minimizes enlarged pores",
-          "Softens acne scarring",
-          "Stimulates collagen and elastin",
-        ],
-        placeholderImage: srTech3.url,
-      },
-      {
-        marker: "1550nm",
-        title: "Fractional Laser",
-        body: "Deeper fractional energy that remodels and tightens.",
-        points: [
-          "Improves deeper wrinkles",
-          "Tightens lax skin",
-          "Reduces deeper acne scars",
-          "Enhances tone and firmness",
-        ],
-        placeholderImage: srTech4.url,
-      },
-    ],
-    steps: [
-      {
-        title: "Consultation",
-        body: "Jyl assesses your skin and confirms this is the right treatment, or that something gentler should come first.",
-      },
-      {
-        title: "The week before",
-        body: "Preparation instructions arrive by email. Following them is what makes the session safe and effective.",
-      },
-      {
-        title: "The session",
-        body: "Skin is cleansed and numbed, then each technology is applied in sequence at settings chosen for you.",
-      },
-      {
-        title: "Afterwards",
-        body: "Aftercare arrives the same day, with follow-up guidance across the first week. Your complimentary review is booked for four to five weeks later.",
-      },
-    ],
-    preCare: [
-      "Avoid sun exposure, tanning beds and self-tanner",
-      "Stop retinol and retinoids",
-      "Stop exfoliating acids and chemical peels",
-      "Wear SPF daily",
-      "Arrive with clean skin, free of makeup or lotions",
-    ],
-    postCare: [],
-    providerHeading: "Conservative settings, honest expectations",
-    providerParagraphs: [
-      "Jyl will tell you plainly if your skin isn't ready. Recent sun, active breakouts, or a holiday in three weeks are all reasons to wait. Waiting produces a better result than pushing ahead.",
-      "She treats this as one thorough session rather than a package sold in threes. Most people need one, reviewed at five weeks, and only then a decision about whether a second would add anything.",
-    ],
-    faqs: [
-      {
-        q: "How much downtime should I plan for?",
-        a: "A few days of redness and a sandpaper-like texture as the skin sheds. Most people are comfortable in public by day three.",
-      },
-      {
-        q: "How is this different from a standard IPL photofacial?",
-        a: "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen. IPL cannot address those.",
-      },
-      {
-        q: "Will one session be enough?",
-        a: "Often, yes. Your complimentary follow-up is where that gets assessed properly.",
-      },
-      {
-        q: "Is it suitable for darker skin tones?",
-        a: "The platform is designed for a wide range of skin types, and Jyl confirms suitability individually at consultation.",
-      },
-      {
-        q: "Can it treat acne as well as aging?",
-        a: "Yes. One of the technologies is tuned specifically for active acne, which is why the session can address both.",
-      },
-    ],
-    relatedServiceIds: ["DEV-06", "DEV-05"],
-    relatedProductIds: ["SB-08", "SB-04"],
-  },
-];
-
-export const products: Product[] = [
-  {
-    id: "SB-08",
-    slug: "sunbetter-sheer-spf-70",
-    name: "sunbetter SHEER SPF 70",
-    category: "Daily care",
-    description: "Sheer mineral protection worn every day after light and laser work.",
-  },
-  {
-    id: "SB-04",
-    slug: "alto-advanced-defense-and-repair-serum",
-    name: "Alto Advanced Defense and Repair Serum",
-    category: "Daily care",
-    description: "Antioxidant serum used to support and hold the result between sessions.",
-  },
-  {
-    id: "PRD-01",
-    slug: "barrier-repair-balm",
-    name: "Barrier Repair Balm",
-    category: "Aftercare",
-    description: "The occlusive balm we send home after every device treatment.",
-    priceDisplay: "$48",
-  },
-  {
-    id: "PRD-02",
-    slug: "mineral-spf-50",
-    name: "Mineral SPF 50",
-    category: "Daily care",
-    description: "Tinted zinc sunscreen that sits well over healing skin.",
-    priceDisplay: "$62",
-  },
-];
-
-export const serviceSummaries: {
-  id: string;
-  slug: string;
-  name: string;
-  category: string;
-  description: string;
-  priceDisplay: string;
-}[] = [
-  {
-    id: "DEV-01",
-    slug: "nordlys-ipl",
-    name: "Nordlys IPL",
-    category: "Device & Laser",
-    description: "Targeted light for sun damage, pigment and diffuse redness.",
-    priceDisplay: "From $350",
+    id: "INJ-01",
+    name: "Neurotoxin (Daxxify, Dysport, or Xeomin)",
+    slug: "injectables/neurotoxin",
+    category: "Injectables",
+    priceDisplay: "From $95",
+    priceBand: "low",
+    downtime: "none",
+    seriesSessions: 1,
+    repeatWeeks: 16,
+    concernTags: ["fine_lines"],
+    pairsWith: ["INJ-10", "SB-01"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-TOX",
+    shortDescription: "Softens expression lines in the forehead, brows and around the eyes.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
   },
   {
     id: "INJ-02",
-    slug: "neuromodulator",
-    name: "Neuromodulator",
+    name: "Dermal Fillers",
+    slug: "injectables/dermal-fillers",
     category: "Injectables",
-    description: "Softening expression lines while keeping movement natural.",
-    priceDisplay: "From $14 per unit",
+    priceDisplay: "Price on consultation",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 1,
+    repeatWeeks: 48,
+    concernTags: ["volume_loss", "contour"],
+    pairsWith: ["INJ-01"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-FILLER",
+    shortDescription: "Restores lost volume and smooths lines using hyaluronic acid filler.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-03",
+    name: "Lip Filler",
+    slug: "injectables/lip-filler",
+    category: "Injectables",
+    priceDisplay: "$800",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 1,
+    repeatWeeks: 36,
+    concernTags: ["lips", "volume_loss"],
+    pairsWith: ["HY-09"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-FILLER",
+    shortDescription: "Adds volume and definition to the lips, tailored to how much change you want.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-04",
+    name: "Full Facial Balancing",
+    slug: "injectables/full-facial-balancing",
+    category: "Injectables",
+    priceDisplay: "$2,100",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 1,
+    repeatWeeks: 52,
+    concernTags: ["volume_loss", "contour", "laxity"],
+    pairsWith: ["INJ-01"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-FILLER",
+    shortDescription: "Three to four syringes used across the face to harmonise proportions rather than treat one area.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-05",
+    name: "Regenerative Medicine / Biostimulators (Sculptra, Radiesse)",
+    slug: "injectables/biostimulators",
+    category: "Injectables",
+    priceDisplay: "From $750",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 3,
+    repeatWeeks: 26,
+    concernTags: ["laxity", "volume_loss", "fine_lines"],
+    pairsWith: ["INJ-02"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-BIOSTIM",
+    shortDescription: "Stimulates your own collagen gradually over a series, for subtle long-lasting change.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-07",
+    name: "Platelet Rich Plasma Hair Restoration",
+    slug: "injectables/prp-hair-restoration",
+    category: "Injectables",
+    priceDisplay: "From $750",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 3,
+    repeatWeeks: 26,
+    concernTags: ["hair_loss"],
+    pairsWith: [],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-PRP",
+    shortDescription: "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-08",
+    name: "EZ Gel / PRP",
+    slug: "injectables/ez-gel-prp",
+    category: "Injectables",
+    priceDisplay: "From $750",
+    priceBand: "high",
+    downtime: "minimal",
+    seriesSessions: 2,
+    repeatWeeks: 6,
+    concernTags: ["volume_loss", "texture", "eye_area", "laxity"],
+    pairsWith: ["INJ-05"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-PRP",
+    shortDescription: "A filler-like volumiser made from your own blood, used under the eyes, cheeks, lips and laugh lines.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "INJ-09",
+    name: "Skin Booster Skinvive",
+    slug: "injectables/skinvive",
+    category: "Injectables",
+    priceDisplay: "$600",
+    priceBand: "mid",
+    downtime: "none",
+    seriesSessions: 1,
+    repeatWeeks: 26,
+    concernTags: ["hydration", "texture", "dryness", "fine_lines"],
+    pairsWith: ["HY-01"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-FILLER",
+    shortDescription: "Micro-droplet hydration that improves smoothness and glow rather than adding volume.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "DEV-01",
+    name: "Non-ablative Fractional Treatment (Lips)",
+    slug: "devices/fractional-lips",
+    category: "Device & Laser",
+    priceDisplay: "$250",
+    priceBand: "low",
+    downtime: "minimal",
+    seriesSessions: 1,
+    repeatWeeks: 26,
+    concernTags: ["lips", "fine_lines", "texture"],
+    pairsWith: ["INJ-03"],
+    precareId: "PC-LASER",
+    aftercareId: "AC-LASER",
+    shortDescription: "Refreshes the lip area and smooths lip lines without adding volume.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
   },
   {
     id: "DEV-03",
-    slug: "skin-refinery",
-    name: "The Skin Refinery",
+    name: "The Skin Refinery by RIN",
+    slug: "devices/skin-refinery",
     category: "Device & Laser",
-    description: "Four technologies in one customized light and laser session.",
     priceDisplay: "$900",
+    priceBand: "high",
+    downtime: "days",
+    seriesSessions: 1,
+    repeatWeeks: 26,
+    concernTags: ["pigment", "redness", "texture", "fine_lines", "acne", "scarring"],
+    pairsWith: ["DEV-04"],
+    precareId: "PC-LASER",
+    aftercareId: "AC-RESURFACE",
+    shortDescription: "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
   },
   {
     id: "DEV-05",
-    slug: "candela-fractional-laser",
     name: "Candela 1940 & 1550 Fractional Laser",
+    slug: "devices/fractional-laser",
     category: "Device & Laser",
-    description: "Fractional resurfacing for texture, scarring and established lines.",
     priceDisplay: "$675",
+    priceBand: "mid",
+    downtime: "days",
+    seriesSessions: 1,
+    repeatWeeks: 26,
+    concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring"],
+    pairsWith: ["DEV-04"],
+    precareId: "PC-LASER",
+    aftercareId: "AC-RESURFACE",
+    shortDescription: "Two fractional wavelengths working at different depths to renew skin from the inside out.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
   },
   {
     id: "DEV-06",
-    slug: "candela-swt-ipl-photofacial",
-    name: "Candela SWT IPL Photofacial",
+    name: "Candela SWT IPL",
+    slug: "devices/ipl",
     category: "Device & Laser",
-    description: "Selective light for sun damage, pigment and diffuse redness.",
-    priceDisplay: "$450",
+    priceDisplay: "$250 spot, $450 full face or chest",
+    priceBand: "mid",
+    downtime: "minimal",
+    seriesSessions: 1,
+    repeatWeeks: 26,
+    concernTags: ["sun_damage", "pigment", "redness", "texture"],
+    pairsWith: ["DEV-04"],
+    precareId: "PC-LASER",
+    aftercareId: "AC-LASER",
+    shortDescription: "Evens tone by targeting sun damage, redness and broken capillaries. Treat a few spots or the whole face or chest.",
+    options: [
+      { name: "Spot treatment", price: "$250", note: "A few specific spots rather than the whole area." },
+      { name: "Full face or chest", price: "$450", note: "Even tone across the whole area in one session." },
+    ],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "SKN-01",
+    name: "VI Peel",
+    slug: "skin-treatments/vi-peel",
+    category: "Skin Treatments",
+    priceDisplay: "From $350",
+    priceBand: "mid",
+    downtime: "days",
+    seriesSessions: 3,
+    repeatWeeks: 8,
+    concernTags: ["pigment", "texture", "acne", "scarring", "sun_damage"],
+    pairsWith: ["SB-08"],
+    precareId: "PC-PEEL",
+    aftercareId: "AC-PEEL",
+    shortDescription: "A medical-grade peel suitable for all skin types. Includes a post-care kit to take home.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "SKN-02",
+    name: "Microneedling",
+    slug: "skin-treatments/microneedling",
+    category: "Skin Treatments",
+    priceDisplay: "From $650",
+    priceBand: "mid",
+    downtime: "minimal",
+    seriesSessions: 3,
+    repeatWeeks: 6,
+    concernTags: ["texture", "scarring", "pores", "fine_lines", "laxity"],
+    pairsWith: ["HY-05"],
+    precareId: "PC-MICRO",
+    aftercareId: "AC-RESURFACE",
+    shortDescription: "Controlled micro-injury that triggers your own repair response, paired with exosomes, PRP or a biphasic peel.",
+    options: [
+      { name: "With exosomes or PRP", price: "$675", note: "Growth factors applied straight after needling to amplify the repair response." },
+      { name: "With biphasic peel", price: "$650", note: "A peel layered with the needling for renewal plus radiance." },
+    ],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+  {
+    id: "HYD-01",
+    name: "The Refinement Hydrafacial",
+    slug: "hydrafacials/the-refinement",
+    category: "Hydrafacials",
+    priceDisplay: "$195",
+    priceBand: "low",
+    downtime: "none",
+    seriesSessions: 1,
+    repeatWeeks: 4,
+    concernTags: ["hydration", "texture", "pores", "dryness"],
+    pairsWith: ["HY-01"],
+    precareId: "",
+    aftercareId: "AC-FACIAL",
+    shortDescription: "A 50-minute treatment covering analysis, cleanse, exfoliation, extractions, LED, boosters and SPF.",
+    options: [],
+    intro: [],
+    helpsWith: [],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
   },
 ];
 
-export function getService(slug: string) {
-  return services.find((s) => s.slug === slug);
+export interface BookingAction {
+  id: string;
+  name: string;
+  slug: string;
+  priceDisplay: string;
+  shortDescription: string;
 }
+
+// Not pages. These are booking links and reminder triggers only.
+export const bookingActions: BookingAction[] = [
+  {
+    id: "INJ-06",
+    name: "Consultation",
+    slug: "book/consultation",
+    priceDisplay: "$100",
+    shortDescription: "A full assessment with the provider. The fee goes toward your completed service.",
+  },
+  {
+    id: "INJ-10",
+    name: "Follow Up",
+    slug: "book/follow-up",
+    priceDisplay: "Free",
+    shortDescription: "A complimentary touch-up after your initial tox, usually between weeks two and three.",
+  },
+  {
+    id: "DEV-04",
+    name: "Device Follow Up",
+    slug: "book/device-follow-up",
+    priceDisplay: "Free",
+    shortDescription: "A complimentary review of your results and next steps, usually four to five weeks after treatment.",
+  },
+];
