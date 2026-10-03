@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { createFileRoute, useServerFn } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { PageShell } from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -89,11 +90,11 @@ function ContactForm() {
 
     if (!parsed.success) {
       const fields = parsed.error.flatten().fieldErrors;
-      setErrors({
-        name: fields.name?.[0],
-        email: fields.email?.[0],
-        message: fields.message?.[0],
-      });
+      const nextErrors: Partial<Record<keyof ContactFormInput, string>> = {};
+      if (fields.name?.[0]) nextErrors.name = fields.name[0];
+      if (fields.email?.[0]) nextErrors.email = fields.email[0];
+      if (fields.message?.[0]) nextErrors.message = fields.message[0];
+      setErrors(nextErrors);
       return;
     }
 

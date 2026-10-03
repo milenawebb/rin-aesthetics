@@ -9,9 +9,9 @@
 
 # Contact page roadmap
 
-- [ ] Add Follow as the fourth contact route
-- [ ] Replace the storefront image and preserve its full frame
-- [ ] Store validated contact submissions in Lovable Cloud
-- [ ] Send each submission to the practice through Resend
-- [ ] Add visible success and failure states with spam protection
+- [x] Add Follow as the fourth contact route
+- [x] Replace the storefront image and preserve its full frame
+- [x] Store validated contact submissions in Lovable Cloud
+- [ ] Send each submission to the practice through Resend, blocked until the Resend connection is linked
+- [x] Add visible success and failure states with spam protection
 - [ ] Verify desktop, mobile, persistence, email behavior, and clean build
