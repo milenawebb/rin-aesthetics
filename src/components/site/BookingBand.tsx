@@ -20,7 +20,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
   return (
     <section className="border-t border-greige bg-ivory">
       <div
-        className={`mx-auto grid max-w-[1240px] grid-cols-1 items-start gap-y-8 pb-[144px] pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-12 md:px-10 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px] ${padding}`}
+        className={`mx-auto grid max-w-[1240px] grid-cols-1 items-start gap-y-8 pb-[144px] pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-8 md:px-10 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px] ${padding}`}
       >
         <div className="min-w-0 lg:col-span-7">
           <h2 className="display-tight font-display text-[34px] font-extralight text-ink">
