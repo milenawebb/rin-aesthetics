@@ -26,7 +26,7 @@ export const Route = createFileRoute("/concerns/$slug")({
   head: ({ params }) => {
     const concern = getConcern(params.slug);
     if (!concern) {
-      return { meta: [{ title: "Concern not found — RIN Aesthetic Practice" }] };
+      return { meta: [{ title: "Concern not found | RIN Aesthetic Practice" }] };
     }
     const title = `${concern.label} treatment in Charlottesville, VA | RIN Aesthetic Practice`;
     const description = firstSentence(concern.intro[0] ?? concern.label);

@@ -32,14 +32,14 @@ export function BeforeAfterTile({ item }: { item: ResultCase }) {
           <>
             <img
               src={item.beforeSrc}
-              alt={`${item.alt} — before`}
+              alt={`${item.alt}, before`}
               className="absolute inset-0 h-full w-full object-cover"
               style={{ clipPath: "inset(0 50% 0 0)" }}
               loading="lazy"
             />
             <img
               src={item.afterSrc}
-              alt={`${item.alt} — after`}
+              alt={`${item.alt}, after`}
               className="absolute inset-0 h-full w-full object-cover"
               style={{ clipPath: "inset(0 0 0 50%)" }}
               loading="lazy"
@@ -53,13 +53,13 @@ export function BeforeAfterTile({ item }: { item: ResultCase }) {
           <>
             <img
               src={item.beforeSrc}
-              alt={`${item.alt} — before`}
+              alt={`${item.alt}, before`}
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
             <img
               src={item.afterSrc}
-              alt={`${item.alt} — after`}
+              alt={`${item.alt}, after`}
               className="absolute inset-0 h-full w-full object-cover"
               style={{
                 clipPath: revealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",

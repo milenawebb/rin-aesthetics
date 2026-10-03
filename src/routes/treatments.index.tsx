@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PlaceholderPage } from "@/components/site/PageShell";
 
-const title = "Treatments — RIN Aesthetic Practice";
+const title = "Treatments | RIN Aesthetic Practice";
 const description =
   "Injectables, laser and light, and skin health treatments at RIN Aesthetic Practice in Charlottesville, Virginia.";
 

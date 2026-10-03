@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Home } from "@/components/home/Home";
 
-const title = "RIN Aesthetic Practice — Refined. Intentional. Natural.";
+const title = "RIN Aesthetic Practice | Refined. Intentional. Natural.";
 const description =
   "Medical aesthetics in Charlottesville, Virginia. Injectables, laser and skin health, delivered with restraint and a natural result.";
 
