@@ -20,9 +20,9 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
   return (
     <section className="border-t border-greige bg-ivory">
       <div
-        className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-12 md:py-14 lg:grid-cols-12 lg:gap-x-8 lg:py-[72px] ${padding}`}
+        className={`mx-auto grid max-w-[1240px] grid-cols-1 items-start gap-y-8 pb-[144px] pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-8 md:px-10 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px] ${padding}`}
       >
-        <div className="lg:col-span-7 lg:self-start">
+        <div className="min-w-0 lg:col-span-7">
           <h2 className="display-tight font-display text-[34px] font-extralight text-ink">
             {heading}
           </h2>
@@ -56,21 +56,21 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             </a>
           ) : null}
         </div>
-        <picture className="block self-start lg:col-span-4 lg:col-start-9">
+        <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 240px, 100vw"
+            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
           />
           <img
             src={jyl960.url}
             srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 240px, 100vw"
+            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={960}
             height={1200}
             loading="lazy"
-            className="mx-auto aspect-square h-auto w-full max-w-[240px] rounded-[2px] object-cover object-[50%_20%]"
+            className="block aspect-square h-auto w-full max-w-[200px] rounded-[2px] object-cover object-[50%_20%] md:max-w-[220px] lg:max-w-[240px]"
           />
         </picture>
       </div>
