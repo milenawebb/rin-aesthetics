@@ -59,10 +59,11 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: "Policies",
     links: [
-      { label: "Cancellation", to: "/contact" },
-      { label: "Privacy", to: "/contact" },
-      { label: "Accessibility", to: "/contact" },
-      { label: "Terms", to: "/contact" },
+      { label: "Service policies", to: "/policies/service-policies" },
+      { label: "Privacy", to: "/policies/privacy" },
+      { label: "Cookies", to: "/policies/cookies" },
+      { label: "Terms", to: "/policies/terms" },
+      { label: "Medical records", to: "/policies/medical-records" },
     ],
   },
 ];
