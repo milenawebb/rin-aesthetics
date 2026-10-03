@@ -56,21 +56,21 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             </a>
           ) : null}
         </div>
-        <picture className="block lg:col-span-4 lg:col-start-9">
+        <picture className="block self-center lg:col-span-4 lg:col-start-9">
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 380px, 100vw"
+            sizes="(min-width: 1024px) 300px, 100vw"
           />
           <img
             src={jyl960.url}
             srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 380px, 100vw"
+            sizes="(min-width: 1024px) 300px, 100vw"
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={960}
             height={1200}
             loading="lazy"
-            className="aspect-[4/5] h-auto w-full rounded-[2px] object-cover"
+            className="mx-auto aspect-[4/5] h-auto w-full max-w-[300px] rounded-[2px] object-cover"
           />
         </picture>
       </div>
