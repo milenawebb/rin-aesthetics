@@ -46,7 +46,7 @@ function ConcernsIndex() {
             const more = treatments.length > 4;
             const prices = treatments.map((s) => priceValue(s.priceDisplay)).filter(Number.isFinite);
             const count = `${treatments.length} ${treatments.length === 1 ? "treatment" : "treatments"}`;
-            const summary = prices.length ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}` : count;
+            const summary = prices.length >= 2 ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}` : count;
             // Reserved for a single 88px square result image per concern, once real photos exist.
             const thumbnail: React.ReactNode = null;
             return (
