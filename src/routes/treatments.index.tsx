@@ -4,7 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
-import { services } from "@/data/services";
+import { services, serviceBookingUrl } from "@/data/services";
 import { downtimeLabel, priceValue, splitSlug } from "@/data/lookup";
 
 const title = "Treatments | RIN Aesthetic Practice";
@@ -67,9 +67,9 @@ function TreatmentsIndex() {
           <div className="mt-8" role="table" aria-label={group.category}>
             <div
               role="row"
-              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)] md:gap-8"
+              className="hidden border-b border-greige pb-4 md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:gap-8"
             >
-              {["Treatment", "What it does", "Price", "Downtime"].map((h) => (
+              {["Treatment", "What it does", "Price", "Downtime", ""].map((h) => (
                 <span key={h} role="columnheader" className="label-xs text-walnut">
                   {h}
                 </span>
@@ -81,7 +81,7 @@ function TreatmentsIndex() {
                 <Reveal key={item.id} delay={i * 60}>
                   <div
                     role="row"
-                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)] md:items-baseline md:gap-8 md:py-8"
+                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:items-baseline md:gap-8 md:py-8"
                   >
                     <div role="cell">
                       <Link
@@ -98,6 +98,17 @@ function TreatmentsIndex() {
                     <div className="mt-2 grid grid-cols-2 gap-4 md:contents">
                       <Fact label="Price" value={item.priceDisplay} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
+                    </div>
+                    <div role="cell" className="md:text-right">
+                      <a
+                        href={serviceBookingUrl(item)}
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`Book ${item.name}`}
+                        className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
+                      >
+                        Book
+                      </a>
                     </div>
                   </div>
                 </Reveal>
