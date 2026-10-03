@@ -20,16 +20,16 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
   return (
     <section className="border-t border-greige bg-ivory">
       <div
-        className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-[72px] md:py-[96px] lg:grid-cols-12 lg:gap-x-8 ${padding}`}
+        className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-12 md:py-14 lg:grid-cols-12 lg:gap-x-8 lg:py-[72px] ${padding}`}
       >
         <div className="lg:col-span-7 lg:self-center">
-          <h2 className="display-tight font-display text-[30px] font-extralight text-ink md:text-[38px]">
+          <h2 className="display-tight font-display text-[34px] font-extralight text-ink">
             {heading}
           </h2>
           {line ? (
-            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
+            <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
-          <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-6">
+          <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
             <a
               href={treatment ? treatment.bookingUrl : practice.bookingUrl}
               target="_blank"
@@ -56,21 +56,21 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
             </a>
           ) : null}
         </div>
-        <picture className="block lg:col-span-4 lg:col-start-9">
+        <picture className="block self-center lg:col-span-4 lg:col-start-9">
           <source
             type="image/webp"
             srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 380px, 100vw"
+            sizes="(min-width: 1024px) 300px, 100vw"
           />
           <img
             src={jyl960.url}
             srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 380px, 100vw"
+            sizes="(min-width: 1024px) 300px, 100vw"
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={960}
             height={1200}
             loading="lazy"
-            className="aspect-[4/5] h-auto w-full rounded-[2px] object-cover"
+            className="mx-auto aspect-[4/5] h-auto w-full max-w-[300px] rounded-[2px] object-cover"
           />
         </picture>
       </div>
