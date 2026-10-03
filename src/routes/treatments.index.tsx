@@ -13,6 +13,13 @@ const description =
 
 const categoryOrder = ["Injectables", "Device & Laser", "Skin Treatments", "Hydrafacials"];
 
+const categoryIds: Record<string, string> = {
+  Injectables: "injectables",
+  "Device & Laser": "device-and-laser",
+  "Skin Treatments": "skin-treatments",
+  Hydrafacials: "hydrafacials",
+};
+
 export const Route = createFileRoute("/treatments/")({
   head: () => ({
     meta: [
@@ -61,7 +68,8 @@ function TreatmentsIndex() {
       {groups.map((group) => (
         <section
           key={group.category}
-          className="pb-[72px] md:pb-[120px]"
+          id={categoryIds[group.category]}
+          className="scroll-mt-20 pb-[72px] md:pb-[120px]"
         >
           <SectionLabel label={group.category} contentClassName="px-6 md:px-10 xl:px-0">
           <div className="xl:mt-8" role="table" aria-label={group.category}>
