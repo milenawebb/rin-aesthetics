@@ -203,7 +203,7 @@ function ContactPage() {
               href={practice.bookingUrl}
               target="_blank"
               rel="noopener"
-              className="mt-5 inline-flex rounded-[2px] bg-ink px-6 py-3 text-sm tracking-wide text-ivory transition-colors duration-300 hover:bg-walnut"
+              className="btn-label mt-5 inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory shadow-none transition-colors hover:bg-walnut"
             >
               Book now
             </a>
