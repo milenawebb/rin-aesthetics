@@ -6,7 +6,7 @@ import { BookingBand } from "@/components/site/BookingBand";
 import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
-import { serviceMedia } from "@/data/service-media";
+import { serviceMedia, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
   concernsForService,
@@ -99,7 +99,9 @@ function ServicePage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: service.faqs.map((f) => ({
+              mainEntity: service.faqs
+                .filter((f) => !f.answer.startsWith("NEEDS APPROVAL"))
+                .map((f) => ({
                 "@type": "Question",
                 name: f.question,
                 acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -112,12 +114,12 @@ function ServicePage() {
       <section className="bg-ivory">
         <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-6 py-[56px] md:grid-cols-12 md:gap-16 md:px-10 md:py-[96px]">
           <div className={media ? "md:col-span-7" : "md:col-span-9"}>
-            <Label>{service.category}</Label>
+            <Label>{service.eyebrow ?? service.category}</Label>
             <h1 className="display-tight mt-6 max-w-[18ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
               {service.name}
             </h1>
             <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
-              {service.shortDescription}
+              {service.tagline ?? service.shortDescription}
             </p>
             {service.intro.length ? (
               <div className="measure mt-8 space-y-6">
@@ -178,6 +180,24 @@ function ServicePage() {
         </dl>
       </section>
 
+      {service.promises && service.promises.length ? (
+        <section className={section}>
+          <div className="grid border-t border-greige md:grid-cols-4">
+            {service.promises.map((promise) => (
+              <div
+                key={promise.label}
+                className="border-b border-greige py-7 md:border-b-0 md:border-r md:px-8 md:pb-0 md:pt-8 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+              >
+                <p className="label-xs text-ink">{promise.label}</p>
+                <p className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">
+                  {promise.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {service.options.length ? (
         <section className={section}>
           <h2 className={h2}>Options</h2>
@@ -226,6 +246,62 @@ function ServicePage() {
         </section>
       ) : null}
 
+      {service.technologies && service.technologies.length ? (
+        <section className="mb-[72px] bg-ink md:mb-[120px]">
+          <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
+            <Label>What's in it</Label>
+            {service.technologiesHeading ? (
+              <h2 className="display-tight mt-6 font-display text-[28px] font-extralight text-ivory md:text-[34px]">
+                {service.technologiesHeading}
+              </h2>
+            ) : null}
+            {service.technologiesIntro ? (
+              <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-greige">
+                {service.technologiesIntro}
+              </p>
+            ) : null}
+            <div className="mt-14 grid border-t border-walnut md:grid-cols-2 lg:grid-cols-4">
+              {service.technologies.map((tech, i) => {
+                const image = technologyMedia[service.id]?.[i];
+                return (
+                  <div
+                    key={`${tech.badge}-${tech.name}`}
+                    className="border-b border-walnut px-0 py-10 md:border-r md:px-8 md:first:pl-0 lg:border-b-0 lg:last:border-r-0 lg:last:pr-0 md:[&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:pr-0 lg:[&:nth-child(2)]:border-r lg:[&:nth-child(2)]:pr-8 lg:[&:nth-child(3)]:pl-8"
+                  >
+                    <p className="label-xs text-champagne">{tech.badge}</p>
+                    <h3 className="mt-4 font-body text-[19px] font-medium text-ivory">{tech.name}</h3>
+                    <p className="mt-3 font-body text-[15px] font-light leading-[1.75] text-greige">
+                      {tech.description}
+                    </p>
+                    {tech.bullets.length ? (
+                      <ul className="mt-5 space-y-2">
+                        {tech.bullets.map((b) => (
+                          <li key={b} className="flex gap-3 font-body text-[14px] font-light leading-[1.6] text-greige">
+                            <span aria-hidden className="mt-[11px] h-px w-3 shrink-0 bg-champagne" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {image ? (
+                      <figure className="mt-7">
+                        <img
+                          src={image}
+                          alt={`${tech.name} in use`}
+                          loading="lazy"
+                          className="aspect-[16/9] w-full rounded-[2px] border border-walnut object-cover"
+                        />
+                        <figcaption className="label-xs mt-3 text-walnut">Placeholder image</figcaption>
+                      </figure>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {service.steps.length ? (
         <section className={section}>
           <h2 className={h2}>What to expect</h2>
@@ -256,7 +332,7 @@ function ServicePage() {
               className="aspect-[3/4] w-full"
             />
             <div>
-              <h2 className={h2}>How Jyl approaches it</h2>
+              <h2 className={h2}>{service.howJylApproachesHeading ?? "How Jyl approaches it"}</h2>
               <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
                 {service.howJylApproaches}
               </p>

@@ -39,6 +39,13 @@ export interface Service {
   steps: { title: string; body: string }[];
   howJylApproaches: string;
   faqs: Faq[];
+  eyebrow?: string;
+  tagline?: string;
+  promises?: { label: string; text: string }[];
+  technologiesHeading?: string;
+  technologiesIntro?: string;
+  technologies?: { badge: string; name: string; description: string; bullets: string[] }[];
+  howJylApproachesHeading?: string;
 }
 
 export const services: Service[] = [
@@ -269,18 +276,147 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 26,
     concernTags: ["pigment", "redness", "texture", "fine_lines", "acne", "scarring"],
-    pairsWith: ["DEV-04"],
+    pairsWith: ["DEV-06", "DEV-05", "SB-08", "SB-04"],
     precareId: "PC-LASER",
-    aftercareId: "AC-RESURFACE",
-    shortDescription: "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session.",
+    aftercareId: "AC-LASER",
+    shortDescription:
+      "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session.",
+
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+    eyebrow: "RIN SIGNATURE TREATMENT",
+    tagline: "Tone. Texture. Clarity. Luminosity.",
+
+    intro: [
+      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin in one customized session, rather than across months of separate appointments.",
+      "Every session is set individually. Which technologies are used, and at what strength, depends on what your skin needs on the day.",
+    ],
+
+    promises: [
+      { label: "CUSTOMIZED TO YOU", text: "Settings chosen for your skin, not a fixed protocol" },
+      { label: "VISIBLE RESULTS", text: "Change you can see, documented at your follow-up" },
+      { label: "MINIMAL DOWNTIME", text: "A few quiet days, not a few quiet weeks" },
+      { label: "BROAD SUITABILITY", text: "Safe across a wide range of skin types" },
+    ],
+
+    helpsWith: [
+      "Uneven tone, sun spots and pigmentation",
+      "Persistent redness and rosacea",
+      "Rough texture and enlarged pores",
+      "Fine lines and deeper wrinkles",
+      "Active breakouts and oil control",
+      "Acne scarring at the surface and below it",
+    ],
+
+    whoItsFor: [
+      "Anyone who wants several concerns addressed in one visit",
+      "Skin that has stopped responding to skincare alone",
+      "Patients planning four to five weeks before an event",
+      "A wide range of skin types, confirmed individually at consultation",
+    ],
+
+    notFor:
+      "Recent sun exposure, a very active breakout or travel within three weeks are all reasons to wait. Jyl will say so at consultation, and waiting produces a better result.",
+
+    technologiesHeading: "Four technologies. One session.",
+    technologiesIntro:
+      "Each does something the others cannot. Combining them is what separates this from a standard photofacial.",
+    technologies: [
+      {
+        badge: "SWT",
+        name: "SWT IPL Photofacial",
+        description: "Broadband light targeting the visible signs of sun exposure and time.",
+        bullets: [
+          "Evens skin tone",
+          "Reduces redness and rosacea",
+          "Improves pigmentation",
+          "Stimulates collagen",
+        ],
+      },
+      {
+        badge: "SWT",
+        name: "SWT IPL for Acne",
+        description: "The same light technology tuned to acne-causing bacteria and inflammation.",
+        bullets: [
+          "Reduces active breakouts",
+          "Calms inflammation",
+          "Helps control oil",
+          "Discourages future breakouts",
+        ],
+      },
+      {
+        badge: "1940NM",
+        name: "Fractional Laser",
+        description: "Non-ablative resurfacing that works at the surface.",
+        bullets: [
+          "Improves fine lines and texture",
+          "Minimizes enlarged pores",
+          "Softens acne scarring",
+          "Stimulates collagen and elastin",
+        ],
+      },
+      {
+        badge: "1550NM",
+        name: "Fractional Laser",
+        description: "Deeper fractional energy that remodels and tightens.",
+        bullets: [
+          "Improves deeper wrinkles",
+          "Tightens lax skin",
+          "Reduces deeper acne scars",
+          "Enhances tone and firmness",
+        ],
+      },
+    ],
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl assesses your skin and confirms this is the right treatment, or that something gentler should come first.",
+      },
+      {
+        title: "The week before",
+        body: "Preparation instructions arrive by email. Following them is what makes the session safe and effective.",
+      },
+      {
+        title: "The session",
+        body: "Skin is cleansed and numbed, then each technology is applied in sequence at settings chosen for you.",
+      },
+      {
+        title: "Afterwards",
+        body: "Aftercare arrives the same day, with follow-up guidance across the first week. Your complimentary review is booked for four to five weeks later.",
+      },
+    ],
+
+    howJylApproachesHeading: "Conservative settings, honest expectations",
+    howJylApproaches:
+      "Jyl will tell you plainly if your skin is not ready. Recent sun, active breakouts, or a holiday in three weeks are all reasons to wait, and waiting produces a better result. She treats this as one thorough session rather than a package sold in threes. Most people need one, reviewed at five weeks, and only then a decision about whether a second would add anything.",
+
+    faqs: [
+      {
+        question: "How much downtime should I plan for?",
+        answer:
+          "NEEDS APPROVAL. Draft: A few days. Expect redness and a sandpaper texture that settles over roughly three to five days, with makeup usually fine after the first forty-eight hours.",
+      },
+      {
+        question: "How is this different from a standard IPL photofacial?",
+        answer:
+          "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen. IPL cannot address those.",
+      },
+      {
+        question: "Will one session be enough?",
+        answer:
+          "Often, yes. Your complimentary follow-up is where that gets assessed properly.",
+      },
+      {
+        question: "Is it suitable for darker skin tones?",
+        answer:
+          "The platform is designed for a wide range of skin types, and Jyl confirms suitability individually at consultation.",
+      },
+      {
+        question: "Can it treat acne as well as aging?",
+        answer:
+          "Yes. One of the technologies is tuned specifically for active acne, which is why the session can address both.",
+      },
+    ],
   },
   {
     id: "DEV-05",

@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { getResultCasesByTags } from "@/data/results";
+import { redirects } from "@/data/redirects";
 import {
   concernPathSlug,
   downtimeLabel,
@@ -17,6 +18,8 @@ import {
 
 export const Route = createFileRoute("/concerns/$slug")({
   loader: ({ params }) => {
+    const target = redirects[`/concerns/${params.slug}`];
+    if (target) throw redirect({ href: target, statusCode: 301 });
     if (!getConcernBySlug(params.slug)) throw notFound();
   },
   head: ({ params }) => {
