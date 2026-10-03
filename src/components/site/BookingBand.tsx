@@ -22,7 +22,7 @@ export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
       <div
         className={`mx-auto grid max-w-[1240px] grid-cols-1 gap-12 py-12 md:py-14 lg:grid-cols-12 lg:gap-x-8 lg:py-[72px] ${padding}`}
       >
-        <div className="lg:col-span-7 lg:self-center">
+        <div className="lg:col-span-7 lg:self-start">
           <h2 className="display-tight font-display text-[34px] font-extralight text-ink">
             {heading}
           </h2>
