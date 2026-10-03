@@ -6,8 +6,9 @@
 // commas inside a single instruction ("Avoid sun exposure, tanning beds and
 // self-tanner") and splitting there changes the meaning.
 //
-// body is empty on every series except PC-LASER. The provider owes that
-// clinical copy. An empty body renders nothing: no heading, no empty box.
+// showOnPage is false for a touch whose only job is to get someone to
+// rebook. Those are emails, not care instructions, and they read as nonsense
+// in a list of things to do after a treatment.
 
 export type SeriesType = "precare" | "aftercare";
 
@@ -20,6 +21,8 @@ export interface CareTouch {
   // Bullet lines. Empty until written and approved by the provider.
   body: string[];
   productIds: string[];
+  // Email always. Page only when true.
+  showOnPage: boolean;
 }
 
 export interface CareSeries {
@@ -42,6 +45,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Her published one-week prep instruction, verbatim.",
         body: ["Avoid sun exposure, tanning beds and self-tanner.", "Stop retinol and retinoids, exfoliating acids and chemical peels.", "Wear SPF daily.", "Arrive with clean skin, free of makeup or lotions."],
         productIds: ["SB-08"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -50,6 +54,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Short reminder of the day-of points only: clean skin, no makeup, SPF.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -65,6 +70,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Anything she wants avoided beforehand, and what to expect on the day.",
         body: ["Avoid alcohol for 24 hours before your appointment.", "Stop fish oil, vitamin E, ibuprofen and other blood thinners for three days beforehand if your doctor says it is safe to pause them.", "Come with clean skin.", "Let Jyl know if you have a dental appointment or any vaccination booked within two weeks either side."],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -80,6 +86,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Prep instructions, plus what the peeling week will actually look like so nobody is surprised.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -95,6 +102,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Products to pause beforehand and day-of instructions.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -110,6 +118,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What to do and avoid for the rest of today. When to call.",
         body: ["Stay upright for the next four hours.", "Do not rub, massage or press on the treated areas today.", "Skip exercise, hot yoga, saunas and anything that raises your heart rate until tomorrow.", "Small raised bumps at the injection points are normal and settle within an hour.", "Call the practice if you have anything you were not expecting."],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -118,6 +127,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What is normal at 24 hours, and what is not.",
         body: ["Mild tenderness, a small bruise or a faint headache in the first day is normal.", "You will not see much change yet, and that is expected.", "Movement starts to ease around day three or four.", "Call the practice if you have drooping of an eyelid or brow, difficulty swallowing, or anything that feels wrong rather than just new."],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -126,6 +136,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Results are assessed around two weeks. Direct link to book the free Follow Up.",
         body: ["Your result is now at its full effect, which is why this is the right moment to look at it together.", "Your follow-up is complimentary and takes a few minutes.", "If anything needs adjusting, this is when it gets adjusted, and it is included."],
         productIds: [],
+        showOnPage: false,
       },
     ],
   },
@@ -141,6 +152,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "First 24 hours. Swelling and bruising expectations. When to call.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -149,6 +161,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What is normal now. Sleeping and activity guidance.",
         body: [],
         productIds: ["HY-09"],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -157,6 +170,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Swelling should be settling. What warrants a call.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 4,
@@ -165,6 +179,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Final result assessment. Offer a review appointment.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -180,6 +195,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Any at-home massage protocol she prescribes. First-day guidance.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -188,6 +204,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Reinforce the massage schedule if she uses one.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -196,6 +213,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What to expect over coming weeks. When the next session in the series falls.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -211,6 +229,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "First-day guidance. What to avoid.",
         body: [],
         productIds: ["HY-05"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -219,6 +238,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Normal recovery signs. When to call.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -227,6 +247,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Sessions are usually spaced about six weeks apart. Rebooking link.",
         body: [],
         productIds: [],
+        showOnPage: false,
       },
     ],
   },
@@ -242,6 +263,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "First-day guidance. Heat, sun and activity restrictions.",
         body: [],
         productIds: ["SB-08"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -250,6 +272,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Normal recovery. For pigment work, the darkening and flaking that is expected.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -258,6 +281,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Four to five weeks post-treatment. Direct link to book the free Device Follow Up.",
         body: [],
         productIds: ["SB-07"],
+        showOnPage: false,
       },
     ],
   },
@@ -273,6 +297,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "First 24 hours. Cleansing, sun, what to apply and what to leave off.",
         body: [],
         productIds: ["HY-05"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -281,6 +306,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What is normal now. Barrier support and sun protection.",
         body: [],
         productIds: ["SB-05", "SB-08"],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -289,6 +315,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "When actives can come back in. Warning signs.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
       {
         touch: 4,
@@ -297,6 +324,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Book the free Device Follow Up, and the next session if it's a series.",
         body: [],
         productIds: ["SB-01"],
+        showOnPage: false,
       },
     ],
   },
@@ -312,6 +340,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "How to use the post-care kit that came with the peel. Day-one guidance.",
         body: [],
         productIds: ["SB-08"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -320,6 +349,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "What peeling looks like and the do-not-pick message. This is the email that stops the panic call.",
         body: [],
         productIds: ["SB-05"],
+        showOnPage: true,
       },
       {
         touch: 3,
@@ -328,6 +358,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Reintroducing actives. When the next peel in the series falls.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -343,6 +374,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Light guidance for the rest of the day. Sun protection.",
         body: [],
         productIds: ["HY-01"],
+        showOnPage: true,
       },
       {
         touch: 2,
@@ -351,6 +383,7 @@ export const careSeries: CareSeries[] = [
         topicsToCover: "Monthly cadence nudge. Retention, not clinical.",
         body: [],
         productIds: [],
+        showOnPage: true,
       },
     ],
   },
@@ -360,7 +393,16 @@ export function seriesById(id: string): CareSeries | undefined {
   return careSeries.find((s) => s.id === id);
 }
 
-// True when a series has at least one touch with written body copy.
+// Bullets for the service page: written touches that belong on a page.
+export function pageBullets(s: CareSeries | undefined): string[] {
+  if (!s) return [];
+  return s.touches
+    .filter((t) => t.showOnPage && t.body.length > 0)
+    .sort((a, b) => a.touch - b.touch)
+    .flatMap((t) => t.body);
+}
+
+// True when a series has anything to show on a page.
 export function hasContent(s: CareSeries | undefined): boolean {
-  return !!s && s.touches.some((t) => t.body.length > 0);
+  return pageBullets(s).length > 0;
 }
