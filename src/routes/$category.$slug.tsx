@@ -143,7 +143,8 @@ function ServicePage() {
         <div className="mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[96px] md:pb-[80px]">
           <Label>{service.eyebrow ?? service.category}</Label>
           <h1 className="display-tight mt-6 max-w-[28ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
-            {service.name} in Charlottesville, VA
+            <span>{service.name}</span>
+            <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
           <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
             {service.tagline ?? service.shortDescription}
