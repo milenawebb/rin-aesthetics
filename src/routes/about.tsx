@@ -57,7 +57,7 @@ export const Route = createFileRoute("/about")({
 
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
-  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-8 lg:grid-cols-12 lg:px-16";
+  "mx-auto grid max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 md:gap-y-8 lg:gap-y-10 px-6 md:grid-cols-6 md:px-8 lg:grid-cols-12 lg:px-16 lg:[--content-pad:4rem]";
 const pad = "py-12 md:py-16 lg:py-[88px]";
 const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";

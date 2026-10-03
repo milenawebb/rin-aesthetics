@@ -382,7 +382,7 @@
   .section-label {
     display: block;
     position: absolute;
-    left: max(0px, 12px);
+    left: max(0px, calc(var(--content-pad, 2.5rem) - 26px));
     top: 0;
     bottom: 0;
     width: 0;
