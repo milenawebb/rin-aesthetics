@@ -184,7 +184,7 @@ function ServicePage() {
 
       {/* 3. Intro and actions */}
       <section
-        className={`mx-auto max-w-[1240px] px-6 md:px-10 ${media || service.intro.length ? "py-[56px] md:py-[88px]" : "pt-[40px] pb-[56px] md:pt-[48px] md:pb-[88px]"}`}
+        className={`mx-auto max-w-[1240px] px-6 md:px-10 ${media || service.intro.length ? "py-[56px] md:py-[88px]" : "pt-0 pb-[56px] md:pb-[88px]"}`}
       >
         {service.intro.length ? (
           <div className="measure mb-10 space-y-6">
