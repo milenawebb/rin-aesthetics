@@ -16,3 +16,4 @@
 - Service URLs are /<category>/<slug> taken from Service.slug via one dynamic route; redirects.ts entries are 301s in that route; /book/* sends to Vagaro. Why: routes stay generated from data.
 
 - Gallery records are the single source for results placements; service and concern matches derive from service IDs, and images render only through isDisplayable(), which admits real photos solely via isPublishable() and otherwise only patient-free stand-ins. Why: treatment tags stay synchronized and patient consent is enforced at render time.
+- Contact submissions are written by a server function before email is attempted, and delivery status is stored on each record. Why: a provider failure must never lose a visitor message.
