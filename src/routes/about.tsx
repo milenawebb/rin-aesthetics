@@ -67,7 +67,7 @@ function AboutPage() {
     <PageShell>
       <div className="md:max-lg:pb-24">
       <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
-        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>About</SectionLabel></div>
+        <div className="relative mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>About</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
@@ -144,7 +144,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>Why RIN</SectionLabel></div>
+        <div className="relative mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>Why RIN</SectionLabel></div>
         <div className={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
@@ -198,7 +198,7 @@ function AboutPage() {
       </section>
 
       <section className={`bg-ivory ${pad} relative`}>
-        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>The space</SectionLabel></div>
+        <div className="relative mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>The space</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
@@ -222,7 +222,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <div className="mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>In their words</SectionLabel></div>
+        <div className="relative mx-auto max-w-[1240px] px-6 md:px-8 lg:px-16"><SectionLabel>In their words</SectionLabel></div>
         <div className={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
