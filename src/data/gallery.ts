@@ -229,6 +229,15 @@ export function galleryForService(serviceId: string): GalleryItem[] {
   return gallery.filter((g) => g.serviceId === serviceId);
 }
 
+export function galleryForConcern(
+  concernTags: string[],
+  serviceTags: (serviceId: string) => string[],
+): GalleryItem[] {
+  return gallery.filter((item) =>
+    serviceTags(item.serviceId).some((tag) => concernTags.includes(tag)),
+  );
+}
+
 export function featured(): GalleryItem[] {
   return gallery.filter((g) => g.featured).slice(0, 6);
 }
