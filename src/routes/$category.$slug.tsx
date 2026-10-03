@@ -9,6 +9,7 @@ import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
+import { serviceInPackage } from "@/data/shop";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
