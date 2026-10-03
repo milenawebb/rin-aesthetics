@@ -145,24 +145,92 @@ export const services: Service[] = [
     slug: "injectables/dermal-fillers",
     category: "Injectables",
     priceDisplay: "Price on consultation",
-    priceBand: "high",
+    priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
     repeatWeeks: 48,
     concernTags: ["volume_loss", "contour"],
-    pairsWith: ["INJ-01"],
+    pairsWith: ["INJ-01", "INJ-10"],
     precareId: "PC-INJECT",
     aftercareId: "AC-FILLER",
-    shortDescription: "Restores lost volume and smooths lines using hyaluronic acid filler.",
+    shortDescription:
+      "Restores lost volume and smooths lines using hyaluronic acid filler.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Faces lose volume before they lose anything else. Cheeks flatten, the midface drops, and the lines that follow are a consequence of that rather than the problem itself. Filler restores the structure underneath so the surface settles.",
+      "Price depends entirely on how much is needed and where, which is why it is quoted at consultation rather than listed. Most people need less than they expect.",
+    ],
+
+    helpsWith: [
+      "Flattening or hollowing through the cheeks",
+      "Folds from the nose to the mouth",
+      "Lines from the corners of the mouth downward",
+      "A chin or jawline that has lost definition",
+      "Hollowing at the temples",
+    ],
+
+    whoItsFor: [
+      "Anyone seeing the midface flatten rather than simply line",
+      "Patients who want structure restored rather than a different face",
+      "Anyone whose lines are visible at rest, where neurotoxin alone will not help",
+    ],
+
+    notFor:
+      "Filler adds volume. It does not tighten loose skin and it does not soften a line caused by movement. If the honest answer is neurotoxin, or a device, or nothing yet, Jyl will say so at consultation.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl assesses the whole face rather than the area you came in about. Where volume is lost is often not where you notice the change.",
+      },
+      {
+        title: "The appointment",
+        body: "Numbing first, then placement. Most people describe pressure rather than pain. Plan on 45 minutes to an hour.",
+      },
+      {
+        title: "The first week",
+        body: "Swelling and the chance of bruising for a few days. What you see in the first 48 hours is not the result.",
+      },
+      {
+        title: "Settling",
+        body: "Filler integrates over about two weeks. Judge it then, not before.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl treats the face as a structure rather than a list of areas, which is why she will often suggest filling somewhere you had not thought about and leaving alone the thing you came in for. She works conservatively and would rather you come back for more than start by overfilling.",
+
+    faqs: [
+      {
+        question: "Why is there no price listed?",
+        answer:
+          "Because the amount varies so much between people that any figure would be misleading. Jyl quotes at consultation once she knows what is actually needed.",
+      },
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Typically nine to eighteen months depending on the product, the area and how quickly you metabolize it.",
+      },
+      {
+        question: "Will I look overfilled?",
+        answer:
+          "Not at the amounts Jyl uses. She treats conservatively and reviews, which means you can add later. The overfilled look almost always comes from doing too much in one visit.",
+      },
+      {
+        question: "Which filler do you use?",
+        answer:
+          "NEEDS APPROVAL: confirm which brands Jyl carries and how she chooses between them.",
+      },
+      {
+        question: "Can it be reversed?",
+        answer:
+          "Hyaluronic acid fillers can be dissolved if needed. That is one of the reasons Jyl favors them.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-03
   {
     id: "INJ-03",
     name: "Lip Filler",
@@ -170,24 +238,87 @@ export const services: Service[] = [
     slug: "injectables/lip-filler",
     category: "Injectables",
     priceDisplay: "$800",
-    priceBand: "high",
+    priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
     repeatWeeks: 36,
     concernTags: ["lips", "volume_loss"],
-    pairsWith: ["HY-09"],
+    pairsWith: ["DEV-01", "HY-09"],
     precareId: "PC-INJECT",
     aftercareId: "AC-FILLER",
-    shortDescription: "Adds volume and definition to the lips, tailored to how much change you want.",
+    shortDescription:
+      "Adds volume and definition to the lips, tailored to how much change you want.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Lip filler covers a wide range, from restoring what has thinned to deliberately adding more. Where you sit on that range is your decision, and Jyl will tell you plainly what she thinks suits your face.",
+      "Most people who ask for a natural result want definition more than volume: a clearer border, an even shape, a little more at the centre. That takes less product than most expect.",
+    ],
+
+    helpsWith: [
+      "Lips that have thinned over time",
+      "An uneven or undefined lip border",
+      "Asymmetry between the upper and lower lip",
+      "Flattening of the lip's natural shape",
+      "Added volume, where that is what you want",
+    ],
+
+    whoItsFor: [
+      "Anyone wanting more definition without an obvious change",
+      "Patients whose lips have lost fullness with time",
+      "Anyone who wants more volume and wants it done conservatively",
+    ],
+
+    notFor:
+      "Filler adds volume to the lip itself. It does not erase the fine lines above the lip, which usually need resurfacing instead. If that is what is bothering you, the fractional treatment for lips is the better answer and Jyl will say so.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl looks at the shape, the balance between upper and lower, and what you actually want, which is often different from what you first describe.",
+      },
+      {
+        title: "The appointment",
+        body: "Numbing cream first, then placement. Lips are more sensitive than most areas and most people still describe it as very manageable.",
+      },
+      {
+        title: "The first few days",
+        body: "Swelling is normal and lips swell more than anywhere else. Expect them to look fuller than the final result for two to three days.",
+      },
+      {
+        title: "Settling",
+        body: "About two weeks to fully settle. Your photographs and your judgement should both wait until then.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl does not have one lip she gives everyone. She works to the shape you already have, and she will say no to a request she thinks will not suit you rather than take the booking. Most of her lip work is deliberately subtle, which is why people cannot tell it has been done.",
+
+    faqs: [
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Usually six to twelve months. Lips move constantly, so filler there does not last as long as elsewhere on the face.",
+      },
+      {
+        question: "Will everyone be able to tell?",
+        answer:
+          "Not if the aim is definition rather than volume. The look people recognize comes from quantity, and that is a choice rather than an inevitability.",
+      },
+      {
+        question: "Does it hurt?",
+        answer:
+          "Lips are sensitive, so numbing cream is used first. Most people find it very manageable, and it is over quickly.",
+      },
+      {
+        question: "How swollen will I be?",
+        answer:
+          "Noticeably, for two to three days. Do not book this in the week of an event. Four weeks before is comfortable.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-04
   {
     id: "INJ-04",
     name: "Full Facial Balancing",
@@ -200,19 +331,81 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 52,
     concernTags: ["volume_loss", "contour", "laxity"],
-    pairsWith: ["INJ-01"],
+    pairsWith: ["INJ-01", "INJ-02"],
     precareId: "PC-INJECT",
     aftercareId: "AC-FILLER",
-    shortDescription: "Three to four syringes used across the face to harmonize proportions rather than treat one area.",
+    shortDescription:
+      "Three to four syringes used across the face to harmonize proportions rather than treat one area.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Treating one area at a time can make the rest of the face look less balanced rather than more. Facial balancing takes the opposite approach: three to four syringes placed across the face in one session, chosen so the proportions work together.",
+      "It costs more than a single area because it is more product, and it usually achieves what several separate appointments would not.",
+    ],
+
+    helpsWith: [
+      "Volume lost across the midface rather than in one spot",
+      "Proportions that have shifted with time",
+      "A jawline and chin that no longer balance the upper face",
+      "Several areas you have been treating one at a time",
+    ],
+
+    whoItsFor: [
+      "Anyone who has had filler in one area and felt the result looked incomplete",
+      "Patients who would rather do it properly once than piece it together",
+      "Anyone wanting structure addressed rather than lines chased",
+    ],
+
+    notFor:
+      "This is a bigger treatment than most people need. If one area is genuinely the issue, Jyl will treat that area and charge you less. She will tell you if balancing is more than your face requires.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "A full assessment of proportion and structure, not a list of complaints. This consultation is longer than most.",
+      },
+      {
+        title: "The appointment",
+        body: "Numbing, then placement across the planned areas. Plan on an hour and a half.",
+      },
+      {
+        title: "The first week",
+        body: "More swelling than a single area simply because more was done. Bruising is possible.",
+      },
+      {
+        title: "Settling",
+        body: "Two weeks to settle, and a review after that.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl plans this as one piece of work rather than four separate decisions, and that planning is most of the value. She will reduce the scope if she thinks the full treatment is more than you need.",
+
+    faqs: [
+      {
+        question: "What does $2,100 include?",
+        answer:
+          "NEEDS APPROVAL: confirm exactly what the price covers, how many syringes, and what happens if more is needed.",
+      },
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes.",
+      },
+      {
+        question: "Can it be done in stages?",
+        answer:
+          "It can, but the point of doing it in one session is that the areas are planned against each other. Staged over months, you are making each decision without seeing the whole.",
+      },
+      {
+        question: "How much time should I leave before an event?",
+        answer:
+          "Four weeks. This involves more product and more swelling than a single area.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-05
   {
     id: "INJ-05",
     name: "Regenerative Medicine / Biostimulators (Sculptra, Radiesse)",
@@ -225,19 +418,81 @@ export const services: Service[] = [
     seriesSessions: 3,
     repeatWeeks: 26,
     concernTags: ["laxity", "volume_loss", "fine_lines"],
-    pairsWith: ["INJ-02"],
+    pairsWith: ["INJ-02", "SB-01"],
     precareId: "PC-INJECT",
     aftercareId: "AC-BIOSTIM",
-    shortDescription: "Stimulates your own collagen gradually over a series, for subtle long-lasting change.",
+    shortDescription:
+      "Stimulates your own collagen gradually over a series, for subtle long-lasting change.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Biostimulators do not fill. They prompt your own collagen to rebuild, so the change arrives slowly and looks like your skin improving rather than something being added.",
+      "That makes them a different proposition from filler. It takes a series, it takes months, and nobody will be able to point at what you had done. For some people that is exactly the appeal.",
+    ],
+
+    helpsWith: [
+      "Overall loss of firmness rather than one hollow area",
+      "Thinning, crepey skin texture",
+      "Gradual loss of structure through the cheeks",
+      "Fine lines that come from skin quality rather than movement",
+    ],
+
+    whoItsFor: [
+      "Anyone who wants change nobody can date to an appointment",
+      "Patients willing to wait months for a result that lasts longer",
+      "Anyone addressing overall quality rather than a specific hollow",
+    ],
+
+    notFor:
+      "If you want to see a difference next week, this is the wrong treatment and filler is the right one. Jyl will tell you that rather than start a series you will be disappointed by at week two.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl confirms whether stimulating collagen or replacing volume is the better answer for what you want.",
+      },
+      {
+        title: "The series",
+        body: "Usually three sessions spaced several weeks apart. Each one is quick.",
+      },
+      {
+        title: "After each session",
+        body: "Massage as instructed, which matters more with these products than with filler. Full instructions come by email.",
+      },
+      {
+        title: "The following months",
+        body: "The result builds across three to six months after the last session. This is the slowest treatment RIN offers and the most gradual.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl sets expectations before taking a deposit on a series, because the most common disappointment with biostimulators is someone expecting filler. If you want immediate change she will say so and recommend something else.",
+
+    faqs: [
+      {
+        question: "When will I see a difference?",
+        answer:
+          "Not for weeks. The result builds across three to six months after the final session, which is the nature of stimulating collagen rather than adding volume.",
+      },
+      {
+        question: "How many sessions do I need?",
+        answer:
+          "NEEDS APPROVAL: confirm Jyl's protocol. Usually three, spaced several weeks apart, but hers is what should appear here.",
+      },
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. Biostimulators generally outlast hyaluronic acid filler.",
+      },
+      {
+        question: "What is the difference between Sculptra and Radiesse?",
+        answer:
+          "NEEDS APPROVAL: confirm how Jyl explains this and how she chooses between them.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-07
   {
     id: "INJ-07",
     name: "Platelet Rich Plasma Hair Restoration",
@@ -250,19 +505,81 @@ export const services: Service[] = [
     seriesSessions: 3,
     repeatWeeks: 26,
     concernTags: ["hair_loss"],
-    pairsWith: [],
+    pairsWith: ["INJ-06"],
     precareId: "PC-INJECT",
     aftercareId: "AC-PRP",
-    shortDescription: "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult.",
+    shortDescription:
+      "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Blood is drawn, spun to concentrate the platelets, and the concentrate is injected into the scalp where hair is thinning. The growth factors in your own platelets are what prompt the follicles to respond.",
+      "It works better on thinning than on areas that have been bare for years, which is why this one starts with a candidacy consultation rather than a booking.",
+    ],
+
+    helpsWith: [
+      "Thinning through the crown or part line",
+      "A hairline that has started to recede",
+      "Hair that has become finer rather than absent",
+      "Shedding that has not resolved on its own",
+    ],
+
+    whoItsFor: [
+      "Anyone noticing thinning early rather than late",
+      "Patients with follicles still present in the area",
+      "Anyone wanting to use their own biology rather than a medication",
+    ],
+
+    notFor:
+      "Where a follicle is gone, nothing injected will bring it back. Jyl assesses candidacy honestly at the first appointment and will tell you if this is not going to work for you.",
+
+    steps: [
+      {
+        title: "Candidacy consultation",
+        body: "Jyl assesses the pattern and density and tells you whether you are likely to respond. This comes before any booking.",
+      },
+      {
+        title: "The appointment",
+        body: "Blood draw, then roughly fifteen minutes while it spins, then injection into the scalp. Plan on about an hour in total.",
+      },
+      {
+        title: "The series",
+        body: "Usually three sessions spaced several weeks apart.",
+      },
+      {
+        title: "The following months",
+        body: "Shedding often slows first, then density improves. This takes months rather than weeks.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl would rather turn someone away at the candidacy appointment than take payment for a series that will not work. Hair loss is emotional and that makes an honest first conversation more important here than almost anywhere else.",
+
+    faqs: [
+      {
+        question: "How many sessions will I need?",
+        answer:
+          "NEEDS APPROVAL: confirm Jyl's protocol and whether maintenance sessions follow the initial series.",
+      },
+      {
+        question: "When will I see a difference?",
+        answer:
+          "Shedding usually slows before density changes. Expect months, not weeks.",
+      },
+      {
+        question: "Does it hurt?",
+        answer:
+          "The scalp is sensitive and the injections are quick. Most people find it uncomfortable rather than painful.",
+      },
+      {
+        question: "Will it work for me?",
+        answer:
+          "That is what the candidacy consultation is for. It depends on whether the follicles are still there, which is why Jyl assesses before booking a series.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-08
   {
     id: "INJ-08",
     name: "EZ Gel / PRP",
@@ -275,19 +592,81 @@ export const services: Service[] = [
     seriesSessions: 2,
     repeatWeeks: 6,
     concernTags: ["volume_loss", "texture", "eye_area", "laxity"],
-    pairsWith: ["INJ-05"],
+    pairsWith: ["INJ-02", "SKN-02"],
     precareId: "PC-INJECT",
     aftercareId: "AC-PRP",
-    shortDescription: "A filler-like volumizer made from your own blood, used under the eyes, cheeks, lips and laugh lines.",
+    shortDescription:
+      "A filler-like volumizer made from your own blood, used under the eyes, cheeks, lips and laugh lines.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Your own blood is drawn and processed into a gel that can be placed much like filler. Because it comes from you, it suits areas where conventional filler is harder to use well, the under-eye in particular.",
+      "It does two things at once: it adds a little volume, and the growth factors improve the quality of the skin over it.",
+    ],
+
+    helpsWith: [
+      "Hollowing and shadowing under the eyes",
+      "Thin, crepey skin where filler would show",
+      "Laugh lines and early cheek flattening",
+      "Overall skin quality in the area treated",
+    ],
+
+    whoItsFor: [
+      "Anyone wanting the under-eye treated cautiously",
+      "Patients who prefer something derived from their own blood",
+      "Anyone whose skin quality is as much the issue as the volume",
+    ],
+
+    notFor:
+      "The under-eye is the least forgiving area on the face and not everyone is a candidate. Puffiness, fluid retention and certain anatomy all make it a poor idea, and Jyl will tell you if that is you.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl assesses whether the under-eye shadow is hollowing, pigment, or puffiness, because only one of those responds to this.",
+      },
+      {
+        title: "The appointment",
+        body: "Blood draw, processing, then placement. Plan on about an hour.",
+      },
+      {
+        title: "The first week",
+        body: "Swelling and bruising are more likely here than elsewhere. The under-eye bruises easily.",
+      },
+      {
+        title: "The series",
+        body: "Usually two sessions a few weeks apart, with the result improving between them.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl is more conservative under the eyes than anywhere else on the face, because it is the area where overcorrection is most visible and hardest to fix. She would rather do too little and review.",
+
+    faqs: [
+      {
+        question: "How is this different from filler?",
+        answer:
+          "It is made from your own blood rather than hyaluronic acid, and it improves skin quality as well as adding a little volume. It is also softer, which is why it suits the under-eye.",
+      },
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. It does not last as long as hyaluronic acid filler.",
+      },
+      {
+        question: "Will I bruise?",
+        answer:
+          "Possibly, and more so under the eyes than elsewhere. Leave two weeks before anything you want to look your best for.",
+      },
+      {
+        question: "How many sessions?",
+        answer:
+          "Usually two, a few weeks apart. Jyl confirms at consultation.",
+      },
+    ],
   },
+
+  // ---------------------------------------------------------------- INJ-09
   {
     id: "INJ-09",
     name: "Skin Booster Skinvive",
@@ -300,18 +679,78 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 26,
     concernTags: ["hydration", "texture", "dryness", "fine_lines"],
-    pairsWith: ["HY-01"],
+    pairsWith: ["INJ-01", "HY-01"],
     precareId: "PC-INJECT",
-    aftercareId: "AC-FILLER",
-    shortDescription: "Micro-droplet hydration that improves smoothness and glow rather than adding volume.",
+    aftercareId: "AC-TOX",
+    shortDescription:
+      "Micro-droplet hydration that improves smoothness and glow rather than adding volume.",
     options: [],
-    intro: [],
-    helpsWith: [],
-    whoItsFor: [],
-    notFor: "",
-    steps: [],
-    howJylApproaches: "",
-    faqs: [],
+
+    intro: [
+      "Skinvive is hyaluronic acid placed in tiny droplets just under the surface. It does not shape or fill anything. It hydrates the skin from within, and the result is smoothness and light rather than volume.",
+      "It is the treatment for someone whose face does not need changing but whose skin looks tired.",
+    ],
+
+    helpsWith: [
+      "Skin that looks dull or flat",
+      "Dryness that skincare has not solved",
+      "Fine surface lines on the cheeks",
+      "Rough or uneven texture",
+    ],
+
+    whoItsFor: [
+      "Anyone happy with their face who wants better skin",
+      "Patients who want a result with no downtime",
+      "Anyone nervous about injectables who wants somewhere gentle to start",
+    ],
+
+    notFor:
+      "This adds no volume and changes no shape. If what is bothering you is hollowing or a line at rest, this will not address it and Jyl will point you elsewhere.",
+
+    steps: [
+      {
+        title: "Consultation",
+        body: "Jyl confirms that skin quality rather than structure is what you want improved.",
+      },
+      {
+        title: "The appointment",
+        body: "A series of very small injections across the treated area. Numbing first. About 30 minutes.",
+      },
+      {
+        title: "The first day",
+        body: "Small bumps where the droplets were placed, which settle within a day. No real downtime beyond that.",
+      },
+      {
+        title: "The following weeks",
+        body: "Hydration and smoothness build over the first month.",
+      },
+    ],
+
+    howJylApproaches:
+      "Jyl often suggests this to people who came in asking for filler and do not need it. If the complaint is that the skin looks tired rather than that the face has changed, this is usually the honest answer.",
+
+    faqs: [
+      {
+        question: "Will it change my face?",
+        answer:
+          "No. It adds no volume and no shape. It improves the skin itself.",
+      },
+      {
+        question: "How long does it last?",
+        answer:
+          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: around six months.",
+      },
+      {
+        question: "Is there downtime?",
+        answer:
+          "Small bumps at the injection points for a few hours to a day. Most people go straight back to normal.",
+      },
+      {
+        question: "Can I have it with other treatments?",
+        answer:
+          "Yes. It pairs well with neurotoxin, which addresses movement while this addresses the skin itself.",
+      },
+    ],
   },
   {
     id: "DEV-01",
