@@ -15,7 +15,7 @@
 //   6. The cookie policy generator credit was removed.
 //   7. Suite address normalized to "340 Towncenter Ln, Suite 200B".
 //
-// Still outstanding: the cookie list, and refreshing the dates at launch.
+// Still outstanding: the cookie list.
 
 export interface PolicySection {
   heading?: string;
@@ -39,6 +39,8 @@ export const policies: Policy[] = [
     "slug": "policies/service-policies",
     "title": "Service policies",
     "standfirst": "Appointments, cancellations, refunds and what to expect when you visit.",
+    "effective": "October 12, 2026",
+    "updated": "October 12, 2026",
     "sections": [
       {
         "heading": "Appointments",
@@ -86,6 +88,8 @@ export const policies: Policy[] = [
     "slug": "policies/medical-records",
     "title": "Medical record requests",
     "standfirst": "How to request a copy of your records, and how long we keep them.",
+    "effective": "October 12, 2026",
+    "updated": "October 12, 2026",
     "sections": [
       {
         "paragraphs": [
@@ -140,8 +144,8 @@ export const policies: Policy[] = [
     "slug": "policies/privacy",
     "title": "Privacy policy",
     "standfirst": "What we collect, why, and how to ask us to change or delete it.",
-    "effective": "22 April 2026",
-    "updated": "22 April 2026",
+    "effective": "October 12, 2026",
+    "updated": "October 12, 2026",
     "sections": [
       {
         "paragraphs": [
@@ -221,8 +225,8 @@ export const policies: Policy[] = [
     "slug": "policies/cookies",
     "title": "Cookie policy",
     "standfirst": "What cookies are, which ones this site uses, and how to turn them off.",
-    "effective": "22 April 2026",
-    "updated": "22 April 2026",
+    "effective": "October 12, 2026",
+    "updated": "October 12, 2026",
     "sections": [
       {
         "heading": "What are cookies?",
@@ -269,7 +273,8 @@ export const policies: Policy[] = [
     "slug": "policies/terms",
     "title": "Terms and conditions",
     "standfirst": "The terms you accept by using this website.",
-    "effective": "22 April 2026",
+    "effective": "October 12, 2026",
+    "updated": "October 12, 2026",
     "sections": [
       {
         "heading": "Agreement between user and rinaestheticsva.com",
