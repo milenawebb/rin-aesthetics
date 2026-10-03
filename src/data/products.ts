@@ -272,5 +272,5 @@ export const products: Product[] = [
 ];
 
 export function buyUrl(p: Product): string {
-  return p.vendorUrl || brands[p.brand].storeUrl;
+  return p.vendorUrl || (brands[p.brand]?.storeUrl ?? "");
 }
