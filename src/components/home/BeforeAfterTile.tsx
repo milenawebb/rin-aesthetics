@@ -65,6 +65,10 @@ export function BeforeAfterTile({ item }: { item: GalleryItem }) {
             />
           </>
 
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/55 to-transparent"
+          />
           <span className="label-xs pointer-events-none absolute bottom-4 left-4 text-ivory">
             {label}
           </span>
