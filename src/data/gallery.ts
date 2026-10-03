@@ -252,8 +252,11 @@ export const NOTICE_REAL =
   "Unretouched photography from our own treatment room. Individual results vary.";
 
 // The line under a Results heading, chosen from what is actually displayed.
-export function resultsNotice(items: GalleryItem[]): string {
-  const anyStandIn = items.some((item) => isDisplayable(item) && !isPublishable(item));
+// Null when nothing displayable is showing: no line over only greige blocks.
+export function resultsNotice(items: GalleryItem[]): string | null {
+  const displayable = items.filter(isDisplayable);
+  if (displayable.length === 0) return null;
+  const anyStandIn = displayable.some((item) => !isPublishable(item));
   return anyStandIn ? NOTICE_STAND_IN : NOTICE_REAL;
 }
 

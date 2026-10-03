@@ -182,9 +182,11 @@ function ConcernPage() {
           <div className="mx-auto max-w-[1240px] px-6 md:px-10">
             <SectionLabel>Results</SectionLabel>
             <MaskedLines as="h2" lines={["Results"]} className={display} />
-            <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
-              {resultsNotice(results)}
-            </p>
+            {resultsNotice(results) ? (
+              <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
+                {resultsNotice(results)}
+              </p>
+            ) : null}
           </div>
           <div className="mt-12">
             <GalleryGrid items={results} />
