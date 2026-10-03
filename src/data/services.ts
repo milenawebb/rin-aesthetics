@@ -103,7 +103,7 @@ export const services: Service[] = [
       { label: "Acne scarring", slug: "acne-scarring" },
     ],
     intro: [
-      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin \u2014 in one customized session rather than across months of separate appointments.",
+      "The Skin Refinery is our signature light and laser treatment, built on the Candela Nordlys platform. It combines advanced IPL with two fractional laser wavelengths to refine, renew and reveal clearer skin in one customized session, rather than across months of separate appointments.",
       "Every session is set individually. Which technologies are used, and at what strength, depends on what your skin needs on the day.",
     ],
     promises: [
@@ -222,7 +222,7 @@ export const services: Service[] = [
     postCare: [],
     providerHeading: "Conservative settings, honest expectations",
     providerParagraphs: [
-      "Jyl will tell you plainly if your skin isn't ready. Recent sun, active breakouts, or a holiday in three weeks are all reasons to wait \u2014 and waiting produces a better result than pushing ahead.",
+      "Jyl will tell you plainly if your skin isn't ready. Recent sun, active breakouts, or a holiday in three weeks are all reasons to wait. Waiting produces a better result than pushing ahead.",
       "She treats this as one thorough session rather than a package sold in threes. Most people need one, reviewed at five weeks, and only then a decision about whether a second would add anything.",
     ],
     faqs: [
@@ -232,7 +232,7 @@ export const services: Service[] = [
       },
       {
         q: "How is this different from a standard IPL photofacial?",
-        a: "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen \u2014 concerns IPL cannot address.",
+        a: "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen. IPL cannot address those.",
       },
       {
         q: "Will one session be enough?",
@@ -244,7 +244,7 @@ export const services: Service[] = [
       },
       {
         q: "Can it treat acne as well as aging?",
-        a: "Yes \u2014 one of the four technologies is tuned specifically for active acne, which is why the session can address both.",
+        a: "Yes. One of the technologies is tuned specifically for active acne, which is why the session can address both.",
       },
     ],
     relatedServiceIds: ["DEV-06", "DEV-05"],

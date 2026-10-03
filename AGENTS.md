@@ -9,5 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- No em dashes anywhere in this project. Not in copy, headings, button labels, alt text, meta descriptions, schema, form text, error messages, comments, or AI assistant responses. Use a full stop, a comma, a colon or brackets instead. Do not substitute a spaced hyphen. This applies to all new content and to any content generated or edited later.
+- No em dashes anywhere in this project. Not in copy, headings, button labels, alt text, meta descriptions, schema, form text, error messages, comments, or AI assistant responses. Use a full stop, a comma, a colon or brackets instead. Do not substitute a spaced hyphen. This applies to all new content and to any content generated or edited later. Every build runs the dash checker against src, including encoded forms, so violations fail before compilation.
 - Use American English throughout all visitor-facing and internal copy because RIN is a Virginia practice. Use forms such as customize, customization, color, center, gray, catalog, and license as a noun.
