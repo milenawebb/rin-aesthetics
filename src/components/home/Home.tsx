@@ -243,7 +243,7 @@ export function Home() {
                   </svg>
                 ))}
               </div>
-              <blockquote className="hanging-quote mt-6 max-w-[30ch] font-body text-[19px] font-light leading-[1.6] text-ink [text-wrap:balance]">
+              <blockquote className="hanging-quote mt-6 min-h-[60.8px] font-body text-[19px] font-light leading-[1.6] text-ink [text-wrap:pretty]">
                 “{testimonial.quote}”
               </blockquote>
               <div className="flex-1" aria-hidden="true" />
