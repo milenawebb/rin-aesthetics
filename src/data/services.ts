@@ -282,6 +282,7 @@ export const services: Service[] = [
     shortDescription:
       "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session.",
 
+    options: [],
     eyebrow: "RIN SIGNATURE TREATMENT",
     tagline: "Tone. Texture. Clarity. Luminosity.",
 
