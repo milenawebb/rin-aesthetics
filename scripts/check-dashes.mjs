@@ -2,7 +2,8 @@ import { readdir, readFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 
 const sourceRoot = join(process.cwd(), "src");
-const forbidden = /—|\\u2014|&#8212;|&#x2014;|&mdash;/i;
+const literalDash = String.fromCodePoint(0x2014);
+const forbiddenText = [literalDash, "\\u" + "2014", "&#8212;", "&#x2014;", "&mdash;"];
 const violations = [];
 
 async function scan(directory) {
@@ -17,7 +18,7 @@ async function scan(directory) {
 
     const content = await readFile(path, "utf8");
     content.split(/\r?\n/).forEach((line, index) => {
-      if (forbidden.test(line)) {
+      if (forbiddenText.some((value) => line.toLowerCase().includes(value))) {
         violations.push(`${relative(process.cwd(), path)}:${index + 1}:${line}`);
       }
     });
