@@ -17,7 +17,7 @@ export const Route = createFileRoute("/treatments/$slug")({
   head: ({ params }) => {
     const service = getService(params.slug);
     if (!service) {
-      return { meta: [{ title: "Treatment not found — RIN Aesthetic Practice" }] };
+      return { meta: [{ title: "Treatment not found | RIN Aesthetic Practice" }] };
     }
     const title = `${service.name} in Charlottesville, VA | RIN Aesthetic Practice`;
     const description = firstSentence(service.intro[0] ?? service.name);
@@ -323,7 +323,7 @@ function ServicePage() {
                     <figure className="mt-7">
                       <img
                         src={variant.placeholderImage}
-                        alt={`${variant.title} in use — low-resolution reference image`}
+                        alt={`${variant.title} in use (low-resolution reference image)`}
                         loading="lazy"
                         className="aspect-[16/9] w-full rounded-[2px] border border-walnut object-cover"
                       />

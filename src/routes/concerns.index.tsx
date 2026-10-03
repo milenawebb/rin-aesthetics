@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PlaceholderPage } from "@/components/site/PageShell";
 
-const title = "Concerns — RIN Aesthetic Practice";
+const title = "Concerns | RIN Aesthetic Practice";
 const description =
   "Start with what you notice: lines, tone, texture, volume, lips or the under-eye area.";
 

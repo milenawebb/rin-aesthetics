@@ -9,7 +9,7 @@ const SUGGESTIONS = [
 ];
 
 const PLACEHOLDER_REPLY =
-  "This is a preview — the assistant will be connected before launch.";
+  "This is a preview. The assistant will be connected before launch.";
 
 type Message = { role: "user" | "assistant"; text: string };
 
@@ -133,7 +133,7 @@ export function AskRin() {
 
           <div ref={bodyRef} className="flex-1 overflow-y-auto bg-ivory px-5 py-6">
             <p className="font-body text-[14px] font-light leading-[1.65] text-walnut">
-              Hi — I can help with treatments, prices, downtime and how to prepare. For
+              Hi. I can help with treatments, prices, downtime and how to prepare. For
               anything clinical, Jyl will answer at your consultation.
             </p>
 
