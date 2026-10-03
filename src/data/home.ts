@@ -1,22 +1,7 @@
-export interface Concern {
-  slug: string;
-  name: string;
-  label: string;
-}
-
 export interface Testimonial {
   quote: string;
   name: string;
 }
-
-export const concerns: Concern[] = [
-  { slug: "lines-and-wrinkles", name: "Lines and wrinkles", label: "Concern" },
-  { slug: "uneven-tone", name: "Uneven tone", label: "Concern" },
-  { slug: "texture-and-pores", name: "Texture and pores", label: "Concern" },
-  { slug: "lost-volume", name: "Lost volume", label: "Concern" },
-  { slug: "lips", name: "Lips", label: "Concern" },
-  { slug: "under-eye-area", name: "Under-eye area", label: "Concern" },
-];
 
 export const testimonials: Testimonial[] = [
   { quote: "As someone completely new to injections, I feel so at ease with her.", name: "Ann Humphries" },
@@ -59,10 +44,7 @@ export const resultsSection = {
 
 export const signature = {
   label: "Signature",
-  heading: "The Skin Refinery by RIN",
-  headingLines: ["The Skin Refinery", "by RIN"],
-  body: "Four technologies combined into one customized session: SWT IPL, SWT IPL for acne, and 1940nm and 1550nm fractional lasers. Together they address pigmentation, redness, texture, fine lines, acne and scarring. Exclusive to RIN.",
-  price: "$900",
+  serviceId: "DEV-03",
   cta: "Learn more",
 } as const;
 

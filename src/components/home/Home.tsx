@@ -17,6 +17,7 @@ import jyl4x5Jpg960 from "@/assets/jyl-4x5-960.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
+import { getServiceById, splitSlug } from "@/data/lookup";
 import {
   bookingBand,
   concernsSection,
@@ -27,6 +28,15 @@ import {
   testimonials,
   testimonialsMeta,
 } from "@/data/home";
+
+const signatureService = getServiceById(signature.serviceId);
+const signaturePath = signatureService ? splitSlug(signatureService.slug) : null;
+const signatureLines = signatureService
+  ? signatureService.name.endsWith(" by RIN")
+    ? [signatureService.name.slice(0, -7), "by RIN"]
+    : [signatureService.name]
+  : [];
+
 
 const container = "relative mx-auto max-w-[1240px] px-6 md:px-10";
 const grid = "grid grid-cols-12 gap-x-6";
@@ -140,22 +150,22 @@ export function Home() {
           <p className="eyebrow text-champagne">{signature.label}</p>
           <div className={`${grid} mt-8`}>
             <MaskedLines
-              lines={signature.headingLines as unknown as string[]}
+              lines={signatureLines}
               delay={700}
               className="col-span-12 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ivory md:text-[56px]"
             />
 
             <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige">
-              {signature.body}
+              {signatureService?.shortDescription}
             </p>
             <p className="col-span-12 mt-7 font-body text-[32px] font-extralight text-champagne">
-              {signature.price}
+              {signatureService?.priceDisplay}
             </p>
 
           </div>
           <Link
-            to="/treatments/$slug"
-            params={{ slug: "skin-refinery" }}
+            to="/$category/$slug"
+            params={{ category: signaturePath?.category ?? "", slug: signaturePath?.slug ?? "" }}
             className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
           >
 
