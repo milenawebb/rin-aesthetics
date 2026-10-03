@@ -1,13 +1,11 @@
-# Contact page updates
+# Replace injectable service content
 
 ## Changes
-- Add Follow as the fourth contact route with a thin outlined Instagram mark and the requested copy.
-- Remove the Instagram link beneath the storefront photograph while keeping the footer link unchanged.
-- Replace both storefront assets with the new uploaded files.
-- Update the image dimensions to 1368 by 1100 and preserve the full photograph without side cropping.
-- Do not add the message form because Lovable Cloud is not connected.
+- Replace the complete INJ-02, INJ-03, INJ-04, INJ-05, INJ-07, INJ-08 and INJ-09 records in the service catalog with the supplied records.
+- Preserve the existing empty options field required by the shared service template.
+- Keep all approval-marked copy visible while excluding approval-marked FAQ answers from FAQ structured data.
 
 ## Verification
-- Confirm the Contact page displays four routes across on desktop and stacked on mobile.
-- Confirm the full storefront image, including the right-side arrow, remains visible.
-- Confirm the preview builds cleanly and the long-dash check passes.
+- Confirm all seven records contain their full supplied content and all eleven data approval items remain present.
+- Run the project punctuation check and inspect the latest build result.
+- Open the Lip Filler page and verify its content, results gallery and remaining sections render.
