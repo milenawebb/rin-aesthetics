@@ -5,7 +5,13 @@ const scanRoot = process.cwd();
 const excludedDirs = new Set(["node_modules", "dist", "build", ".git", ".output", ".vinxi", ".nitro"]);
 const excludedFiles = new Set(["bun.lock", "bun.lockb", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"]);
 const literalDash = String.fromCodePoint(0x2014);
-const forbiddenText = [literalDash, "\\u" + "2014", "&#8212;", "&#x2014;", "&mdash;"];
+const forbiddenText = [
+  literalDash,
+  "\\u" + "2014",
+  "&#" + "8212;",
+  "&#x" + "2014;",
+  "&md" + "ash;",
+];
 const violations = [];
 
 async function scan(directory) {
