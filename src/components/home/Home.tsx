@@ -94,7 +94,7 @@ export function Home() {
             </a>
             <Link
               to="/concerns"
-              className={`${btn} w-full whitespace-nowrap border border-greige bg-transparent px-8 py-[18px] text-center text-ink transition-colors duration-[400ms] hover:border-champagne lg:w-auto lg:text-ivory`}
+              className={`${btn} w-full whitespace-nowrap border border-greige bg-transparent px-8 py-[18px] text-center text-ink transition-colors duration-[400ms] hover:border-champagne md:text-ivory lg:w-auto`}
             >
               Find your treatment
             </Link>
