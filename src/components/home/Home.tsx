@@ -84,18 +84,18 @@ export function Home() {
             delay={200}
             className="hidden font-body text-[26px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch] lg:text-[44px] lg:font-extralight lg:tracking-[-0.02em] lg:leading-[1.15]"
           />
-          <div className="mt-10 flex flex-col gap-3 md:flex-row md:items-start md:gap-4">
+          <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-start lg:gap-4">
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:w-auto md:px-6 md:py-4 md:bg-ivory md:text-ink md:hover:bg-champagne lg:px-8 lg:py-4`}
+              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:whitespace-nowrap md:py-4 md:bg-ivory md:text-ink md:text-[11px]! md:hover:bg-champagne lg:w-auto lg:px-8 lg:text-[12px]!`}
             >
               {hero.primaryCta}
             </a>
             <Link
               to="/concerns"
-              className={`${btn} w-full border border-greige bg-transparent px-8 py-[14px] text-center text-ivory transition-colors duration-[400ms] hover:border-champagne md:w-auto md:px-6 md:py-4 md:text-left lg:px-8 lg:py-4`}
+              className={`${btn} w-full border border-greige bg-transparent px-8 py-[14px] text-center text-ink transition-colors duration-[400ms] hover:border-champagne md:whitespace-nowrap md:py-4 md:text-left md:text-[11px]! md:text-ivory lg:w-auto lg:px-8 lg:text-[12px]!`}
             >
               Find your treatment
             </Link>
