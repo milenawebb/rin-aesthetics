@@ -105,7 +105,7 @@ export function Home() {
       <section>
         <SectionLabel
           label={concernsSection.eyebrow}
-          className="pt-[96px] pb-[80px] md:pt-[140px] md:pb-[120px]"
+          className="pb-[80px] md:pt-[140px] md:pb-[120px]"
           contentClassName="px-6 md:px-10 xl:px-0"
         >
           <div className={grid}>
