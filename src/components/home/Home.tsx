@@ -70,7 +70,7 @@ export function Home() {
           aria-hidden="true"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(13,13,12,0.55) 0%, rgba(13,13,12,0) 60%)",
+              "linear-gradient(to right, rgba(13,13,12,0.55) 0%, rgba(13,13,12,0.55) 40%, rgba(13,13,12,0) 55%)",
           }}
         />
         <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[420px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
@@ -83,18 +83,18 @@ export function Home() {
             delay={200}
             className="hidden font-body text-[26px] font-light leading-[1.3] text-ivory md:block md:max-w-[24ch] lg:text-[44px] lg:font-extralight lg:tracking-[-0.02em] lg:leading-[1.15]"
           />
-          <div className="mt-10 flex flex-col gap-3 md:flex-row md:items-center md:gap-4">
+          <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-4">
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full whitespace-nowrap border border-transparent bg-ink px-8 py-[18px] text-center text-ivory transition-colors hover:bg-walnut md:w-auto md:bg-ivory md:text-ink md:hover:bg-champagne`}
+              className={`${btn} w-full whitespace-nowrap border border-transparent bg-ink px-8 py-[18px] text-center text-ivory transition-colors hover:bg-walnut md:bg-ivory md:text-ink md:hover:bg-champagne lg:w-auto`}
             >
               {hero.primaryCta}
             </a>
             <Link
               to="/concerns"
-              className={`${btn} w-full whitespace-nowrap border border-greige bg-transparent px-8 py-[18px] text-center text-ink transition-colors duration-[400ms] hover:border-champagne md:w-auto md:text-ivory`}
+              className={`${btn} w-full whitespace-nowrap border border-greige bg-transparent px-8 py-[18px] text-center text-ink transition-colors duration-[400ms] hover:border-champagne lg:w-auto lg:text-ivory`}
             >
               Find your treatment
             </Link>
