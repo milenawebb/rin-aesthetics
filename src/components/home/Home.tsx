@@ -54,18 +54,18 @@ export function Home() {
 
   return (
     <>
-      <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
-        <picture className="hero-settle is-in aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
+      <section className="relative flex h-[82vh] items-center justify-center overflow-hidden bg-ivory lg:h-[85vh] lg:min-h-[520px]">
+        <picture className="hero-settle is-in absolute inset-0 block h-full w-full">
           <source media="(min-width: 1024px)" srcSet={heroAsset.url} />
           <source media="(min-width: 768px)" srcSet={heroTabletAsset.url} />
           <img
             src={heroMobileAsset.url}
             alt={hero.imageAlt}
             fetchPriority="high"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-[50%_40%] md:object-center"
           />
         </picture>
-        <div className="absolute inset-0 hidden bg-ink/45 md:block" aria-hidden="true" />
+        <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
         <div
           className="absolute inset-0 hidden md:block"
           aria-hidden="true"
@@ -74,8 +74,8 @@ export function Home() {
               "linear-gradient(to right, rgba(13,13,12,0.45) 0%, rgba(13,13,12,0) 55%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[420px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
-          <h1 className="font-body text-[26px] font-light leading-[1.3] text-ink md:hidden">
+        <div className="absolute inset-x-0 bottom-12 z-10 mx-auto w-full max-w-[1240px] px-6 md:inset-y-0 md:left-0 md:right-auto md:bottom-auto md:flex md:w-[38%] md:max-w-[420px] md:flex-col md:justify-center md:px-6 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10">
+          <h1 className="font-body text-[26px] font-light leading-[1.3] text-ivory md:hidden">
             Medical aesthetics in Charlottesville, VA
           </h1>
           <MaskedLines
@@ -89,10 +89,16 @@ export function Home() {
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${btn} w-full border border-transparent bg-ink px-8 py-[14px] text-ivory transition-colors hover:bg-walnut md:w-auto md:px-6 md:py-4 md:bg-ivory md:text-ink md:hover:bg-champagne lg:px-8 lg:py-4`}
+              className={`${btn} w-full border border-transparent bg-ivory px-8 py-[14px] text-center text-ink transition-colors hover:bg-champagne md:w-auto md:px-6 md:py-4 lg:px-8 lg:py-4`}
             >
               {hero.primaryCta}
             </a>
+            <Link
+              to="/concerns"
+              className={`${btn} w-full border border-greige px-8 py-[14px] text-center text-ivory transition-colors hover:border-champagne md:w-auto md:px-6 md:py-4 lg:px-8 lg:py-4`}
+            >
+              Find your treatment
+            </Link>
           </div>
         </div>
       </section>
@@ -100,7 +106,7 @@ export function Home() {
       <section>
         <SectionLabel
           label={concernsSection.eyebrow}
-          className="pt-[96px] pb-[80px] md:pt-[140px] md:pb-[120px]"
+          className="pt-12 pb-[80px] md:pt-[140px] md:pb-[120px]"
           contentClassName="px-6 md:px-10 xl:px-0"
         >
           <div className={grid}>
