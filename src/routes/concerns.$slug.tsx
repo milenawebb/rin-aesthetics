@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { resultsNotice } from "@/data/gallery";
 import { serviceBookingUrl } from "@/data/services";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
@@ -28,24 +29,7 @@ export const Route = createFileRoute("/concerns/$slug")({
     if (target) throw redirect({ href: target, statusCode: 301 });
     if (!getConcernBySlug(params.slug)) throw notFound();
   },
-  head: ({ params }) => {
-    const concern = getConcernBySlug(params.slug);
-    if (!concern) return { meta: [{ title: "Unavailable | RIN Aesthetic Practice" }] };
-    const title = `${concern.h1} treatment in Charlottesville, VA | RIN Aesthetic Practice`;
-    const description =
-      concern.intro ||
-      `Treatments for ${concern.h1.toLowerCase()} at RIN Aesthetic Practice in Charlottesville, Virginia.`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-    };
-  },
+  head: ({ params }) => seoHead(`/concerns/${params.slug}`),
   component: ConcernPage,
 });
 

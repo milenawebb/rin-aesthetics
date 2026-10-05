@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -5,20 +6,13 @@ import { ProductList } from "@/components/site/ProductList";
 import { brands, products } from "@/data/products";
 import { packages, giftCards } from "@/data/shop";
 
-const title = "Shop | RIN Aesthetic Practice";
-const description =
-  "Packages, gift cards, and the skinbetter science and Hydrinity skincare RIN recommends, ordered directly from each brand.";
+
+const seo = seoHead("/shop");
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
+    meta: seo.meta,
+    links: seo.links,
   }),
   component: ShopPage,
 });

@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import type React from "react";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -7,20 +8,13 @@ import { Reveal } from "@/components/site/Reveal";
 import { concerns } from "@/data/concerns";
 import { concernPathSlug, priceValue, servicesFor } from "@/data/lookup";
 
-const title = "Concerns | RIN Aesthetic Practice";
-const description =
-  "Start with what you notice: lines, tone, texture, volume, lips or the under-eye area.";
+
+const seo = seoHead("/concerns");
 
 export const Route = createFileRoute("/concerns/")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: seo.meta,
+    links: seo.links,
   }),
   component: ConcernsIndex,
 });

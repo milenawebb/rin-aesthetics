@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
@@ -18,21 +19,10 @@ export const Route = createFileRoute("/policies/$slug")({
     if (!policy) throw notFound();
     return { slug: params.slug };
   },
-  head: ({ params }) => {
-    const policy = findPolicy(params.slug);
-    if (!policy) return { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] };
-    const title = `${policy.title} | RIN Aesthetic Practice`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: policy.standfirst },
-        { property: "og:title", content: title },
-        { property: "og:description", content: policy.standfirst },
-        { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary" },
-      ],
-    };
-  },
+  head: ({ params }) =>
+    findPolicy(params.slug)
+      ? seoHead(`/policies/${params.slug}`)
+      : { meta: [{ name: "robots", content: "noindex" }] },
   component: PolicyPage,
 });
 

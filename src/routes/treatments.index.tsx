@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
@@ -7,9 +8,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { services, serviceBookingUrl } from "@/data/services";
 import { downtimeLabel, priceValue, splitSlug } from "@/data/lookup";
 
-const title = "Treatments | RIN Aesthetic Practice";
-const description =
-  "Injectables, laser and light, and skin health treatments at RIN Aesthetic Practice in Charlottesville, Virginia.";
 
 const categoryOrder = ["Injectables", "Device & Laser", "Skin Treatments", "Hydrafacials"];
 
@@ -20,16 +18,12 @@ const categoryIds: Record<string, string> = {
   Hydrafacials: "hydrafacials",
 };
 
+const seo = seoHead("/treatments");
+
 export const Route = createFileRoute("/treatments/")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: seo.meta,
+    links: seo.links,
   }),
   component: TreatmentsIndex,
 });
