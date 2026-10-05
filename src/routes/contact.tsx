@@ -190,7 +190,7 @@ function ContactForm() {
 function ContactPage() {
   return (
     <PageShell>
-      <div className="mx-auto max-w-[1240px] px-6 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-[1240px] px-6 pt-24 md:px-10 md:py-32">
         <h1 className="text-4xl font-light text-ink md:text-5xl">Contact</h1>
         <p className="mt-6 max-w-[68ch] text-lg font-light text-ink/80">
           Booking is the fastest way to reach us.

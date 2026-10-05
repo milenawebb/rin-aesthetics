@@ -12,7 +12,6 @@ import type { ErrorComponentProps } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { AskRin } from "../components/site/AskRin";
 
 function NotFoundComponent() {
   return (
@@ -136,7 +135,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <AskRin />
     </QueryClientProvider>
   );
 }

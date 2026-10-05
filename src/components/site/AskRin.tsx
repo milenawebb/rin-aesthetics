@@ -8,9 +8,6 @@ const SUGGESTIONS = [
   "Downtime for a peel?",
 ];
 
-const PLACEHOLDER_REPLY =
-  "This is a preview. The assistant will be connected before launch.";
-
 type Message = { role: "user" | "assistant"; text: string };
 
 export function AskRin() {
@@ -43,8 +40,9 @@ export function AskRin() {
         'button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])',
       );
       if (focusables.length === 0) return;
-      const first = focusables[0]!;
-      const last = focusables[focusables.length - 1]!;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (!first || !last) return;
       const active = document.activeElement as HTMLElement | null;
       if (e.shiftKey && (active === first || active === panel)) {
         e.preventDefault();
@@ -70,7 +68,6 @@ export function AskRin() {
     setMessages((prev) => [
       ...prev,
       { role: "user", text },
-      { role: "assistant", text: PLACEHOLDER_REPLY },
     ]);
     setDraft("");
     window.requestAnimationFrame(() => {
@@ -132,11 +129,6 @@ export function AskRin() {
           </div>
 
           <div ref={bodyRef} className="flex-1 overflow-y-auto bg-ivory px-5 py-6">
-            <p className="font-body text-[14px] font-light leading-[1.65] text-walnut">
-              Hi. I can help with treatments, prices, downtime and how to prepare. For
-              anything clinical, Jyl will answer at your consultation.
-            </p>
-
             {messages.length === 0 && (
               <div className="mt-6 flex flex-wrap gap-2">
                 {SUGGESTIONS.map((s) => (
