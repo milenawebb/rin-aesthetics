@@ -1,4 +1,4 @@
-import { seoHead } from "@/lib/seo-head";
+import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -20,7 +20,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   name: "RIN Aesthetic Practice",
-  url: "https://mwgroupllc.net",
+  url: SITE_URL,
   telephone: "+1-434-217-5300",
   email: practice.email,
   address: {
