@@ -19,13 +19,7 @@ import bp1000 from "@/assets/rin-blueprints-1000.jpg.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jyl",
-  jobTitle: "Nurse Injector",
-  worksFor: { "@type": "MedicalBusiness", name: "RIN Aesthetic Practice" },
-};
+import { providerSchema } from "@/data/person-schema";
 
 const seo = seoHead("/about");
 
@@ -44,7 +38,7 @@ export const Route = createFileRoute("/about")({
         fetchPriority: "high",
       },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(personSchema) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(providerSchema) }],
   }),
   component: AboutPage,
 });
