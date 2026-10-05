@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageMeta } from "@/data/seo";
 import { redirects } from "@/data/redirects";
-import { wordpressRedirects, retiredUrls } from "@/data/wordpress-redirects";
 import { getServiceByPath } from "@/data/lookup";
 import { SITE_URL } from "@/lib/seo-head";
 
@@ -13,8 +12,6 @@ export function sitemapRoutes(): string[] {
   return Object.keys(pageMeta).filter((route) => {
     if (route === "/404") return false;
     if (route in redirects) return false;
-    const old = [...Object.keys(wordpressRedirects), ...retiredUrls].map((k) => k.replace(/\/$/, ""));
-    if (old.includes(route)) return false;
     const parts = route.split("/").filter(Boolean);
     const isServicePath =
       parts.length === 2 && !SERVICE_PREFIXES.some((p) => route.startsWith(p));
