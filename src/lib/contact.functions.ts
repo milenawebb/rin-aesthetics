@@ -1,8 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { contactFormSchema } from "./contact-schema";
 
-// Temporary testing recipient. Must return to info@rinaestheticsva.com before launch (see roadmap.md launch checklist).
-const RECIPIENT = "milena221@gmail.com";
+const RECIPIENT = "info@rinaestheticsva.com";
+// Sender must be on the verified Resend domain and must not be the practice mailbox itself.
+const SENDER = "RIN Aesthetic Practice <website@rinaestheticsva.com>";
 const RESEND_GATEWAY = "https://connector-gateway.lovable.dev/resend";
 
 function escapeHtml(value: string) {
@@ -51,10 +52,10 @@ export const submitContactForm = createServerFn({ method: "POST" })
         "X-Connection-Api-Key": resendApiKey,
       },
       body: JSON.stringify({
-        from: "RIN Aesthetic Practice <info@rinaestheticsva.com>",
+        from: SENDER,
         to: [RECIPIENT],
         reply_to: data.email,
-        subject: `Website message from ${data.name}`,
+        subject: `New enquiry from the website: ${data.name}`,
         html: `<p><strong>Name:</strong> ${escapeHtml(data.name)}</p><p><strong>Email:</strong> ${escapeHtml(data.email)}</p><p><strong>Message:</strong></p><p>${escapeHtml(data.message).replaceAll("\n", "<br>")}</p>`,
       }),
     });
