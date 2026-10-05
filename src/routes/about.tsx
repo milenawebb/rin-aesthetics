@@ -1,4 +1,4 @@
-import { seoHead } from "@/lib/seo-head";
+import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
@@ -21,6 +21,21 @@ import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 
 import { providerSchema } from "@/data/person-schema";
 
+function stripEmpty<T extends Record<string, unknown>>(obj: T): Partial<T> {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([, v]) => {
+      if (typeof v === "string") return v.length > 0;
+      if (Array.isArray(v)) return v.length > 0;
+      return v !== null && v !== undefined;
+    }),
+  ) as Partial<T>;
+}
+
+const personSchema = stripEmpty({
+  ...providerSchema,
+  image: new URL(j960.url, SITE_URL).href,
+});
+
 const seo = seoHead("/about");
 
 export const Route = createFileRoute("/about")({
@@ -38,7 +53,7 @@ export const Route = createFileRoute("/about")({
         fetchPriority: "high",
       },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(providerSchema) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(personSchema) }],
   }),
   component: AboutPage,
 });
