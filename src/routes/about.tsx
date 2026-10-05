@@ -65,7 +65,7 @@ const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8]
 function AboutPage() {
   return (
     <PageShell>
-      <div className="md:max-lg:pb-24">
+      <div>
       <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
         <SectionLabel label="About" contentClassName={wrap}>
           <div className="col-span-full lg:col-span-8">
