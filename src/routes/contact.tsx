@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -12,9 +13,6 @@ import { contactFormSchema, type ContactFormInput } from "@/lib/contact-schema";
 import storefrontJpg from "@/assets/rin-storefront.jpg.asset.json";
 import storefrontWebp from "@/assets/rin-storefront.webp.asset.json";
 
-const title = "Contact | RIN Aesthetic Practice";
-const description =
-  "Book online, email or text RIN Aesthetic Practice. 340 Towncenter Ln, Suite 200B, Charlottesville, VA 22911.";
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(practice.address)}`;
 
@@ -37,16 +35,12 @@ const schema = {
   sameAs: [practice.instagram],
 };
 
+const seo = seoHead("/contact");
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: seo.meta,
+    links: seo.links,
     scripts: [{ type: "application/ld+json", children: JSON.stringify(schema) }],
   }),
   component: ContactPage,

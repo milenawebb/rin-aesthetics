@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { useState } from "react";
@@ -9,20 +10,13 @@ import { concerns } from "@/data/concerns";
 import { gallery, galleryForConcern } from "@/data/gallery";
 import { getServiceById } from "@/data/lookup";
 
-const title = "Before and After Results | RIN Aesthetic Practice";
-const description =
-  "Before and after treatment results from RIN Aesthetic Practice in Charlottesville, Virginia.";
+
+const seo = seoHead("/results");
 
 export const Route = createFileRoute("/results")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: seo.meta,
+    links: seo.links,
   }),
   component: ResultsPage,
 });

@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
@@ -17,9 +18,6 @@ import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
 import bp1000 from "@/assets/rin-blueprints-1000.jpg.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 
-const title = "About Jyl | RIN Aesthetic Practice";
-const description =
-  "Jyl is an accomplished nurse injector with a career spanning over a decade in healthcare, focusing initially on perioperative services before making a seamless transition to aesthetic medicine in 2020.";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -29,17 +27,13 @@ const personSchema = {
   worksFor: { "@type": "MedicalBusiness", name: "RIN Aesthetic Practice" },
 };
 
+const seo = seoHead("/about");
+
 export const Route = createFileRoute("/about")({
   head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "profile" },
-      { name: "twitter:card", content: "summary" },
-    ],
+    meta: seo.meta,
     links: [
+      ...seo.links,
       {
         rel: "preload",
         as: "image",
