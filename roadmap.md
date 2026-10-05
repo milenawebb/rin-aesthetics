@@ -1,3 +1,10 @@
+# Ask RIN removal
+
+- [x] Unmount Ask RIN and remove canned replies while retaining its interface
+- [x] Remove floating-button clearance from Contact and the booking band
+- [x] Remove tablet-only floating-button clearance from About
+- [x] Verify home, Lip Filler, and Contact with no floating control or layout regressions
+
 # Gallery roadmap
 
 - [x] Add supplied gallery data and derived concern matching
