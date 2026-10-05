@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
@@ -33,21 +34,7 @@ export const Route = createFileRoute("/$category/$slug")({
     if (target) throw redirect({ href: target, statusCode: 301 });
     if (!getServiceByPath(params.category, params.slug)) throw notFound();
   },
-  head: ({ params }) => {
-    const service = getServiceByPath(params.category, params.slug);
-    if (!service) return { meta: [{ title: "Unavailable | RIN Aesthetic Practice" }] };
-    const title = `${service.name} in Charlottesville, VA | RIN Aesthetic Practice`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: service.shortDescription },
-        { property: "og:title", content: title },
-        { property: "og:description", content: service.shortDescription },
-        { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-    };
-  },
+  head: ({ params }) => seoHead(`/${params.category}/${params.slug}`),
   component: ServicePage,
 });
 
