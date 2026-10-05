@@ -15,7 +15,7 @@ export function sitemapRoutes(): string[] {
     const parts = route.split("/").filter(Boolean);
     const isServicePath =
       parts.length === 2 && !SERVICE_PREFIXES.some((p) => route.startsWith(p));
-    if (isServicePath && !getServiceByPath(parts[0], parts[1])) return false;
+    if (isServicePath && !getServiceByPath(parts[0] ?? "", parts[1] ?? "")) return false;
     return true;
   });
 }
