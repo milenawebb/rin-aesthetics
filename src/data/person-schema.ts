@@ -1,0 +1,72 @@
+// Person schema for the provider, rendered on /about.
+//
+// Why this matters: Google treats medical and aesthetic content as a topic
+// where it wants to know who is behind the advice. A named provider with a
+// stated role, employer and verifiable profile is a trust signal that a
+// practice without one does not have.
+//
+// ONE GAP, needing the client:
+//
+//   1. Credentials. If she is an RN, BSN or similar, those belong here and
+//      on the page. This is the one place where letters after a name do real
+//      work, because the competing practice leads with MSN and FNP-C and we
+//      currently show nothing. Leave the arrays empty rather than inventing
+//      anything.
+
+import { SITE_URL } from "@/lib/seo-head";
+
+export const providerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+
+  name: "Jyl Carter",
+  givenName: "Jyl",
+  familyName: "Carter",
+
+  jobTitle: "Nurse Injector",
+  description:
+    "Nurse injector and founder of RIN Aesthetic Practice in Charlottesville, Virginia, with over a decade in healthcare and a practice built on conservative, anatomy-led treatment.",
+
+  url: `${SITE_URL}/about`,
+  image: `${SITE_URL}/images/jyl-portrait-4x5.jpg`,
+
+  worksFor: {
+    "@type": "MedicalBusiness",
+    name: "RIN Aesthetic Practice",
+    url: SITE_URL,
+    telephone: "+1-434-217-5300",
+    email: "info@rinaestheticsva.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "340 Towncenter Ln, Suite 200B",
+      addressLocality: "Charlottesville",
+      addressRegion: "VA",
+      postalCode: "22911",
+      addressCountry: "US",
+    },
+  },
+
+  // NEEDS CLIENT: add her licence and qualifications, for example
+  // { "@type": "EducationalOccupationalCredential",
+  //   credentialCategory: "license",
+  //   name: "Registered Nurse, Commonwealth of Virginia" }
+  hasCredential: [],
+
+  // NEEDS CLIENT: letters she uses after her name, such as "RN", "BSN".
+  honorificSuffix: "",
+
+  knowsAbout: [
+    "Neurotoxin",
+    "Dermal fillers",
+    "Lip filler",
+    "Facial balancing",
+    "Biostimulators",
+    "Platelet rich plasma",
+    "Fractional laser resurfacing",
+    "Intense pulsed light",
+    "Microneedling",
+    "Chemical peels",
+  ],
+
+  sameAs: ["https://www.instagram.com/rinaestheticsva"],
+};
