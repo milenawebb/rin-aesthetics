@@ -28,7 +28,7 @@ export const providerSchema = {
     "Nurse injector and founder of RIN Aesthetic Practice in Charlottesville, Virginia, with over a decade in healthcare and a practice built on conservative, anatomy-led treatment.",
 
   url: `${SITE_URL}/about`,
-  image: `${SITE_URL}/images/jyl-portrait-4x5.jpg`,
+  // image: supplied by the About route from the imported portrait asset.
 
   worksFor: {
     "@type": "MedicalBusiness",
