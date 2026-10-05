@@ -1,6 +1,9 @@
 import { metaFor } from "@/data/seo";
 
-export const SITE_URL = "https://mwgroupllc.net";
+// Single source for the site's public URL. Override with VITE_SITE_URL; the
+// fallback is the live domain so a launch can never ship preview canonicals.
+export const SITE_URL: string =
+  import.meta.env["VITE_SITE_URL"] ?? "https://rinaestheticsva.com";
 
 // Shared head tags for every indexable route. Title and description come only from src/data/seo.ts.
 export function seoHead(path: string) {
