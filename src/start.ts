@@ -2,6 +2,29 @@ import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/r
 
 import { renderErrorPage } from "./lib/error-page";
 import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
+import { redirects } from "@/data/redirects";
+import { wordpressRedirects, retiredUrls } from "@/data/wordpress-redirects";
+
+// Strip one trailing slash so "/about/" and "/about" match the same key.
+const norm = (p: string) => (p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p);
+const wpMap = new Map(Object.entries(wordpressRedirects).map(([k, v]) => [norm(k), v]));
+const retired = new Set(retiredUrls.map(norm));
+const internalMap = new Map(Object.entries(redirects).map(([k, v]) => [norm(k), v]));
+
+// Real 301 and 410 responses at the server, before any page renders.
+// Order: retired (410), then WordPress map, then internal map.
+const legacyUrlMiddleware = createMiddleware().server(async ({ next, request }) => {
+  const url = new URL(request.url);
+  const path = norm(url.pathname);
+  if (retired.has(path)) {
+    return new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8" } });
+  }
+  const target = wpMap.get(path) ?? internalMap.get(path);
+  if (target) {
+    return new Response(null, { status: 301, headers: { location: target } });
+  }
+  return next();
+});
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
@@ -27,5 +50,5 @@ const csrfMiddleware = createCsrfMiddleware({
 
 export const startInstance = createStart(() => ({
   functionMiddleware: [attachSupabaseAuth],
-  requestMiddleware: [errorMiddleware, csrfMiddleware],
+  requestMiddleware: [errorMiddleware, legacyUrlMiddleware, csrfMiddleware],
 }));

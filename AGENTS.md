@@ -19,3 +19,5 @@
 - Contact submissions are written by a server function before email is attempted, and delivery status is stored on each record. Why: a provider failure must never lose a visitor message.
 - Gutter-labeled sections use the shared structural 96px label column and 32px gap at 1280px and wider. Why: label spacing must stay identical across pages without positional offsets.
 - Keep AskRin dormant and unimported by the root layout, retaining its component and CSS without canned assistant replies. Why: Phase 2 can reuse the interface without shipping an inactive assistant or reserving floating-button clearance in Phase 1.
+
+- Legacy URLs are answered by one server request middleware in src/start.ts: 410 for retiredUrls, then 301 from wordpressRedirects, then 301 from redirects.ts, matching with or without a trailing slash. Why: real status codes before any page renders, with data files as the only source.
