@@ -238,12 +238,8 @@ export function Home() {
         </div>
       </section>
 
-      <section>
-        <SectionLabel
-          label={testimonialsMeta.eyebrow}
-          className="pb-[80px] md:pb-[120px]"
-         
-        >
+      <section className="section-space">
+        <SectionLabel label={testimonialsMeta.eyebrow}>
           <MaskedLines
             lines={testimonialsMeta.headingLines as unknown as string[]}
             className={`${heading}`}
