@@ -177,7 +177,6 @@ function ServicePage() {
           {eyebrow ? <Label>{eyebrow}</Label> : null}
           <h1 className="type-h1 mt-6 max-w-[22ch] text-ink">
             <span>{keepBrandTogether(service.name)}</span>
-            <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
           {subtitle ? (
             <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
