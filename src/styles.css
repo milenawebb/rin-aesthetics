@@ -533,3 +533,19 @@
   height: 1px;
   background: var(--color-champagne);
 }
+
+/* Care list marker: a 4px gold dot level with the cap height of the first line. */
+.dot-list > li {
+  position: relative;
+  padding-left: 30px;
+}
+.dot-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc((1lh - 1em) / 2 + 0.44em - 2px);
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-champagne);
+}
