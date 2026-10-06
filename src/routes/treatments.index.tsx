@@ -91,7 +91,7 @@ function TreatmentsIndex() {
                       <Link
                         to="/$category/$slug"
                         params={{ category: p.category, slug: p.slug }}
-                        className="font-body text-[19px] font-medium leading-[1.35] text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
+                        className="font-body text-[19px] font-medium leading-[1.35] text-ink decoration-greige underline-offset-[6px] transition-colors hover:underline hover:decoration-champagne"
                       >
                         {item.name}
                       </Link>
@@ -109,7 +109,7 @@ function TreatmentsIndex() {
                         target="_blank"
                         rel="noopener"
                         aria-label={`Book ${item.name}`}
-                        className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
+                        className="font-body text-[15px] font-medium text-ink decoration-champagne underline-offset-4 transition-colors hover:text-walnut hover:underline"
                       >
                         Book
                       </a>

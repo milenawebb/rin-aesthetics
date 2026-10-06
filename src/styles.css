@@ -517,3 +517,19 @@
 @media (prefers-reduced-motion: reduce) {
   .drawer-sheet, .drawer-level-fwd, .drawer-level-back { animation-name: drawer-fade; }
 }
+
+/* Drawn list marker: a 14px by 1px rule centered on the cap height of the first line. */
+.rule-list > li {
+  position: relative;
+  padding-left: 30px;
+}
+.rule-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* Half the leading above the first line, plus the distance from its top to mid-cap. */
+  top: calc((1lh - 1em) / 2 + 0.5em - 0.5px);
+  width: 14px;
+  height: 1px;
+  background: var(--color-champagne);
+}
