@@ -33,3 +33,9 @@
 
 - [x] Contact form recipient set to info@rinaestheticsva.com
 - [ ] Connect Resend and verify a sending subdomain (root rinaestheticsva.com already has MX records for hosted mail). The From address in the send code must be on the exact verified domain, including subdomain: a verified send.rinaestheticsva.com cannot send From info@rinaestheticsva.com (403 domain mismatch). Reply-to stays the visitor's address.
+
+
+# Concern content batch 2
+
+- [x] Merge the four supplied concern records by ID without changing other fields or records
+- [ ] Verify filled and empty pages, capture screenshots and redness FAQ schema, and run the dash check
