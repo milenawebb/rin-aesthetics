@@ -73,7 +73,7 @@ function ConcernPage() {
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={[concern.h1]} className={h1} />
           {concern.intro ? (
-            <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">{concern.intro}</p>
+            <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">{concern.intro}</p>
           ) : null}
         </div>
       </section>
