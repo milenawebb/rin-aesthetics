@@ -583,3 +583,14 @@
   padding-bottom: 72px;
   @media (width >= 48rem) { padding-top: 104px; padding-bottom: 104px; }
 }
+
+/* The one site container: max width, side padding and centering live here only. */
+@utility site-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+}

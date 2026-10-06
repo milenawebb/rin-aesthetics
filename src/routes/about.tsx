@@ -60,7 +60,7 @@ export const Route = createFileRoute("/about")({
 
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
-  "mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 px-6 md:grid-cols-6 md:gap-y-8 md:px-8 lg:grid-cols-12 lg:gap-y-10 lg:px-16 xl:px-0";
+  "grid w-full grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-6 md:gap-y-8 lg:grid-cols-12 lg:gap-y-10";
 const pad = "section-space";
 const h2 = "type-h2 text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
@@ -70,7 +70,7 @@ function AboutPage() {
     <PageShell>
       <div>
       <section className={`${pad} relative scroll-mt-[104px] pt-[56px] md:pt-[104px]`}>
-        <SectionLabel label="About" contentClassName={wrap}>
+        <SectionLabel label="About" className="md:px-8 lg:px-10" contentClassName={wrap}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
@@ -144,7 +144,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="Why RIN" contentClassName={`${wrap} items-center`}>
+        <SectionLabel label="Why RIN" className="md:px-8 lg:px-10" contentClassName={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -197,7 +197,7 @@ function AboutPage() {
       </section>
 
       <section className={`bg-ivory ${pad} relative`}>
-        <SectionLabel label="The space" contentClassName={wrap}>
+        <SectionLabel label="The space" className="md:px-8 lg:px-10" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
@@ -220,7 +220,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="In their words" contentClassName={wrap}>
+        <SectionLabel label="In their words" className="md:px-8 lg:px-10" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
@@ -260,7 +260,7 @@ function AboutPage() {
       </section>
 
       <section className="section-space">
-        <SectionLabel contentClassName={wrap}>
+        <SectionLabel className="md:px-8 lg:px-10" contentClassName={wrap}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
@@ -279,7 +279,7 @@ function AboutPage() {
         </SectionLabel>
       </section>
 
-      <BookingBand padding="px-6 md:px-8 lg:px-16 xl:px-0" />
+      <BookingBand />
     </div>
     </PageShell>
   );

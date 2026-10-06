@@ -24,7 +24,7 @@ export function FeatureLinkEl({ feature, className, onClick }: { feature: Featur
 /** Shared mega menu skeleton: three link columns plus a tinted feature panel. */
 export function MegaPanel({ columns, feature }: { columns: MenuColumn[]; feature: FeaturePanel }) {
   return (
-    <div className="relative mx-auto grid max-w-[1240px] grid-cols-[3fr_1fr] px-6 md:px-10">
+    <div className="site-container relative grid grid-cols-[3fr_1fr]">
       <div className="grid grid-cols-3 py-10">
         {columns.map((col, ci) => (
           <div

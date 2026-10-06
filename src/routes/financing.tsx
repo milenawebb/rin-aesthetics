@@ -28,7 +28,7 @@ const h2 = "type-h2 text-ink";
 function FinancingPage() {
   return (
     <PageShell>
-      <section className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+      <section className="page-head site-container">
         <p className="eyebrow">Payment options</p>
         <h1 className="type-h1 mt-6 text-ink">
           Pay over time with PatientFi

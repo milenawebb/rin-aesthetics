@@ -70,7 +70,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-ink">
-      <div className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-6 md:px-10">
+      <div className="site-container flex h-20 items-center justify-between">
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
           <Logo width={118} />
         </Link>

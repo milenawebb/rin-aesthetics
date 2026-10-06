@@ -10,20 +10,17 @@ import { practice } from "@/data/site";
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
   treatment?: { name: string; price: string; bookingUrl: string };
-  /** Horizontal padding matching the page's own container, so the band's left edge lines up with its H1. */
-  padding?: string;
 };
 
 /** The one closing booking band, used on every page except concern pages. */
-export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
+export function BookingBand({ treatment }: Props) {
   const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : "Book a consultation";
   const line = treatment ? treatment.price : "Consultations are thorough and obligation-free.";
   return (
     <section className="border-t border-greige bg-ivory">
-      <div className="mx-auto w-full max-w-[1368px] xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8">
-        <div className="hidden xl:block" />
+      <div className="site-container">
         <div
-          className={`grid min-w-0 max-w-[1240px] grid-cols-1 items-start gap-y-8 pb-12 pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-8 md:px-10 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px] xl:px-0 ${padding}`}
+          className={`grid min-w-0 grid-cols-1 items-start gap-y-8 pb-12 pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-8 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px]`}
         >
         <div className="min-w-0 lg:col-span-7">
           <h2 className="type-h2 text-ink">

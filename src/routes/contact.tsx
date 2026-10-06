@@ -186,7 +186,7 @@ function ContactForm() {
 function ContactPage() {
   return (
     <PageShell>
-      <div className="page-head mx-auto max-w-[1240px] px-6 md:px-10 xl:px-0">
+      <div className="page-head site-container">
         <h1 className="type-h1 text-ink">Contact</h1>
         <p className="mt-6 max-w-[68ch] text-lg font-light text-ink/80">
           Booking is the fastest way to reach us.

@@ -15,7 +15,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 export function PlaceholderPage({ title, blurb }: { title: string; blurb: string }) {
   return (
     <PageShell>
-      <section className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+      <section className="page-head site-container">
         <p className="label-xs text-champagne">RIN</p>
         <h1 className="type-h1 mt-6 text-ink">
           {title}
