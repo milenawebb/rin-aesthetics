@@ -98,7 +98,7 @@ function CareTimeline({ groups, id }: { groups: CareGroup[]; id: string }) {
 
 function CareBullets({ items, className = "" }: { items: string[]; className?: string }) {
   return (
-    <ul className={`dot-list space-y-5 ${className}`}>
+    <ul className={`rule-list space-y-5 ${className}`}>
       {items.map((item, i) => (
         <li key={i} className="font-body text-[16px] font-light leading-[1.75] text-walnut">
           {item}

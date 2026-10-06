@@ -518,10 +518,10 @@
   .drawer-sheet, .drawer-level-fwd, .drawer-level-back { animation-name: drawer-fade; }
 }
 
-/* Drawn list marker: a 14px by 1px rule centered on the cap height of the first line. */
+/* The one list marker for the site: a 14px by 1px square-ended rule level with the first line, 16px before the text. */
 .rule-list > li {
   position: relative;
-  padding-left: 30px;
+  padding-left: 30px; /* 14px marker plus 16px gap; wrapped lines align to the text edge */
 }
 .rule-list > li::before {
   content: "";
@@ -531,22 +531,6 @@
   top: calc((1lh - 1em) / 2 + 0.44em);
   width: 14px;
   height: 1px;
-  background: var(--color-champagne);
-}
-
-/* Care list marker: a 4px gold dot level with the cap height of the first line. */
-.dot-list > li {
-  position: relative;
-  padding-left: 30px;
-}
-.dot-list > li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: calc((1lh - 1em) / 2 + 0.44em - 2px);
-  width: 4px;
-  height: 4px;
-  border-radius: 9999px;
   background: var(--color-champagne);
 }
 
