@@ -113,7 +113,8 @@ function ServicePage() {
   const service = getServiceByPath(category, slug);
   if (!service) return null;
 
-  const media = serviceMedia[service.id];
+  // A service with a captioned device photo in its technology band shows the device there only.
+  const media = technologyLead[service.id] ? undefined : serviceMedia[service.id];
   const eyebrow = service.eyebrow ?? service.category;
   const subtitle = service.tagline ?? service.shortDescription;
   const chips = concernsForService(service);
@@ -350,16 +351,16 @@ function ServicePage() {
                 ) : null}
               </div>
               {technologyLead[service.id] ? (
-                <figure className="mx-auto mt-12 w-full max-w-[220px] md:max-w-[280px] lg:mt-0 lg:max-w-[360px]">
+                <figure className="-mx-6 mt-12 md:mx-auto md:w-full md:max-w-[280px] lg:mt-0 lg:max-w-[360px]">
                   <img
                     src={technologyLead[service.id]!.src}
                     alt={technologyLead[service.id]!.alt}
                     width={1000}
                     height={1170}
                     loading="lazy"
-                    className="aspect-[1000/1170] max-h-[420px] w-full rounded-[2px] object-cover"
+                    className="aspect-[4/3] w-full object-cover object-bottom md:aspect-[1000/1170] md:max-h-[420px] md:rounded-[2px]"
                   />
-                  <figcaption className="label-xs mt-3 text-greige">{technologyLead[service.id]!.caption}</figcaption>
+                  <figcaption className="label-xs mt-3 px-6 text-left text-greige md:px-0">{technologyLead[service.id]!.caption}</figcaption>
                 </figure>
               ) : null}
             </div>
