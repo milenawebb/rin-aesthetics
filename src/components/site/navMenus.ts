@@ -154,8 +154,8 @@ export const navMenus: Record<string, NavMenu> = {
       { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser", "All device and laser")] },
       {
         groups: [
-          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments"),
-          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials"),
+          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments", "All skin treatments"),
+          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials", "All hydrafacials"),
         ],
       },
     ],
