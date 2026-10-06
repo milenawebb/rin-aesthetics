@@ -44,6 +44,18 @@ export const signature = {
   label: "Signature",
   serviceId: "DEV-03",
   cta: "Learn more",
+  body: [
+    "Our signature treatment, exclusive to RIN. Three Candela technologies in one customized session, layered in the order your skin needs rather than sold as a fixed package.",
+    "One appointment covers what usually takes three. Jyl decides the mix after looking at your skin, so two people paying the same price rarely leave with the same treatment.",
+  ],
+  treatsLabel: "What it treats",
+  treats: [
+    "Redness and rosacea",
+    "Pigmentation and sun damage",
+    "Enlarged pores and rough texture",
+    "Active breakouts and acne scarring",
+    "Loose skin and lost firmness",
+  ],
 } as const;
 
 export const provider = {

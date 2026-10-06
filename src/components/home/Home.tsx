@@ -155,29 +155,38 @@ export function Home() {
         />
         <div className={`${container} py-[96px] md:py-[140px]`}>
           <p className="eyebrow text-champagne">{signature.label}</p>
-          <div className={`${grid} mt-8`}>
+          <div className="mt-8 lg:grid lg:grid-cols-[55fr_45fr] lg:gap-x-24">
             <MaskedLines
               lines={signatureLines}
               delay={700}
-              className="type-h2 col-span-12 text-ivory"
+              className="type-h2 text-ivory lg:col-start-1 lg:row-start-1"
             />
-
-            <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige">
-              {signatureService?.shortDescription}
-            </p>
-            <p className="col-span-12 mt-7 font-body text-[32px] font-extralight text-champagne">
-              {signatureService?.priceDisplay}
-            </p>
-
+            <div className="lg:col-start-1 lg:row-start-2">
+              {signature.body.map((para) => (
+                <p key={para} className="pretty mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige">
+                  {para}
+                </p>
+              ))}
+              <p className="mt-7 font-body text-[32px] font-extralight text-champagne">
+                {signatureService?.priceDisplay}
+              </p>
+              <Link
+                to="/$category/$slug"
+                params={{ category: signaturePath?.category ?? "", slug: signaturePath?.slug ?? "" }}
+                className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
+              >
+                {signature.cta}
+              </Link>
+            </div>
+            <div className="mt-16 lg:col-start-2 lg:row-start-2 lg:mt-8">
+              <p className="eyebrow text-champagne">{signature.treatsLabel}</p>
+              <ul className="rule-list mt-6 space-y-4 font-body text-[17px] font-light leading-[1.6] text-ivory">
+                {signature.treats.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <Link
-            to="/$category/$slug"
-            params={{ category: signaturePath?.category ?? "", slug: signaturePath?.slug ?? "" }}
-            className={`${btn} mt-10 inline-block border border-greige px-8 py-4 text-ivory transition-colors duration-[400ms] hover:border-champagne`}
-          >
-
-            {signature.cta}
-          </Link>
         </div>
       </section>
 
