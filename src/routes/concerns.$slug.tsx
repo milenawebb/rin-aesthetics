@@ -152,7 +152,7 @@ function ConcernPage() {
                 alt={concern.imageAlt}
                 loading="eager"
                 className={concern.body.length
-                  ? "mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0"
+                  ? "mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[26.25%] md:shrink-0"
                   : "mx-auto w-full max-w-[280px]"}
               />
             ) : null}
