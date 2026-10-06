@@ -9,6 +9,9 @@ import { MobileDrawer } from "./MobileDrawer";
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
 
+/** Each page renders its own header, so a drawer link navigation hands focus to the next page's Menu button. */
+let focusMenuOnMount = false;
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [panel, setPanel] = useState<string | null>(null);
@@ -17,7 +20,18 @@ export function Header() {
   const navRef = useRef<HTMLElement>(null);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const closeDrawer = useCallback(() => setOpen(false), []);
-  const returnFocus = useCallback(() => menuBtnRef.current?.focus(), []);
+  const returnFocus = useCallback(() => {
+    focusMenuOnMount = true;
+    menuBtnRef.current?.focus();
+    window.setTimeout(() => (focusMenuOnMount = false), 1000);
+  }, []);
+
+  useEffect(() => {
+    if (focusMenuOnMount) {
+      focusMenuOnMount = false;
+      menuBtnRef.current?.focus();
+    }
+  }, []);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
 

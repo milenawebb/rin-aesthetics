@@ -25,6 +25,7 @@ export const navLinks: NavLink[] = [
   { label: "Concerns", to: "/concerns" },
   { label: "Treatments", to: "/treatments" },
   { label: "Results", to: "/results" },
+  { label: "Shop", to: "/shop" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
