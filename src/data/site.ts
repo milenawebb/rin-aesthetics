@@ -57,6 +57,7 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
       { label: "Results", to: "/results" },
       { label: "Shop", to: "/shop" },
       { label: "Gift cards", to: "/shop", hash: "gift-cards" },
+      { label: "Financing", to: "/financing" },
       { label: "Contact", to: "/contact" },
     ],
   },

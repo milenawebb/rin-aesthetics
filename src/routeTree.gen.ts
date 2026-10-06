@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ConcernsRouteImport } from './routes/concerns'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as FindYourTreatmentRouteImport } from './routes/find-your-treatment'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
@@ -44,6 +45,11 @@ const ConcernsRoute = ConcernsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancingRoute = FinancingRouteImport.update({
+  id: '/financing',
+  path: '/financing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FindYourTreatmentRoute = FindYourTreatmentRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/concerns': typeof ConcernsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/financing': typeof FinancingRoute
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/financing': typeof FinancingRoute
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/concerns': typeof ConcernsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/financing': typeof FinancingRoute
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/concerns'
     | '/contact'
+    | '/financing'
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/financing'
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/concerns'
     | '/contact'
+    | '/financing'
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
@@ -222,6 +234,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConcernsRoute: typeof ConcernsRouteWithChildren
   ContactRoute: typeof ContactRoute
+  FinancingRoute: typeof FinancingRoute
   FindYourTreatmentRoute: typeof FindYourTreatmentRoute
   ResultsRoute: typeof ResultsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
@@ -262,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financing': {
+      id: '/financing'
+      path: '/financing'
+      fullPath: '/financing'
+      preLoaderRoute: typeof FinancingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/find-your-treatment': {
@@ -370,6 +390,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ConcernsRoute: ConcernsRouteWithChildren,
   ContactRoute: ContactRoute,
+  FinancingRoute: FinancingRoute,
   FindYourTreatmentRoute: FindYourTreatmentRoute,
   ResultsRoute: ResultsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
