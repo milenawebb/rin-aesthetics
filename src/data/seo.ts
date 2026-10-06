@@ -40,6 +40,10 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Medical-Grade Skincare | RIN Aesthetic Practice",
     description: "skinbetter science and Hydrinity, chosen by Jyl to support and hold your results between treatments. Ordered directly from each brand.",
   },
+  "/financing": {
+    title: "Financing and Payment Plans | RIN Aesthetic Practice",
+    description: "Spread the cost of treatment over monthly payments with PatientFi. Apply in about a minute and see your options before you book.",
+  },
   "/contact": {
     title: "Contact and Directions | RIN Aesthetic Practice",
     description: "340 Towncenter Ln, Suite 200B, Charlottesville, VA. Book online, email or text. Use the entrance facing the Sherwin Williams store.",

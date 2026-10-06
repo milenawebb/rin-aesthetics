@@ -51,8 +51,8 @@ export const wordpressRedirects: Record<string, string> = {
   "/product-category/hydrafacial/": "/hydrafacials/the-refinement",
   "/product-category/device-packages/": "/shop",
 
-  // PROVISIONAL: pending confirmation. The new site has no financing page yet.
-  "/payment-plans/": "/contact",
+  // Financing
+  "/payment-plans/": "/financing",
 };
 
 // Theme demo content. These are posts and categories about nail salons and
@@ -81,12 +81,3 @@ export const retiredUrls: string[] = [
   "/category/pedicure/",
   "/category/workshops/",
 ];
-
-// NEEDS A DECISION before launch:
-//
-// "/payment-plans/"  The current site has a payment plans page. Affirm
-//                    financing was mentioned early in the project. The new
-//                    site has no equivalent page and no mention of financing
-//                    anywhere. Either build a short page, add financing to
-//                    the treatments index intro, or redirect to /contact.
-//                    Do not quietly drop it: people search for it.
