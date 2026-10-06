@@ -840,7 +840,7 @@ export const services: Service[] = [
   {
     id: "DEV-03",
     name: "The Skin Refinery by RIN",
-    shortName: "The Skin Refinery",
+    shortName: "The Skin Refinery by RIN",
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
@@ -853,7 +853,7 @@ export const services: Service[] = [
     precareId: "PC-LASER",
     aftercareId: "AC-LASER",
     shortDescription:
-      "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session.",
+      "Her signature treatment. Three Candela technologies combined in one customized session.",
 
     options: [],
     eyebrow: "RIN SIGNATURE TREATMENT",
