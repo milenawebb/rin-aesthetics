@@ -118,7 +118,6 @@ export function Header() {
     </header>
   );
 }
-}
 
 function canHover() {
   return typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
