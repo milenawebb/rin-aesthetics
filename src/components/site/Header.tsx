@@ -2,7 +2,13 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { navLinks, practice } from "@/data/site";
 import { Logo } from "./Logo";
-import { navMenus, type NavMenu } from "./navMenus";
+import { navMenus, type MenuLink, type NavMenu } from "./navMenus";
+
+function linkProps(l: MenuLink) {
+  return l.to === "/concerns/$slug"
+    ? ({ to: l.to, params: l.params } as const)
+    : ({ to: l.to, params: l.params } as const);
+}
 
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
@@ -255,13 +261,13 @@ function DesktopDropdown({
                     ) : null}
                     <ul className="flex flex-col gap-[10px]">
                       {group.links.map((l) => (
-                        <li key={l.href}>
-                          <a
-                            href={l.href}
+                        <li key={l.label}>
+                          <Link
+                            {...linkProps(l)}
                             className="font-body text-[14px] font-light text-ink transition-colors hover:text-walnut"
                           >
                             {l.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -271,9 +277,9 @@ function DesktopDropdown({
             ))}
           </div>
           <div className="mt-6 border-t border-greige pt-5">
-            <a href={menu.allHref} className="btn-label text-ink transition-colors hover:text-walnut">
+            <Link to={menu.allHref} className="btn-label text-ink transition-colors hover:text-walnut">
               {menu.allLabel}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -332,18 +338,18 @@ function MobileAccordion({
               {g.heading ? <p className="label-xs mb-2 text-olive">{g.heading}</p> : null}
               <ul className="flex flex-col">
                 {g.links.map((l) => (
-                  <li key={l.href}>
-                    <a href={l.href} onClick={onNavigate} className="block py-2 font-body text-[16px] font-light text-greige">
+                  <li key={l.label}>
+                    <Link {...linkProps(l)} onClick={onNavigate} className="block py-2 font-body text-[16px] font-light text-greige">
                       {l.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-          <a href={menu.allHref} onClick={onNavigate} className="btn-label mt-5 block py-2 text-champagne">
+          <Link to={menu.allHref} onClick={onNavigate} className="btn-label mt-5 block py-2 text-champagne">
             {menu.allLabel}
-          </a>
+          </Link>
         </div>
       ) : null}
     </div>
