@@ -53,10 +53,15 @@ function splitPath(slug: string) {
 
 const treatmentServices = services.filter((s) => !s.slug.startsWith("book/"));
 
-function treatmentGroup(category: string, heading: string, hash: string): MenuGroup {
+function treatmentGroup(
+  category: string,
+  heading: string,
+  hash: string,
+  footLabel: string
+): MenuGroup {
   return {
     heading,
-    foot: { label: "See all", to: "/treatments", hash },
+    foot: { label: footLabel, to: "/treatments", hash },
     links: treatmentServices
       .filter((s) => s.category === category)
       .map((s): MenuLink => ({
@@ -136,7 +141,7 @@ export const navMenus: Record<string, NavMenu> = {
     columns: [
       { groups: [concernGroups[0]!] },
       { groups: [concernGroups[1]!] },
-      { groups: [{ ...concernGroups[2]!, foot: { label: "See all concerns", to: "/concerns" } }] },
+      { groups: [{ ...concernGroups[2]!, foot: { label: "All concerns", to: "/concerns" } }] },
     ],
     feature: concernsFeature,
     allLabel: "All concerns",
@@ -145,12 +150,12 @@ export const navMenus: Record<string, NavMenu> = {
   "/treatments": {
     id: "treatments",
     columns: [
-      { groups: [treatmentGroup("Injectables", "Injectables", "injectables")] },
-      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser")] },
+      { groups: [treatmentGroup("Injectables", "Injectables", "injectables", "All injectables")] },
+      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser", "All device and laser")] },
       {
         groups: [
-          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments"),
-          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials"),
+          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments", "All skin treatments"),
+          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials", "All hydrafacials"),
         ],
       },
     ],
