@@ -4,6 +4,7 @@ import { navLinks, practice } from "@/data/site";
 import { Logo } from "./Logo";
 import { drawerExtraLinks, menuGroups, navMenus, type NavMenu } from "./navMenus";
 import { FeatureLinkEl, menuLinkProps } from "./MegaPanel";
+import { MagnifierIcon, SearchResults, useSearch } from "./Search";
 
 const rowClass =
   "flex min-h-[56px] w-full items-center justify-between border-b border-walnut py-3 text-left font-body text-[18px] font-light text-ivory";
@@ -21,6 +22,8 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
   const [dir, setDir] = useState<"fwd" | "back">("fwd");
   const [openGroups, setOpenGroups] = useState<Set<string>>(new Set());
   const sheetRef = useRef<HTMLDivElement>(null);
+  const srch = useSearch(onClose);
+  const searching = srch.query.trim().length >= 2;
 
   // Lock page scroll and restore the exact position on close.
   useEffect(() => {
@@ -47,7 +50,7 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
     }
     if (e.key !== "Tab" || !sheetRef.current) return;
     const items = Array.from(
-      sheetRef.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
+      sheetRef.current.querySelectorAll<HTMLElement>("input, a[href], button:not([disabled])"),
     );
     const first = items[0];
     const last = items[items.length - 1];
@@ -99,8 +102,43 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
           <span />
         </div>
 
+        <div className="shrink-0 border-b border-walnut px-6 py-3">
+          <div className="flex items-center gap-3 text-greige">
+            <MagnifierIcon size={16} />
+            {/* Never autofocused: on a phone the keyboard would cover the menu. */}
+            <input
+              type="text"
+              enterKeyHint="search"
+              value={srch.query}
+              onChange={(e) => srch.setQuery(e.target.value)}
+              onKeyDown={srch.onInputKey}
+              placeholder="What are you looking for?"
+              aria-label="Search the site"
+              aria-controls="drawer-search-list"
+              aria-activedescendant={srch.active >= 0 ? `drawer-search-opt-${srch.active}` : undefined}
+              className="min-h-[44px] w-full bg-transparent font-body text-[16px] font-light text-ivory placeholder:text-greige focus:outline-none"
+            />
+            {srch.query ? (
+              <button type="button" onClick={() => srch.setQuery("")} className="label-xs shrink-0 text-greige">
+                Clear
+              </button>
+            ) : null}
+          </div>
+        </div>
+
         <div className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain">
-          {menu ? (
+          {searching ? (
+            <div className="px-6 pb-10">
+              <SearchResults
+                query={srch.query}
+                results={srch.results}
+                active={srch.active}
+                tone="dark"
+                onNavigate={onClose}
+                idPrefix="drawer-search"
+              />
+            </div>
+          ) : menu ? (
             <div key={menu.id} data-level className={`px-6 pb-10 ${dir === "fwd" ? "drawer-level-fwd" : "drawer-level-back"}`}>
               <button
                 type="button"
@@ -195,7 +233,7 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
           )}
         </div>
 
-        {!menu ? (
+        {!menu && !searching ? (
           <div className="shrink-0 px-6 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-5">
             <a
               href={practice.bookingUrl}
