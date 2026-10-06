@@ -84,7 +84,7 @@ function buildIndex(): Entry[] {
       label,
       group: "Pages",
       href: route,
-      fields: [normalize(label), normalize(pageMeta[route].title)],
+      fields: [normalize(label), normalize(pageMeta[route]?.title ?? "")],
       names: [normalize(label)],
     });
   }

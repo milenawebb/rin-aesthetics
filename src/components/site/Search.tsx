@@ -123,7 +123,7 @@ export function useSearch(onNavigate: () => void) {
       setActive((a) => (a <= 0 ? results.length - 1 : a - 1));
     } else if (e.key === "Enter" && active >= 0) {
       e.preventDefault();
-      go(results[active].href);
+      go(results[active]?.href ?? "/");
     }
   };
   return { query, setQuery, results, active, onInputKey };
@@ -175,10 +175,10 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
     const last = items[items.length - 1];
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
-      last.focus();
+      last?.focus();
     } else if (!e.shiftKey && document.activeElement === last) {
       e.preventDefault();
-      first.focus();
+      first?.focus();
     }
   };
 
