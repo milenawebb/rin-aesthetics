@@ -152,5 +152,5 @@ export function search(raw: string): SearchResult[] {
 }
 
 export const QUICK_LINKS: SearchResult[] = ["/treatments", "/concerns", "/results", "/financing", "/contact"].map(
-  (r) => ({ key: r, label: PAGE_LABELS[r], group: "Pages", href: r }),
+  (r) => ({ key: r, label: PAGE_LABELS[r] ?? "", group: "Pages", href: r }),
 );
