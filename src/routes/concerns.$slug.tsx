@@ -146,8 +146,8 @@ function ConcernPage() {
         <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
           <div className={concern.image ? "flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-16" : undefined}>
             {concern.image ? (
-              <div className="mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0">
-                <div className="flex items-end overflow-hidden rounded-t-[9999px] rounded-b-[4px] bg-greige/40 px-[8%] pt-[10%]">
+              <div className="mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0 [container-type:inline-size]">
+                <div className="flex items-end overflow-hidden rounded-t-[50cqw] rounded-b-[4px] bg-greige/40 px-[8%] pt-[10%]">
                   <img
                     src={concern.image}
                     alt={concern.imageAlt}
