@@ -402,6 +402,38 @@ export function pageBullets(s: CareSeries | undefined): string[] {
     .flatMap((t) => t.body);
 }
 
+export interface CareGroup {
+  offsetHours: number;
+  label: string;
+  bullets: string[];
+}
+
+const NUM = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
+const word = (n: number) => NUM[n] ?? String(n);
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+// Label for a touch, derived from its send offset. Labels are never stored.
+export function offsetLabel(hours: number): string {
+  const h = Math.abs(hours);
+  const before = hours < 0;
+  if (h < 12) return before ? "Earlier today" : "Today";
+  if (h <= 36) return before ? "The day before" : "Tomorrow";
+  const days = Math.round(h / 24);
+  if (days <= 6) return before ? `${cap(word(days))} days before` : `In ${word(days)} days`;
+  const weeks = Math.round(days / 7);
+  const unit = weeks === 1 ? "week" : "weeks";
+  return before ? `${cap(word(weeks))} ${unit} before` : `After ${word(weeks)} ${unit}`;
+}
+
+// Page bullets grouped by touch, in ascending send offset. Text is untouched.
+export function pageGroups(s: CareSeries | undefined): CareGroup[] {
+  if (!s) return [];
+  return s.touches
+    .filter((t) => t.showOnPage && t.body.length > 0)
+    .sort((a, b) => a.sendOffsetHours - b.sendOffsetHours)
+    .map((t) => ({ offsetHours: t.sendOffsetHours, label: offsetLabel(t.sendOffsetHours), bullets: t.body }));
+}
+
 // True when a series has anything to show on a page.
 export function hasContent(s: CareSeries | undefined): boolean {
   return pageBullets(s).length > 0;

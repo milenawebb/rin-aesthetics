@@ -15,7 +15,7 @@ import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
-import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
+import { hasContent, pageGroups, seriesById, type CareGroup, type CareSeries } from "@/data/careEmails";
 import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
@@ -59,9 +59,52 @@ function LineList({ items }: { items: string[] }) {
   );
 }
 
-function careLines(series: CareSeries | undefined) {
+function careLines(series: CareSeries | undefined): CareGroup[] {
   if (!series || !hasContent(series)) return [];
-  return pageBullets(series);
+  return pageGroups(series);
+}
+
+function CareTimeline({ groups, id }: { groups: CareGroup[]; id: string }) {
+  const [expanded, setExpanded] = useState(false);
+  if (groups.length === 1) return <CareBullets items={groups[0]!.bullets} className="mt-8" />;
+  const [first, ...rest] = groups;
+  const remaining = rest.reduce((n, g) => n + g.bullets.length, 0);
+  const restId = `care-rest-${id}`;
+  const renderGroup = (g: CareGroup, i: number) => (
+    <div key={`${g.offsetHours}-${i}`} className="mt-8">
+      <p className="label-xs text-walnut/70">{g.label}</p>
+      <CareBullets items={g.bullets} className="mt-4" />
+    </div>
+  );
+  return (
+    <>
+      {first ? renderGroup(first, 0) : null}
+      <div id={restId} hidden={!expanded}>
+        {rest.map((g, i) => renderGroup(g, i + 1))}
+      </div>
+      <button
+        type="button"
+        aria-expanded={expanded}
+        aria-controls={restId}
+        onClick={() => setExpanded((v) => !v)}
+        className="btn-label mt-8 border-b border-champagne pb-1 text-ink"
+      >
+        {expanded ? "Show less" : `See the full timeline (${remaining} more)`}
+      </button>
+    </>
+  );
+}
+
+function CareBullets({ items, className = "" }: { items: string[]; className?: string }) {
+  return (
+    <ul className={`dot-list space-y-5 ${className}`}>
+      {items.map((item, i) => (
+        <li key={i} className="font-body text-[16px] font-light leading-[1.75] text-walnut">
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function ServicePage() {
@@ -89,6 +132,7 @@ function ServicePage() {
     { heading: "Before your visit", items: pre },
     { heading: "After your treatment", items: after },
   ].filter((c) => c.items.length > 0);
+
 
   const facts = [
     { label: "Price", value: service.priceDisplay },
@@ -378,7 +422,7 @@ function ServicePage() {
             {careColumns.map((col) => (
               <div key={col.heading}>
                 <h2 className={h2}>{col.heading}</h2>
-                <LineList items={col.items} />
+                <CareTimeline groups={col.items} id={col.heading === "Before your visit" ? "pre" : "after"} />
               </div>
             ))}
           </div>
