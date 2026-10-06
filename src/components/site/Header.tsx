@@ -1,9 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { navLinks, practice } from "@/data/site";
 import { Logo } from "./Logo";
 import { navMenus, type NavMenu } from "./navMenus";
-import { MegaPanel, FeatureLinkEl, menuLinkProps } from "./MegaPanel";
+import { MegaPanel } from "./MegaPanel";
+import { MobileDrawer } from "./MobileDrawer";
 
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
@@ -14,14 +15,11 @@ export function Header() {
   const openTimer = useRef<number | undefined>(undefined);
   const closeTimer = useRef<number | undefined>(undefined);
   const navRef = useRef<HTMLElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const closeDrawer = useCallback(() => setOpen(false), []);
+  const returnFocus = useCallback(() => menuBtnRef.current?.focus(), []);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
 
   // Close everything on route change.
   useEffect(() => {
@@ -105,56 +103,21 @@ export function Header() {
         </nav>
 
         <button
+          ref={menuBtnRef}
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpen(true)}
           aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label="Open menu"
           className="label-xs text-ivory lg:hidden"
         >
-          {open ? "Close" : "Menu"}
+          Menu
         </button>
       </div>
 
-      {open ? (
-        <div className="fixed inset-0 top-20 z-50 flex flex-col overflow-y-auto overscroll-contain bg-ink px-6 pb-16 pt-10 lg:hidden">
-          <nav aria-label="Mobile" className="flex flex-col">
-            {navLinks.map((link) => {
-              const menu = navMenus[link.to];
-              return menu ? (
-                <MobileAccordion
-                  key={link.to}
-                  label={link.label}
-                  to={link.to}
-                  menu={menu}
-                  onNavigate={() => setOpen(false)}
-                />
-              ) : (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setOpen(false)}
-                  className="display-tight border-b border-walnut py-6 font-display text-[28px] font-extralight text-ivory"
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-          <a
-            href={practice.bookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-label mt-10 block shrink-0 rounded-[2px] bg-champagne px-6 py-4 text-center text-ink"
-          >
-            Book now
-          </a>
-          <p className="mt-10 font-body text-[14px] text-greige">
-            <a href={practice.phoneHref}>{practice.phone}</a>
-          </p>
-        </div>
-      ) : null}
+      {open ? <MobileDrawer onClose={closeDrawer} returnFocus={returnFocus} /> : null}
     </header>
   );
+}
 }
 
 function canHover() {
@@ -252,88 +215,6 @@ function DesktopDropdown({
       >
         <MegaPanel columns={menu.columns} feature={menu.feature} />
       </div>
-    </div>
-  );
-}
-
-function MobileAccordion({
-  label,
-  to,
-  menu,
-  onNavigate,
-}: {
-  label: string;
-  to: string;
-  menu: NavMenu;
-  onNavigate: () => void;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const id = `mobile-panel-${menu.id}`;
-  const groups = menu.columns.flatMap((c) => c.groups);
-
-  return (
-    <div className="border-b border-walnut">
-      <div className="flex items-center justify-between">
-        <Link
-          to={to}
-          onClick={onNavigate}
-          className="display-tight flex-1 py-6 font-display text-[28px] font-extralight text-ivory"
-        >
-          {label}
-        </Link>
-        <button
-          type="button"
-          aria-expanded={expanded}
-          aria-controls={id}
-          aria-label={`${expanded ? "Collapse" : "Expand"} ${label}`}
-          onClick={() => setExpanded((v) => !v)}
-          className="flex h-12 w-12 items-center justify-center text-greige"
-        >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            aria-hidden="true"
-            className={`transition-transform duration-150 ${expanded ? "rotate-180" : ""}`}
-          >
-            <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.2" />
-          </svg>
-        </button>
-      </div>
-      {expanded ? (
-        <div id={id} className="pb-6">
-          {groups.map((g, i) => (
-            <div key={g.heading} className={i > 0 ? "mt-5" : ""}>
-              <p className="label-xs mb-2 text-olive">{g.heading}</p>
-              <ul className="flex flex-col">
-                {g.links.map((l) => (
-                  <li key={l.label}>
-                    <Link {...menuLinkProps(l)} onClick={onNavigate} className="block py-2 font-body text-[16px] font-light text-greige">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <Link to={menu.allHref} onClick={onNavigate} className="btn-label mt-5 block py-2 text-champagne">
-            {menu.allLabel}
-          </Link>
-          <div className="mt-6 rounded-[2px] bg-walnut/40 px-5 py-6">
-            {menu.feature.image ? (
-              <img src={menu.feature.image} alt={menu.feature.imageAlt ?? ""} className="mb-5 aspect-[4/3] w-full object-cover" />
-            ) : null}
-            <p className="label-xs text-champagne">{menu.feature.eyebrow}</p>
-            <p className="mt-3 font-display text-[20px] font-extralight text-ivory">{menu.feature.title}</p>
-            <p className="mt-3 font-body text-[14px] font-light leading-[1.7] text-greige">{menu.feature.body}</p>
-            <FeatureLinkEl
-              feature={menu.feature}
-              onClick={onNavigate}
-              className="btn-label mt-5 inline-block border-b border-champagne pb-1 text-ivory"
-            />
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 }
