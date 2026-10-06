@@ -36,6 +36,8 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
       Object.assign(b, prev);
       window.scrollTo(0, y);
       returnFocus();
+      // A navigation can reset focus after unmount; return it once the new page has rendered.
+      window.setTimeout(returnFocus, 100);
     };
   }, [returnFocus]);
 
