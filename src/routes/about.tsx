@@ -138,7 +138,7 @@ function AboutPage() {
 
       <section className={`${pad} relative`}>
         <SectionLabel label="Why RIN" contentClassName={`${wrap} items-center`}>
-          <div className="col-span-full lg:col-span-6">
+          <div className="col-span-full lg:col-span-6 lg:row-start-2 lg:mt-10">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
                 <source
@@ -159,10 +159,13 @@ function AboutPage() {
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-full lg:col-span-5 lg:col-start-8">
-            <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
-            <Reveal>
-              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5">
+          {/* Below desktop this block stacks as one column; at desktop it dissolves so the heading spans the row above image and prose, matching the "Jyl" section. */}
+          <div className="col-span-full lg:contents">
+            <div className="lg:col-span-12 lg:row-start-1">
+              <MaskedLines lines={["Building the practice"]} className={`mt-3 ${h2}`} />
+            </div>
+            <Reveal className="lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:mt-10 lg:self-start">
+              <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut mt-5 lg:mt-0">
                 RIN is named for my daughter, Korynne. We call her Ryn. She is my why, and the
                 reason I wanted to build something of my own rather than keep working the way
                 everyone else does.
