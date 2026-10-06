@@ -2,8 +2,8 @@ import { brands, buyUrl, type Product } from "@/data/products";
 
 /**
  * Referral list. A product links out only when buyUrl() returns a real URL.
- * Each row owns its rules (top on the first row, bottom on every row), so
- * every rule spans the same content width with no offsets.
+ * Each row owns one top rule: rules sit only above and between products,
+ * never after the last one, and all span the same content width.
  */
 export function ProductList({ items, showBrand = true }: { items: Product[]; showBrand?: boolean }) {
   const cols = showBrand
@@ -21,7 +21,7 @@ export function ProductList({ items, showBrand = true }: { items: Product[]; sho
           </div>
         );
         return (
-          <li key={p.id} className="border-b border-greige first:border-t">
+          <li key={p.id} className="border-t border-greige">
             {url ? (
               <a href={url} target="_blank" rel="noopener" className="group block hover:bg-white">
                 {body}

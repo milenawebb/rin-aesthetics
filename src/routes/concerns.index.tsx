@@ -54,7 +54,7 @@ function ConcernsIndex() {
             const thumbnail: React.ReactNode = null;
             return (
               <Reveal key={concern.id} delay={i * 40}>
-                <div className={`flex gap-6 border-b border-greige py-7 md:py-8 ${i === 0 ? "border-t" : ""} ${i === 6 ? "lg:border-t" : ""}`}>
+                <div className="flex gap-6 border-t border-greige py-7 md:py-8">
                   {thumbnail ? <div className="aspect-square w-[88px] shrink-0">{thumbnail}</div> : null}
                   <div className="min-w-0">
                     <Link
