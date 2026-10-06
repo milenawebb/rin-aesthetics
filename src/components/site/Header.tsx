@@ -187,6 +187,7 @@ function DesktopDropdown({
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = `nav-panel-${menu.id}`;
+  const skipFocusOpen = useRef(false);
 
   const focusFirst = () =>
     requestAnimationFrame(() => panelRef.current?.querySelector<HTMLAnchorElement>("a")?.focus());
@@ -205,6 +206,7 @@ function DesktopDropdown({
     if (e.key === "Escape") {
       e.preventDefault();
       setOpen(false);
+      skipFocusOpen.current = true;
       triggerRef.current?.focus();
     }
   };
@@ -235,6 +237,10 @@ function DesktopDropdown({
         onClick={onTriggerClick}
         onKeyDown={onTriggerKey}
         onFocus={(e) => {
+          if (skipFocusOpen.current) {
+            skipFocusOpen.current = false;
+            return;
+          }
           if (e.currentTarget.matches(":focus-visible")) setOpen(true);
         }}
         className="font-body text-[14px] font-normal text-ivory transition-colors hover:text-champagne"
