@@ -8,7 +8,8 @@ const EASE = "cubic-bezier(0.16,1,0.3,1)";
 // which itself requires isPublishable() for any real photograph.
 // mode "wipe": hover or focus wipes the after across the before.
 // mode "split": before left, after right, divider fixed at center.
-// Touch and reduced motion always fall back to split.
+// Wipe runs only under (hover: hover) and (pointer: fine); touch, coarse
+// pointers and reduced motion always fall back to split.
 export function ResultTile({
   item,
   treatmentName,
@@ -25,7 +26,7 @@ export function ResultTile({
 
   useEffect(() => {
     setForceSplit(
-      window.matchMedia("(hover: none)").matches ||
+      !window.matchMedia("(hover: hover) and (pointer: fine)").matches ||
         window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     );
   }, []);
@@ -91,8 +92,8 @@ export function ResultTile({
       }
       aria-pressed={onOpen ? undefined : revealed}
       onClick={onOpen}
-      onMouseEnter={() => setRevealed(true)}
-      onMouseLeave={() => setRevealed(false)}
+      onPointerEnter={(e) => e.pointerType === "mouse" && setRevealed(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setRevealed(false)}
       onFocus={() => setRevealed(true)}
       onBlur={() => setRevealed(false)}
       className="relative block aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-greige outline-none focus-visible:ring-1 focus-visible:ring-champagne focus-visible:ring-offset-2"
