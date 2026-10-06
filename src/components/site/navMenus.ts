@@ -150,8 +150,8 @@ export const navMenus: Record<string, NavMenu> = {
   "/treatments": {
     id: "treatments",
     columns: [
-      { groups: [treatmentGroup("Injectables", "Injectables", "injectables")] },
-      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser")] },
+      { groups: [treatmentGroup("Injectables", "Injectables", "injectables", "All injectables")] },
+      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser", "All device and laser")] },
       {
         groups: [
           treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments"),
