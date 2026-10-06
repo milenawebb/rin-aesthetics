@@ -1,5 +1,7 @@
 import { keepBrandTogether } from "@/data/lookup";
-import portrait from "@/assets/jyl-portrait.jpg.asset.json";
+import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+
+const BAND_SIZES = "(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px";
 import { practice } from "@/data/site";
 
 type Props = {
@@ -55,8 +57,11 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           ) : null}
         </div>
         <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">
+          <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={BAND_SIZES} />
           <img
-            src={portrait.url}
+            src={portraitSrc}
+            srcSet={portraitJpgSrcSet}
+            sizes={BAND_SIZES}
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={1123}
             height={1401}

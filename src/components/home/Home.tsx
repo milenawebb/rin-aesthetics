@@ -1,4 +1,4 @@
-import portrait from "@/assets/jyl-portrait.jpg.asset.json";
+import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
@@ -193,8 +193,11 @@ export function Home() {
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
               <picture>
+                <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"} />
                 <img
-                  src={portrait.url}
+                  src={portraitSrc}
+                  srcSet={portraitJpgSrcSet}
+                  sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"}
                   alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
                   width={1123}
                   height={1401}
