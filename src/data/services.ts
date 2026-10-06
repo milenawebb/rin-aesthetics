@@ -890,7 +890,7 @@ export const services: Service[] = [
     notFor:
       "Recent sun exposure, a very active breakout or travel within three weeks are all reasons to wait. Jyl will say so at consultation, and waiting produces a better result.",
 
-    technologiesHeading: "Four technologies. One session.",
+    technologiesHeading: "Four ways to treat. One session.",
     technologiesIntro:
       "Each does something the others cannot. Combining them is what separates this from a standard photofacial.",
     technologies: [
