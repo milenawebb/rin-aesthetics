@@ -166,7 +166,6 @@ export function menuGroups(menu: NavMenu): MenuGroup[] {
 }
 
 /** Extra drawer rows after the main nav links. Not part of the desktop main navigation. */
-export const drawerExtraLinks: { label: string; to: "/shop" | "/financing" }[] = [
-  { label: "Shop", to: "/shop" },
+export const drawerExtraLinks: { label: string; to: "/financing" }[] = [
   { label: "Financing", to: "/financing" },
 ];
