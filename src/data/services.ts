@@ -252,7 +252,7 @@ export const services: Service[] = [
 
     intro: [
       "Lip filler covers a wide range, from restoring what has thinned to deliberately adding more. Where you sit on that range is your decision, and Jyl will tell you plainly what she thinks suits your face.",
-      "Most people who ask for a natural result want definition more than volume: a clearer border, an even shape, a little more at the centre. That takes less product than most expect.",
+      "Most people who ask for a natural result want definition more than volume: a clearer border, an even shape, a little more at the center. That takes less product than most expect.",
     ],
 
     helpsWith: [
@@ -287,7 +287,7 @@ export const services: Service[] = [
       },
       {
         title: "Settling",
-        body: "About two weeks to fully settle. Your photographs and your judgement should both wait until then.",
+        body: "About two weeks to fully settle. Your photographs and your judgment should both wait until then.",
       },
     ],
 
@@ -1110,7 +1110,7 @@ export const services: Service[] = [
     ],
 
     intro: [
-      "Broadband light targets what has colour in it: sun spots, freckling, redness and broken capillaries. It passes over everything else, which is why tone evens out without the skin being resurfaced.",
+      "Broadband light targets what has color in it: sun spots, freckling, redness and broken capillaries. It passes over everything else, which is why tone evens out without the skin being resurfaced.",
       "You can treat a handful of specific spots or the whole face or chest. The chest is worth mentioning, because it shows sun damage earlier than the face and is the area people forget until they see a photograph.",
     ],
 
@@ -1123,7 +1123,7 @@ export const services: Service[] = [
     ],
 
     whoItsFor: [
-      "Anyone whose complaint is colour rather than texture",
+      "Anyone whose complaint is color rather than texture",
       "Patients who want visible change with little downtime",
       "Anyone treating the chest, where sun damage shows first",
     ],
