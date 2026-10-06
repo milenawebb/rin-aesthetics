@@ -1,7 +1,7 @@
 import { keepBrandTogether } from "@/data/lookup";
 import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
-const BAND_SIZES = "(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px";
+const BAND_SIZES = "(min-width: 1024px) 240px, (min-width: 768px) 220px, calc(100vw - 48px)";
 import { practice } from "@/data/site";
 
 type Props = {
@@ -29,12 +29,12 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           {line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
-          <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
+          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-center md:gap-x-10">
             <a
               href={treatment ? treatment.bookingUrl : practice.bookingUrl}
               target="_blank"
               rel="noopener"
-              className="btn-label inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut"
+              className="btn-label inline-flex w-full md:w-auto items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut"
             >
               {treatment ? "Book this treatment" : "Book a consultation"}
             </a>
@@ -66,7 +66,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             width={1123}
             height={1401}
             loading="lazy"
-            className="block aspect-square h-auto w-full max-w-[200px] rounded-[2px] object-cover object-[50%_20%] md:max-w-[220px] lg:max-w-[240px]"
+            className="block aspect-square h-auto w-full rounded-[2px] object-cover object-[50%_20%] md:max-w-[220px] lg:max-w-[240px]"
           />
         </picture>
         </div>
