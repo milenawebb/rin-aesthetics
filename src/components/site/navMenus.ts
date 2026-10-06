@@ -9,6 +9,7 @@ export type MenuLink =
 export interface MenuGroup {
   heading: string;
   links: MenuLink[];
+  foot?: FootLink;
 }
 
 export interface FootLink {
@@ -19,7 +20,6 @@ export interface FootLink {
 
 export interface MenuColumn {
   groups: MenuGroup[];
-  foot?: FootLink;
 }
 
 export type FeatureLink =
@@ -53,9 +53,10 @@ function splitPath(slug: string) {
 
 const treatmentServices = services.filter((s) => !s.slug.startsWith("book/"));
 
-function treatmentGroup(category: string, heading: string): MenuGroup {
+function treatmentGroup(category: string, heading: string, hash: string): MenuGroup {
   return {
     heading,
+    foot: { label: "See all", to: "/treatments", hash },
     links: treatmentServices
       .filter((s) => s.category === category)
       .map((s): MenuLink => ({
@@ -135,7 +136,7 @@ export const navMenus: Record<string, NavMenu> = {
     columns: [
       { groups: [concernGroups[0]!] },
       { groups: [concernGroups[1]!] },
-      { groups: [concernGroups[2]!], foot: { label: "See all concerns", to: "/concerns" } },
+      { groups: [{ ...concernGroups[2]!, foot: { label: "See all concerns", to: "/concerns" } }] },
     ],
     feature: concernsFeature,
     allLabel: "All concerns",
@@ -144,20 +145,13 @@ export const navMenus: Record<string, NavMenu> = {
   "/treatments": {
     id: "treatments",
     columns: [
-      {
-        groups: [treatmentGroup("Injectables", "Injectables")],
-        foot: { label: "See all", to: "/treatments", hash: "injectables" },
-      },
-      {
-        groups: [treatmentGroup("Device & Laser", "Device and laser")],
-        foot: { label: "See all", to: "/treatments", hash: "device-and-laser" },
-      },
+      { groups: [treatmentGroup("Injectables", "Injectables", "injectables")] },
+      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser")] },
       {
         groups: [
-          treatmentGroup("Skin Treatments", "Skin treatments"),
-          treatmentGroup("Hydrafacials", "Hydrafacials"),
+          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments"),
+          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials"),
         ],
-        foot: { label: "See all", to: "/treatments", hash: "skin-treatments" },
       },
     ],
     feature: treatmentsFeature,
