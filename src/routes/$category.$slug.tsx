@@ -66,8 +66,9 @@ function careLines(series: CareSeries | undefined): CareGroup[] {
 
 function CareTimeline({ groups, id }: { groups: CareGroup[]; id: string }) {
   const [expanded, setExpanded] = useState(false);
-  if (groups.length === 1) return <CareBullets items={groups[0]!.bullets} className="mt-8" />;
   const [first, ...rest] = groups;
+  if (!first) return null;
+  if (groups.length === 1) return <CareBullets items={first.bullets} className="mt-8" />;
   const remaining = rest.reduce((n, g) => n + g.bullets.length, 0);
   const restId = `care-rest-${id}`;
   const renderGroup = (g: CareGroup, i: number) => (
@@ -113,6 +114,8 @@ function ServicePage() {
   if (!service) return null;
 
   const media = serviceMedia[service.id];
+  const eyebrow = service.eyebrow ?? service.category;
+  const subtitle = service.tagline ?? service.shortDescription;
   const chips = concernsForService(service);
   const firstConcern = service.concernTags.length
     ? concerns.find((c) => c.tags.includes(service.concernTags[0]!))
@@ -141,7 +144,7 @@ function ServicePage() {
     ...(followUp
       ? [{ label: "Follow-up", value: followUp.priceDisplay === "Free" ? "Complimentary" : followUp.priceDisplay }]
       : []),
-  ];
+  ].filter((fact) => fact.value.trim().length > 0);
 
   const hasHelps = service.helpsWith.length > 0;
   const hasWho = service.whoItsFor.length > 0 || service.notFor !== "";
@@ -168,16 +171,19 @@ function ServicePage() {
 
       {/* 1. Header */}
       <section className="bg-ivory">
-        <div className="mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[96px] md:pb-[80px]">
-          <Label>{service.eyebrow ?? service.category}</Label>
+        <div className={`mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
+          {eyebrow ? <Label>{eyebrow}</Label> : null}
           <h1 className="display-tight mt-6 max-w-[28ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
             <span>{service.name}</span>
             <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
-          <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
-            {service.tagline ?? service.shortDescription}
-          </p>
-          <dl className={`mt-12 grid grid-cols-2 border-l border-t border-greige ${facts.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+          {subtitle ? (
+            <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
+              {subtitle}
+            </p>
+          ) : null}
+          {facts.length ? (
+          <dl className={`mt-12 grid grid-cols-1 border-l border-t border-greige ${facts.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
             {facts.map((fact) => (
               <div key={fact.label} className="border-b border-r border-greige px-6 py-7">
                 <dt className="label-xs text-walnut">{fact.label}</dt>
@@ -185,6 +191,7 @@ function ServicePage() {
               </div>
             ))}
           </dl>
+          ) : null}
           {serviceInPackage(service.name) ? (
             <p className="mt-6 font-body text-[15px] font-light text-walnut">
               <Link
@@ -224,7 +231,7 @@ function ServicePage() {
 
       {/* 3. Intro and actions */}
       <section
-        className={`mx-auto max-w-[1240px] px-6 md:px-10 ${media || service.intro.length ? "py-[56px] md:py-[88px]" : "pt-0 pb-[56px] md:pb-[88px]"}`}
+        className={`mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px] ${media ? "pt-[56px] md:pt-[88px]" : "pt-12"}`}
       >
         {service.intro.length ? (
           <div className="measure mb-10 space-y-6">
