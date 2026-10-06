@@ -1,21 +1,19 @@
 import { keepBrandTogether } from "@/data/lookup";
-import jyl480 from "@/assets/jyl-4x5-480.jpg.asset.json";
-import jyl720 from "@/assets/jyl-4x5-720.jpg.asset.json";
-import jyl960 from "@/assets/jyl-4x5-960.jpg.asset.json";
-import jyl480w from "@/assets/jyl-4x5-480.webp.asset.json";
-import jyl720w from "@/assets/jyl-4x5-720.webp.asset.json";
-import jyl960w from "@/assets/jyl-4x5-960.webp.asset.json";
+import portrait from "@/assets/jyl-portrait.jpg.asset.json";
 import { practice } from "@/data/site";
 
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
   treatment?: { name: string; price: string; bookingUrl: string };
+  /** Page-specific copy for the consultation variant (concern pages). */
+  heading?: string;
+  line?: string;
 };
 
-/** The one closing booking band, used on every page except concern pages. */
-export function BookingBand({ treatment }: Props) {
-  const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : "Book a consultation";
-  const line = treatment ? treatment.price : "Consultations are thorough and obligation-free.";
+/** The one closing booking band, used on every page. */
+export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }: Props) {
+  const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : (headingCopy ?? "Book a consultation");
+  const line = treatment ? treatment.price : (lineCopy ?? "Consultations are thorough and obligation-free.");
   return (
     <section className="booking-band border-t border-greige bg-ivory">
       <div className="site-container">
@@ -57,18 +55,11 @@ export function BookingBand({ treatment }: Props) {
           ) : null}
         </div>
         <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">
-          <source
-            type="image/webp"
-            srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
-          />
           <img
-            src={jyl960.url}
-            srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
+            src={portrait.url}
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
-            width={960}
-            height={1200}
+            width={1123}
+            height={1401}
             loading="lazy"
             className="block aspect-square h-auto w-full max-w-[200px] rounded-[2px] object-cover object-[50%_20%] md:max-w-[220px] lg:max-w-[240px]"
           />

@@ -1,3 +1,4 @@
+import portrait from "@/assets/jyl-portrait.jpg.asset.json";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
@@ -10,12 +11,6 @@ import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
-import jyl4x5Webp480 from "@/assets/jyl-4x5-480.webp.asset.json";
-import jyl4x5Webp720 from "@/assets/jyl-4x5-720.webp.asset.json";
-import jyl4x5Webp960 from "@/assets/jyl-4x5-960.webp.asset.json";
-import jyl4x5Jpg480 from "@/assets/jyl-4x5-480.jpg.asset.json";
-import jyl4x5Jpg720 from "@/assets/jyl-4x5-720.jpg.asset.json";
-import jyl4x5Jpg960 from "@/assets/jyl-4x5-960.jpg.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
@@ -198,18 +193,11 @@ export function Home() {
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
               <picture>
-                <source
-                  type="image/webp"
-                  srcSet={`${jyl4x5Webp480.url} 480w, ${jyl4x5Webp720.url} 720w, ${jyl4x5Webp960.url} 960w`}
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
                 <img
-                  src={jyl4x5Jpg720.url}
-                  srcSet={`${jyl4x5Jpg480.url} 480w, ${jyl4x5Jpg720.url} 720w, ${jyl4x5Jpg960.url} 960w`}
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  src={portrait.url}
                   alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
-                  width={960}
-                  height={1200}
+                  width={1123}
+                  height={1401}
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover object-[50%_25%]"
                 />

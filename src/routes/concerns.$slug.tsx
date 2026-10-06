@@ -6,6 +6,7 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { Reveal } from "@/components/site/Reveal";
+import { BookingBand } from "@/components/site/BookingBand";
 import { practice } from "@/data/site";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { galleryForConcern } from "@/data/gallery";
@@ -236,26 +237,10 @@ function ConcernPage() {
         </section>
       ) : null}
 
-      <section className="bg-ink">
-        <div className="site-container flex flex-col gap-10 band-space md:flex-row md:items-end md:justify-between md:gap-20">
-          <div>
-            <h2 className="type-h2 max-w-[22ch] text-ivory">
-              Not sure which of these is right?
-            </h2>
-            <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">
-              Jyl will look at your skin and tell you which of these is worth doing, and which is not. The consultation fee goes toward whatever you book.
-            </p>
-          </div>
-          <a
-            href={practice.bookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-label inline-flex shrink-0 items-center justify-center self-start rounded-[2px] bg-champagne px-8 py-4 text-ink transition-colors hover:bg-ivory md:self-auto"
-          >
-            Book a consultation
-          </a>
-        </div>
-      </section>
+      <BookingBand
+        heading="Not sure which of these is right?"
+        line="Jyl will look at your skin and tell you which of these is worth doing, and which is not. The consultation fee goes toward whatever you book."
+      />
     </PageShell>
   );
 }

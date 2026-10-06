@@ -5,7 +5,7 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
-import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
+import providerPortrait from "@/assets/jyl-portrait.jpg.asset.json";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
@@ -461,8 +461,8 @@ function ServicePage() {
             <GradedImage
               src={providerPortrait.url}
               alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
-              width={960}
-              height={1280}
+              width={1123}
+              height={1401}
               className="aspect-[3/4] w-full"
             />
             <div>
