@@ -16,6 +16,7 @@ import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageGroups, seriesById, type CareGroup, type CareSeries } from "@/data/careEmails";
+import { keepBrandTogether } from "@/data/lookup";
 import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
@@ -175,7 +176,7 @@ function ServicePage() {
         <div className={`mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
           {eyebrow ? <Label>{eyebrow}</Label> : null}
           <h1 className="type-h1 mt-6 max-w-[22ch] text-ink">
-            <span>{service.name}</span>
+            <span>{keepBrandTogether(service.name)}</span>
             <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
           {subtitle ? (
@@ -336,7 +337,7 @@ function ServicePage() {
       {service.technologies && service.technologies.length ? (
         <section className="mb-[72px] bg-ink md:mb-[112px]">
           <div className="mx-auto max-w-[1240px] band-space px-6 md:px-10">
-            <div className={technologyLead[service.id] ? "lg:grid lg:grid-cols-[1fr_minmax(0,1fr)] lg:items-center lg:gap-16" : undefined}>
+            <div className={technologyLead[service.id] ? "md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-center md:gap-12 lg:gap-16" : undefined}>
               <div>
                 <Label>What's in it</Label>
                 {service.technologiesHeading ? (
@@ -351,14 +352,14 @@ function ServicePage() {
                 ) : null}
               </div>
               {technologyLead[service.id] ? (
-                <figure className="-mx-6 mt-12 md:mx-auto md:w-full md:max-w-[280px] lg:mt-0 lg:max-w-[360px]">
+                <figure className="-mx-6 mt-12 md:mx-0 md:mt-0 md:w-full">
                   <img
                     src={technologyLead[service.id]!.src}
                     alt={technologyLead[service.id]!.alt}
                     width={1000}
                     height={1170}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-bottom md:aspect-[1000/1170] md:max-h-[420px] md:rounded-[2px]"
+                    className="block h-auto w-full md:rounded-[2px]"
                   />
                   <figcaption className="label-xs mt-3 px-6 text-left text-greige md:px-0">{technologyLead[service.id]!.caption}</figcaption>
                 </figure>

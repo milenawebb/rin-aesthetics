@@ -536,6 +536,7 @@
 
 /* ---- Shared type scale. Every template uses these; no per-page heading sizes. ---- */
 @utility type-h1 {
+  text-wrap: balance;
   font-family: var(--font-display);
   font-weight: 200;
   font-size: 40px;

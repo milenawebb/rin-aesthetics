@@ -34,7 +34,7 @@ const signatureService = getServiceById(signature.serviceId);
 const signaturePath = signatureService ? splitSlug(signatureService.slug) : null;
 const signatureLines = signatureService
   ? signatureService.name.endsWith(" by RIN")
-    ? [signatureService.name.slice(0, -7), "by RIN"]
+    ? [signatureService.name.slice(0, -7), "by\u00a0RIN"]
     : [signatureService.name]
   : [];
 const featuredResults = featured();
