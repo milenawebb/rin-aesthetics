@@ -136,7 +136,7 @@ function MobileAccordion() {
 export function Footer() {
   return (
     <footer className="bg-ink">
-      <div className="site-container pt-16 pb-20 md:py-28 md:px-6 lg:px-10">
+      <div className="site-container pt-16 pb-20 md:py-28">
         {/* Mobile: always-visible brand + contact + accordion */}
         <div className="md:hidden">
           <ContactBlock />
