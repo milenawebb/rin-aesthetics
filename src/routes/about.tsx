@@ -5,7 +5,6 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
-import { SectionLabel } from "@/components/site/SectionLabel";
 import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
 const ABOUT_PORTRAIT_SIZES = "(min-width: 1280px) 580px, (min-width: 1024px) 46vw, (min-width: 768px) 460px, calc(100vw - 48px)";
@@ -67,7 +66,8 @@ function AboutPage() {
     <PageShell>
       <div>
       <section className={`${pad} relative scroll-mt-[104px] pt-[56px] md:pt-[104px]`}>
-        <SectionLabel label="About" contentClassName={wrap}>
+        <div className="site-container">
+          <div className={`min-w-0 ${wrap}`}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
@@ -133,11 +133,13 @@ function AboutPage() {
               </p>
             </Reveal>
           </div>
-        </SectionLabel>
+          </div>
+        </div>
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="Why RIN" contentClassName={`${wrap} items-center`}>
+        <div className="site-container">
+          <div className={`min-w-0 ${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6 lg:row-start-2 lg:mt-10">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -189,11 +191,13 @@ function AboutPage() {
               </div>
             </Reveal>
           </div>
-        </SectionLabel>
+          </div>
+        </div>
       </section>
 
       <section className={`bg-ivory ${pad} relative`}>
-        <SectionLabel label="The space" contentClassName={wrap}>
+        <div className="site-container">
+          <div className={`min-w-0 ${wrap}`}>
           <div className="col-span-full">
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
@@ -212,11 +216,13 @@ function AboutPage() {
               ))}
             </div>
           </div>
-        </SectionLabel>
+          </div>
+        </div>
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="In their words" contentClassName={wrap}>
+        <div className="site-container">
+          <div className={`min-w-0 ${wrap}`}>
           <div className="col-span-full">
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
@@ -252,11 +258,13 @@ function AboutPage() {
         >
           Read more reviews on Google
         </a>
-        </SectionLabel>
+          </div>
+        </div>
       </section>
 
       <section className="section-space">
-        <SectionLabel contentClassName={wrap}>
+        <div className="site-container">
+          <div className={`min-w-0 ${wrap}`}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
@@ -272,7 +280,8 @@ function AboutPage() {
             . We will respond within 72 hours.
           </p>
         </Reveal>
-        </SectionLabel>
+          </div>
+        </div>
       </section>
 
       <BookingBand />
