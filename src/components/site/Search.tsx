@@ -196,7 +196,8 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
           <MagnifierIcon size={18} />
           <input
             ref={inputRef}
-            type="search"
+            type="text"
+              enterKeyHint="search"
             value={s.query}
             onChange={(e) => s.setQuery(e.target.value)}
             onKeyDown={s.onInputKey}

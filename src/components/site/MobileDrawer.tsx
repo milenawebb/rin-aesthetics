@@ -107,7 +107,8 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
             <MagnifierIcon size={16} />
             {/* Never autofocused: on a phone the keyboard would cover the menu. */}
             <input
-              type="search"
+              type="text"
+              enterKeyHint="search"
               value={srch.query}
               onChange={(e) => srch.setQuery(e.target.value)}
               onKeyDown={srch.onInputKey}
