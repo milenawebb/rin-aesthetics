@@ -55,7 +55,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         from: SENDER,
         to: [RECIPIENT],
         reply_to: data.email,
-        subject: `New enquiry from the website: ${data.name}`,
+        subject: `New inquiry from the website: ${data.name}`,
         html: `<p><strong>Name:</strong> ${escapeHtml(data.name)}</p><p><strong>Email:</strong> ${escapeHtml(data.email)}</p><p><strong>Message:</strong></p><p>${escapeHtml(data.message).replaceAll("\n", "<br>")}</p>`,
       }),
     });
