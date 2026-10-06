@@ -6,12 +6,7 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import j480w from "@/assets/jyl-4x5-480.webp.asset.json";
-import j720w from "@/assets/jyl-4x5-720.webp.asset.json";
-import j960w from "@/assets/jyl-4x5-960.webp.asset.json";
-import j480 from "@/assets/jyl-4x5-480.jpg.asset.json";
-import j720 from "@/assets/jyl-4x5-720.jpg.asset.json";
-import j960 from "@/assets/jyl-4x5-960.jpg.asset.json";
+import portrait from "@/assets/jyl-portrait.jpg.asset.json";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
@@ -33,7 +28,7 @@ function stripEmpty<T extends Record<string, unknown>>(obj: T): Partial<T> {
 
 const personSchema = stripEmpty({
   ...providerSchema,
-  image: new URL(j960.url, SITE_URL).href,
+  image: new URL(portrait.url, SITE_URL).href,
 });
 
 const seo = seoHead("/about");
@@ -46,10 +41,7 @@ export const Route = createFileRoute("/about")({
       {
         rel: "preload",
         as: "image",
-        type: "image/webp",
-        href: j720w.url,
-        imageSrcSet: `${j480w.url} 480w, ${j720w.url} 720w, ${j960w.url} 960w`,
-        imageSizes: "(max-width: 768px) 100vw, 40vw",
+        href: portrait.url,
         fetchPriority: "high",
       },
     ],
