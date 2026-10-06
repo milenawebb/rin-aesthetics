@@ -1,53 +1,161 @@
-import { concerns } from "@/data/concerns";
+import { concerns, type Concern } from "@/data/concerns";
 import { services } from "@/data/services";
+import { practice } from "@/data/site";
 
 export type MenuLink =
   | { label: string; to: "/concerns/$slug"; params: { slug: string } }
   | { label: string; to: "/$category/$slug"; params: { category: string; slug: string } };
+
 export interface MenuGroup {
-  heading?: string;
+  heading: string;
   links: MenuLink[];
+  foot?: FootLink;
 }
+
+export interface FootLink {
+  label: string;
+  to: "/concerns" | "/treatments";
+  hash?: string;
+}
+
+export interface MenuColumn {
+  groups: MenuGroup[];
+}
+
+export type FeatureLink =
+  | { label: string; kind: "internal"; to: "/$category/$slug"; params: { category: string; slug: string } }
+  | { label: string; kind: "external"; href: string };
+
+export interface FeaturePanel {
+  eyebrow: string;
+  title: string;
+  body: string;
+  link: FeatureLink;
+  /** Optional image URL. When absent, nothing renders in its place. */
+  image?: string;
+  imageAlt?: string;
+}
+
 export interface NavMenu {
   id: "concerns" | "treatments";
-  columns: MenuGroup[][];
+  columns: MenuColumn[];
+  feature: FeaturePanel;
   allLabel: string;
   allHref: "/concerns" | "/treatments";
-  count: number;
 }
 
-const categoryOrder = ["Injectables", "Device & Laser", "Skin Treatments", "Hydrafacials"];
+function splitPath(slug: string) {
+  const [category = "", rest = ""] = slug.split("/");
+  return { category, slug: rest };
+}
 
-const concernLinks: MenuLink[] = concerns.map((c) => ({
-  label: c.h1,
-  to: "/concerns/$slug",
-  params: { slug: c.slug.replace(/^concerns\//, "") },
-}));
-const half = Math.ceil(concernLinks.length / 2);
+/* ---------- Treatments ---------- */
 
-const treatmentGroups: MenuGroup[] = categoryOrder.map((category) => ({
-  heading: category,
-  links: services
-    .filter((s) => s.category === category && !s.slug.startsWith("book/"))
-    .map((s): MenuLink => {
-      const [cat = "", slug = ""] = s.slug.split("/");
-      return { label: s.shortName || s.name, to: "/$category/$slug", params: { category: cat, slug } };
+const treatmentServices = services.filter((s) => !s.slug.startsWith("book/"));
+
+function treatmentGroup(category: string, heading: string, hash: string): MenuGroup {
+  return {
+    heading,
+    foot: { label: "See all", to: "/treatments", hash },
+    links: treatmentServices
+      .filter((s) => s.category === category)
+      .map((s): MenuLink => ({
+        label: s.shortName || s.name,
+        to: "/$category/$slug",
+        params: splitPath(s.slug),
+      })),
+  };
+}
+
+const refinery = services.find((s) => s.slug === "devices/skin-refinery");
+
+const treatmentsFeature: FeaturePanel = {
+  eyebrow: "Signature treatment",
+  title: refinery?.name ?? "",
+  body: "Jyl's own protocol, built from the treatments on this page and sequenced for your skin rather than sold as a single appointment.",
+  link: {
+    label: `Read about ${refinery?.shortName ?? refinery?.name ?? ""}`.replace(/^Read about The /, "Read about the "),
+    kind: "internal",
+    to: "/$category/$slug",
+    params: splitPath(refinery?.slug ?? ""),
+  },
+};
+
+/* ---------- Concerns ---------- */
+
+const concernColumns: { heading: string; ids: string[] }[] = [
+  { heading: "Shape and volume", ids: ["lines-and-wrinkles", "volume-loss", "facial-contour", "skin-laxity"] },
+  { heading: "Lips, eyes and hair", ids: ["lips", "under-eye-area", "hair-thinning"] },
+  {
+    heading: "Skin quality",
+    ids: ["pigmentation", "redness", "texture-and-pores", "acne-and-scarring", "dryness-and-dullness"],
+  },
+];
+
+function concernLink(c: Concern): MenuLink {
+  return { label: c.h1, to: "/concerns/$slug", params: { slug: c.slug.replace(/^concerns\//, "") } };
+}
+
+function buildConcernGroups(): MenuGroup[] {
+  const byId = new Map(concerns.map((c) => [c.id, c]));
+  const listed = new Set(concernColumns.flatMap((col) => col.ids));
+  const groups = concernColumns.map((col) => ({
+    heading: col.heading,
+    links: col.ids.flatMap((id) => {
+      const c = byId.get(id);
+      return c ? [concernLink(c)] : [];
     }),
-}));
+  }));
+  // Safety net: a concern missing from the lists above still appears, in the last column.
+  const missing = concerns.filter((c) => !listed.has(c.id));
+  if (missing.length) {
+    if (import.meta.env.DEV) {
+      console.warn(
+        `[navMenus] Concern ids not assigned to a nav column, appended to the last column: ${missing
+          .map((c) => c.id)
+          .join(", ")}`,
+      );
+    }
+    groups[groups.length - 1]?.links.push(...missing.map(concernLink));
+  }
+  return groups;
+}
+
+const concernGroups = buildConcernGroups();
+
+const concernsFeature: FeaturePanel = {
+  eyebrow: "Not sure where to start",
+  title: "Book a consultation",
+  body: "Tell me what bothers you when you look in the mirror and I will tell you honestly what will help, what will not, and what it would take.",
+  link: { label: "Book a consultation", kind: "external", href: practice.bookingUrl },
+};
 
 export const navMenus: Record<string, NavMenu> = {
   "/concerns": {
     id: "concerns",
-    columns: [[{ links: concernLinks.slice(0, half) }], [{ links: concernLinks.slice(half) }]],
+    columns: [
+      { groups: [concernGroups[0]!] },
+      { groups: [concernGroups[1]!] },
+      { groups: [{ ...concernGroups[2]!, foot: { label: "See all concerns", to: "/concerns" } }] },
+    ],
+    feature: concernsFeature,
     allLabel: "All concerns",
     allHref: "/concerns",
-    count: concernLinks.length,
   },
   "/treatments": {
     id: "treatments",
-    columns: [treatmentGroups.slice(0, 1), treatmentGroups.slice(1)],
+    columns: [
+      { groups: [treatmentGroup("Injectables", "Injectables", "injectables")] },
+      { groups: [treatmentGroup("Device & Laser", "Device and laser", "device-and-laser")] },
+      {
+        groups: [
+          treatmentGroup("Skin Treatments", "Skin treatments", "skin-treatments"),
+          treatmentGroup("Hydrafacials", "Hydrafacials", "hydrafacials"),
+        ],
+      },
+    ],
+    feature: treatmentsFeature,
     allLabel: "All treatments",
     allHref: "/treatments",
-    count: treatmentGroups.reduce((n, g) => n + g.links.length, 0),
   },
 };

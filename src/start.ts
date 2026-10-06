@@ -20,7 +20,8 @@ const legacyUrlMiddleware = createMiddleware().server(async ({ next, request }) 
     return new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8" } });
   }
   const target = wpMap.get(path) ?? internalMap.get(path);
-  if (target) {
+  // Never redirect a URL to itself ("/about/" maps to "/about", which is a live page).
+  if (target && target !== url.pathname) {
     return new Response(null, { status: 301, headers: { location: target } });
   }
   return next();
