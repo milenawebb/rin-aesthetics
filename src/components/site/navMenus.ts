@@ -159,3 +159,14 @@ export const navMenus: Record<string, NavMenu> = {
     allHref: "/treatments",
   },
 };
+
+/** Groups for the mobile drawer: the same groups the mega menu columns hold, in column order. */
+export function menuGroups(menu: NavMenu): MenuGroup[] {
+  return menu.columns.flatMap((c) => c.groups);
+}
+
+/** Extra drawer rows after the main nav links. Not part of the desktop main navigation. */
+export const drawerExtraLinks: { label: string; to: "/shop" | "/financing" }[] = [
+  { label: "Shop", to: "/shop" },
+  { label: "Financing", to: "/financing" },
+];
