@@ -1,3 +1,4 @@
+import { keepBrandTogether } from "@/data/lookup";
 import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -92,7 +93,7 @@ function TreatmentsIndex() {
                         params={{ category: p.category, slug: p.slug }}
                         className="font-body text-[19px] font-medium leading-[1.35] text-ink decoration-greige underline-offset-[6px] transition-colors hover:underline hover:decoration-champagne"
                       >
-                        {item.name}
+                        {keepBrandTogether(item.name)}
                       </Link>
                     </div>
                     <p role="cell" className="font-body text-[16px] font-light leading-[1.75] text-walnut">

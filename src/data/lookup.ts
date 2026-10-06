@@ -69,3 +69,9 @@ export const downtimeLabel: Record<Downtime, string> = {
 export function sessionsLabel(n: number) {
   return n <= 1 ? "Single visit" : `Series of ${n}`;
 }
+
+
+/** Joins "by RIN" with a non-breaking space so the brand never wraps away from "by". */
+export function keepBrandTogether(text: string): string {
+  return text.replace(/ by RIN\b/g, " by\u00a0RIN");
+}
