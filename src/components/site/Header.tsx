@@ -2,13 +2,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { navLinks, practice } from "@/data/site";
 import { Logo } from "./Logo";
-import { navMenus, type MenuLink, type NavMenu } from "./navMenus";
-
-function linkProps(l: MenuLink) {
-  return l.to === "/concerns/$slug"
-    ? ({ to: l.to, params: l.params } as const)
-    : ({ to: l.to, params: l.params } as const);
-}
+import { navMenus, type NavMenu } from "./navMenus";
+import { MegaPanel, FeatureLinkEl, menuLinkProps } from "./MegaPanel";
 
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
@@ -222,7 +217,6 @@ function DesktopDropdown({
   return (
     <div
       ref={wrapRef}
-      className="relative"
       onMouseEnter={() => canHover() && onHoverIn()}
       onMouseLeave={() => canHover() && onHoverOut()}
       onBlur={(e) => {
@@ -254,40 +248,9 @@ function DesktopDropdown({
         id={panelId}
         hidden={!isOpen}
         onKeyDown={onPanelKey}
-        className="nav-panel absolute left-0 top-full z-50 pt-6"
+        className="nav-panel absolute inset-x-0 top-full z-50 max-h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden border-b border-greige bg-ivory"
       >
-        <div className="w-max max-w-[min(560px,calc(100vw-48px))] rounded-[2px] border border-greige bg-ivory px-8 py-7">
-          <div className="grid grid-cols-2 gap-x-10">
-            {menu.columns.map((col, ci) => (
-              <div key={ci} className="flex flex-col gap-6">
-                {col.map((group, gi) => (
-                  <div key={gi}>
-                    {group.heading ? (
-                      <p className="label-xs mb-3 text-olive">{group.heading}</p>
-                    ) : null}
-                    <ul className="flex flex-col gap-[10px]">
-                      {group.links.map((l) => (
-                        <li key={l.label}>
-                          <Link
-                            {...linkProps(l)}
-                            className="font-body text-[14px] font-light text-ink transition-colors hover:text-walnut"
-                          >
-                            {l.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 border-t border-greige pt-5">
-            <Link to={menu.allHref} className="btn-label text-ink transition-colors hover:text-walnut">
-              {menu.allLabel}
-            </Link>
-          </div>
-        </div>
+        <MegaPanel columns={menu.columns} feature={menu.feature} />
       </div>
     </div>
   );
@@ -306,7 +269,7 @@ function MobileAccordion({
 }) {
   const [expanded, setExpanded] = useState(false);
   const id = `mobile-panel-${menu.id}`;
-  const groups = menu.columns.flat();
+  const groups = menu.columns.flatMap((c) => c.groups);
 
   return (
     <div className="border-b border-walnut">
@@ -340,12 +303,12 @@ function MobileAccordion({
       {expanded ? (
         <div id={id} className="pb-6">
           {groups.map((g, i) => (
-            <div key={i} className={i > 0 && g.heading ? "mt-5" : ""}>
-              {g.heading ? <p className="label-xs mb-2 text-olive">{g.heading}</p> : null}
+            <div key={g.heading} className={i > 0 ? "mt-5" : ""}>
+              <p className="label-xs mb-2 text-olive">{g.heading}</p>
               <ul className="flex flex-col">
                 {g.links.map((l) => (
                   <li key={l.label}>
-                    <Link {...linkProps(l)} onClick={onNavigate} className="block py-2 font-body text-[16px] font-light text-greige">
+                    <Link {...menuLinkProps(l)} onClick={onNavigate} className="block py-2 font-body text-[16px] font-light text-greige">
                       {l.label}
                     </Link>
                   </li>
@@ -356,6 +319,19 @@ function MobileAccordion({
           <Link to={menu.allHref} onClick={onNavigate} className="btn-label mt-5 block py-2 text-champagne">
             {menu.allLabel}
           </Link>
+          <div className="mt-6 rounded-[2px] bg-walnut/40 px-5 py-6">
+            {menu.feature.image ? (
+              <img src={menu.feature.image} alt={menu.feature.imageAlt ?? ""} className="mb-5 aspect-[4/3] w-full object-cover" />
+            ) : null}
+            <p className="label-xs text-champagne">{menu.feature.eyebrow}</p>
+            <p className="mt-3 font-display text-[20px] font-extralight text-ivory">{menu.feature.title}</p>
+            <p className="mt-3 font-body text-[14px] font-light leading-[1.7] text-greige">{menu.feature.body}</p>
+            <FeatureLinkEl
+              feature={menu.feature}
+              onClick={onNavigate}
+              className="btn-label mt-5 inline-block border-b border-champagne pb-1 text-ivory"
+            />
+          </div>
         </div>
       ) : null}
     </div>
