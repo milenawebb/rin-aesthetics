@@ -113,7 +113,7 @@ function ContactForm() {
     <section className="mt-24 border-t border-greige pt-12" aria-labelledby="send-message">
       <h2 id="send-message" className="type-h2 text-ink">Send a message</h2>
       <form className="mt-10 space-y-7" noValidate onSubmit={handleSubmit}>
-        <div className="grid gap-7 md:grid-cols-2 md:gap-8">
+        <div className="grid gap-7 md:grid-cols-2 md:gap-10">
         <div>
           <label htmlFor="contact-name" className={label}>Name</label>
           <Input
