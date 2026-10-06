@@ -70,7 +70,7 @@ function AboutPage() {
     <PageShell>
       <div>
       <section className={`${pad} relative scroll-mt-[104px] pt-[56px] md:pt-[104px]`}>
-        <SectionLabel label="About" className="md:px-8 lg:px-10" contentClassName={wrap}>
+        <SectionLabel label="About" contentClassName={wrap}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
@@ -144,7 +144,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="Why RIN" className="md:px-8 lg:px-10" contentClassName={`${wrap} items-center`}>
+        <SectionLabel label="Why RIN" contentClassName={`${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6">
             <WipeImage from="left">
               <picture className="block overflow-hidden rounded-[2px]">
@@ -197,7 +197,7 @@ function AboutPage() {
       </section>
 
       <section className={`bg-ivory ${pad} relative`}>
-        <SectionLabel label="The space" className="md:px-8 lg:px-10" contentClassName={wrap}>
+        <SectionLabel label="The space" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["Where you will be"]} className={`mt-3 ${h2}`} />
             <p className="mt-5 font-body text-[16px] font-light text-walnut">
@@ -220,7 +220,7 @@ function AboutPage() {
       </section>
 
       <section className={`${pad} relative`}>
-        <SectionLabel label="In their words" className="md:px-8 lg:px-10" contentClassName={wrap}>
+        <SectionLabel label="In their words" contentClassName={wrap}>
           <div className="col-span-full">
             <MaskedLines lines={["What clients say about Jyl"]} className={`mt-3 ${h2}`} />
           </div>
@@ -260,7 +260,7 @@ function AboutPage() {
       </section>
 
       <section className="section-space">
-        <SectionLabel className="md:px-8 lg:px-10" contentClassName={wrap}>
+        <SectionLabel contentClassName={wrap}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
