@@ -16,7 +16,7 @@ import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
-import { serviceMedia, technologyMedia } from "@/data/service-media";
+import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
   concernsForService,
@@ -288,17 +288,34 @@ function ServicePage() {
       {service.technologies && service.technologies.length ? (
         <section className="mb-[72px] bg-ink md:mb-[120px]">
           <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
-            <Label>What's in it</Label>
-            {service.technologiesHeading ? (
-              <h2 className="display-tight mt-6 font-display text-[28px] font-extralight text-ivory md:text-[34px]">
-                {service.technologiesHeading}
-              </h2>
-            ) : null}
-            {service.technologiesIntro ? (
-              <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-greige">
-                {service.technologiesIntro}
-              </p>
-            ) : null}
+            <div className={technologyLead[service.id] ? "lg:grid lg:grid-cols-[1fr_minmax(0,1fr)] lg:items-center lg:gap-16" : undefined}>
+              <div>
+                <Label>What's in it</Label>
+                {service.technologiesHeading ? (
+                  <h2 className="display-tight mt-6 font-display text-[28px] font-extralight text-ivory md:text-[34px]">
+                    {service.technologiesHeading}
+                  </h2>
+                ) : null}
+                {service.technologiesIntro ? (
+                  <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-greige">
+                    {service.technologiesIntro}
+                  </p>
+                ) : null}
+              </div>
+              {technologyLead[service.id] ? (
+                <figure className="mx-auto mt-12 w-full max-w-[220px] md:max-w-[280px] lg:mt-0 lg:max-w-[360px]">
+                  <img
+                    src={technologyLead[service.id]!.src}
+                    alt={technologyLead[service.id]!.alt}
+                    width={1000}
+                    height={1170}
+                    loading="lazy"
+                    className="aspect-[1000/1170] max-h-[420px] w-full rounded-[2px] object-cover"
+                  />
+                  <figcaption className="label-xs mt-3 text-greige">{technologyLead[service.id]!.caption}</figcaption>
+                </figure>
+              ) : null}
+            </div>
             <div className="mt-14 grid border-t border-walnut md:grid-cols-2 lg:grid-cols-4">
               {service.technologies.map((tech, i) => {
                 const image = technologyMedia[service.id]?.[i];
