@@ -49,7 +49,29 @@ const csrfMiddleware = createCsrfMiddleware({
   filter: (ctx) => ctx.handlerType === "serverFn",
 });
 
+// Every host except the production domain gets a noindex tag in the rendered
+// HTML (plus a matching header). Crawling stays allowed so the tag is read.
+const PRODUCTION_HOSTS = new Set(["rinaestheticsva.com", "www.rinaestheticsva.com"]);
+const NOINDEX_META = '<meta name="robots" content="noindex, nofollow"/>';
+
+const noindexMiddleware = createMiddleware().server(async ({ next, request }) => {
+  const result = await next();
+  const host = new URL(request.url).hostname.toLowerCase();
+  if (PRODUCTION_HOSTS.has(host)) return result;
+  const res = result.response;
+  if (!(res instanceof Response)) return result;
+  const headers = new Headers(res.headers);
+  headers.set("x-robots-tag", "noindex, nofollow");
+  const type = headers.get("content-type") ?? "";
+  if (!type.includes("text/html")) {
+    return { ...result, response: new Response(res.body, { status: res.status, statusText: res.statusText, headers }) };
+  }
+  const html = (await res.text()).replace(/<head>/i, `<head>${NOINDEX_META}`);
+  headers.delete("content-length");
+  return { ...result, response: new Response(html, { status: res.status, statusText: res.statusText, headers }) };
+});
+
 export const startInstance = createStart(() => ({
   functionMiddleware: [attachSupabaseAuth],
-  requestMiddleware: [errorMiddleware, legacyUrlMiddleware, csrfMiddleware],
+  requestMiddleware: [errorMiddleware, noindexMiddleware, legacyUrlMiddleware, csrfMiddleware],
 }));
