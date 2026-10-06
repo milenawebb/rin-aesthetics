@@ -145,9 +145,20 @@ export function Footer() {
 
         <DesktopFooter />
 
-        <div className="mt-12 border-t border-walnut pt-8 md:mt-16">
+        <div className="mt-12 flex flex-col items-start gap-2 border-t border-walnut pt-8 md:mt-16 md:flex-row md:items-baseline md:justify-between md:gap-8">
           <p className="font-body text-[13px] font-light text-[#A39A8C]">
             © {new Date().getFullYear()} RIN Aesthetic Practice. {practice.location}.
+          </p>
+          <p className="font-body text-[13px] font-light text-footer-credit">
+            Developed by{" "}
+            <a
+              href="https://fifthexit.com"
+              target="_blank"
+              rel="noopener"
+              className="underline-offset-4 hover:underline focus-visible:underline"
+            >
+              fifthexit
+            </a>
           </p>
         </div>
       </div>
