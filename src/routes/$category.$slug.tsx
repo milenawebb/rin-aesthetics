@@ -16,7 +16,7 @@ import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageBullets, seriesById, type CareSeries } from "@/data/careEmails";
-import { serviceMedia, technologyMedia } from "@/data/service-media";
+import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
   concernsForService,
