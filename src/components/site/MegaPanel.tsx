@@ -49,7 +49,7 @@ export function MegaPanel({ columns, feature }: { columns: MenuColumn[]; feature
                 {group.foot ? (
                   <Link
                     to={group.foot.to}
-                    hash={group.foot.hash}
+                    {...(group.foot.hash ? { hash: group.foot.hash } : {})}
                     className="mt-4 inline-block font-body text-[14px] font-normal text-ink transition-colors hover:text-walnut"
                   >
                     {group.foot.label}
