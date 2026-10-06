@@ -112,7 +112,8 @@ function ContactForm() {
   return (
     <section className="mt-24 border-t border-greige pt-12" aria-labelledby="send-message">
       <h2 id="send-message" className="type-h2 text-ink">Send a message</h2>
-      <form className="mt-10 max-w-[680px] space-y-7" noValidate onSubmit={handleSubmit}>
+      <form className="mt-10 space-y-7" noValidate onSubmit={handleSubmit}>
+        <div className="grid gap-7 md:grid-cols-2 md:gap-10">
         <div>
           <label htmlFor="contact-name" className={label}>Name</label>
           <Input
@@ -139,6 +140,7 @@ function ContactForm() {
             className="mt-3 h-12 rounded-[2px] border-greige bg-transparent shadow-none"
           />
           {errors.email && <p id="contact-email-error" className="mt-2 text-sm text-destructive">{errors.email}</p>}
+        </div>
         </div>
         <div>
           <label htmlFor="contact-message" className={label}>Message</label>
@@ -184,7 +186,7 @@ function ContactForm() {
 function ContactPage() {
   return (
     <PageShell>
-      <div className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+      <div className="page-head mx-auto max-w-[1240px] px-6 md:px-10 xl:px-0">
         <h1 className="type-h1 text-ink">Contact</h1>
         <p className="mt-6 max-w-[68ch] text-lg font-light text-ink/80">
           Booking is the fastest way to reach us.
