@@ -34,7 +34,7 @@ function ResultsPage() {
 
   return (
     <PageShell>
-      <main className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+      <main className="page-head mx-auto max-w-[1240px] px-6 md:px-10 xl:px-0">
         <header>
           <p className="eyebrow">Results</p>
           <h1 className="type-h1 mt-6 text-ink">
