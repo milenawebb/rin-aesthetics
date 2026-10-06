@@ -19,13 +19,12 @@ export const Route = createFileRoute("/concerns/")({
   component: ConcernsIndex,
 });
 
-const display = "display-tight font-display text-[30px] font-extralight text-ink md:text-[46px]";
+const display = "type-h1 text-ink";
 
 function ConcernsIndex() {
   return (
     <PageShell>
-      <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[104px] md:pb-[80px]">
-        <p className="eyebrow">Concerns</p>
+      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10">
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={["Concerns"]} className={display} />
           <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">
@@ -34,7 +33,7 @@ function ConcernsIndex() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
+      <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-flow-col lg:grid-rows-6 lg:gap-x-16">
           {concerns.map((concern, i) => {
             const treatments = servicesFor(concern);

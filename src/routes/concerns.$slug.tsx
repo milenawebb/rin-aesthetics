@@ -33,7 +33,8 @@ export const Route = createFileRoute("/concerns/$slug")({
   component: ConcernPage,
 });
 
-const display = "display-tight font-display text-[30px] font-extralight text-ink md:text-[46px]";
+const h1 = "type-h1 text-ink";
+const display = "type-h2 text-ink";
 
 function ConcernPage() {
   const { slug } = Route.useParams();
@@ -67,10 +68,10 @@ function ConcernPage() {
         />
       ) : null}
 
-      <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[104px] md:pb-[80px]">
+      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10">
         <p className="eyebrow">Concern</p>
         <div className="mt-6 max-w-[860px]">
-          <MaskedLines as="h1" lines={[concern.h1]} className={display} />
+          <MaskedLines as="h1" lines={[concern.h1]} className={h1} />
           {concern.intro ? (
             <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">{concern.intro}</p>
           ) : null}
@@ -78,7 +79,7 @@ function ConcernPage() {
       </section>
 
       {concern.body.length ? (
-        <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[96px]">
+        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
           <div className="measure space-y-6">
             {concern.body.map((para, i) => (
               <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
@@ -90,7 +91,7 @@ function ConcernPage() {
       ) : null}
 
       {treatments.length ? (
-        <section className="pb-[72px] md:pb-[120px]">
+        <section className="section-space">
           <SectionLabel label="Treatments for this" contentClassName="px-6 md:px-10 xl:px-0">
           <MaskedLines
             as="h2"
@@ -154,7 +155,7 @@ function ConcernPage() {
       ) : null}
 
       {concernProducts.length ? (
-        <section className="relative mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]">
+        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
           <h2 className="label-xs text-walnut">Products for this</h2>
           <div className="mt-8">
             <ProductList items={concernProducts} />
@@ -163,8 +164,8 @@ function ConcernPage() {
       ) : null}
 
       {results.length ? (
-        <section className="py-[72px] md:py-[120px]">
-          <SectionLabel label="Results" contentClassName="px-6 md:px-10 xl:px-0">
+        <section className="section-space">
+          <SectionLabel contentClassName="px-6 md:px-10 xl:px-0">
             <MaskedLines as="h2" lines={["Results"]} className={display} />
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
@@ -179,8 +180,8 @@ function ConcernPage() {
       ) : null}
 
       {concern.faqs.length ? (
-        <section className="py-[72px] md:py-[120px]">
-          <SectionLabel label="Questions" contentClassName="px-6 md:px-10 xl:px-0">
+        <section className="section-space">
+          <SectionLabel contentClassName="px-6 md:px-10 xl:px-0">
           <MaskedLines as="h2" lines={["Questions"]} className={display} />
           <div className="mt-12 border-t border-greige">
             {concern.faqs.map((faq) => (
@@ -203,7 +204,7 @@ function ConcernPage() {
       ) : null}
 
       {related.length ? (
-        <section className="mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[96px]">
+        <section className="section-space mx-auto max-w-[1240px] px-6 md:px-10">
           <h2 className="label-xs text-walnut">Also look at</h2>
           <p className="mt-4 font-body text-[15px] font-light leading-[1.8] text-walnut">
             {related.map((other, i) => (
@@ -223,9 +224,9 @@ function ConcernPage() {
       ) : null}
 
       <section className="bg-ink">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-10 px-6 py-[72px] md:flex-row md:items-end md:justify-between md:gap-20 md:px-10 md:py-[96px]">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-10 band-space px-6 md:flex-row md:items-end md:justify-between md:gap-20 md:px-10">
           <div>
-            <h2 className="display-tight max-w-[22ch] font-display text-[30px] font-extralight text-ivory md:text-[38px]">
+            <h2 className="type-h2 max-w-[22ch] text-ivory">
               Not sure which of these is right?
             </h2>
             <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-greige">

@@ -17,15 +17,14 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
 });
 
-const sectionClass = "mx-auto max-w-[1240px] px-6 py-[56px] md:px-10 md:py-[88px]";
-const headingClass = "display-tight font-display text-[28px] font-extralight text-ink md:text-[34px]";
+const sectionClass = "section-space mx-auto max-w-[1240px] px-6 md:px-10";
+const headingClass = "type-h2 text-ink";
 
 function ShopPage() {
   return (
     <PageShell>
-      <section className="mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[104px]">
-        <p className="eyebrow">Shop</p>
-        <h1 className="display-tight mt-6 font-display text-[34px] font-extralight text-ink md:text-[44px]">
+      <section className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+        <h1 className="type-h1 text-ink">
           Shop
         </h1>
       </section>
@@ -36,7 +35,7 @@ function ShopPage() {
           <div className="mt-10 space-y-10">
             {packages.map((pkg) => (
               <div key={pkg.id} className="max-w-[760px] border border-greige px-6 py-8 md:px-10 md:py-10">
-                <h3 className="font-body text-[19px] font-medium leading-[1.35] text-ink">
+                <h3 className="type-h3 text-ink">
                   {pkg.name}
                 </h3>
                 <p className="mt-3 font-body text-[19px] font-medium text-ink">{pkg.priceDisplay}</p>

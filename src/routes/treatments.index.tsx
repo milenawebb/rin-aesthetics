@@ -28,7 +28,7 @@ export const Route = createFileRoute("/treatments/")({
   component: TreatmentsIndex,
 });
 
-const display = "display-tight font-display text-[30px] font-extralight text-ink md:text-[46px]";
+const display = "type-h1 text-ink";
 
 function TreatmentsIndex() {
   const groups = categoryOrder
@@ -42,8 +42,7 @@ function TreatmentsIndex() {
 
   return (
     <PageShell>
-      <section className="relative mx-auto max-w-[1240px] px-6 pt-[56px] pb-[56px] md:px-10 md:pt-[104px] md:pb-[80px]">
-        <p className="eyebrow">Treatments</p>
+      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10">
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={["Treatments"]} className={display} />
           <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">
@@ -65,7 +64,7 @@ function TreatmentsIndex() {
         <section
           key={group.category}
           id={categoryIds[group.category]}
-          className="scroll-mt-20 pb-[72px] md:pb-[120px]"
+          className="section-space scroll-mt-20"
         >
           <SectionLabel label={group.category} contentClassName="px-6 md:px-10 xl:px-0">
           <div className="xl:mt-8" role="table" aria-label={group.category}>
