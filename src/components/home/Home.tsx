@@ -159,7 +159,7 @@ export function Home() {
             <MaskedLines
               lines={signatureLines}
               delay={700}
-              className="col-span-12 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ivory md:text-[56px]"
+              className="type-h2 col-span-12 text-ivory"
             />
 
             <p className="pretty col-span-12 mt-8 max-w-[62ch] font-body text-[17px] font-light leading-[1.8] text-greige">
@@ -211,7 +211,7 @@ export function Home() {
             <MaskedLines
               as="h3"
               lines={[provider.name]}
-              className="font-body text-[30px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[46px]"
+              className="type-h2 text-ink"
             />
 
             {provider.paragraphs.map((paragraph, i) => (
