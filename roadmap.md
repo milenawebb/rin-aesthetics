@@ -38,4 +38,4 @@
 # Concern content batch 2
 
 - [x] Merge the four supplied concern records by ID without changing other fields or records
-- [ ] Verify filled and empty pages, capture screenshots and redness FAQ schema, and run the dash check
+- [x] Verify filled and empty pages, capture screenshots and redness FAQ schema, and run the dash check
