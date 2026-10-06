@@ -1,3 +1,4 @@
+import { ConcernArch } from "@/components/site/ConcernArch";
 import { seoHead } from "@/lib/seo-head";
 import type React from "react";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -49,12 +50,13 @@ function ConcernsIndex() {
                 : prices.length >= 2
                   ? `${count}, from $${Math.min(...prices).toLocaleString("en-US")}`
                   : count;
-            // Reserved for a single 88px square result image per concern, once real photos exist.
-            const thumbnail: React.ReactNode = null;
+            const thumbnail: React.ReactNode = concern.image ? (
+              <ConcernArch src={concern.image} alt={concern.imageAlt} loading="lazy" className="w-[120px] shrink-0 md:w-[132px]" />
+            ) : null;
             return (
               <Reveal key={concern.id} delay={i * 40}>
-                <div className="flex gap-6 border-t border-greige py-7 md:py-8">
-                  {thumbnail ? <div className="aspect-square w-[88px] shrink-0">{thumbnail}</div> : null}
+                <div className="flex flex-col gap-5 border-t border-greige py-7 sm:flex-row sm:items-center sm:gap-8 md:py-8">
+                  {thumbnail}
                   <div className="min-w-0">
                     <Link
                       to="/concerns/$slug"
