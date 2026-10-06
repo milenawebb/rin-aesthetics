@@ -305,14 +305,14 @@ function ServicePage() {
               {technologyLead[service.id] ? (
                 <figure className="mx-auto mt-12 w-full max-w-[220px] md:max-w-[280px] lg:mt-0 lg:max-w-[360px]">
                   <img
-                    src={technologyLead[service.id].src}
-                    alt={technologyLead[service.id].alt}
+                    src={technologyLead[service.id]!.src}
+                    alt={technologyLead[service.id]!.alt}
                     width={1000}
                     height={1170}
                     loading="lazy"
                     className="aspect-[1000/1170] max-h-[420px] w-full rounded-[2px] object-cover"
                   />
-                  <figcaption className="label-xs mt-3 text-greige">{technologyLead[service.id].caption}</figcaption>
+                  <figcaption className="label-xs mt-3 text-greige">{technologyLead[service.id]!.caption}</figcaption>
                 </figure>
               ) : null}
             </div>
