@@ -589,7 +589,7 @@
 .booking-band {
   margin-top: var(--space-section);
 }
-main > :has(+ .booking-band) {
+:has(+ .booking-band) {
   padding-bottom: 0;
   margin-bottom: 0;
 }
