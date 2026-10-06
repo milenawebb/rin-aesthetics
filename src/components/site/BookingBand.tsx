@@ -1,3 +1,4 @@
+import { keepBrandTogether } from "@/data/lookup";
 import jyl480 from "@/assets/jyl-4x5-480.jpg.asset.json";
 import jyl720 from "@/assets/jyl-4x5-720.jpg.asset.json";
 import jyl960 from "@/assets/jyl-4x5-960.jpg.asset.json";
@@ -15,7 +16,7 @@ type Props = {
 
 /** The one closing booking band, used on every page except concern pages. */
 export function BookingBand({ treatment, padding = "px-6 md:px-10" }: Props) {
-  const heading = treatment ? `Book your ${treatment.name}` : "Book a consultation";
+  const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : "Book a consultation";
   const line = treatment ? treatment.price : "Consultations are thorough and obligation-free.";
   return (
     <section className="border-t border-greige bg-ivory">
