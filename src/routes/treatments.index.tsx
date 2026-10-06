@@ -85,7 +85,7 @@ function TreatmentsIndex() {
                 <Reveal key={item.id} delay={i * 60}>
                   <div
                     role="row"
-                    className="grid gap-4 border-b border-greige py-7 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:items-baseline md:gap-8 md:py-8"
+                    className={`grid gap-4 border-greige py-7 ${i === 0 ? "border-t md:border-t-0" : "border-t"} md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,1.6fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] md:items-baseline md:gap-8 md:py-8`}
                   >
                     <div role="cell">
                       <Link
