@@ -66,7 +66,7 @@ const noindexMiddleware = createMiddleware().server(async ({ next, request }) =>
   if (!type.includes("text/html")) {
     return { ...result, response: new Response(res.body, { status: res.status, statusText: res.statusText, headers }) };
   }
-  const html = (await res.text()).replace(/<head>/i, `<head>${NOINDEX_META}`);
+  const html = (await res.text()).replace(/<head(\s[^>]*)?>/i, (m) => `${m}${NOINDEX_META}`);
   headers.delete("content-length");
   return { ...result, response: new Response(html, { status: res.status, statusText: res.statusText, headers }) };
 });
