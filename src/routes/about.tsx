@@ -6,7 +6,9 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import portrait from "@/assets/jyl-portrait.jpg.asset.json";
+import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+
+const ABOUT_PORTRAIT_SIZES = "(min-width: 1280px) 580px, (min-width: 1024px) 46vw, (min-width: 768px) 460px, calc(100vw - 48px)";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
@@ -28,7 +30,7 @@ function stripEmpty<T extends Record<string, unknown>>(obj: T): Partial<T> {
 
 const personSchema = stripEmpty({
   ...providerSchema,
-  image: new URL(portrait.url, SITE_URL).href,
+  image: new URL(portraitSrc, SITE_URL).href,
 });
 
 const seo = seoHead("/about");
@@ -41,7 +43,10 @@ export const Route = createFileRoute("/about")({
       {
         rel: "preload",
         as: "image",
-        href: portrait.url,
+        href: portraitSrc,
+        imageSrcSet: portraitWebpSrcSet,
+        imageSizes: ABOUT_PORTRAIT_SIZES,
+        type: "image/webp",
         fetchPriority: "high",
       },
     ],
@@ -76,8 +81,11 @@ function AboutPage() {
           <div className="col-span-full mt-6 md:max-w-[460px] md:mt-8 lg:sticky lg:top-[120px] lg:col-span-6 lg:max-w-none lg:mt-10">
             <WipeImage from="bottom">
               <picture className="block overflow-hidden rounded-[2px]">
+                <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={ABOUT_PORTRAIT_SIZES} />
                 <img
-                  src={portrait.url}
+                  src={portraitSrc}
+                  srcSet={portraitJpgSrcSet}
+                  sizes={ABOUT_PORTRAIT_SIZES}
                   width={1123}
                   height={1401}
                   loading="eager"

@@ -5,7 +5,7 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
-import providerPortrait from "@/assets/jyl-portrait.jpg.asset.json";
+import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
@@ -459,7 +459,10 @@ function ServicePage() {
         <section className={section}>
           <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
             <GradedImage
-              src={providerPortrait.url}
+              src={portraitSrc}
+              srcSet={portraitJpgSrcSet}
+              webpSrcSet={portraitWebpSrcSet}
+              sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
               alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
               width={1123}
               height={1401}

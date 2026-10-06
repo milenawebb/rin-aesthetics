@@ -5,6 +5,9 @@ interface GradedImageProps {
   width?: number;
   height?: number;
   priority?: boolean;
+  srcSet?: string;
+  webpSrcSet?: string;
+  sizes?: string;
 }
 
 /**
@@ -19,11 +22,18 @@ export function GradedImage({
   width,
   height,
   priority = false,
+  srcSet,
+  webpSrcSet,
+  sizes,
 }: GradedImageProps) {
   return (
     <div className={`relative overflow-hidden rounded-[2px] bg-greige ${className}`}>
+      <picture>
+      {webpSrcSet ? <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} /> : null}
       <img
         src={src}
+        srcSet={srcSet}
+        sizes={sizes}
         alt={alt}
         width={width}
         height={height}
@@ -31,6 +41,7 @@ export function GradedImage({
         className="h-full w-full object-cover"
         style={{ filter: "saturate(0.92) brightness(1.02)" }}
       />
+      </picture>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
