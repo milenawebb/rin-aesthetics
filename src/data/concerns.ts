@@ -248,9 +248,26 @@ export const concerns: Concern[] = [
     slug: "concerns/texture-and-pores",
     h1: "Texture and pores",
     tags: ["texture", "pores"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Pore size is largely inherited and cannot be permanently reduced. What can change is how visible pores are, which depends on how much is sitting in them and how rough the skin around them is. That distinction decides which treatments on this page are worth your money.",
+    body: [
+      "A pore looks bigger when it is full and when the skin around it is uneven, because both scatter light instead of reflecting it. That is why pores can look noticeably smaller the morning after a treatment without having changed size at all.",
+      "Texture is the more treatable half of this, and it is the half worth investing in. Resurfacing and microneedling work on the surface and the layer beneath it, building over a series rather than arriving all at once.",
+      "Be skeptical of anything that promises to shrink pores. Nothing does permanently. What treatment can do is leave them holding less and sitting in smoother skin, which is what people usually mean when they say their pores look better.",
+    ],
+    faqs: [
+      {
+        question: "Can pores actually be made smaller?",
+        answer: "Not permanently. Pore size is largely genetic. What changes is how much they hold and how smooth the skin around them is, and that changes how large they look, which is the part you actually see.",
+      },
+      {
+        question: "Why do my pores look worse in some photos?",
+        answer: "Light direction. Overhead or side light throws shadow into every pore at once. It is not that your skin changed between one photo and the next.",
+      },
+      {
+        question: "Will one treatment be enough?",
+        answer: "Usually not. The treatments that genuinely improve texture work by prompting repair, which accumulates over a series. A single session shows you the direction rather than the destination.",
+      },
+    ],
   },
   {
     id: "acne-and-scarring",
@@ -259,9 +276,27 @@ export const concerns: Concern[] = [
     slug: "concerns/acne-and-scarring",
     h1: "Acne and acne scarring",
     tags: ["acne", "scarring"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Active acne and acne scarring are two problems in sequence rather than one problem. Treating scarring while breakouts are still active tends to create more scarring, so the order matters more than which treatment you choose.",
+    body: [
+      "Active breakouts are settled first. Calming inflammation and controlling oil reduces how much new scarring forms, and a scar that never forms costs nothing to treat. Any practice that sells you resurfacing while your skin is still breaking out is selling you the second appointment before the first one.",
+      "Scarring is treated once things have calmed down. Different scars respond to different things. Shallow and rolling scars respond well to resurfacing and microneedling. Deeper, sharper scars need more, and some do not respond well to anything offered here, in which case you will be told that.",
+      "Marks left behind after a breakout are often pigment rather than scarring. They are flat, they are more common in deeper skin tones, and they fade on their own over months. They are treated differently from a scar, and mistaking one for the other leads to the wrong treatment.",
+      "If your acne is persistent, painful or cystic, that is a dermatology conversation before an aesthetic one. Treating the surface while the cause goes untreated is money spent on something that keeps returning.",
+    ],
+    faqs: [
+      {
+        question: "Can I treat my scarring now, while I still break out?",
+        answer: "It is usually the wrong order. Treating scars in skin that is still inflamed tends to leave more marks than it removes. Getting the breakouts settled first is slower and gives a better result.",
+      },
+      {
+        question: "Are the dark marks scars?",
+        answer: "Often not. A flat brown or gray mark where a spot used to be is pigment, not scarring, and it fades over months. A scar has texture, a dent or a raised edge. They look similar and they need different treatment.",
+      },
+      {
+        question: "Will the scarring go completely?",
+        answer: "Improved, usually. Gone, rarely. Anyone promising to erase acne scarring is describing something other than what will happen, and the honest version of this conversation is about how much better rather than whether perfect.",
+      },
+    ],
   },
   {
     id: "dryness-and-dullness",
@@ -270,9 +305,26 @@ export const concerns: Concern[] = [
     slug: "concerns/dryness-and-dullness",
     h1: "Dryness and dullness",
     tags: ["dryness", "hydration"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Dryness is a lack of oil, dehydration is a lack of water, and dullness is usually the surface being rough enough to scatter light instead of reflecting it. They feel similar and they are not the same, which is why one routine does not fix all three.",
+    body: [
+      "Dullness is the easiest thing on this site to improve and the hardest to keep. A single treatment can have skin reflecting light properly again within a day, which is why these are the appointments people book before an event. Holding it is a routine rather than an appointment.",
+      "This is also the concern where what you do at home matters most relative to what happens in the room. Cleansing less aggressively, a moisturizer that actually suits your skin, and daily sun protection will outperform any single treatment over the course of a year.",
+      "If your skin is genuinely dry rather than dehydrated, treatments that exfoliate can make it feel worse before it feels better. Say which one it feels like at your consultation, because it changes what is recommended.",
+    ],
+    faqs: [
+      {
+        question: "What is the difference between dry and dehydrated?",
+        answer: "Dry skin is short on oil and tends to be that way permanently. Dehydrated skin is short on water and can happen to anyone, including oily skin, often temporarily. They need different things, and treating dehydration as if it were dryness is why some people find rich creams do nothing.",
+      },
+      {
+        question: "How long does the glow last?",
+        answer: "Days to a couple of weeks from a single treatment, depending on which one and on what you do afterwards. It is the most immediately rewarding category here and the least durable.",
+      },
+      {
+        question: "Can I do this the day before an event?",
+        answer: "Some of them, yes, which is unusual on this site. The treatments with no downtime are the ones that can be done close to the day. The ones that resurface cannot. The downtime column in the table above is the thing to read.",
+      },
+    ],
   },
   {
     id: "hair-thinning",
@@ -281,9 +333,26 @@ export const concerns: Concern[] = [
     slug: "concerns/hair-thinning",
     h1: "Hair thinning",
     tags: ["hair_loss"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Hair thinning has many causes and only some of them respond to treatment here. Hormonal pattern thinning, stress shedding, thyroid problems, low iron and tension from how hair is worn all look alike in the mirror and are managed very differently.",
+    body: [
+      "The first appointment is a candidacy consultation rather than a treatment. Whether this will work for you depends on why you are thinning and how long it has been going on, and those are questions to answer before anything is booked.",
+      "Timing matters more here than almost anywhere else on this site. A follicle that has thinned can be stimulated. A follicle that is gone cannot. Earlier genuinely is better, and that is a fact about biology rather than a reason to book today.",
+      "If this has come on suddenly, in patches, or alongside other symptoms, see your doctor first. Several common causes are a blood test away from an answer and need no treatment here at all.",
+    ],
+    faqs: [
+      {
+        question: "Will this regrow hair I have already lost?",
+        answer: "It can thicken follicles that have weakened. It cannot bring back follicles that are no longer there. Which of those you are dealing with is what the candidacy consultation is for.",
+      },
+      {
+        question: "How soon would I see anything?",
+        answer: "Months rather than weeks. Hair grows on its own schedule and no treatment speeds that up. Judging this at six weeks will tell you nothing.",
+      },
+      {
+        question: "Is this a one-time treatment?",
+        answer: "No. It is a series, followed by maintenance. If the underlying cause is ongoing, stopping treatment means the thinning resumes, and you should know that before you start rather than after.",
+      },
+    ],
   },
 ];
 
