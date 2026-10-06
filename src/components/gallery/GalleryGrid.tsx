@@ -52,6 +52,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const touch = useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: TouchEvent) => {
     const t = e.touches[0];
+    if (!t) return;
     touch.current = { x: t.clientX, y: t.clientY };
   };
   const onTouchEnd = (e: TouchEvent) => {
@@ -59,6 +60,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     touch.current = null;
     if (!start) return;
     const t = e.changedTouches[0];
+    if (!t) return;
     const dx = t.clientX - start.x;
     const dy = t.clientY - start.y;
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1);
