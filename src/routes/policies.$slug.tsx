@@ -150,11 +150,11 @@ function PolicyPage() {
                         </p>
                       ))}
                       {hasBullets ? (
-                        <ul className="space-y-3">
+                        <ul className="rule-list space-y-3">
                           {section.bullets!.map((b, j) => (
                             <li
                               key={j}
-                              className="relative pl-6 font-body text-[16px] font-light leading-[1.75] text-ink/85 before:absolute before:left-0 before:text-greige before:content-['\2013']"
+                              className="font-body text-[16px] font-light leading-[1.75] text-ink/85"
                             >
                               {renderText(b)}
                             </li>
