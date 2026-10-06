@@ -35,7 +35,7 @@ function ConcernsIndex() {
       </section>
 
       <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-flow-col lg:grid-rows-6 lg:gap-x-16">
+        <div className="grid grid-cols-1 lg:grid-flow-col lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-6 lg:gap-x-16">
           {concerns.map((concern, i) => {
             const treatments = servicesFor(concern);
             const shown = treatments.slice(0, 4).map((s) => s.shortName);
