@@ -25,7 +25,7 @@ const display = "type-h1 text-ink";
 function ConcernsIndex() {
   return (
     <PageShell>
-      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10 xl:px-0">
+      <section className="page-head relative site-container">
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={["Concerns"]} className={display} />
           <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">
@@ -34,7 +34,7 @@ function ConcernsIndex() {
         </div>
       </section>
 
-      <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10 xl:px-0">
+      <section className="section-space relative site-container">
         <div className="grid grid-cols-1 lg:grid-flow-col lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-6 lg:gap-x-16">
           {concerns.map((concern, i) => {
             const treatments = servicesFor(concern);

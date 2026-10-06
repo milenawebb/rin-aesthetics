@@ -43,7 +43,7 @@ function TreatmentsIndex() {
 
   return (
     <PageShell>
-      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10">
+      <section className="page-head relative site-container">
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={["Treatments"]} className={display} />
           <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">
@@ -67,7 +67,7 @@ function TreatmentsIndex() {
           id={categoryIds[group.category]}
           className="section-space scroll-mt-20"
         >
-          <SectionLabel label={group.category} contentClassName="px-6 md:px-10 xl:px-0">
+          <SectionLabel label={group.category}>
           <div className="xl:mt-8" role="table" aria-label={group.category}>
             <div
               role="row"

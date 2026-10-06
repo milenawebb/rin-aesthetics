@@ -42,7 +42,7 @@ export const Route = createFileRoute("/$category/$slug")({
 const btnPrimary =
   "btn-label inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut";
 const h2 = "type-h2 text-ink";
-const section = "section-space mx-auto max-w-[1240px] px-6 md:px-10";
+const section = "section-space site-container";
 
 function Label({ children }: { children: ReactNode }) {
   return <p className="label-xs text-champagne">{children}</p>;
@@ -173,7 +173,7 @@ function ServicePage() {
 
       {/* 1. Header */}
       <section className="bg-ivory">
-        <div className={`mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
+        <div className={`site-container pt-[56px] md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
           {eyebrow ? <Label>{eyebrow}</Label> : null}
           <h1 className="type-h1 mt-6 max-w-[22ch] text-ink">
             <span>{keepBrandTogether(service.name)}</span>
@@ -224,7 +224,7 @@ function ServicePage() {
 
       {/* 2. Hero image */}
       {media ? (
-        <section className="mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px]">
+        <section className="site-container pb-[56px] md:pb-[88px]">
           <div className="flex aspect-[16/9] w-full items-center justify-center bg-ivory p-10">
             <img src={media.src} alt={media.alt} className="h-full w-auto max-w-full object-contain" />
           </div>
@@ -233,7 +233,7 @@ function ServicePage() {
 
       {/* 3. Intro and actions */}
       <section
-        className={`mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px] ${media ? "pt-0" : "pt-12"}`}
+        className={`site-container pb-[56px] md:pb-[88px] ${media ? "pt-0" : "pt-12"}`}
       >
         {service.intro.length ? (
           <div className="measure mb-10 space-y-6">
@@ -336,7 +336,7 @@ function ServicePage() {
 
       {service.technologies && service.technologies.length ? (
         <section className="mb-[72px] bg-ink md:mb-[112px]">
-          <div className="mx-auto max-w-[1240px] band-space px-6 md:px-10">
+          <div className="site-container band-space">
             <div className={technologyLead[service.id] ? "md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-center md:gap-12 lg:gap-16" : undefined}>
               <div>
                 <Label>What's in it</Label>
@@ -441,7 +441,7 @@ function ServicePage() {
       {/* 9. Results */}
       {results.length ? (
         <section className={section}>
-          <div className="mx-auto max-w-[1240px] px-6 md:px-10">
+          <div className="site-container">
             <h2 className={h2}>Results</h2>
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">

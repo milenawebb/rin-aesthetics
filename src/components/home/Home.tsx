@@ -40,7 +40,7 @@ const signatureLines = signatureService
 const featuredResults = featured();
 
 
-const container = "relative mx-auto max-w-[1240px] px-6 md:px-10";
+const container = "relative site-container";
 const grid = "grid grid-cols-12 gap-x-6";
 const heading =
   "type-h2 text-ink";
@@ -106,7 +106,7 @@ export function Home() {
         <SectionLabel
           label={concernsSection.eyebrow}
           className="pb-[80px] md:pt-[140px] md:pb-[120px]"
-          contentClassName="px-6 md:px-10 xl:px-0"
+         
         >
           <div className={grid}>
             <MaskedLines
@@ -122,7 +122,7 @@ export function Home() {
       </section>
 
       <section className="relative pb-[80px] md:pb-[120px]">
-        <SectionLabel label={resultsSection.eyebrow} contentClassName="px-6 md:px-10 xl:px-0">
+        <SectionLabel label={resultsSection.eyebrow}>
           <div className={grid}>
             <MaskedLines
               lines={resultsSection.headingLines as unknown as string[]}
@@ -242,7 +242,7 @@ export function Home() {
         <SectionLabel
           label={testimonialsMeta.eyebrow}
           className="pb-[80px] md:pb-[120px]"
-          contentClassName="px-6 md:px-10 xl:px-0"
+         
         >
           <MaskedLines
             lines={testimonialsMeta.headingLines as unknown as string[]}

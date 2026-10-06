@@ -69,7 +69,7 @@ function ConcernPage() {
         />
       ) : null}
 
-      <section className="page-head relative mx-auto max-w-[1240px] px-6 md:px-10">
+      <section className="page-head relative site-container">
         <p className="eyebrow">Concern</p>
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={[concern.h1]} className={h1} />
@@ -81,7 +81,7 @@ function ConcernPage() {
 
       {treatments.length ? (
         <section className="section-space">
-          <SectionLabel label="Treatments for this" className="xl:px-10" contentClassName="px-6 md:px-10 xl:px-0">
+          <SectionLabel label="Treatments for this" className="xl:px-10">
           <MaskedLines
             as="h2"
             lines={[treatments.length === 1 ? "The treatment we recommend" : "Compare your options"]}
@@ -144,7 +144,7 @@ function ConcernPage() {
       ) : null}
 
       {concern.body.length || concern.image ? (
-        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
+        <section className="section-space relative site-container">
           <div className={concern.image ? "flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-16" : undefined}>
             {concern.image ? (
               <ConcernArch
@@ -168,7 +168,7 @@ function ConcernPage() {
       ) : null}
 
       {concernProducts.length ? (
-        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
+        <section className="section-space relative site-container">
           <h2 className="label-xs text-walnut">Products for this</h2>
           <div className="mt-8">
             <ProductList items={concernProducts} />
@@ -178,7 +178,7 @@ function ConcernPage() {
 
       {results.length ? (
         <section className="section-space">
-          <SectionLabel contentClassName="px-6 md:px-10 xl:px-0">
+          <SectionLabel>
             <MaskedLines as="h2" lines={["Results"]} className={display} />
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
@@ -194,7 +194,7 @@ function ConcernPage() {
 
       {concern.faqs.length ? (
         <section className="section-space">
-          <SectionLabel contentClassName="px-6 md:px-10 xl:px-0">
+          <SectionLabel>
           <MaskedLines as="h2" lines={["Questions"]} className={display} />
           <div className="mt-12 border-t border-greige">
             {concern.faqs.map((faq) => (
@@ -217,7 +217,7 @@ function ConcernPage() {
       ) : null}
 
       {related.length ? (
-        <section className="section-space mx-auto max-w-[1240px] px-6 md:px-10">
+        <section className="section-space site-container">
           <h2 className="label-xs text-walnut">Also look at</h2>
           <p className="mt-4 font-body text-[15px] font-light leading-[1.8] text-walnut">
             {related.map((other, i) => (
@@ -237,7 +237,7 @@ function ConcernPage() {
       ) : null}
 
       <section className="bg-ink">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-10 band-space px-6 md:flex-row md:items-end md:justify-between md:gap-20 md:px-10">
+        <div className="site-container flex flex-col gap-10 band-space md:flex-row md:items-end md:justify-between md:gap-20">
           <div>
             <h2 className="type-h2 max-w-[22ch] text-ivory">
               Not sure which of these is right?

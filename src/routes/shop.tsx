@@ -17,13 +17,13 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
 });
 
-const sectionClass = "section-space mx-auto max-w-[1240px] px-6 md:px-10";
+const sectionClass = "section-space site-container";
 const headingClass = "type-h2 text-ink";
 
 function ShopPage() {
   return (
     <PageShell>
-      <section className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+      <section className="page-head site-container">
         <h1 className="type-h1 text-ink">
           Shop
         </h1>
