@@ -73,7 +73,7 @@ export function Home() {
               "linear-gradient(to right, rgba(13,13,12,0.55) 0%, rgba(13,13,12,0.55) 40%, rgba(13,13,12,0) 55%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-12 md:absolute md:left-0 md:top-0 md:bottom-0 md:w-[38%] md:max-w-[420px] md:flex md:flex-col md:justify-center md:px-6 md:py-0 md:text-left lg:static lg:mx-auto lg:w-full lg:max-w-[1240px] lg:px-10 lg:py-0">
+        <div className="site-container hero-tablet-panel relative z-10 py-12 md:flex md:flex-col md:justify-center md:py-0 md:text-left">
           <h1 className="type-h1 text-ink md:hidden">
             Medical aesthetics in Charlottesville, VA
           </h1>
@@ -135,7 +135,7 @@ export function Home() {
             ) : null}
           </div>
         </SectionLabel>
-        <div className="mt-14 w-full overflow-x-clip pl-6 md:pl-[max(2.5rem,calc((100%-1240px)/2+2.5rem))]">
+        <div className="site-bleed-right mt-14 overflow-x-clip">
           <ResultsRail cases={featuredResults} />
         </div>
         <div className={`${container} mt-10`}>
