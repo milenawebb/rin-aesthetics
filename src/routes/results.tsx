@@ -34,10 +34,10 @@ function ResultsPage() {
 
   return (
     <PageShell>
-      <main className="mx-auto max-w-[1240px] px-6 py-[64px] md:px-10 md:py-[104px]">
+      <main className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
         <header>
           <p className="eyebrow">Results</p>
-          <h1 className="display-tight mt-6 font-display text-[34px] font-extralight text-ink md:text-[48px]">
+          <h1 className="type-h1 mt-6 text-ink">
             Before and after
           </h1>
           {resultsNotice(items) ? (

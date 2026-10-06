@@ -40,8 +40,8 @@ export const Route = createFileRoute("/$category/$slug")({
 
 const btnPrimary =
   "btn-label inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut";
-const h2 = "display-tight font-display text-[28px] font-extralight text-ink md:text-[34px]";
-const section = "mx-auto max-w-[1240px] px-6 pb-[72px] md:px-10 md:pb-[120px]";
+const h2 = "type-h2 text-ink";
+const section = "section-space mx-auto max-w-[1240px] px-6 md:px-10";
 
 function Label({ children }: { children: ReactNode }) {
   return <p className="label-xs text-champagne">{children}</p>;
@@ -173,7 +173,7 @@ function ServicePage() {
       <section className="bg-ivory">
         <div className={`mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
           {eyebrow ? <Label>{eyebrow}</Label> : null}
-          <h1 className="display-tight mt-6 max-w-[28ch] font-display text-[34px] font-extralight text-ink md:text-[44px]">
+          <h1 className="type-h1 mt-6 max-w-[22ch] text-ink">
             <span>{service.name}</span>
             <span className="inline-block whitespace-nowrap md:block">in Charlottesville, VA</span>
           </h1>
@@ -222,7 +222,7 @@ function ServicePage() {
 
       {/* 2. Hero image */}
       {media ? (
-        <section className="mx-auto max-w-[1240px] px-6 pt-[56px] md:px-10 md:pt-[88px]">
+        <section className="mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px]">
           <div className="flex aspect-[16/9] w-full items-center justify-center bg-ivory p-10">
             <img src={media.src} alt={media.alt} className="h-full w-auto max-w-full object-contain" />
           </div>
@@ -231,7 +231,7 @@ function ServicePage() {
 
       {/* 3. Intro and actions */}
       <section
-        className={`mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px] ${media ? "pt-[56px] md:pt-[88px]" : "pt-12"}`}
+        className={`mx-auto max-w-[1240px] px-6 pb-[56px] md:px-10 md:pb-[88px] ${media ? "pt-0" : "pt-12"}`}
       >
         {service.intro.length ? (
           <div className="measure mb-10 space-y-6">
@@ -333,13 +333,13 @@ function ServicePage() {
       ) : null}
 
       {service.technologies && service.technologies.length ? (
-        <section className="mb-[72px] bg-ink md:mb-[120px]">
-          <div className="mx-auto max-w-[1240px] px-6 py-[72px] md:px-10 md:py-[120px]">
+        <section className="mb-[72px] bg-ink md:mb-[112px]">
+          <div className="mx-auto max-w-[1240px] band-space px-6 md:px-10">
             <div className={technologyLead[service.id] ? "lg:grid lg:grid-cols-[1fr_minmax(0,1fr)] lg:items-center lg:gap-16" : undefined}>
               <div>
                 <Label>What's in it</Label>
                 {service.technologiesHeading ? (
-                  <h2 className="display-tight mt-6 font-display text-[28px] font-extralight text-ivory md:text-[34px]">
+                  <h2 className="type-h2 mt-6 text-ivory">
                     {service.technologiesHeading}
                   </h2>
                 ) : null}

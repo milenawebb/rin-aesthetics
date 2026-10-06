@@ -78,7 +78,7 @@ function PolicyPage() {
 
   return (
     <PageShell>
-      <div className="px-6 py-[72px] md:px-10 md:py-[120px] xl:px-0">
+      <div className="page-head px-6 md:px-10 xl:px-0">
         <div className="mx-auto w-full max-w-[1368px] xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8">
           <div className="hidden xl:block" />
           <div className="min-w-0 max-w-[1240px] xl:grid xl:grid-cols-[220px_minmax(0,1fr)] xl:gap-x-16">
@@ -109,7 +109,7 @@ function PolicyPage() {
 
             <article className="min-w-0 max-w-[68ch]">
               <p className="eyebrow">Policies</p>
-              <h1 className="display-tight mt-6 font-display text-[34px] font-extralight text-ink md:text-[56px]">
+              <h1 className="type-h1 mt-6 text-ink">
                 {policy.title}
               </h1>
               <p className="mt-6 font-body text-[18px] font-light leading-[1.6] text-walnut">{policy.standfirst}</p>
@@ -140,7 +140,7 @@ function PolicyPage() {
                   return (
                     <section key={i} id={anchor(i)} className="scroll-mt-[120px] space-y-5">
                       {section.heading ? (
-                        <h2 className="font-display text-[20px] font-normal leading-[1.4] text-ink">
+                        <h2 className="type-h3 text-ink">
                           {section.heading}
                         </h2>
                       ) : null}

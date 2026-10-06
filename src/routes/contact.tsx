@@ -111,7 +111,7 @@ function ContactForm() {
 
   return (
     <section className="mt-24 border-t border-greige pt-12" aria-labelledby="send-message">
-      <h2 id="send-message" className="text-3xl font-light text-ink md:text-4xl">Send a message</h2>
+      <h2 id="send-message" className="type-h2 text-ink">Send a message</h2>
       <form className="mt-10 max-w-[680px] space-y-7" noValidate onSubmit={handleSubmit}>
         <div>
           <label htmlFor="contact-name" className={label}>Name</label>
@@ -184,8 +184,8 @@ function ContactForm() {
 function ContactPage() {
   return (
     <PageShell>
-      <div className="mx-auto max-w-[1240px] px-6 pt-24 md:px-10 md:py-32">
-        <h1 className="text-4xl font-light text-ink md:text-5xl">Contact</h1>
+      <div className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
+        <h1 className="type-h1 text-ink">Contact</h1>
         <p className="mt-6 max-w-[68ch] text-lg font-light text-ink/80">
           Booking is the fastest way to reach us.
         </p>

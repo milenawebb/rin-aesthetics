@@ -23,14 +23,14 @@ const notes = [
 ];
 
 const body = "measure font-body text-[16px] font-light leading-[1.75] text-walnut";
-const h2 = "font-display text-[24px] font-extralight text-ink md:text-[30px]";
+const h2 = "type-h2 text-ink";
 
 function FinancingPage() {
   return (
     <PageShell>
-      <section className="mx-auto max-w-[1240px] px-6 py-[64px] md:px-10 md:py-[104px]">
+      <section className="page-head mx-auto max-w-[1240px] px-6 md:px-10">
         <p className="eyebrow">Payment options</p>
-        <h1 className="display-tight mt-6 font-display text-[34px] font-extralight text-ink md:text-[48px]">
+        <h1 className="type-h1 mt-6 text-ink">
           Pay over time with PatientFi
         </h1>
         <div className="mt-8 space-y-5">
