@@ -36,8 +36,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     if (!fig) return;
     const measure = () => {
       if (window.matchMedia("(min-width: 768px)").matches) return setBodyMax(undefined);
-      // 24px is the gap between the two figures.
-      setBodyMax(fig.offsetHeight + 24 + AFTER_PEEK);
+      setBodyMax(fig.offsetHeight + 48 + AFTER_PEEK); // 24px top padding + 24px gap
     };
     measure();
     const ro = new ResizeObserver(measure);
