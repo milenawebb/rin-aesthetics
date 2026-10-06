@@ -88,7 +88,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: fallback.title },
       { property: "og:description", content: fallback.description },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "RIN Aesthetic Practice" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: fallback.title },
+      { name: "twitter:description", content: fallback.description },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
