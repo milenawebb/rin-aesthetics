@@ -10,7 +10,7 @@ type SectionLabelProps = {
 export function SectionLabel({ label, children, className = "", contentClassName = "" }: SectionLabelProps) {
   return (
     <div
-      className={`mx-auto w-full max-w-[1368px] xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8 ${className}`}
+      className={`site-container xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8 ${className}`}
     >
       <div className="hidden xl:block">
         {label ? (
@@ -19,7 +19,7 @@ export function SectionLabel({ label, children, className = "", contentClassName
           </div>
         ) : null}
       </div>
-      <div className={`min-w-0 max-w-[1240px] ${contentClassName}`}>
+      <div className={`min-w-0 ${contentClassName}`}>
         {label ? <p className="eyebrow mb-6 xl:hidden">{label}</p> : null}
         {children}
       </div>

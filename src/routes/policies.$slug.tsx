@@ -78,10 +78,10 @@ function PolicyPage() {
 
   return (
     <PageShell>
-      <div className="page-head px-6 md:px-10 xl:px-0">
-        <div className="mx-auto w-full max-w-[1368px] xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8">
+      <div className="page-head">
+        <div className="site-container xl:grid xl:grid-cols-[96px_minmax(0,1fr)] xl:gap-x-8">
           <div className="hidden xl:block" />
-          <div className="min-w-0 max-w-[1240px] xl:grid xl:grid-cols-[220px_minmax(0,1fr)] xl:gap-x-16">
+          <div className="min-w-0 xl:grid xl:grid-cols-[220px_minmax(0,1fr)] xl:gap-x-16">
             {toc.length > 0 ? (
               <nav aria-label="Contents" className="hidden xl:block">
                 <div className="sticky top-[120px]">
