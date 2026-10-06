@@ -151,7 +151,9 @@ function ConcernPage() {
                 src={concern.image}
                 alt={concern.imageAlt}
                 loading="eager"
-                className={`mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0 ${concern.body.length ? "" : "md:ml-auto"}`}
+                className={concern.body.length
+                  ? "mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0"
+                  : "mx-auto w-full max-w-[280px]"}
               />
             ) : null}
             <div className="measure space-y-6 md:order-1">
