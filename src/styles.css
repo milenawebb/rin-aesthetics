@@ -549,3 +549,52 @@
   border-radius: 9999px;
   background: var(--color-champagne);
 }
+
+/* ---- Shared type scale. Every template uses these; no per-page heading sizes. ---- */
+@utility type-h1 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  @media (width >= 48rem) { font-size: 56px; }
+  @media (width >= 64rem) { font-size: 64px; }
+}
+
+/* About three quarters of the H1 at each width. */
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  @media (width >= 48rem) { font-size: 38px; }
+  @media (width >= 64rem) { font-size: 46px; }
+}
+
+@utility type-h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+/* ---- Shared section spacing. Each section owns only its bottom space, so values never stack. ---- */
+@utility page-head {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  @media (width >= 48rem) { padding-top: 104px; padding-bottom: 88px; }
+}
+
+@utility section-space {
+  padding-bottom: 72px;
+  @media (width >= 48rem) { padding-bottom: 112px; }
+}
+
+/* Bands with their own background need space on both edges. */
+@utility band-space {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  @media (width >= 48rem) { padding-top: 104px; padding-bottom: 104px; }
+}
