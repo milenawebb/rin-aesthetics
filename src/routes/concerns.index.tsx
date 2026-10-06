@@ -60,7 +60,7 @@ function ConcernsIndex() {
                     <Link
                       to="/concerns/$slug"
                       params={{ slug: concernPathSlug(concern) }}
-                      className="font-body text-[19px] font-medium leading-[1.35] text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
+                      className="font-body text-[19px] font-medium leading-[1.35] text-ink decoration-greige underline-offset-[6px] transition-colors hover:underline hover:decoration-champagne"
                     >
                       {concern.h1}
                     </Link>

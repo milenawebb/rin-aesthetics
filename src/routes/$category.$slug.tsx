@@ -49,14 +49,10 @@ function Label({ children }: { children: ReactNode }) {
 
 function LineList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-8">
+    <ul className="rule-list mt-8 space-y-5">
       {items.map((item) => (
-        <li
-          key={item}
-          className="flex gap-4 border-b border-greige py-4 font-body text-[16px] font-light leading-[1.75] text-walnut"
-        >
-          <span aria-hidden className="mt-[13px] h-px w-4 shrink-0 bg-champagne" />
-          <span>{item}</span>
+        <li key={item} className="font-body text-[16px] font-light leading-[1.75] text-walnut">
+          {item}
         </li>
       ))}
     </ul>
@@ -330,11 +326,10 @@ function ServicePage() {
                       {tech.description}
                     </p>
                     {tech.bullets.length ? (
-                      <ul className="mt-5 space-y-2">
+                      <ul className="rule-list mt-5 space-y-2">
                         {tech.bullets.map((b) => (
-                          <li key={b} className="flex gap-3 font-body text-[14px] font-light leading-[1.6] text-greige">
-                            <span aria-hidden className="mt-[11px] h-px w-3 shrink-0 bg-champagne" />
-                            <span>{b}</span>
+                          <li key={b} className="font-body text-[14px] font-light leading-[1.6] text-greige">
+                            {b}
                           </li>
                         ))}
                       </ul>
