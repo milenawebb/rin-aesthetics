@@ -85,7 +85,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Refreshes the lip area and smooths lip lines without adding volume. $250. Prices, downtime and aftercare shown before you book.",
   },
   "/devices/skin-refinery": {
-    title: "The Skin Refinery in Charlottesville, VA | RIN",
+    title: "The Skin Refinery by RIN in Charlottesville, VA | RIN",
     description: "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session. $900. Prices, downtime and aftercare shown before you book.",
   },
   "/devices/fractional-laser": {
