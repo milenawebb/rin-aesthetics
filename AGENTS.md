@@ -24,3 +24,4 @@
 - Legacy URLs are answered by one server request middleware in src/start.ts: 410 for retiredUrls, then 301 from wordpressRedirects, then 301 from redirects.ts, matching with or without a trailing slash. Why: real status codes before any page renders, with data files as the only source.
 
 - Header dropdowns and mobile accordions derive from concerns.ts and services.ts via src/components/site/navMenus.ts; booking actions are a separate array and never appear. Why: adding a concern or service updates the nav with no hand list.
+- Heading sizes come only from the type-h1, type-h2 and type-h3 utilities in src/styles.css; section spacing comes only from page-head, section-space and band-space, with each section owning its bottom space only. Why: one change applies site-wide and spacing values can never stack.
