@@ -504,3 +504,16 @@
     opacity: 1;
   }
 }
+
+/* Mobile drill-in drawer */
+.drawer-sheet { animation: drawer-in 200ms ease-out both; }
+.drawer-scrim { animation: drawer-fade 200ms ease-out both; }
+.drawer-level-fwd { animation: drawer-from-right 200ms ease-out both; }
+.drawer-level-back { animation: drawer-from-left 200ms ease-out both; }
+@keyframes drawer-in { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes drawer-from-right { from { transform: translateX(40%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes drawer-from-left { from { transform: translateX(-40%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes drawer-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .drawer-sheet, .drawer-level-fwd, .drawer-level-back { animation-name: drawer-fade; }
+}
