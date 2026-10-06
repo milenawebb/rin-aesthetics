@@ -73,22 +73,10 @@ function ConcernPage() {
         <div className="mt-6 max-w-[860px]">
           <MaskedLines as="h1" lines={[concern.h1]} className={h1} />
           {concern.intro ? (
-            <p className="measure mt-8 font-body text-[19px] font-light leading-[1.7] text-ink">{concern.intro}</p>
+            <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">{concern.intro}</p>
           ) : null}
         </div>
       </section>
-
-      {concern.body.length ? (
-        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
-          <div className="measure space-y-6">
-            {concern.body.map((para, i) => (
-              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
-                {para}
-              </p>
-            ))}
-          </div>
-        </section>
-      ) : null}
 
       {treatments.length ? (
         <section className="section-space">
@@ -151,6 +139,18 @@ function ConcernPage() {
             })}
           </div>
           </SectionLabel>
+        </section>
+      ) : null}
+
+      {concern.body.length ? (
+        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
+          <div className="measure space-y-6">
+            {concern.body.map((para, i) => (
+              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
+                {para}
+              </p>
+            ))}
+          </div>
         </section>
       ) : null}
 
