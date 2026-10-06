@@ -358,7 +358,7 @@ function ServicePage() {
                     width={1000}
                     height={1170}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-[center_72%] md:aspect-[1000/1170] md:max-h-[420px] md:rounded-[2px]"
+                    className="aspect-[4/3] w-full object-cover object-bottom md:aspect-[1000/1170] md:max-h-[420px] md:rounded-[2px]"
                   />
                   <figcaption className="label-xs mt-3 px-6 text-left text-greige md:px-0">{technologyLead[service.id]!.caption}</figcaption>
                 </figure>
