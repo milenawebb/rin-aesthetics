@@ -1,8 +1,8 @@
 # Treatment spacing
 
-- [ ] Match the tag-to-intro gap to the subtitle-to-facts gap
-- [ ] Stack phone facts while preserving tablet and desktop columns
-- [ ] Audit empty treatment sections and verify three widths and the dash check
+- [x] Match the tag-to-intro gap to the subtitle-to-facts gap
+- [x] Stack phone facts while preserving tablet and desktop columns
+- [x] Audit empty treatment sections and verify three widths and the dash check
 
 # Ask RIN removal
 
