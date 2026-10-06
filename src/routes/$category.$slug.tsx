@@ -2,7 +2,7 @@ import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
 import providerPortrait from "@/assets/jyl-portrait-3x4.jpg.asset.json";
