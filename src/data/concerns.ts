@@ -123,36 +123,104 @@ export const concerns: Concern[] = [
     slug: "concerns/lips",
     h1: "Lips",
     tags: ["lips"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Lips change in two separate ways. They lose volume, and the border and the skin around them soften. Filler answers the first. The second usually needs something else, which is why lip filler is not always the answer to a complaint about lips.",
+    body: [
+      "Most people who ask for lip filler want definition rather than size. Those are different injections, placed differently, and the amount of product involved can be very small. If what you want is shape rather than volume, say that, because it changes the approach entirely.",
+      "The lines above the lip are a different problem from the lips themselves. Those vertical lines are in the skin, and filling the lip will not remove them. They need something that works on skin texture, and the two are often done at separate appointments rather than together.",
+      "Lips swell more than anywhere else on the face. What you see on the day is not the result. Judging it too early is the most common reason people ask for more before they needed it."
+    ],
+    faqs: [
+      {
+        "question": "How much bigger will they look?",
+        "answer": "As much or as little as you want, within what your lips can carry well. The default here is to start conservatively, because adding more at a follow up is straightforward and the reverse is a longer conversation."
+      },
+      {
+        "question": "Can filler fix the lines above my lip?",
+        "answer": "Usually not. Those lines sit in the skin rather than in the lip, and adding volume underneath them does not smooth them. They respond to treatments aimed at skin texture instead."
+      },
+      {
+        "question": "How long before they look normal?",
+        "answer": "Swelling is immediate and settles over the following days. Do not book this for the day before something that matters, and do not judge the shape until it has calmed down."
+      }
+    ],
   },
   {
     id: "under-eye-area",
     slug: "concerns/under-eye-area",
     h1: "Under-eye area",
     tags: ["eye_area"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Dark circles, hollows and puffiness look alike in the mirror and have almost nothing in common underneath. One is pigment in the skin, one is shadow cast by lost volume, one is fluid or fat. Treating the wrong one is the most common mistake made in this area.",
+    body: [
+      "There is a quick test you can do yourself. Face a mirror, tilt your head back, and look up. If the darkness lifts, it is shadow from a hollow. If it stays where it is, it is pigment. Those two need different treatments, and nothing treats both at once.",
+      "This is also the least forgiving area on the face. The skin is thin, the anatomy underneath is crowded, and products behave differently here than anywhere else. It is the area where the honest answer is most often not yet, or not with this.",
+      "Sleep, allergies and salt move this area more than people expect. If what you see changes noticeably from one day to the next, part of it is not structural, and no treatment on this page will hold it still."
+    ],
+    faqs: [
+      {
+        "question": "Can anything fix dark circles?",
+        "answer": "It depends entirely on what is causing them. Shadow from a hollow and pigment in the skin look the same and respond to completely different things, which is why this area is assessed in person before anything is recommended."
+      },
+      {
+        "question": "Why are some practices cautious about treating here?",
+        "answer": "Because it is technically demanding and mistakes are visible, close to the eye, and slow to resolve. Caution here is a good sign rather than a limitation."
+      },
+      {
+        "question": "Will makeup still be needed afterwards?",
+        "answer": "Possibly, and that is not a failure. The goal is to improve what is causing the shadow or the darkness, not to guarantee you will never reach for concealer again."
+      }
+    ],
   },
   {
     id: "pigmentation",
     slug: "concerns/pigmentation",
     h1: "Pigmentation and sun damage",
     tags: ["pigment", "sun_damage"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Brown spots, uneven tone and melasma are not one condition. They look similar in a photograph and they are managed differently, and the treatment that clears one of them can make another worse. That is why pigment is assessed before anything is aimed at it.",
+    body: [
+      "Sun damage collected over years outdoors usually clears well with light-based treatment, and often faster than people expect. Melasma is hormonal, sits deeper, and returns. Telling them apart is the first thing that happens, because getting it wrong is not a wasted appointment, it is a setback.",
+      "Whatever is done in the room, pigment comes back without daily sun protection. This is the one concern where the home routine is not an optional extra. It is most of the result.",
+      "Expect this to be staged rather than finished in one visit. Pigment lifts in layers, and pushing harder to finish sooner is how post-inflammatory pigmentation starts, which leaves you with more than you began with."
+    ],
+    faqs: [
+      {
+        "question": "Will it come back?",
+        "answer": "Sun damage stays away if you protect against more of it. Melasma is more likely to return regardless, which is why it is managed over time rather than treated once."
+      },
+      {
+        "question": "I think I have melasma. Can I still be treated?",
+        "answer": "Often yes, but carefully and not with everything. Heat and aggressive light can worsen melasma, so it is identified first and the approach is chosen around it."
+      },
+      {
+        "question": "Why did my spots look darker afterwards?",
+        "answer": "That is expected with light-based treatment. Treated pigment darkens before it lifts away over the following days. It is a sign the treatment reached its target."
+      }
+    ],
   },
   {
     id: "redness",
     slug: "concerns/redness",
     h1: "Redness and visible vessels",
     tags: ["redness"],
-    intro: "",
-    body: [],
-    faqs: [],
+    intro: "Flushing, background redness and visible vessels usually travel together and respond differently. Individual vessels can be targeted directly and often change visibly. Diffuse redness improves by degrees over a series. Rosacea underlies a lot of this, and rosacea is managed rather than cured.",
+    body: [
+      "The fine vessels around the nose and cheeks are the most satisfying thing to treat here, because the change is often obvious after a single session. Generalized background flush is slower, improves gradually, and is better judged across a series than after any one appointment.",
+      "Triggers matter more than treatment frequency for most people. Heat, alcohol, spice and sun will undo progress faster than anything done in the room can build it. The people who get the most out of this are the ones who already know what sets them off.",
+      "If redness is new, spreading, or arrives with bumps, pain or irritated eyes, that is a question for a dermatologist before it is an aesthetic one. Say so at your consultation and you will be told the same thing."
+    ],
+    faqs: [
+      {
+        "question": "Is this a cure for rosacea?",
+        "answer": "No. Rosacea is a condition that is managed, not resolved. What treatment does here is reduce how visible it is, and that result is maintained rather than permanent."
+      },
+      {
+        "question": "Do the vessels come back?",
+        "answer": "A vessel that has been treated is gone. New ones can form over time, particularly if the underlying flushing is not managed, which is why triggers matter as much as sessions."
+      },
+      {
+        "question": "Will my face be red afterwards?",
+        "answer": "Yes, for a while, which is the part people find counterintuitive about treating redness. It settles, and the aftercare on the treatment page says how long to expect and what to avoid."
+      }
+    ],
   },
   {
     id: "texture-and-pores",
