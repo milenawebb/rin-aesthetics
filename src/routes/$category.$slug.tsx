@@ -183,14 +183,14 @@ function ServicePage() {
             </p>
           ) : null}
           {facts.length ? (
-          <dl className={`mt-12 grid grid-cols-1 border-l border-t border-greige ${facts.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
-            {facts.map((fact) => (
-              <div key={fact.label} className="border-b border-r border-greige px-6 py-7">
-                <dt className="label-xs text-walnut">{fact.label}</dt>
-                <dd className="mt-3 font-body text-[19px] font-medium text-ink">{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
+            <dl className={`mt-12 grid grid-cols-1 border-l border-t border-greige ${facts.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+              {facts.map((fact) => (
+                <div key={fact.label} className="min-w-0 border-b border-r border-greige px-6 py-7 md:px-4 lg:px-6">
+                  <dt className="label-xs text-walnut">{fact.label}</dt>
+                  <dd className="mt-3 font-body text-[19px] font-medium text-ink">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
           ) : null}
           {serviceInPackage(service.name) ? (
             <p className="mt-6 font-body text-[15px] font-light text-walnut">
