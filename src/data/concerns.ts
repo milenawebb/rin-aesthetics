@@ -11,11 +11,16 @@ export interface Concern {
   intro: string;
   body: string[];
   faqs: { question: string; answer: string }[];
+  // Concern diagram (transparent). Empty renders nothing.
+  image: string;
+  imageAlt: string;
 }
 
 export const concerns: Concern[] = [
   {
     id: "lines-and-wrinkles",
+    image: "/images/concerns/lines-and-wrinkles.webp",
+    imageAlt: "Illustration of a face with fine lines marked across the forehead, between the brows and at the outer corners of the eyes.",
     slug: "concerns/lines-and-wrinkles",
     h1: "Lines and wrinkles",
     tags: ["fine_lines"],
@@ -42,6 +47,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "volume-loss",
+    image: "",
+    imageAlt: "",
     slug: "concerns/volume-loss",
     h1: "Volume loss",
     tags: ["volume_loss"],
@@ -68,6 +75,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "facial-contour",
+    image: "",
+    imageAlt: "",
     slug: "concerns/facial-contour",
     h1: "Facial contour and balance",
     tags: ["contour"],
@@ -94,6 +103,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "skin-laxity",
+    image: "",
+    imageAlt: "",
     slug: "concerns/skin-laxity",
     h1: "Skin laxity and firmness",
     tags: ["laxity"],
@@ -120,6 +131,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "lips",
+    image: "",
+    imageAlt: "",
     slug: "concerns/lips",
     h1: "Lips",
     tags: ["lips"],
@@ -146,6 +159,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "under-eye-area",
+    image: "",
+    imageAlt: "",
     slug: "concerns/under-eye-area",
     h1: "Under-eye area",
     tags: ["eye_area"],
@@ -172,6 +187,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "pigmentation",
+    image: "",
+    imageAlt: "",
     slug: "concerns/pigmentation",
     h1: "Pigmentation and sun damage",
     tags: ["pigment", "sun_damage"],
@@ -198,6 +215,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "redness",
+    image: "",
+    imageAlt: "",
     slug: "concerns/redness",
     h1: "Redness and visible vessels",
     tags: ["redness"],
@@ -224,6 +243,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "texture-and-pores",
+    image: "",
+    imageAlt: "",
     slug: "concerns/texture-and-pores",
     h1: "Texture and pores",
     tags: ["texture", "pores"],
@@ -233,6 +254,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "acne-and-scarring",
+    image: "",
+    imageAlt: "",
     slug: "concerns/acne-and-scarring",
     h1: "Acne and acne scarring",
     tags: ["acne", "scarring"],
@@ -242,6 +265,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "dryness-and-dullness",
+    image: "",
+    imageAlt: "",
     slug: "concerns/dryness-and-dullness",
     h1: "Dryness and dullness",
     tags: ["dryness", "hydration"],
@@ -251,6 +276,8 @@ export const concerns: Concern[] = [
   },
   {
     id: "hair-thinning",
+    image: "",
+    imageAlt: "",
     slug: "concerns/hair-thinning",
     h1: "Hair thinning",
     tags: ["hair_loss"],

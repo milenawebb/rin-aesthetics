@@ -144,12 +144,28 @@ function ConcernPage() {
 
       {concern.body.length ? (
         <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
-          <div className="measure space-y-6">
-            {concern.body.map((para, i) => (
-              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
-                {para}
-              </p>
-            ))}
+          <div className={concern.image ? "flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-16" : undefined}>
+            {concern.image ? (
+              <div className="mx-auto w-full max-w-[280px] md:order-2 md:mx-0 md:max-w-none md:w-[35%] md:shrink-0 [container-type:inline-size]">
+                <div className="flex items-end overflow-hidden rounded-t-[50cqw] rounded-b-[4px] bg-greige/40 px-[8%] pt-[10%]">
+                  <img
+                    src={concern.image}
+                    alt={concern.imageAlt}
+                    width={800}
+                    height={1000}
+                    loading="eager"
+                    className="block h-auto w-full"
+                  />
+                </div>
+              </div>
+            ) : null}
+            <div className="measure space-y-6 md:order-1">
+              {concern.body.map((para, i) => (
+                <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
+                  {para}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
