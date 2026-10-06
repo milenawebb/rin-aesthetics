@@ -53,10 +53,15 @@ function splitPath(slug: string) {
 
 const treatmentServices = services.filter((s) => !s.slug.startsWith("book/"));
 
-function treatmentGroup(category: string, heading: string, hash: string): MenuGroup {
+function treatmentGroup(
+  category: string,
+  heading: string,
+  hash: string,
+  footLabel: string
+): MenuGroup {
   return {
     heading,
-    foot: { label: "See all", to: "/treatments", hash },
+    foot: { label: footLabel, to: "/treatments", hash },
     links: treatmentServices
       .filter((s) => s.category === category)
       .map((s): MenuLink => ({
