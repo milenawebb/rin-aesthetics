@@ -13,6 +13,7 @@
 - Use American English throughout all visitor-facing and internal copy because RIN is a Virginia practice. Use forms such as customize, customization, color, center, gray, catalog, and license as a noun.
 
 - Service and concern content lives only in src/data (services.ts, concerns.ts); pages render a section only when its field is non-empty. Why: content is filled field by field and empty fields must never show placeholders.
+- Treatment headers without a device image use one spacing owner before the intro; facts stack below the tablet breakpoint. Why: avoids doubled section spacing and orphan fact cells.
 - Service URLs are /<category>/<slug> taken from Service.slug via one dynamic route; redirects.ts entries are 301s in that route; /book/* sends to Vagaro. Why: routes stay generated from data.
 
 - Gallery records are the single source for results placements; service and concern matches derive from service IDs, and images render only through isDisplayable(), which admits real photos solely via isPublishable() and otherwise only patient-free stand-ins. Why: treatment tags stay synchronized and patient consent is enforced at render time.
