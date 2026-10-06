@@ -141,7 +141,7 @@ export const navMenus: Record<string, NavMenu> = {
     columns: [
       { groups: [concernGroups[0]!] },
       { groups: [concernGroups[1]!] },
-      { groups: [{ ...concernGroups[2]!, foot: { label: "See all concerns", to: "/concerns" } }] },
+      { groups: [{ ...concernGroups[2]!, foot: { label: "All concerns", to: "/concerns" } }] },
     ],
     feature: concernsFeature,
     allLabel: "All concerns",
