@@ -572,9 +572,26 @@
   @media (width >= 48rem) { padding-top: 104px; padding-bottom: 88px; }
 }
 
+:root {
+  --space-section: 72px;
+}
+@media (width >= 48rem) {
+  :root {
+    --space-section: 112px;
+  }
+}
 @utility section-space {
-  padding-bottom: 72px;
-  @media (width >= 48rem) { padding-bottom: 112px; }
+  padding-bottom: var(--space-section);
+}
+
+/* The booking band owns the space above itself: one section-space step.
+   Whatever sits directly before it contributes no bottom space. Unlayered so it wins over section utilities. */
+.booking-band {
+  margin-top: var(--space-section);
+}
+main > :has(+ .booking-band) {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Bands with their own background need space on both edges. */

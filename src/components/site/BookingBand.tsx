@@ -17,7 +17,7 @@ export function BookingBand({ treatment }: Props) {
   const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : "Book a consultation";
   const line = treatment ? treatment.price : "Consultations are thorough and obligation-free.";
   return (
-    <section className="border-t border-greige bg-ivory">
+    <section className="booking-band border-t border-greige bg-ivory">
       <div className="site-container">
         <div
           className={`grid min-w-0 grid-cols-1 items-start gap-y-8 pb-12 pt-12 md:grid-cols-[minmax(0,1fr)_220px] md:gap-x-8 md:pb-14 md:pt-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-[72px] lg:pt-[72px]`}
