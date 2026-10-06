@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { navMenus, type NavMenu } from "./navMenus";
 import { MegaPanel } from "./MegaPanel";
 import { MobileDrawer } from "./MobileDrawer";
+import { DesktopSearch } from "./Search";
 
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
@@ -106,6 +107,9 @@ export function Header() {
               />
             );
           })}
+          <div className="-mx-4">
+            <DesktopSearch />
+          </div>
           <a
             href={practice.bookingUrl}
             target="_blank"
