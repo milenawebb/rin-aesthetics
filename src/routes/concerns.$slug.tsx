@@ -5,7 +5,6 @@ import { serviceBookingUrl } from "@/data/services";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
-import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
 import { practice } from "@/data/site";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
@@ -81,7 +80,8 @@ function ConcernPage() {
 
       {treatments.length ? (
         <section className="section-space">
-          <SectionLabel label="Treatments for this">
+          <div className="site-container">
+          <p className="eyebrow mb-6">Treatments for this</p>
           <MaskedLines
             as="h2"
             lines={[treatments.length === 1 ? "The treatment we recommend" : "Compare your options"]}
@@ -139,7 +139,7 @@ function ConcernPage() {
               );
             })}
           </div>
-          </SectionLabel>
+          </div>
         </section>
       ) : null}
 
@@ -178,7 +178,7 @@ function ConcernPage() {
 
       {results.length ? (
         <section className="section-space">
-          <SectionLabel>
+          <div className="site-container">
             <MaskedLines as="h2" lines={["Results"]} className={display} />
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[17px] font-light leading-[1.8] text-walnut">
@@ -188,13 +188,13 @@ function ConcernPage() {
             <div className="mt-12">
               <GalleryGrid items={results} />
             </div>
-          </SectionLabel>
+          </div>
         </section>
       ) : null}
 
       {concern.faqs.length ? (
         <section className="section-space">
-          <SectionLabel>
+          <div className="site-container">
           <MaskedLines as="h2" lines={["Questions"]} className={display} />
           <div className="mt-12 border-t border-greige">
             {concern.faqs.map((faq) => (
@@ -212,7 +212,7 @@ function ConcernPage() {
               </details>
             ))}
           </div>
-          </SectionLabel>
+          </div>
         </section>
       ) : null}
 
