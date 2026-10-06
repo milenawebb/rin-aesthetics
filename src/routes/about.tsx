@@ -76,17 +76,10 @@ function AboutPage() {
           <div className="col-span-full mt-6 md:max-w-[460px] md:mt-8 lg:sticky lg:top-[120px] lg:col-span-6 lg:max-w-none lg:mt-10">
             <WipeImage from="bottom">
               <picture className="block overflow-hidden rounded-[2px]">
-                <source
-                  type="image/webp"
-                  srcSet={`${j480w.url} 480w, ${j720w.url} 720w, ${j960w.url} 960w`}
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 460px, 480px"
-                />
                 <img
-                  src={j720.url}
-                  srcSet={`${j480.url} 480w, ${j720.url} 720w, ${j960.url} 960w`}
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 460px, 480px"
-                  width={720}
-                  height={900}
+                  src={portrait.url}
+                  width={1123}
+                  height={1401}
                   loading="eager"
                   fetchPriority="high"
                   alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"

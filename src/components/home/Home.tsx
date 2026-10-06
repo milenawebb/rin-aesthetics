@@ -195,8 +195,6 @@ export function Home() {
               <picture>
                 <img
                   src={portrait.url}
-                  480w, ${jyl4x5Jpg720.url} 720w, ${jyl4x5Jpg960.url} 960w`}
-                  sizes="(max-width: 1024px) 100vw, 40vw"
                   alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
                   width={1123}
                   height={1401}

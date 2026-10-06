@@ -55,15 +55,8 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           ) : null}
         </div>
         <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">
-          <source
-            type="image/webp"
-            srcSet={`${jyl480w.url} 480w, ${jyl720w.url} 720w, ${jyl960w.url} 960w`}
-            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
-          />
           <img
-            src={jyl960.url}
-            srcSet={`${jyl480.url} 480w, ${jyl720.url} 720w, ${jyl960.url} 960w`}
-            sizes="(min-width: 1024px) 240px, (min-width: 768px) 220px, 200px"
+            src={portrait.url}
             alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
             width={1123}
             height={1401}
