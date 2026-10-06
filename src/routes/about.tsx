@@ -61,21 +61,21 @@ export const Route = createFileRoute("/about")({
 // One grid for every section on this page: 1 col mobile, 6 tablet, 12 desktop.
 const wrap =
   "mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-x-8 gap-y-6 px-6 md:grid-cols-6 md:gap-y-8 md:px-8 lg:grid-cols-12 lg:gap-y-10 lg:px-16 xl:px-0";
-const pad = "py-12 md:py-16 lg:py-[88px]";
-const h2 = "font-body text-[32px] font-extralight leading-[1.16] tracking-[-0.02em] text-ink";
+const pad = "section-space";
+const h2 = "type-h2 text-ink";
 const body = "pretty measure-body font-body text-[17px] font-light leading-[1.8] text-walnut";
 
 function AboutPage() {
   return (
     <PageShell>
       <div>
-      <section className={`${pad} relative scroll-mt-[104px] md:max-lg:pt-[104px]`}>
+      <section className={`${pad} relative scroll-mt-[104px] pt-[56px] md:pt-[104px]`}>
         <SectionLabel label="About" contentClassName={wrap}>
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
               lines={["Jyl"]}
-              className="mt-3 font-body text-[34px] font-extralight leading-[1.16] tracking-[-0.03em] text-ink md:text-[56px]"
+              className="type-h1 mt-3 text-ink"
             />
             <p className="mt-5 font-body text-[20px] font-light text-walnut">
               Founder and nurse injector
@@ -259,7 +259,7 @@ function AboutPage() {
         </SectionLabel>
       </section>
 
-      <section className="pb-12 md:pb-16 lg:pb-[88px]">
+      <section className="section-space">
         <SectionLabel contentClassName={wrap}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive">Medical oversight</p>
