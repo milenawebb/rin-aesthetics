@@ -528,7 +528,7 @@
   position: absolute;
   left: 0;
   /* Half the leading above the first line, plus the distance from its top to mid-cap. */
-  top: calc((1lh - 1em) / 2 + 0.5em - 0.5px);
+  top: calc((1lh - 1em) / 2 + 0.44em);
   width: 14px;
   height: 1px;
   background: var(--color-champagne);
