@@ -29,10 +29,10 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
 
   // Phone peek: cap the scroll area so a sliver of the After shows.
   const bodyRef = useRef<HTMLDivElement>(null);
-  const beforeRef = useRef<HTMLElement>(null);
+  const [beforeEl, beforeRef] = useState<HTMLElement | null>(null);
   const [bodyMax, setBodyMax] = useState<number | undefined>(undefined);
   useEffect(() => {
-    const fig = beforeRef.current;
+    const fig = beforeEl;
     if (!fig) return;
     const measure = () => {
       if (window.matchMedia("(min-width: 768px)").matches) return setBodyMax(undefined);
@@ -42,7 +42,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     const ro = new ResizeObserver(measure);
     ro.observe(fig);
     return () => ro.disconnect();
-  }, [selected]);
+  }, [beforeEl]);
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 });
   }, [index]);
