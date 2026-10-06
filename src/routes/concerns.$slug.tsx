@@ -78,18 +78,6 @@ function ConcernPage() {
         </div>
       </section>
 
-      {concern.body.length ? (
-        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
-          <div className="measure space-y-6">
-            {concern.body.map((para, i) => (
-              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
-                {para}
-              </p>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       {treatments.length ? (
         <section className="section-space">
           <SectionLabel label="Treatments for this" className="xl:px-10" contentClassName="px-6 md:px-10 xl:px-0">
@@ -151,6 +139,18 @@ function ConcernPage() {
             })}
           </div>
           </SectionLabel>
+        </section>
+      ) : null}
+
+      {concern.body.length ? (
+        <section className="section-space relative mx-auto max-w-[1240px] px-6 md:px-10">
+          <div className="measure space-y-6">
+            {concern.body.map((para, i) => (
+              <p key={i} className="font-body text-[17px] font-light leading-[1.8] text-walnut">
+                {para}
+              </p>
+            ))}
+          </div>
         </section>
       ) : null}
 
