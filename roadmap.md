@@ -1,3 +1,9 @@
+# Treatment spacing
+
+- [x] Match the tag-to-intro gap to the subtitle-to-facts gap
+- [x] Stack phone facts while preserving tablet and desktop columns
+- [x] Audit empty treatment sections and verify three widths and the dash check
+
 # Ask RIN removal
 
 - [x] Unmount Ask RIN and remove canned replies while retaining its interface
