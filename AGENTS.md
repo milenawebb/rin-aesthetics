@@ -21,3 +21,5 @@
 - Keep AskRin dormant and unimported by the root layout, retaining its component and CSS without canned assistant replies. Why: Phase 2 can reuse the interface without shipping an inactive assistant or reserving floating-button clearance in Phase 1.
 
 - Legacy URLs are answered by one server request middleware in src/start.ts: 410 for retiredUrls, then 301 from wordpressRedirects, then 301 from redirects.ts, matching with or without a trailing slash. Why: real status codes before any page renders, with data files as the only source.
+
+- Header dropdowns and mobile accordions derive from concerns.ts and services.ts via src/components/site/navMenus.ts; booking actions are a separate array and never appear. Why: adding a concern or service updates the nav with no hand list.
