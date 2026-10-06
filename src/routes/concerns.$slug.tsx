@@ -92,7 +92,7 @@ function ConcernPage() {
 
       {treatments.length ? (
         <section className="section-space">
-          <SectionLabel label="Treatments for this" contentClassName="px-6 md:px-10 xl:px-0">
+          <SectionLabel label="Treatments for this" className="xl:px-10" contentClassName="px-6 md:px-10 xl:px-0">
           <MaskedLines
             as="h2"
             lines={[treatments.length === 1 ? "The treatment we recommend" : "Compare your options"]}
