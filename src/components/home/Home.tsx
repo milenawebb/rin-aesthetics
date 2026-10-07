@@ -13,10 +13,6 @@ import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
-
-/** Average color of each hero crop, painted behind it while it loads. */
-export const HERO_COLORS = { desktop: "#817061", tablet: "#6B5A4B", mobile: "#4F3E2F" };
-export const heroUrls = { desktop: heroAsset.url, tablet: heroTabletAsset.url, mobile: heroMobileAsset.url };
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
 import {
