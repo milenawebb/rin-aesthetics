@@ -1,9 +1,13 @@
 import nordlysDevice from "@/assets/nordlys-device.png.asset.json";
 import nordlysFull from "@/assets/nordlys-full.jpg.asset.json";
-import srTech1 from "@/assets/sr-tech-1.png.asset.json";
-import srTech2 from "@/assets/sr-tech-2.png.asset.json";
-import srTech3 from "@/assets/sr-tech-3.png.asset.json";
-import srTech4 from "@/assets/sr-tech-4.png.asset.json";
+import swtPhotoWebp from "@/assets/swt-photofacial.webp.asset.json";
+import swtPhotoJpg from "@/assets/swt-photofacial.jpg.asset.json";
+import swtAcneWebp from "@/assets/swt-acne.webp.asset.json";
+import swtAcneJpg from "@/assets/swt-acne.jpg.asset.json";
+import frac1940Webp from "@/assets/fractional-1940.webp.asset.json";
+import frac1940Jpg from "@/assets/fractional-1940.jpg.asset.json";
+import frac1550Webp from "@/assets/fractional-1550.webp.asset.json";
+import frac1550Jpg from "@/assets/fractional-1550.jpg.asset.json";
 
 /** Photography only, keyed by service id. No treatment copy lives here. */
 export const serviceMedia: Record<string, { src: string; alt: string; width: number; height: number }> = {
@@ -16,8 +20,13 @@ export const serviceMedia: Record<string, { src: string; alt: string; width: num
 };
 
 /** Placeholder images for each technology column, in the same order as Service.technologies. */
-export const technologyMedia: Record<string, string[]> = {
-  "DEV-03": [srTech1.url, srTech2.url, srTech3.url, srTech4.url],
+export const technologyMedia: Record<string, { webp: string; jpg: string }[]> = {
+  "DEV-03": [
+    { webp: swtPhotoWebp.url, jpg: swtPhotoJpg.url },
+    { webp: swtAcneWebp.url, jpg: swtAcneJpg.url },
+    { webp: frac1940Webp.url, jpg: frac1940Jpg.url },
+    { webp: frac1550Webp.url, jpg: frac1550Jpg.url },
+  ],
 };
 
 /** Lead image for a technologies section: the platform shared by every column. */
