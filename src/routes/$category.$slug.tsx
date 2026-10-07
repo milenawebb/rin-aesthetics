@@ -393,8 +393,8 @@ function ServicePage() {
                         <img
                           src={image.jpg}
                           alt={`${tech.name} in use`}
-                          width={261}
-                          height={147}
+                          width={522}
+                          height={294}
                           loading="lazy"
                           className="mt-7 block aspect-[16/9] w-full object-cover object-center"
                         />
