@@ -185,7 +185,7 @@ function ServicePage() {
             </p>
           ) : null}
           {facts.length ? (
-            <dl className={`mt-12 grid grid-cols-1 border-l border-t border-greige ${facts.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+            <dl className={`mt-12 grid grid-cols-1 border-l border-t border-greige ${facts.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"}`}>
               {facts.map((fact) => (
                 <div key={fact.label} className="min-w-0 border-b border-r border-greige px-6 py-7 md:px-4 lg:px-6">
                   <dt className="label-xs text-walnut">{fact.label}</dt>
@@ -414,7 +414,7 @@ function ServicePage() {
           <h2 className={h2}>What to expect</h2>
           <ol className="step-counter mt-12">
             {service.steps.map((step) => (
-              <li key={step.title} className="grid gap-2 border-t border-greige py-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-x-6 md:gap-y-0 lg:grid-cols-[120px_1fr] lg:gap-10">
+              <li key={step.title} className="grid gap-2 border-t border-greige py-8 md:grid-cols-[20px_minmax(0,1fr)] md:gap-x-6 md:gap-y-0 lg:grid-cols-[120px_1fr] lg:gap-10">
                 <span className="step-number label-xs text-champagne" aria-hidden />
                 <div>
                   <h3 className="font-body text-[19px] font-medium text-ink">{step.title}</h3>
