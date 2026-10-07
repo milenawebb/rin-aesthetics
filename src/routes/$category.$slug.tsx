@@ -388,12 +388,17 @@ function ServicePage() {
                       </ul>
                     ) : null}
                     {image ? (
-                      <img
-                        src={image}
-                        alt={`${tech.name} in use`}
-                        loading="lazy"
-                        className="mt-7 block aspect-[3/2] w-full object-cover object-center"
-                      />
+                      <picture>
+                        <source type="image/webp" srcSet={image.webp} />
+                        <img
+                          src={image.jpg}
+                          alt={`${tech.name} in use`}
+                          width={261}
+                          height={147}
+                          loading="lazy"
+                          className="mt-7 block aspect-[16/9] w-full object-cover object-center"
+                        />
+                      </picture>
                     ) : null}
                   </div>
                 );
