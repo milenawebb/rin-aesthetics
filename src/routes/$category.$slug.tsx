@@ -388,7 +388,7 @@ function ServicePage() {
                       </ul>
                     ) : null}
                     {image ? (
-                      <figure className="mt-7">
+                      <figure className={`mt-7 ${i === 0 || i === service.technologies!.length - 1 ? "lg:w-[calc(100%-32px)]" : ""}`}>
                         <img
                           src={image}
                           alt={`${tech.name} in use`}
