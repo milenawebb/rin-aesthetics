@@ -6,9 +6,11 @@ import srTech3 from "@/assets/sr-tech-3.png.asset.json";
 import srTech4 from "@/assets/sr-tech-4.png.asset.json";
 
 /** Photography only, keyed by service id. No treatment copy lives here. */
-export const serviceMedia: Record<string, { src: string; alt: string }> = {
+export const serviceMedia: Record<string, { src: string; alt: string; width: number; height: number }> = {
   "DEV-03": {
     src: nordlysDevice.url,
+    width: 894,
+    height: 1200,
     alt: "The Candela Nordlys platform used for The Skin Refinery by RIN at RIN Aesthetic Practice",
   },
 };

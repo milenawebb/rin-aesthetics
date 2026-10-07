@@ -640,3 +640,8 @@
     padding-inline: 1.5rem;
   }
 }
+
+/* Home hero: each crop's average color fills the frame until the photo arrives. */
+.hero-picture { background-color: #4F3E2F; }
+@media (min-width: 768px) { .hero-picture { background-color: #6B5A4B; } }
+@media (min-width: 1024px) { .hero-picture { background-color: #817061; } }

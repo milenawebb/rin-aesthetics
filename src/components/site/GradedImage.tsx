@@ -8,6 +8,8 @@ interface GradedImageProps {
   srcSet?: string;
   webpSrcSet?: string;
   sizes?: string;
+  /** Average color of the photo, shown while it loads. */
+  color?: string;
 }
 
 /**
@@ -25,9 +27,10 @@ export function GradedImage({
   srcSet,
   webpSrcSet,
   sizes,
+  color,
 }: GradedImageProps) {
   return (
-    <div className={`relative overflow-hidden rounded-[2px] bg-greige ${className}`}>
+    <div className={`relative overflow-hidden rounded-[2px] bg-greige ${className}`} style={color ? { backgroundColor: color } : undefined}>
       <picture>
       {webpSrcSet ? <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} /> : null}
       <img

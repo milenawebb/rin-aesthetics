@@ -11,6 +11,8 @@ import w720 from "@/assets/jyl-portrait-sizes/jyl-portrait-720.webp.asset.json";
 import w960 from "@/assets/jyl-portrait-sizes/jyl-portrait-960.webp.asset.json";
 import w1123 from "@/assets/jyl-portrait-sizes/jyl-portrait-1123.webp.asset.json";
 
+/** Average color of the portrait, painted behind it while it loads. */
+export const portraitColor = "#60402C";
 export const portraitWidth = 1123;
 export const portraitHeight = 1401;
 /** Full-size source, used as the plain fallback and for schema/preload. */

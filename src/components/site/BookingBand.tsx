@@ -1,5 +1,5 @@
 import { keepBrandTogether } from "@/data/lookup";
-import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
 const BAND_SIZES = "(min-width: 1024px) 240px, (min-width: 768px) 220px, calc(100vw - 48px)";
 import { practice } from "@/data/site";
@@ -66,6 +66,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             width={1123}
             height={1401}
             loading="lazy"
+            style={{ backgroundColor: portraitColor }}
             className="block aspect-square h-auto w-full rounded-[2px] object-cover object-[50%_20%] md:max-w-[220px] lg:max-w-[240px]"
           />
         </picture>

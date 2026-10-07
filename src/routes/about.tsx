@@ -5,9 +5,11 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { WipeImage } from "@/components/site/WipeImage";
 import { Reveal } from "@/components/site/Reveal";
-import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
 const ABOUT_PORTRAIT_SIZES = "(min-width: 1280px) 580px, (min-width: 1024px) 46vw, (min-width: 768px) 460px, calc(100vw - 48px)";
+/** Average color of the blueprints photo, painted behind it while it loads. */
+const BLUEPRINTS_COLOR = "#7D7C79";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
@@ -80,7 +82,7 @@ function AboutPage() {
           </div>
           <div className="col-span-full mt-6 md:max-w-[460px] md:mt-8 lg:col-span-6 lg:row-start-2 lg:self-center lg:max-w-none lg:mt-10">
             <WipeImage from="bottom">
-              <picture className="block overflow-hidden rounded-[2px]">
+              <picture className="block overflow-hidden rounded-[2px]" style={{ backgroundColor: portraitColor }}>
                 <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={ABOUT_PORTRAIT_SIZES} />
                 <img
                   src={portraitSrc}
@@ -142,7 +144,7 @@ function AboutPage() {
           <div className={`min-w-0 ${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6 lg:row-start-2 lg:self-center lg:mt-10">
             <WipeImage from="left">
-              <picture className="block overflow-hidden rounded-[2px]">
+              <picture className="block overflow-hidden rounded-[2px]" style={{ backgroundColor: BLUEPRINTS_COLOR }}>
                 <source
                   type="image/webp"
                   srcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}

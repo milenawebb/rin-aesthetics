@@ -1,4 +1,4 @@
-import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
@@ -13,6 +13,10 @@ import { useInView } from "@/hooks/use-in-view";
 import heroAsset from "@/assets/hero.png.asset.json";
 import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
 import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
+
+/** Average color of each hero crop, painted behind it while it loads. */
+export const HERO_COLORS = { desktop: "#817061", tablet: "#6B5A4B", mobile: "#4F3E2F" };
+export const heroUrls = { desktop: heroAsset.url, tablet: heroTabletAsset.url, mobile: heroMobileAsset.url };
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
 import {
@@ -50,12 +54,13 @@ export function Home() {
   return (
     <>
       <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
-        <picture className="hero-settle is-in aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
+        <picture className="hero-picture hero-settle is-in aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
           <source media="(min-width: 1024px)" srcSet={heroAsset.url} />
           <source media="(min-width: 768px)" srcSet={heroTabletAsset.url} />
           <img
             src={heroMobileAsset.url}
             alt={hero.imageAlt}
+            loading="eager"
             fetchPriority="high"
             className="h-full w-full object-cover"
           />
@@ -192,7 +197,7 @@ export function Home() {
         <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
-              <picture>
+              <picture className="block" style={{ backgroundColor: portraitColor }}>
                 <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"} />
                 <img
                   src={portraitSrc}
