@@ -131,7 +131,7 @@ export function Home() {
             ) : null}
           </div>
         </SectionLabel>
-        <div className="site-bleed-right mt-14 overflow-x-clip">
+        <div className="site-bleed-right mt-14 overflow-x-clip lg:site-container">
           <ResultsRail cases={featuredResults} />
         </div>
         <div className={`${container} mt-10`}>
@@ -190,7 +190,7 @@ export function Home() {
         <div className={container}>
           <p className="eyebrow">{provider.heading}</p>
         </div>
-        <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start`}>
+        <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start lg:max-w-(--site-max) lg:px-(--site-pad)`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
               <picture className="block" style={{ backgroundColor: portraitColor }}>
@@ -208,7 +208,7 @@ export function Home() {
               </picture>
             </WipeImage>
           </div>
-          <div className="col-span-12 self-center px-6 lg:col-span-6 lg:col-start-7 lg:-ml-10 lg:px-0">
+          <div className="col-span-12 self-center px-6 lg:col-span-6 lg:col-start-7 lg:px-0">
             <MaskedLines
               as="h3"
               lines={[provider.name]}
