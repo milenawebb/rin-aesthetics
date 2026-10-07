@@ -388,12 +388,12 @@ function ServicePage() {
                       </ul>
                     ) : null}
                     {image ? (
-                      <figure className="mt-7">
+                      <figure className={`mt-7 ${i === 0 || i === service.technologies!.length - 1 ? "lg:w-[calc(100%-32px)]" : ""}`}>
                         <img
                           src={image}
                           alt={`${tech.name} in use`}
                           loading="lazy"
-                          className="aspect-[16/9] w-full rounded-[2px] border border-walnut object-cover"
+                          className="block aspect-[3/2] w-full object-cover object-center"
                         />
                         <figcaption className="label-xs mt-3 text-walnut">Placeholder image</figcaption>
                       </figure>
