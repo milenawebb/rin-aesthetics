@@ -6,6 +6,7 @@ import { useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
 import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { TREATING_PHOTO_SERVICE_IDS, treatingAlt, treatingHeight, treatingJpgSrcSet, treatingSrc, treatingWebpSrcSet, treatingWidth } from "@/lib/treating";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
@@ -457,16 +458,29 @@ function ServicePage() {
       {service.howJylApproaches ? (
         <section className={section}>
           <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
-            <GradedImage
-              src={portraitSrc}
-              srcSet={portraitJpgSrcSet}
-              webpSrcSet={portraitWebpSrcSet}
-              sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
-              alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
-              width={1123}
-              height={1401}
-              className="aspect-[3/4] w-full"
-            />
+            {TREATING_PHOTO_SERVICE_IDS.has(service.id) ? (
+              <GradedImage
+                src={treatingSrc}
+                srcSet={treatingJpgSrcSet}
+                webpSrcSet={treatingWebpSrcSet}
+                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
+                alt={treatingAlt}
+                width={treatingWidth}
+                height={treatingHeight}
+                className="aspect-[3/4] w-full"
+              />
+            ) : (
+              <GradedImage
+                src={portraitSrc}
+                srcSet={portraitJpgSrcSet}
+                webpSrcSet={portraitWebpSrcSet}
+                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
+                alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
+                width={1123}
+                height={1401}
+                className="aspect-[3/4] w-full"
+              />
+            )}
             <div>
               <h2 className={h2}>{service.howJylApproachesHeading ?? "How Jyl approaches this"}</h2>
               <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
