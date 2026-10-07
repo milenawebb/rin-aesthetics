@@ -897,7 +897,7 @@ export const services: Service[] = [
       {
         badge: "SWT",
         name: "SWT IPL Photofacial",
-        description: "Broadband light targeting the visible signs of sun exposure and time.",
+        description: "Broadband light targeting visible signs of sun exposure and time.",
         bullets: [
           "Evens skin tone",
           "Reduces redness and rosacea",
