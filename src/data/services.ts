@@ -908,7 +908,7 @@ export const services: Service[] = [
       {
         badge: "SWT",
         name: "SWT IPL for Acne",
-        description: "The same light technology tuned to acne-causing bacteria and inflammation.",
+        description: "The same light technology tuned to acne and inflammation.",
         bullets: [
           "Reduces active breakouts",
           "Calms inflammation",
@@ -924,7 +924,7 @@ export const services: Service[] = [
           "Improves fine lines and texture",
           "Minimizes enlarged pores",
           "Softens acne scarring",
-          "Stimulates collagen and elastin",
+          "Stimulates collagen & elastin",
         ],
       },
       {
