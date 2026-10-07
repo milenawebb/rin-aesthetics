@@ -371,7 +371,7 @@ function ServicePage() {
                 return (
                   <div
                     key={`${tech.badge}-${tech.name}`}
-                    className="border-b border-walnut px-0 py-10 md:border-r md:px-8 md:first:pl-0 lg:border-b-0 lg:last:border-r-0 lg:last:pr-0 md:[&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:pr-0 lg:[&:nth-child(2)]:border-r lg:[&:nth-child(2)]:pr-8 lg:[&:nth-child(3)]:pl-8"
+                    className="border-b border-walnut px-0 py-10 md:px-8 md:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0"
                   >
                     <p className="label-xs text-champagne">{tech.badge}</p>
                     <h3 className="mt-4 font-body text-[19px] font-medium text-ivory">{tech.name}</h3>
@@ -388,15 +388,12 @@ function ServicePage() {
                       </ul>
                     ) : null}
                     {image ? (
-                      <figure className={`mt-7 ${i === 0 || i === service.technologies!.length - 1 ? "lg:w-[calc(100%-32px)]" : ""}`}>
-                        <img
-                          src={image}
-                          alt={`${tech.name} in use`}
-                          loading="lazy"
-                          className="block aspect-[3/2] w-full object-cover object-center"
-                        />
-                        <figcaption className="label-xs mt-3 text-walnut">Placeholder image</figcaption>
-                      </figure>
+                      <img
+                        src={image}
+                        alt={`${tech.name} in use`}
+                        loading="lazy"
+                        className="mt-7 block aspect-[3/2] w-full object-cover object-center"
+                      />
                     ) : null}
                   </div>
                 );
