@@ -41,7 +41,7 @@ export function ResultsRail({ cases }: { cases: GalleryItem[] }) {
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
-        className="rail flex snap-x snap-mandatory items-start gap-3 overflow-x-auto overscroll-x-contain pr-6 sm:snap-none sm:gap-6 md:pr-10"
+        className="rail flex snap-x snap-mandatory items-start gap-3 overflow-x-auto overscroll-x-contain pr-6 sm:snap-none sm:gap-6 md:pr-10 lg:pr-0"
       >
         {cases.map((item) => (
           <BeforeAfterTile key={item.id} item={item} />
