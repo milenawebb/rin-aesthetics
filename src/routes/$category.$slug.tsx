@@ -414,7 +414,7 @@ function ServicePage() {
           <h2 className={h2}>What to expect</h2>
           <ol className="step-counter mt-12">
             {service.steps.map((step) => (
-              <li key={step.title} className="grid gap-2 border-t border-greige py-8 md:grid-cols-[120px_1fr] md:gap-10">
+              <li key={step.title} className="grid gap-2 border-t border-greige py-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-x-6 md:gap-y-0 lg:grid-cols-[120px_1fr] lg:gap-10">
                 <span className="step-number label-xs text-champagne" aria-hidden />
                 <div>
                   <h3 className="font-body text-[19px] font-medium text-ink">{step.title}</h3>
@@ -533,17 +533,17 @@ function ServicePage() {
                   params={{ category: p.category, slug: p.slug }}
                   className="group -mx-4 block border-b border-greige md:-mx-6"
                 >
-                  <div className="grid grid-cols-1 items-baseline gap-2 px-4 py-8 transition-colors duration-300 group-hover:bg-white md:grid-cols-[200px_1fr_auto] md:gap-10 md:px-6">
-                    <span className="label-xs text-olive">{item.category}</span>
-                    <span className="flex flex-col gap-2 md:flex-row md:items-baseline md:gap-10">
-                      <span className="font-body text-[22px] font-extralight leading-[1.25] tracking-[-0.02em] text-ink transition-transform duration-300 group-hover:translate-x-2 md:min-w-[280px]">
+                  <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 px-4 py-8 transition-colors duration-300 group-hover:bg-white md:px-6 lg:grid lg:grid-cols-[200px_1fr_auto] lg:gap-10">
+                    <span className="label-xs w-full text-olive lg:w-auto">{item.category}</span>
+                    <span className="contents lg:flex lg:flex-row lg:items-baseline lg:gap-10">
+                      <span className="font-body text-[22px] font-extralight leading-[1.25] tracking-[-0.02em] text-ink transition-transform duration-300 group-hover:translate-x-2 min-w-0 lg:min-w-[280px]">
                         {item.shortName}
                       </span>
-                      <span className="font-body text-[15px] font-light leading-[1.7] text-walnut">
+                      <span className="order-last w-full font-body text-[15px] font-light leading-[1.7] text-walnut lg:order-none lg:w-auto">
                         {item.shortDescription}
                       </span>
                     </span>
-                    <span className="font-body text-[15px] font-light text-ink md:text-right">
+                    <span className="ml-auto whitespace-nowrap font-body text-[15px] font-light text-ink lg:ml-0 lg:whitespace-normal lg:text-right">
                       {item.priceDisplay}
                     </span>
                   </div>
