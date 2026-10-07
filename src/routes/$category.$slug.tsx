@@ -5,8 +5,8 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { GradedImage } from "@/components/site/GradedImage";
-import { portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
-import { TREATING_PHOTO_SERVICE_IDS, treatingAlt, treatingHeight, treatingJpgSrcSet, treatingSrc, treatingWebpSrcSet, treatingWidth } from "@/lib/treating";
+import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { treatingColor, TREATING_PHOTO_SERVICE_IDS, treatingAlt, treatingHeight, treatingJpgSrcSet, treatingSrc, treatingWebpSrcSet, treatingWidth } from "@/lib/treating";
 import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
@@ -226,7 +226,7 @@ function ServicePage() {
       {media ? (
         <section className="site-container pb-[56px] md:pb-[88px]">
           <div className="flex aspect-[16/9] w-full items-center justify-center bg-ivory p-10">
-            <img src={media.src} alt={media.alt} className="h-full w-auto max-w-full object-contain" />
+            <img src={media.src} alt={media.alt} width={media.width} height={media.height} loading="eager" fetchPriority="high" className="h-full w-auto max-w-full object-contain" />
           </div>
         </section>
       ) : null}
@@ -465,6 +465,7 @@ function ServicePage() {
                 webpSrcSet={treatingWebpSrcSet}
                 sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
                 alt={treatingAlt}
+                color={treatingColor}
                 width={treatingWidth}
                 height={treatingHeight}
                 className="aspect-[3/4] w-full"
@@ -476,6 +477,7 @@ function ServicePage() {
                 webpSrcSet={portraitWebpSrcSet}
                 sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
                 alt="Jyl Carter, aesthetic nurse practitioner, at RIN Aesthetic Practice"
+                color={portraitColor}
                 width={1123}
                 height={1401}
                 className="aspect-[3/4] w-full"

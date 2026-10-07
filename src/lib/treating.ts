@@ -7,6 +7,8 @@ import w480 from "@/assets/jyl-treating-sizes/jyl-treating-480.webp.asset.json";
 import w720 from "@/assets/jyl-treating-sizes/jyl-treating-720.webp.asset.json";
 import w936 from "@/assets/jyl-treating-sizes/jyl-treating-936.webp.asset.json";
 
+/** Average color of the treating photo, painted behind it while it loads. */
+export const treatingColor = "#8F7663";
 export const treatingWidth = 936;
 export const treatingHeight = 1318;
 export const treatingSrc = j720.url;
