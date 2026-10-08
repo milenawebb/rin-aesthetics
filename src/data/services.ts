@@ -7,8 +7,6 @@ import { consultation } from "@/data/consultation";
 export const signatureEyebrow = "A RIN Signature Treatment";
 export const signatureName = "The Skin Refinery by Candela\u2122";
 export const signatureShortName = "The Skin Refinery";
-// Directory marker beside the short name in the treatments list.
-export const signatureDirectoryLabel = "Signature";
 // Delete this (and its one use in DEV-03) once Vagaro lists the treatment under our name.
 export const signatureBookingName = "The Candela Light & Bright Experience";
 
