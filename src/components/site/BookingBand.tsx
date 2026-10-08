@@ -30,7 +30,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           {line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
-          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10 [--band-btn-h:50px]">
+          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10 [--band-btn-h:53px]">
             <div className="flex w-full flex-col md:w-auto">
             <a
               href={treatment ? treatment.bookingUrl : practice.bookingUrl}
