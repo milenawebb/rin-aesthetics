@@ -60,6 +60,8 @@ export interface Service {
   bookLabel?: string;
   /** Sessions wording when the number alone would mislead, e.g. a single treatment also sold as a course. */
   sessionsDisplay?: string;
+  /** Price wording for the treatment page facts panel when it must pair with sessionsDisplay. */
+  priceFact?: string;
   tagline?: string;
   promises?: { label: string; text: string }[];
   technologiesHeading?: string;
@@ -702,6 +704,7 @@ export const services: Service[] = [
     downtime: "minimal",
     seriesSessions: 1,
     sessionsDisplay: "One or three",
+    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["lips", "fine_lines", "texture"],
     pairsWith: ["INJ-03"],
@@ -791,6 +794,7 @@ export const services: Service[] = [
     downtime: "days",
     seriesSessions: 1,
     sessionsDisplay: "One or three",
+    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["pigment", "redness", "texture", "fine_lines", "acne", "scarring"],
     pairsWith: ["DEV-06", "DEV-05", "SB-08", "SB-04"],
@@ -950,6 +954,7 @@ export const services: Service[] = [
     downtime: "days",
     seriesSessions: 1,
     sessionsDisplay: "One or three",
+    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring"],
     pairsWith: ["DEV-04"],
@@ -1040,6 +1045,7 @@ export const services: Service[] = [
     downtime: "minimal",
     seriesSessions: 1,
     sessionsDisplay: "One or three",
+    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["sun_damage", "pigment", "redness", "texture"],
     pairsWith: ["DEV-04"],

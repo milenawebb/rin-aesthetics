@@ -145,7 +145,7 @@ function ServicePage() {
   const hasOptionLinks = service.options.some((o) => o.bookingUrl);
   const basisLines = service.options.filter((o) => o.basis).map((o) => `${o.price} ${o.basis}`);
   const facts = [
-    { label: "Price", value: basisLines[0] ?? service.priceDisplay },
+    { label: "Price", value: service.priceFact ?? basisLines[0] ?? service.priceDisplay },
     { label: "Downtime", value: downtimeLabel[service.downtime] },
     { label: "Sessions", value: service.sessionsDisplay ?? sessionsLabel(service.seriesSessions) },
     ...(followUp
