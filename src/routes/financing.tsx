@@ -47,7 +47,7 @@ function FinancingPage() {
           <ol className="mt-8 space-y-6">
             {steps.map((s, i) => (
               <li key={s.title} className="flex gap-6">
-                <span className="label-xs pt-[6px] text-champagne">{String(i + 1).padStart(2, "0")}</span>
+                <span className="label-xs pt-[6px] text-champagne-light">{String(i + 1).padStart(2, "0")}</span>
                 <p className={body}>
                   <span className="font-normal text-ink">{s.title}</span> {s.body}
                 </p>

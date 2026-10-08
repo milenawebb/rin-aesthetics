@@ -156,7 +156,7 @@ function ContactForm() {
           <p
             role="status"
             aria-live="polite"
-            className={status.kind === "success" ? "text-sm text-olive" : "text-sm text-destructive"}
+            className={status.kind === "success" ? "text-sm text-olive-light" : "text-sm text-destructive"}
           >
             {status.message}
           </p>
@@ -233,7 +233,7 @@ function ContactPage() {
             <br />
             {practice.addressLines[1]}
           </address>
-          <p className="mt-6 max-w-[68ch] text-lg font-normal text-champagne">
+          <p className="mt-6 max-w-[68ch] text-lg font-normal text-champagne-light">
             Please use the entrance that faces the Sherwin Williams store.
           </p>
           <a

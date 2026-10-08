@@ -16,7 +16,7 @@ export function PlaceholderPage({ title, blurb }: { title: string; blurb: string
   return (
     <PageShell>
       <section className="page-head site-container">
-        <p className="label-xs text-champagne">RIN</p>
+        <p className="label-xs text-champagne-light">RIN</p>
         <h1 className="type-h1 mt-6 text-ink">
           {title}
         </h1>

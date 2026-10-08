@@ -21,7 +21,7 @@ export function Placeholder({
           : "items-end justify-start p-6 md:p-10"
       } ${className}`}
     >
-      <span className="label-xs text-ink/55">{label}</span>
+      <span className="label-xs text-ink-soft">{label}</span>
     </div>
   );
 }
