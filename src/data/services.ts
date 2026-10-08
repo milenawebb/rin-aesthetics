@@ -529,7 +529,7 @@ export const services: Service[] = [
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 3,
-    priceFact: "From $750 per session",
+    priceFact: "From $750 each",
     repeatWeeks: 26,
     concernTags: ["hair_loss"],
     pairsWith: ["INJ-06"],
