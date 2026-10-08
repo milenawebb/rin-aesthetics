@@ -1,5 +1,5 @@
 import { seoHead } from "@/lib/seo-head";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ProductList } from "@/components/site/ProductList";
