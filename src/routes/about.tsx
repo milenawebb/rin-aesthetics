@@ -1,4 +1,5 @@
 import { EarlyImage } from "@/components/site/EarlyImage";
+import { practicePhotos, practicePhotoSizes } from "@/lib/practice";
 import { providerName, providerCredential, providerCredentialTitle, medicalDirectorName, medicalDirectorCredential } from "@/data/provider";
 import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -208,12 +209,20 @@ function AboutPage() {
           </div>
           <div className="rail col-span-full -mr-6 overflow-x-auto md:mr-0 md:overflow-visible">
             <div className="flex gap-3 md:grid md:grid-cols-3">
-              {[1, 2, 3].map((n) => (
-                <div
-                  key={n}
-                  className="flex aspect-[4/5] w-[78%] shrink-0 items-center justify-center rounded-[2px] bg-greige md:w-auto"
-                >
-                  <span className="eyebrow text-ink-soft">Practice photo</span>
+              {practicePhotos.map((p) => (
+                <div key={p.key} className="w-[78%] shrink-0 md:w-auto">
+                  <EarlyImage
+                    pictureClassName="block overflow-hidden rounded-[2px]"
+                    color={p.color}
+                    src={p.src}
+                    srcSet={p.srcSet}
+                    webpSrcSet={p.webpSrcSet}
+                    sizes={practicePhotoSizes}
+                    width={1200}
+                    height={900}
+                    alt={p.alt}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
                 </div>
               ))}
             </div>
