@@ -8,7 +8,7 @@ import { practice } from "@/data/site";
 
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
-  treatment?: { name: string; price: string; bookingUrl: string; bookLabel?: string; listedAs?: string };
+  treatment?: { name: string; price: string; bookingUrl: string; bookLabel?: string | undefined; listedAs?: string | undefined };
   /** Page-specific copy for the consultation variant (concern pages). */
   heading?: string;
   line?: string;
@@ -16,7 +16,7 @@ type Props = {
 
 /** The one closing booking band, used on every page. */
 export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }: Props) {
-  const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : (headingCopy ?? "Book a consultation");
+  const heading = treatment ? (treatment.bookLabel ?? `Book your ${keepBrandTogether(treatment.name)}`) : (headingCopy ?? "Book a consultation");
   const line = treatment ? treatment.price : (lineCopy ?? null);
   return (
     <section className="booking-band border-t border-greige bg-ivory">
