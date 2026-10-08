@@ -19,7 +19,7 @@ export interface PageMeta {
 export const pageMeta: Record<string, PageMeta> = {
   "/book/consultation": {
     title: "Book a Consultation | RIN Aesthetic Practice",
-    description: `Book a consultation with ${providerName} at RIN Aesthetic Practice in Charlottesville, Virginia. The consultation fee is shown here before you continue to booking.`,
+    description: `Book a consultation with ${providerName} at RIN Aesthetic Practice in Charlottesville, Virginia. The fee is shown before you continue to booking.`,
   },
   "/": {
     title: "Medical Aesthetics in Charlottesville, VA | RIN",
@@ -67,7 +67,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/injectables/full-facial-balancing": {
     title: "Full Facial Balancing in Charlottesville, VA | RIN",
-    description: "Three to four syringes used across the face to harmonize proportions rather than treat one area. $2,100. Prices, downtime and aftercare shown before you book.",
+    description: "Three to four syringes across the face to harmonize proportions rather than treat one area. $2,100. Prices, downtime and aftercare shown.",
   },
   "/injectables/biostimulators": {
     title: "Biostimulators in Charlottesville, VA | RIN",
@@ -75,11 +75,11 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/injectables/prp-hair-restoration": {
     title: "PRP Hair Restoration in Charlottesville, VA | RIN",
-    description: "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult. From $750. Prices, downtime and aftercare shown before you book.",
+    description: "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult. From $750. Prices and downtime shown.",
   },
   "/injectables/ez-gel-prp": {
     title: "EZ Gel and PRP in Charlottesville, VA | RIN",
-    description: "A filler-like volumizer made from your own blood, used under the eyes, cheeks, lips and laugh lines. From $750. Prices, downtime and aftercare shown before you book.",
+    description: "A filler-like volumizer made from your own blood, used under the eyes, cheeks, lips and laugh lines. From $750. Prices and downtime shown.",
   },
   "/injectables/skinvive": {
     title: "Skinvive in Charlottesville, VA | RIN",
@@ -91,7 +91,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/devices/skin-refinery": {
     title: "The Skin Refinery by RIN in Charlottesville, VA | RIN",
-    description: "Her signature treatment, exclusive to RIN. Three Candela technologies combined in one customized session. $900. Prices, downtime and aftercare shown before you book.",
+    description: "RIN's signature treatment. Three Candela technologies combined in one customized session. $900. Prices, downtime and aftercare shown.",
   },
   "/devices/fractional-laser": {
     title: "Fractional Laser in Charlottesville, VA | RIN",
@@ -115,30 +115,30 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/hydrafacials/the-refinement": {
     title: "The Refinement Hydrafacial in Charlottesville, VA | RIN",
-    description: "A 50-minute treatment covering analysis, cleanse, exfoliation, extractions, LED, boosters and SPF. $195. Prices, downtime and aftercare shown before you book.",
+    description: "A 50-minute treatment covering analysis, cleanse, exfoliation, extractions, LED, boosters and SPF. $195. Prices and downtime shown.",
   },
   "/concerns/lines-and-wrinkles": {
-    title: "Lines and wrinkles Treatments in Charlottesville | RIN",
+    title: "Lines and wrinkles treatments in Charlottesville | RIN",
     description: "Treatments for lines and wrinkles at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/volume-loss": {
-    title: "Volume loss Treatments in Charlottesville | RIN",
+    title: "Volume loss treatments in Charlottesville | RIN",
     description: "Treatments for volume loss at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/facial-contour": {
-    title: "Facial contour and balance Treatments in Charlottesville | RIN",
-    description: "Treatments for facial contour and balance at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Facial contour and balance treatments in Charlottesville | RIN",
+    description: "Jawline, chin and cheek proportion, treated as one face rather than one feature. Compare the options by price, downtime and sessions.",
   },
   "/concerns/skin-laxity": {
-    title: "Skin laxity and firmness Treatments in Charlottesville | RIN",
+    title: "Skin laxity and firmness treatments in Charlottesville | RIN",
     description: "Treatments for skin laxity and firmness at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/lips": {
-    title: "Lips Treatments in Charlottesville | RIN",
-    description: "Treatments for lips at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Lip treatments in Charlottesville | RIN",
+    description: "Volume, shape and definition, or just the fine lines around the edge. Compare lip treatments by price, downtime and how long each one lasts.",
   },
   "/concerns/under-eye-area": {
-    title: "Under-eye area Treatments in Charlottesville | RIN",
+    title: "Under-eye treatments in Charlottesville | RIN",
     description: "Treatments for under-eye area at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/pigmentation": {
@@ -162,7 +162,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Treatments for dryness and dullness at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/hair-thinning": {
-    title: "Hair thinning Treatments in Charlottesville | RIN",
+    title: "Hair thinning treatments in Charlottesville | RIN",
     description: "Treatments for hair thinning at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/policies/service-policies": {
