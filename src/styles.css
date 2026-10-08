@@ -626,7 +626,7 @@
 }
 
 /* DOCUMENTED EXCEPTION. Home hero text at tablet (768px to 1023px) is a panel over the photo,
-   inset 24px and capped at 420px, deliberately set apart from the shared container edges.
+   inset 24px, 55% wide and capped at 520px, deliberately set apart from the shared container edges.
    Phone and desktop use site-container unchanged. Unlayered so it overrides site-container in this band only. */
 @media (48rem <= width < 64rem) {
   .hero-tablet-panel {
