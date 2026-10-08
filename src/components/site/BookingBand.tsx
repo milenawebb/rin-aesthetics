@@ -5,6 +5,7 @@ import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } fro
 
 const BAND_SIZES = "(min-width: 1024px) 240px, (min-width: 768px) 220px, calc(100vw - 48px)";
 import { practice } from "@/data/site";
+import { CancellationNote } from "@/components/site/CancellationNote";
 
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
@@ -50,6 +51,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             {treatment ? null : (
               <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
             )}
+            <CancellationNote className="mt-3" />
             </div>
             <a
               href={practice.smsHref}

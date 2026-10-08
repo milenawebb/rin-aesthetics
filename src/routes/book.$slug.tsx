@@ -1,3 +1,4 @@
+import { CancellationNote } from "@/components/site/CancellationNote";
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getBookingAction } from "@/data/lookup";
 import { practice } from "@/data/site";
@@ -37,6 +38,7 @@ function ConsultationPage() {
         >
           Continue to booking
         </a>
+        <CancellationNote className="mt-3" />
       </div>
     </PageShell>
   );

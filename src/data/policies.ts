@@ -49,6 +49,7 @@ export const policies: Policy[] = [
         ]
       },
       {
+        "id": "cancellations",
         "heading": "Cancellations and no-shows",
         "paragraphs": [
           "At RIN Aesthetic Practice we have a 48 hour Cancellation / No Show Policy in place to ensure guests can get in for appointments in a timely manner and to respect our providers' time.",
