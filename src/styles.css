@@ -646,7 +646,7 @@
 @media (min-width: 768px) { .hero-picture { background-color: #6B5A4B; } }
 @media (min-width: 1024px) { .hero-picture { background-color: #817061; } }
 
-/* Compact pinned header below 1024px: slides in and out; instant when reduced motion is set. */
-.compact-header { transition: transform 200ms ease-out; }
+/* Header bar below 1024px: shrinks once scrolled inside its fixed 80px reservation; instant when reduced motion is set. */
+.compact-header { transition: height 160ms ease-out; }
 @media (prefers-reduced-motion: reduce) { .compact-header { transition: none; } }
 @media (max-width: 1023px) { html { scroll-padding-top: 56px; } }

@@ -68,22 +68,16 @@ export function Header() {
     closeTimer.current = window.setTimeout(() => setPanel(null), CLOSE_DELAY);
   };
 
-  const { mode, reveal } = useCompactHeader(open);
-  const pinned = mode !== "top";
+  const pinned = useCompactHeader(open);
 
   return (
     <header
       className="relative z-50 h-20 w-full bg-ink lg:sticky lg:top-0 lg:h-auto"
-      onFocusCapture={reveal}
     >
       <div
-        className={`bg-ink lg:static lg:translate-y-0 lg:border-0 ${
-          pinned
-            ? `compact-header fixed inset-x-0 top-0 border-b border-walnut ${mode === "hidden" ? "-translate-y-full" : "translate-y-0"}`
-            : ""
-        }`}
+        className={`fixed inset-x-0 top-0 bg-ink lg:static lg:border-0 ${pinned ? "border-b border-walnut" : ""}`}
       >
-      <div className={`site-container flex items-center justify-between lg:h-20 ${pinned ? "h-14" : "h-20"}`}>
+      <div className={`compact-header site-container flex items-center justify-between lg:h-20 ${pinned ? "h-14" : "h-20"}`}>
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
           <Logo width={pinned ? 84 : 118} className="lg:!w-[118px]" />
         </Link>
@@ -165,25 +159,21 @@ export function Header() {
 }
 
 /**
- * Below 1024px: in normal flow at the top of the page; once scrolled past it, hides while
- * scrolling down and pins (compact) the moment the visitor scrolls up. Desktop always reports "top".
+ * Below 1024px the bar is always fixed inside an 80px in-flow reservation. It turns compact on the
+ * first scroll and stays compact until the page is back at the top. Desktop always reports false.
  */
 function useCompactHeader(menuOpen: boolean) {
-  const [mode, setMode] = useState<"top" | "pinned" | "hidden">("top");
+  const [compact, setCompact] = useState(false);
   const menuRef = useRef(menuOpen);
   menuRef.current = menuOpen;
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1023px)");
-    let last = window.scrollY;
     const onScroll = () => {
       // The open menu locks page scrolling; keep the header as it was until it closes.
       if (menuRef.current) return;
-      const y = window.scrollY;
-      if (!mq.matches || y <= 0) setMode("top");
-      else if (y < last) setMode("pinned");
-      else if (y > last && y > 80) setMode((m) => (m === "top" && y <= 80 ? m : "hidden"));
-      last = y;
+      setCompact(mq.matches && window.scrollY > 0);
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     mq.addEventListener("change", onScroll);
     return () => {
@@ -191,8 +181,7 @@ function useCompactHeader(menuOpen: boolean) {
       mq.removeEventListener("change", onScroll);
     };
   }, []);
-  const reveal = useCallback(() => setMode((m) => (m === "hidden" ? "pinned" : m)), []);
-  return { mode: menuOpen && mode === "hidden" ? "pinned" : mode, reveal };
+  return compact;
 }
 
 function canHover() {
