@@ -75,11 +75,11 @@ export function Header() {
       className="relative z-50 h-20 w-full bg-ink lg:sticky lg:top-0 lg:h-auto"
     >
       <div
-        className={`fixed inset-x-0 top-0 bg-ink lg:static lg:border-0 ${pinned ? "border-b border-walnut" : ""}`}
+        className={`compact-header fixed inset-x-0 top-0 bg-ink lg:static lg:translate-y-0 lg:border-0 ${pinned ? "-translate-y-6 border-b border-walnut" : ""}`}
       >
-      <div className={`compact-header site-container flex items-center justify-between lg:h-20 ${pinned ? "h-14" : "h-20"}`}>
+      <div className={`compact-header site-container flex h-20 items-center justify-between lg:translate-y-0 ${pinned ? "translate-y-3" : ""}`}>
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
-          <Logo width={pinned ? 84 : 118} className="lg:!w-[118px]" />
+          <Logo width={118} className={`compact-header origin-left lg:scale-100 ${pinned ? "scale-[0.712]" : ""}`} />
         </Link>
 
 
