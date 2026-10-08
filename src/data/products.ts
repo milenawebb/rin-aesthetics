@@ -9,20 +9,44 @@ export interface Brand {
   // The practice's own authorized storefront. Empty until supplied.
   storeUrl: string;
   note: string;
+  // Display groups, in order. Brands stay separate because each is its own
+  // store and checkout; a cross-brand list could not be ordered in one go.
+  groups: { name: string; ids: string[] }[];
 }
+
+export const skincareIntro: string[] = [
+  "Two lines, both medical grade, both chosen by Jyl rather than stocked by default.",
+  "Nothing is sold on this page. You order from each brand through RIN's store, and it ships to you directly.",
+  "If you are not sure where to start, ask at your appointment. The honest answer is usually fewer products than you expect.",
+];
 
 export const brands: Record<string, Brand> = {
   skinbetter: {
     id: "skinbetter",
     name: "skinbetter science",
     storeUrl: "",
-    note: "Authorized practice store. Orders are placed with skinbetter directly.",
+    note: "A physician-dispensed line, not sold in shops. Best known for AlphaRet, which combines a retinoid and an AHA in one step. Ordered through RIN's store at skinbetter.",
+    groups: [
+      { name: "Cleansers", ids: ["SB-13", "SB-14"] },
+      { name: "Retinoids", ids: ["SB-01", "SB-02", "SB-03"] },
+      { name: "Serums", ids: ["SB-04", "SB-06", "SB-09", "SB-12"] },
+      { name: "Eyes", ids: ["SB-10", "SB-11"] },
+      // One moisturizer is stocked. A group of one is intentional.
+      { name: "Moisture", ids: ["SB-05"] },
+      { name: "Sunscreen", ids: ["SB-07", "SB-08"] },
+    ],
   },
   hydrinity: {
     id: "hydrinity",
     name: "Hydrinity",
     storeUrl: "",
-    note: "Ordered through Hydrinity using the practice link.",
+    note: "Built around hyaluronic acid, with a line designed to sit alongside in-practice treatments. Ordered through RIN's store at Hydrinity.",
+    groups: [
+      { name: "Cleanse and calm", ids: ["HY-06", "HY-05"] },
+      { name: "Hydration", ids: ["HY-01", "HY-02"] },
+      { name: "Brightening and renewal", ids: ["HY-03", "HY-04"] },
+      { name: "Eyes, lips and body", ids: ["HY-07", "HY-09", "HY-08"] },
+    ],
   },
 };
 
