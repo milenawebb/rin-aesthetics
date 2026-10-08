@@ -1,3 +1,4 @@
+import { consultation } from "@/data/consultation";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { navLinks, practice } from "@/data/site";
@@ -237,7 +238,7 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
         {!menu && !searching ? (
           <div className="shrink-0 px-6 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-5">
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noreferrer"
               onClick={onClose}

@@ -1,3 +1,4 @@
+import { consultation } from "@/data/consultation";
 import { EarlyImage } from "@/components/site/EarlyImage";
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { portraitPreview, portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
@@ -83,7 +84,7 @@ export function Home() {
           />
           <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-4">
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noreferrer"
               className={`${btn} w-full whitespace-nowrap border border-transparent bg-ink px-8 py-[18px] text-center text-ivory transition-colors hover:bg-walnut md:bg-ivory md:text-ink md:hover:bg-champagne lg:w-auto`}
