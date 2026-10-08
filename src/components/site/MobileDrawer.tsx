@@ -97,7 +97,7 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
             </svg>
           </button>
           <Link to="/" onClick={onClose} className="justify-self-center" aria-label="RIN home">
-            <Logo width={96} />
+            <Logo width={89} />
           </Link>
           <span />
         </div>

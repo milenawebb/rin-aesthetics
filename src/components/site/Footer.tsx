@@ -45,7 +45,7 @@ function ContactBlock() {
   return (
     <div>
       <Link to="/" aria-label="RIN Aesthetic Practice home" className="inline-block">
-        <Logo width={104} />
+        <Logo width={96} />
       </Link>
       <address className="mt-6 font-body not-italic text-[15px] leading-[1.75] text-greige md:mt-8">
         {practice.addressLines.map((line) => (

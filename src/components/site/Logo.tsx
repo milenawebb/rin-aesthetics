@@ -1,23 +1,24 @@
 import { practice } from "@/data/site";
-import logoAsset from "@/assets/rin-logo.png.asset.json";
 
 /**
- * Brand wordmark. Pass `src` with the outlined SVG export once supplied;
- * until then the text lockup renders as a placeholder.
+ * Brand wordmark, served as a cached SVG file (not inlined). The light file is for dark
+ * backgrounds; pass tone="ink" on cream or light backgrounds.
  */
 export function Logo({
-  src = logoAsset.url,
+  tone = "light",
   width,
   className = "",
 }: {
-  src?: string;
+  tone?: "light" | "ink";
   width: number;
   className?: string;
 }) {
   return (
     <img
-      src={src}
-      alt={`${practice.wordmark} ${practice.wordmarkSub} logo`}
+      src={tone === "ink" ? "/rin-logo-ink.svg" : "/rin-logo.svg"}
+      alt={`${practice.wordmark} ${practice.wordmarkSub}`}
+      width={width}
+      height={Math.round((width * 1449) / 3231)}
       style={{ width }}
       className={`block h-auto ${className}`}
     />

@@ -79,7 +79,7 @@ export function Header() {
       >
       <div className={`compact-header site-container flex h-20 items-center justify-between lg:translate-y-0 ${pinned ? "translate-y-3" : ""}`}>
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
-          <Logo width={118} className={`compact-header origin-left lg:scale-100 ${pinned ? "scale-[0.712]" : ""}`} />
+          <Logo width={109} className={`compact-header origin-left lg:scale-100 ${pinned ? "scale-[0.712]" : ""}`} />
         </Link>
 
 
