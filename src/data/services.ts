@@ -977,13 +977,15 @@ export const services: Service[] = [
     options: [
       {
         name: "Spot treatment",
-        price: "$250",
+        price: "From $250",
         note: "A few specific spots rather than the whole area.",
+        bookingUrl: "https://www.vagaro.com/cl/pALuq2brgWqFXUW24WF0iR3yrKUROaQWTws4Jbh~Ph8=",
       },
       {
         name: "Full face or chest",
         price: "$450",
         note: "Even tone across the whole area in one session.",
+        bookingUrl: "https://www.vagaro.com/cl/856gXqXuAqkIZi27wmXlrglQwl8vyDKCLTpBTakNO1c=",
       },
     ],
 
