@@ -75,6 +75,8 @@ export interface Service {
   /** Further care series shown after the main one, for treatments delivered by more than one method. */
   extraPrecareIds?: string[];
   extraAftercareIds?: string[];
+  /** Labels for each care set, in order (main set first), when a page carries more than one. */
+  careLabels?: string[];
   /** Short headed subsections describing each way the treatment is delivered. */
   approaches?: { heading: string; body: string }[];
 }
@@ -411,7 +413,7 @@ export const services: Service[] = [
     priceFact: "From $750 per session",
     repeatWeeks: 26,
     concernTags: ["laxity", "volume_loss", "fine_lines"],
-    pairsWith: ["INJ-02", "SB-01"],
+    pairsWith: ["INJ-02", "SB-01", "INJ-09"],
     precareId: "PC-INJECT",
     aftercareId: "AC-BIOSTIM",
     shortDescription:
@@ -490,6 +492,7 @@ export const services: Service[] = [
     aftercareId: "AC-BIOSTIM",
     extraPrecareIds: ["PC-LASER"],
     extraAftercareIds: ["AC-RESURFACE"],
+    careLabels: ["With a hyperdilute biostimulator", "With fractional laser"],
     shortDescription:
       "Fractional laser or a hyperdilute biostimulator, used to firm and smooth the neck.",
     options: [],
@@ -941,7 +944,7 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 26,
     concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring", "hair_loss", "eye_area"],
-    pairsWith: ["DEV-04"],
+    pairsWith: ["DEV-04", "INJ-09"],
     precareId: "PC-LASER",
     aftercareId: "AC-RESURFACE",
     shortDescription:
@@ -1200,7 +1203,7 @@ export const services: Service[] = [
     priceFact: "From $650 per session",
     repeatWeeks: 6,
     concernTags: ["texture", "scarring", "pores", "fine_lines", "laxity", "hydration", "hair_loss"],
-    pairsWith: ["HY-05"],
+    pairsWith: ["HY-05", "INJ-09"],
     precareId: "PC-MICRO",
     aftercareId: "AC-RESURFACE",
     shortDescription:
