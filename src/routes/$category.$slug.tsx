@@ -142,8 +142,9 @@ function ServicePage() {
   ].filter((c) => c.items.length > 0);
 
 
+  const basisLines = service.options.filter((o) => o.basis).map((o) => `${o.price} ${o.basis}`);
   const facts = [
-    { label: "Price", value: service.priceDisplay },
+    { label: "Price", value: basisLines.length ? basisLines.join(", ") : service.priceDisplay },
     { label: "Downtime", value: downtimeLabel[service.downtime] },
     { label: "Sessions", value: sessionsLabel(service.seriesSessions) },
     ...(followUp
@@ -563,7 +564,7 @@ function ServicePage() {
         </section>
       ) : null}
 
-      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, bookingUrl: serviceBookingUrl(service), bookLabel: service.bookLabel, listedAs: service.bookingListedAs }} />
+      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, priceLines: basisLines.length ? basisLines : undefined, bookingUrl: serviceBookingUrl(service), bookLabel: service.bookLabel, listedAs: service.bookingListedAs }} />
     </PageShell>
   );
 }
