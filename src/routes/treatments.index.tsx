@@ -7,7 +7,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
-import { services, serviceBookingUrl, signatureDirectoryLabel } from "@/data/services";
+import { services, serviceBookingUrl } from "@/data/services";
 import { downtimeLabel, priceValue, splitSlug } from "@/data/lookup";
 
 
@@ -97,11 +97,6 @@ function TreatmentsIndex() {
                       >
                         {keepBrandTogether(item.name)}
                       </Link>
-                      {item.id === "DEV-03" && (
-                        <span data-sig className="label-xs ml-3 whitespace-nowrap text-walnut">
-                          {signatureDirectoryLabel}
-                        </span>
-                      )}
                     </div>
                     <p role="cell" className="font-body text-[16px] font-light leading-[1.75] text-walnut">
                       {item.shortDescription}
