@@ -30,7 +30,8 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           {line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
-          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-center md:gap-x-10">
+          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10">
+            <div className="flex w-full flex-col md:w-auto">
             <a
               href={treatment ? treatment.bookingUrl : practice.bookingUrl}
               target="_blank"
@@ -39,6 +40,10 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             >
               {treatment ? "Book this treatment" : "Book a consultation"}
             </a>
+            {treatment ? null : (
+              <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
+            )}
+            </div>
             <a
               href={practice.phoneHref}
               className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne"
@@ -46,9 +51,6 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
               {practice.phone}
             </a>
           </div>
-          {treatment ? null : (
-            <p className="mt-4 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
-          )}
           {treatment ? (
             <a
               href={practice.bookingUrl}
