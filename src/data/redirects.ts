@@ -11,4 +11,6 @@ export const redirects: Record<string, string> = {
   "/concerns/acne-scarring": "/concerns/acne-and-scarring",
   "/concerns/laxity": "/concerns/skin-laxity",
   "/concerns/thinning-hair": "/concerns/hair-thinning",
+  // Shop renamed to Skincare.
+  "/shop": "/skincare",
 };

@@ -6,9 +6,9 @@ import { ProductList } from "@/components/site/ProductList";
 import { brands, products } from "@/data/products";
 
 
-const seo = seoHead("/shop");
+const seo = seoHead("/skincare");
 
-export const Route = createFileRoute("/shop")({
+export const Route = createFileRoute("/skincare")({
   head: () => ({
     meta: seo.meta,
     links: seo.links,

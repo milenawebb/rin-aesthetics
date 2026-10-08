@@ -37,19 +37,19 @@ export const wordpressRedirects: Record<string, string> = {
 
   // Shop. The new site has no cart, so the commerce routes go to the shop
   // page rather than nowhere.
-  "/shop/": "/shop",
-  "/shop-dose/": "/shop",
-  "/cart/": "/shop",
-  "/checkout/": "/shop",
+  "/shop/": "/skincare",
+  "/shop-dose/": "/skincare",
+  "/cart/": "/skincare",
+  "/checkout/": "/skincare",
   "/account/": "/",
 
   // Products, all of which are packages
   "/product/signature-hydrafacial/": "/hydrafacials/the-refinement",
-  "/product/matrix-pro-face-and-neck-package/": "/shop",
-  "/product/signature-skin-tightening-package/": "/shop",
-  "/product/sculpt-lift-tighten-package/": "/shop",
+  "/product/matrix-pro-face-and-neck-package/": "/skincare",
+  "/product/signature-skin-tightening-package/": "/skincare",
+  "/product/sculpt-lift-tighten-package/": "/skincare",
   "/product-category/hydrafacial/": "/hydrafacials/the-refinement",
-  "/product-category/device-packages/": "/shop",
+  "/product-category/device-packages/": "/skincare",
 
   // Financing
   "/payment-plans/": "/financing",
