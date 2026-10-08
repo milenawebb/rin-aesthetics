@@ -60,7 +60,7 @@ function ResultsPage() {
               {concern.h1}
             </FilterButton>
           ))}
-        </div>
+        </div>) : null}
 
         <div className="mt-14">
           <GalleryGrid items={items} />
