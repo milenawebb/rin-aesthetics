@@ -634,10 +634,16 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 38%;
-    max-width: 420px;
+    width: 55%;
+    max-width: 520px;
     margin-inline: 0;
     padding-inline: 1.5rem;
+  }
+  /* Two lines at tablet: sized so "in Charlottesville, VA" always fits the panel, never clipped by the line mask. */
+  .hero-tablet-heading { font-size: clamp(40px, 5.2vw, 48px); }
+  /* Darkening widened to sit behind the wider panel. */
+  .hero-overlay {
+    background-image: linear-gradient(to right, rgba(13,13,12,0.55) 0%, rgba(13,13,12,0.55) 52%, rgba(13,13,12,0) 70%) !important;
   }
 }
 

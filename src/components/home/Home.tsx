@@ -1,4 +1,3 @@
-import { consultationFeeLine } from "@/data/consultation";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
@@ -69,7 +68,7 @@ export function Home() {
           />
         </picture>
         <div
-          className="absolute inset-0 hidden md:block"
+          className="hero-overlay absolute inset-0 hidden md:block"
           aria-hidden="true"
           style={{
             backgroundImage:
@@ -82,9 +81,9 @@ export function Home() {
           </h1>
           <MaskedLines
             as="h1"
-            lines={["Medical aesthetics", "in Charlottesville, VA"]}
+            lines={["Medical aesthetics", "in\u00a0Charlottesville, VA"]}
             delay={200}
-            className="type-h1 hidden text-ivory md:block"
+            className="type-h1 hero-tablet-heading hidden text-ivory md:block"
           />
           <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-4">
             <a
@@ -102,7 +101,6 @@ export function Home() {
               Find your treatment
             </Link>
           </div>
-          <p className="mt-4 font-body text-[13px] font-light leading-[1.6] text-walnut md:text-ivory/80">{consultationFeeLine}</p>
         </div>
       </section>
 
