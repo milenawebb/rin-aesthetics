@@ -134,12 +134,14 @@ function ServicePage() {
     .find((b) => b !== undefined);
   const results = galleryForService(service.id);
 
-  const pre = [service.precareId, ...(service.extraPrecareIds ?? [])].flatMap((id) => careLines(seriesById(id)));
-  const after = [service.aftercareId, ...(service.extraAftercareIds ?? [])].flatMap((id) => careLines(seriesById(id)));
+  const careSets = (ids: string[]) =>
+    ids
+      .map((id, i) => ({ label: service.careLabels?.[i], groups: careLines(seriesById(id)) }))
+      .filter((set) => set.groups.length > 0);
   const careColumns = [
-    { heading: "Before your visit", items: pre },
-    { heading: "After your treatment", items: after },
-  ].filter((c) => c.items.length > 0);
+    { heading: "Before your visit", key: "pre", sets: careSets([service.precareId, ...(service.extraPrecareIds ?? [])]) },
+    { heading: "After your treatment", key: "after", sets: careSets([service.aftercareId, ...(service.extraAftercareIds ?? [])]) },
+  ].filter((c) => c.sets.length > 0);
 
 
   const hasNotes = service.options.some((o) => o.note.trim().length > 0);
@@ -301,7 +303,7 @@ function ServicePage() {
           <div className="grid gap-14 md:grid-cols-2 md:gap-20">
             {service.approaches.map((a) => (
               <div key={a.heading}>
-                <h2 className={h2}>{a.heading}</h2>
+                <h3 className="type-h3 text-ink">{a.heading}</h3>
                 <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">{a.body}</p>
               </div>
             ))}
@@ -473,7 +475,16 @@ function ServicePage() {
             {careColumns.map((col) => (
               <div key={col.heading}>
                 <h2 className={h2}>{col.heading}</h2>
-                <CareTimeline groups={col.items} id={col.heading === "Before your visit" ? "pre" : "after"} />
+                {col.sets.map((set, i) =>
+                  set.label ? (
+                    <div key={i} className={i === 0 ? "mt-10" : "mt-14"}>
+                      <h3 className="type-h3 text-ink">{set.label}</h3>
+                      <CareTimeline groups={set.groups} id={`${col.key}-${i}`} />
+                    </div>
+                  ) : (
+                    <CareTimeline key={i} groups={set.groups} id={i === 0 ? col.key : `${col.key}-${i}`} />
+                  ),
+                )}
               </div>
             ))}
           </div>
