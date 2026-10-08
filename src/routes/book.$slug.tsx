@@ -1,7 +1,6 @@
 import { CancellationNote } from "@/components/site/CancellationNote";
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getBookingAction } from "@/data/lookup";
-import { practice } from "@/data/site";
 import { consultation, consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { PageShell } from "@/components/site/PageShell";

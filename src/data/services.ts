@@ -1,5 +1,4 @@
 import { consultation } from "@/data/consultation";
-import { practice } from "@/data/site";
 // Generated from rin-catalog-and-quiz.xlsx. Do not hand-edit structure.
 // Content fields left empty are filled in Stage 3. Any section whose field is
 // empty must render nothing at all, never an empty heading or a placeholder.
