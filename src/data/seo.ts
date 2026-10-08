@@ -119,11 +119,11 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/lines-and-wrinkles": {
     title: "Lines and wrinkles treatments in Charlottesville | RIN",
-    description: "Expression lines that stay visible when your face is at rest. Compare what softens them, by price, downtime and how long results last.",
+    description: "Forehead lines, frown lines and crow's feet, and the difference between lines that move and lines that stay. Compare by price and downtime.",
   },
   "/concerns/volume-loss": {
     title: "Volume loss treatments in Charlottesville | RIN",
-    description: "Flatness through the cheeks that makes a face look tired. Compare what restores it, with prices and downtime shown side by side.",
+    description: "Hollowing at the temples, cheeks and under the eyes. Compare what restores it, with prices and downtime shown side by side.",
   },
   "/concerns/facial-contour": {
     title: "Facial contour and balance treatments in Charlottesville | RIN",
@@ -131,7 +131,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/skin-laxity": {
     title: "Skin laxity and firmness treatments in Charlottesville | RIN",
-    description: "Skin that has lost its spring and firmness. Compare the treatments that rebuild it, with prices, downtime and session counts shown.",
+    description: "Skin that has lost its spring along the jawline and neck. Compare the treatments that rebuild it, with prices, downtime and session counts.",
   },
   "/concerns/lips": {
     title: "Lip treatments in Charlottesville | RIN",
@@ -139,7 +139,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/under-eye-area": {
     title: "Under-eye treatments in Charlottesville | RIN",
-    description: "Dark circles, hollowing and puffiness under the eyes, which is delicate ground. Compare the options with prices and downtime shown.",
+    description: "Dark circles, hollowing, puffiness and crepey skin under the eyes. Compare the options with prices and downtime shown before you book.",
   },
   "/concerns/pigmentation": {
     title: "Pigmentation and sun damage treatments in Charlottesville | RIN",
