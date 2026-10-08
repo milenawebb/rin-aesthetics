@@ -1,3 +1,4 @@
+import { providerName } from "@/data/provider";
 import { ConcernArch } from "@/components/site/ConcernArch";
 import { seoHead } from "@/lib/seo-head";
 import { resultsNotice } from "@/data/gallery";
@@ -239,7 +240,7 @@ function ConcernPage() {
 
       <BookingBand
         heading="Not sure which of these is right?"
-        line="Jyl will look at your skin and tell you which of these is worth doing, and which is not."
+        line={`${providerName} will look at your skin and tell you which of these is worth doing, and which is not.`}
       />
     </PageShell>
   );
