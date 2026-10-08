@@ -1,3 +1,4 @@
+import { EarlyImage } from "@/components/site/EarlyImage";
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -206,19 +207,17 @@ export function Home() {
         <div className={`${grid} mx-auto mt-10 w-full max-w-[1400px] items-start lg:max-w-(--site-max) lg:px-(--site-pad)`}>
           <div className="col-span-12 pl-0 lg:col-span-5 lg:sticky lg:top-[120px]">
             <WipeImage from="bottom">
-              <picture className="block" style={{ backgroundColor: portraitColor }}>
-                <source type="image/webp" srcSet={portraitWebpSrcSet} sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"} />
-                <img
-                  src={portraitSrc}
-                  srcSet={portraitJpgSrcSet}
-                  sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"}
-                  alt={`${providerName}, ${providerCredential}, in the treatment suite at RIN Aesthetic Practice`}
-                  width={1123}
-                  height={1401}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover object-[50%_25%]"
-                />
-              </picture>
+              <EarlyImage
+                color={portraitColor}
+                webpSrcSet={portraitWebpSrcSet}
+                src={portraitSrc}
+                srcSet={portraitJpgSrcSet}
+                sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"}
+                alt={`${providerName}, ${providerCredential}, in the treatment suite at RIN Aesthetic Practice`}
+                width={1123}
+                height={1401}
+                className="aspect-[4/5] w-full object-cover object-[50%_25%]"
+              />
             </WipeImage>
           </div>
           <div className="col-span-12 self-center px-6 lg:col-span-6 lg:col-start-7 lg:px-0">

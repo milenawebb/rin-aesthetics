@@ -1,3 +1,4 @@
+import { EarlyImage } from "@/components/site/EarlyImage";
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -145,23 +146,18 @@ function AboutPage() {
           <div className={`min-w-0 ${wrap} items-center`}>
           <div className="col-span-full lg:col-span-6 lg:row-start-2 lg:self-center lg:mt-10">
             <WipeImage from="left">
-              <picture className="block overflow-hidden rounded-[2px]" style={{ backgroundColor: BLUEPRINTS_COLOR }}>
-                <source
-                  type="image/webp"
-                  srcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
-                  sizes="(max-width: 1023px) 100vw, 560px"
-                />
-                <img
-                  src={bp1000.url}
-                  srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}
-                  sizes="(max-width: 1023px) 100vw, 560px"
-                  width={1000}
-                  height={750}
-                  loading="lazy"
-                  alt={`${providerName} during the renovation of RIN Aesthetic Practice`}
-                  className="aspect-[4/3] w-full object-cover object-[50%_45%]"
-                />
-              </picture>
+              <EarlyImage
+                pictureClassName="block overflow-hidden rounded-[2px]"
+                color={BLUEPRINTS_COLOR}
+                webpSrcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
+                src={bp1000.url}
+                srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}
+                sizes="(max-width: 1023px) 100vw, 560px"
+                width={1000}
+                height={750}
+                alt={`${providerName} during the renovation of RIN Aesthetic Practice`}
+                className="aspect-[4/3] w-full object-cover object-[50%_45%]"
+              />
             </WipeImage>
           </div>
           {/* Below desktop this block stacks as one column; at desktop it dissolves so the heading spans the row above image and prose, matching the "Jyl" section. */}
