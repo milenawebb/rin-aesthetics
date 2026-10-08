@@ -1,5 +1,5 @@
 import { seoHead } from "@/lib/seo-head";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ProductList } from "@/components/site/ProductList";
@@ -24,7 +24,7 @@ function ShopPage() {
     <PageShell>
       <section className="page-head site-container">
         <h1 className="type-h1 text-ink">
-          Shop
+          Skincare
         </h1>
       </section>
 
