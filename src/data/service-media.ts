@@ -15,7 +15,7 @@ export const serviceMedia: Record<string, { src: string; alt: string; width: num
     src: nordlysDevice.url,
     width: 894,
     height: 1200,
-    alt: "The Candela Nordlys platform used for The Skin Refinery by RIN at RIN Aesthetic Practice",
+    alt: "The Candela Nordlys platform used for The Skin Refinery at RIN Aesthetic Practice",
   },
 };
 

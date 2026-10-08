@@ -73,5 +73,5 @@ export function sessionsLabel(n: number) {
 
 /** Joins "by RIN" with a non-breaking space so the brand never wraps away from "by". */
 export function keepBrandTogether(text: string): string {
-  return text.replace(/ by RIN\b/g, " by\u00a0RIN");
+  return text.replace(/ by (RIN|Candela)\b/g, " by\u00a0$1");
 }
