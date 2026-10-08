@@ -626,7 +626,7 @@
 }
 
 /* DOCUMENTED EXCEPTION. Home hero text at tablet (768px to 1023px) is a panel over the photo,
-   inset 24px, 55% wide and capped at 520px, deliberately set apart from the shared container edges.
+   inset 24px, 44% wide and capped at 460px, deliberately set apart from the shared container edges.
    Phone and desktop use site-container unchanged. Unlayered so it overrides site-container in this band only. */
 @media (48rem <= width < 64rem) {
   .hero-tablet-panel {
@@ -634,17 +634,13 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 55%;
-    max-width: 520px;
+    width: 44%;
+    max-width: 460px;
     margin-inline: 0;
     padding-inline: 1.5rem;
   }
   /* Two lines at tablet: sized so "in Charlottesville, VA" always fits the panel, never clipped by the line mask. */
-  .hero-tablet-heading { font-size: clamp(40px, 5.2vw, 48px); }
-  /* Darkening widened to sit behind the wider panel. */
-  .hero-overlay {
-    background-image: linear-gradient(to right, rgba(13,13,12,0.55) 0%, rgba(13,13,12,0.55) 52%, rgba(13,13,12,0) 70%) !important;
-  }
+  .hero-tablet-heading { font-size: clamp(34px, 4.4vw, 40px); }
 }
 
 /* Home hero (hero.png, rin-hero-tablet.png, rin-hero-mobile.png): each crop's average color fills the frame until the photo arrives. */

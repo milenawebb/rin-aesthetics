@@ -68,7 +68,7 @@ export function Home() {
           />
         </picture>
         <div
-          className="hero-overlay absolute inset-0 hidden md:block"
+          className="absolute inset-0 hidden md:block"
           aria-hidden="true"
           style={{
             backgroundImage:
