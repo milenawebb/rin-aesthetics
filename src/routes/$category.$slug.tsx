@@ -145,7 +145,7 @@ function ServicePage() {
   const hasNotes = service.options.some((o) => o.note.trim().length > 0);
   const basisLines = service.options.filter((o) => o.basis).map((o) => `${o.price} ${o.basis}`);
   const facts = [
-    { label: "Price", value: basisLines.length ? basisLines[0] : service.priceDisplay },
+    { label: "Price", value: basisLines[0] ?? service.priceDisplay },
     { label: "Downtime", value: downtimeLabel[service.downtime] },
     { label: "Sessions", value: service.sessionsDisplay ?? sessionsLabel(service.seriesSessions) },
     ...(followUp

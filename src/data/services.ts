@@ -862,7 +862,6 @@ export const services: Service[] = [
     displayName: signatureName,
     bookLabel: `Book ${signatureShortName}`,
     bookingListedAs: signatureBookingName,
-    sessionsDisplay: "One, or a course of three",
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
