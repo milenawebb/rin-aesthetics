@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { concerns, type Concern } from "@/data/concerns";
 import { services } from "@/data/services";
 import { practice } from "@/data/site";
@@ -27,6 +28,8 @@ export type FeatureLink =
   | { label: string; kind: "external"; href: string };
 
 export interface FeaturePanel {
+  /** Plain line shown under the link, such as the consultation fee. */
+  note?: string;
   eyebrow: string;
   title: string;
   body: string;
@@ -133,6 +136,7 @@ const concernsFeature: FeaturePanel = {
   title: "Book a consultation",
   body: "Tell me what bothers you when you look in the mirror and I will tell you honestly what will help, what will not, and what it would take.",
   link: { label: "Book a consultation", kind: "external", href: practice.bookingUrl },
+  note: consultationFeeLine,
 };
 
 export const navMenus: Record<string, NavMenu> = {

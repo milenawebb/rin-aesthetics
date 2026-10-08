@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { keepBrandTogether } from "@/data/lookup";
 import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -58,6 +59,7 @@ function TreatmentsIndex() {
             </Link>
             .
           </p>
+          <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
         </div>
       </section>
 

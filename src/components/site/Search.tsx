@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { useRouter } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { practice } from "@/data/site";
@@ -65,6 +66,7 @@ export function SearchResults({
         >
           Book a consultation
         </a>
+        <p className={`mt-3 font-body text-[13px] font-light leading-[1.6] ${label}`}>{consultationFeeLine}</p>
         <p className={`label-xs mt-8 ${label}`}>Popular</p>
         <ul className="mt-2">
           {QUICK_LINKS.map((q) => (

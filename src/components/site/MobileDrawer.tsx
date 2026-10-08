@@ -203,6 +203,7 @@ export function MobileDrawer({ onClose, returnFocus }: { onClose: () => void; re
                   onClick={onClose}
                   className="btn-label mt-5 inline-block border-b border-champagne pb-1 text-ivory"
                 />
+                {menu.feature.note ? <p className="mt-3 font-body text-[13px] font-light leading-[1.6] text-greige">{menu.feature.note}</p> : null}
               </div>
             </div>
           ) : (

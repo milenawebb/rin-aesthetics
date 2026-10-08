@@ -80,6 +80,5 @@ export const testimonialsMeta = {
 
 export const bookingBand = {
   heading: "Book a consultation",
-  body: "Consultations are thorough and obligation-free.",
   cta: "Book now",
 } as const;

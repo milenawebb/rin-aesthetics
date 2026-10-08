@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { keepBrandTogether } from "@/data/lookup";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
@@ -15,7 +16,7 @@ type Props = {
 /** The one closing booking band, used on every page. */
 export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }: Props) {
   const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : (headingCopy ?? "Book a consultation");
-  const line = treatment ? treatment.price : (lineCopy ?? "Consultations are thorough and obligation-free.");
+  const line = treatment ? treatment.price : (lineCopy ?? null);
   return (
     <section className="booking-band border-t border-greige bg-ivory">
       <div className="site-container">
@@ -45,6 +46,9 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
               {practice.phone}
             </a>
           </div>
+          {treatment ? null : (
+            <p className="mt-4 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
+          )}
           {treatment ? (
             <a
               href={practice.bookingUrl}
@@ -54,6 +58,9 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             >
               or book a consultation first
             </a>
+          ) : null}
+          {treatment ? (
+            <p className="mt-2 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
           ) : null}
         </div>
         <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">

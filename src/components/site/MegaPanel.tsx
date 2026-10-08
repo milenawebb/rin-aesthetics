@@ -74,6 +74,7 @@ export function MegaPanel({ columns, feature }: { columns: MenuColumn[]; feature
           feature={feature}
           className="btn-label mt-6 inline-block self-start border-b border-champagne pb-1 text-ink transition-colors hover:text-walnut"
         />
+        {feature.note ? <p className="mt-3 font-body text-[13px] font-light leading-[1.6] text-walnut">{feature.note}</p> : null}
       </div>
     </div>
   );
