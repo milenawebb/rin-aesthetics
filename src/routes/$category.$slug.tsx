@@ -142,9 +142,10 @@ function ServicePage() {
   ].filter((c) => c.items.length > 0);
 
 
+  const hasNotes = service.options.some((o) => o.note.trim().length > 0);
   const basisLines = service.options.filter((o) => o.basis).map((o) => `${o.price} ${o.basis}`);
   const facts = [
-    { label: "Price", value: basisLines.length ? basisLines.join(", ") : service.priceDisplay },
+    { label: "Price", value: basisLines[0] ?? service.priceDisplay },
     { label: "Downtime", value: downtimeLabel[service.downtime] },
     { label: "Sessions", value: sessionsLabel(service.seriesSessions) },
     ...(followUp
@@ -322,7 +323,7 @@ function ServicePage() {
               <tr>
                 <th>Option</th>
                 <th>Price</th>
-                <th>Note</th>
+                {hasNotes ? <th>Note</th> : null}
               </tr>
             </thead>
             <tbody>
@@ -330,7 +331,9 @@ function ServicePage() {
                 <tr key={o.name} className="grid gap-2 border-b border-greige py-6 md:table-row">
                   <td className="font-body text-[19px] font-medium text-ink md:w-[30%] md:py-6">{o.name}</td>
                   <td className="font-body text-[17px] text-ink md:w-[15%] md:py-6">{o.price}</td>
-                  <td className="font-body text-[15px] font-light leading-[1.7] text-walnut md:py-6">{o.note}</td>
+                  {hasNotes ? (
+                    <td className="font-body text-[15px] font-light leading-[1.7] text-walnut md:py-6">{o.note}</td>
+                  ) : null}
                 </tr>
               ))}
             </tbody>
