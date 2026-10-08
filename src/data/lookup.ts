@@ -36,6 +36,18 @@ export function priceValue(priceDisplay: string) {
   return match ? Number(match[0]) : Number.POSITIVE_INFINITY;
 }
 
+/**
+ * Price for lists and tables. A flat figure gains "From" when an option costs more than any amount
+ * the display already states, so the starting price never reads as the only price.
+ */
+export function listPrice(service: Service): string {
+  const amounts = (t: string) => [...t.replace(/,/g, "").matchAll(/\$(\d+)/g)].map((m) => Number(m[1]));
+  const shown = Math.max(0, ...amounts(service.priceDisplay));
+  const highest = Math.max(0, ...service.options.flatMap((o) => amounts(o.price)));
+  if (highest > shown && !/^from\b/i.test(service.priceDisplay)) return `From ${service.priceDisplay}`;
+  return service.priceDisplay;
+}
+
 export function servicesFor(concern: Concern) {
   return servicesForConcern(concern, services).sort(
     (a, b) => priceValue(a.priceDisplay) - priceValue(b.priceDisplay),

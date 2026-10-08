@@ -21,6 +21,7 @@ import {
   getServiceById,
   relatedConcerns,
   sessionsLabel,
+  listPrice,
   servicesFor,
   splitSlug,
 } from "@/data/lookup";
@@ -121,9 +122,9 @@ function ConcernPage() {
                       {item.shortDescription}
                     </p>
                     <div className="mt-2 grid grid-cols-3 gap-4 md:contents">
-                      <Fact label="Price" value={item.priceDisplay} />
+                      <Fact label="Price" value={listPrice(item)} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
-                      <Fact label="Sessions" value={sessionsLabel(item.seriesSessions)} />
+                      <Fact label="Sessions" value={item.sessionsDisplay ?? sessionsLabel(item.seriesSessions)} />
                     </div>
                     <div role="cell" className="md:text-right">
                       <a

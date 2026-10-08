@@ -8,8 +8,6 @@ import { practice } from "@/data/site";
 export const signatureEyebrow = "A RIN Signature Treatment";
 export const signatureName = "The Skin Refinery by Candela\u2122";
 export const signatureShortName = "The Skin Refinery";
-// Delete this (and its one use in DEV-03) once Vagaro lists the treatment under our name.
-export const signatureBookingName = "The Candela Light & Bright Experience";
 
 export type Downtime = "none" | "minimal" | "days";
 
@@ -60,8 +58,8 @@ export interface Service {
   displayName?: string;
   /** Label for this treatment's booking buttons when it differs from the default. */
   bookLabel?: string;
-  /** Name the booking system lists this treatment under, while it differs from ours. */
-  bookingListedAs?: string;
+  /** Sessions wording when the number alone would mislead, e.g. a single treatment also sold as a course. */
+  sessionsDisplay?: string;
   tagline?: string;
   promises?: { label: string; text: string }[];
   technologiesHeading?: string;
@@ -703,6 +701,7 @@ export const services: Service[] = [
     priceBand: "low",
     downtime: "minimal",
     seriesSessions: 1,
+    sessionsDisplay: "One, or a course of three",
     repeatWeeks: 26,
     concernTags: ["lips", "fine_lines", "texture"],
     pairsWith: ["INJ-03"],
@@ -784,7 +783,6 @@ export const services: Service[] = [
     shortName: signatureShortName,
     displayName: signatureName,
     bookLabel: `Book ${signatureShortName}`,
-    bookingListedAs: signatureBookingName,
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
@@ -792,6 +790,7 @@ export const services: Service[] = [
     priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
+    sessionsDisplay: "One, or a course of three",
     repeatWeeks: 26,
     concernTags: ["pigment", "redness", "texture", "fine_lines", "acne", "scarring"],
     pairsWith: ["DEV-06", "DEV-05", "SB-08", "SB-04"],
@@ -950,6 +949,7 @@ export const services: Service[] = [
     priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
+    sessionsDisplay: "One, or a course of three",
     repeatWeeks: 26,
     concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring"],
     pairsWith: ["DEV-04"],
@@ -1039,6 +1039,7 @@ export const services: Service[] = [
     priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
+    sessionsDisplay: "One, or a course of three",
     repeatWeeks: 26,
     concernTags: ["sun_damage", "pigment", "redness", "texture"],
     pairsWith: ["DEV-04"],

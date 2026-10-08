@@ -147,7 +147,7 @@ function ServicePage() {
   const facts = [
     { label: "Price", value: basisLines[0] ?? service.priceDisplay },
     { label: "Downtime", value: downtimeLabel[service.downtime] },
-    { label: "Sessions", value: sessionsLabel(service.seriesSessions) },
+    { label: "Sessions", value: service.sessionsDisplay ?? sessionsLabel(service.seriesSessions) },
     ...(followUp
       ? [{ label: "Follow-up", value: followUp.priceDisplay === "Free" ? "Complimentary" : followUp.priceDisplay }]
       : []),
@@ -572,7 +572,7 @@ function ServicePage() {
         </section>
       ) : null}
 
-      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, priceLines: basisLines.length ? basisLines : undefined, bookingUrl: serviceBookingUrl(service), bookLabel: service.bookLabel, listedAs: service.bookingListedAs }} />
+      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, priceLines: basisLines.length ? basisLines : undefined, bookingUrl: serviceBookingUrl(service), bookLabel: service.bookLabel }} />
     </PageShell>
   );
 }
