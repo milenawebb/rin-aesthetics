@@ -26,7 +26,7 @@ export const concerns: Concern[] = [
     tags: ["fine_lines"],
     intro: "Expression lines come from muscles doing the same thing thousands of times. Static lines, the ones still there when your face is at rest, come from the skin underneath them thinning. They are two different problems, and the treatments below are not interchangeable.",
     body: [
-      "The first question is whether the line moves. A line that appears when you frown or raise your brows is being made by a muscle, and relaxing that muscle is what softens it. A line that sits in the skin whether you are expressing or not needs the skin itself rebuilt, which means resurfacing, microneedling or a collagen stimulator.",
+      "The first question is whether the line moves. A line that appears when you frown, raise your brows or smile is being made by a muscle, and relaxing that muscle is what softens it. In practice that means the horizontal lines across the forehead, the vertical ones between the brows, and the crow's feet at the outer corners of the eyes. A line that sits in the skin whether you are expressing or not needs the skin itself rebuilt, which means resurfacing, microneedling or a collagen stimulator.",
       "Most people have both kinds by the time they start looking. That is why the better results usually come from combining a muscle treatment with a skin treatment, rather than doing more of either one.",
       "The two also work on completely different calendars. Neurotoxin shows up quickly and wears off gradually. Collagen treatments show nothing for weeks and then keep improving for months. If you are treating ahead of something, which one you choose decides how far ahead you need to start."
     ],
@@ -54,7 +54,7 @@ export const concerns: Concern[] = [
     tags: ["volume_loss"],
     intro: "Faces deflate before they sag. Fat pads shrink and shift downward, the bone underneath changes shape, and skin that used to have something supporting it now has less. The hollows and the heaviness tend to arrive together, which is why treating one without the other rarely looks right.",
     body: [
-      "Replacing volume is not the same as filling in the place where you see the problem. A hollow under the eye is often caused by the cheek above it losing support, and treating that hollow directly can make it look worse. More often than not the product goes somewhere other than the spot that bothers you.",
+      "Replacing volume is not the same as filling in the place where you see the problem. A hollow under the eye is often caused by the cheek above it losing support, and treating that hollow directly can make it look worse. Volume goes from the temples, the cheeks and under the eyes, and because each one supports the one below it, the place you notice first is often not the place that lost it. More often than not the product goes somewhere other than the spot that bothers you.",
       "There are two ways to add volume back. Filler puts it there immediately and you see the result the same day. Biostimulators prompt your own collagen to build gradually over a series. Neither is better than the other. They answer different questions about how quickly you want to see change.",
       "The amount needed is usually less than people expect. Faces that look overdone are rarely the result of one strong treatment. They are the result of too many areas treated at once, too quickly, without waiting to see how the first round settled."
     ],
@@ -108,7 +108,7 @@ export const concerns: Concern[] = [
     slug: "concerns/skin-laxity",
     h1: "Skin laxity and firmness",
     tags: ["laxity"],
-    intro: "Laxity is skin that has lost its spring, and it is not the same as volume loss, although they usually turn up together. Volume loss is about what sits under the skin. Laxity is about the collagen and elastin in the skin itself.",
+    intro: "Laxity is skin that has lost its spring, and it is not the same as volume loss, although they usually turn up together. Volume loss is about what sits under the skin. Laxity is about the collagen and elastin in the skin itself. It usually shows along the jawline and down the neck before anywhere else.",
     body: [
       "This is the concern where expectations need setting honestly, because it is the one most heavily oversold. Energy-based treatments and collagen stimulators genuinely tighten skin, and they genuinely do not do what surgery does. Anything advertising a facelift result without surgery is describing a different outcome than the one you will get.",
       "What they do well is slow the trajectory and improve quality. Skin that is firmer, thicker and more even is a real result and it is often what people actually wanted when they asked about tightening.",
@@ -167,7 +167,7 @@ export const concerns: Concern[] = [
     intro: "Dark circles, hollows and puffiness look alike in the mirror and have almost nothing in common underneath. One is pigment in the skin, one is shadow cast by lost volume, one is fluid or fat. Treating the wrong one is the most common mistake made in this area.",
     body: [
       "There is a quick test you can do yourself. Face a mirror, tilt your head back, and look up. If the darkness lifts, it is shadow from a hollow. If it stays where it is, it is pigment. Those two need different treatments, and nothing treats both at once.",
-      "This is also the least forgiving area on the face. The skin is thin, the anatomy underneath is crowded, and products behave differently here than anywhere else. It is the area where the honest answer is most often not yet, or not with this.",
+      "This is also the least forgiving area on the face. The skin is thin and creases into fine crepey lines, the anatomy underneath is crowded, and products behave differently here than anywhere else. It is the area where the honest answer is most often not yet, or not with this.",
       "Sleep, allergies and salt move this area more than people expect. If what you see changes noticeably from one day to the next, part of it is not structural, and no treatment on this page will hold it still."
     ],
     faqs: [
