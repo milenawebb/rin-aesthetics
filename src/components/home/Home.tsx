@@ -10,9 +10,7 @@ import { ResultsRail } from "@/components/home/ResultsRail";
 import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { useInView } from "@/hooks/use-in-view";
-import heroAsset from "@/assets/hero.png.asset.json";
-import heroMobileAsset from "@/assets/rin-hero-mobile.png.asset.json";
-import heroTabletAsset from "@/assets/rin-hero-tablet.png.asset.json";
+import { heroDesktop, heroDesktopMedia, heroMobile, heroSizes, heroTablet, heroTabletMedia } from "@/lib/hero";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
 import {
@@ -51,11 +49,18 @@ export function Home() {
     <>
       <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
         <picture className="hero-picture hero-settle is-in aspect-[4/3] block w-full md:aspect-[3/2] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
-          <source media="(min-width: 1024px)" srcSet={heroAsset.url} />
-          <source media="(min-width: 768px)" srcSet={heroTabletAsset.url} />
+          <source media={heroDesktopMedia} type="image/webp" srcSet={heroDesktop.webp} sizes={heroSizes} />
+          <source media={heroDesktopMedia} srcSet={heroDesktop.jpg} sizes={heroSizes} />
+          <source media={heroTabletMedia} type="image/webp" srcSet={heroTablet.webp} sizes={heroSizes} />
+          <source media={heroTabletMedia} srcSet={heroTablet.jpg} sizes={heroSizes} />
+          <source type="image/webp" srcSet={heroMobile.webp} sizes={heroSizes} />
           <img
-            src={heroMobileAsset.url}
+            src={heroMobile.src}
+            srcSet={heroMobile.jpg}
+            sizes={heroSizes}
             alt={hero.imageAlt}
+            width={1056}
+            height={792}
             loading="eager"
             fetchPriority="high"
             className="h-full w-full object-cover"
