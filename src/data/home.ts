@@ -1,3 +1,4 @@
+import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 export interface Testimonial {
   quote: string;
   name: string;
@@ -61,11 +62,11 @@ export const signature = {
 export const provider = {
   heading: "Meet your provider",
   eyebrow: "Provider",
-  name: "Jyl",
+  name: providerName,
   portraitLabel: "Portrait",
-  portraitAlt: "Portrait of Jyl, provider at RIN Aesthetic Practice",
+  portraitAlt: `Portrait of ${providerName}, provider at RIN Aesthetic Practice`,
   paragraphs: [
-    "Jyl is a nurse injector with over a decade in healthcare, who moved from perioperative services into aesthetic medicine in 2020. She trained with some of the leading injectors on the East Coast, and her understanding of facial anatomy is what shapes her work.",
+    `Jyl is a ${providerCredential} with over a decade in healthcare, who moved from perioperative services into aesthetic medicine in 2020. She trained with some of the leading injectors on the East Coast, and her understanding of facial anatomy is what shapes her work.`,
     "She treats one person at a time, without rushing, and will tell you plainly when the answer is to do less. Most clients arrive on a recommendation from someone they trust, and stay for years.",
   ],
   linkLabel: "More about Jyl",

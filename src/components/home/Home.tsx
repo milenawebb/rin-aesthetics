@@ -1,3 +1,4 @@
+import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
@@ -213,7 +214,7 @@ export function Home() {
                   src={portraitSrc}
                   srcSet={portraitJpgSrcSet}
                   sizes={"(min-width: 1024px) min(42vw, 590px), 100vw"}
-                  alt="Jyl Carter, aesthetic nurse practitioner, in the treatment suite at RIN Aesthetic Practice"
+                  alt={`${providerName}, ${providerCredential}, in the treatment suite at RIN Aesthetic Practice`}
                   width={1123}
                   height={1401}
                   loading="lazy"

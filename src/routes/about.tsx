@@ -1,3 +1,4 @@
+import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute } from "@tanstack/react-router";
@@ -73,11 +74,11 @@ function AboutPage() {
           <div className="col-span-full lg:col-span-8">
             <MaskedLines
               as="h1"
-              lines={["Jyl"]}
+              lines={[providerName]}
               className="type-h1 mt-3 text-ink"
             />
             <p className="mt-5 font-body text-[20px] font-light text-walnut">
-              Founder and nurse injector
+              Founder and {providerCredential}
             </p>
           </div>
           <div className="col-span-full mt-6 md:max-w-[460px] md:mt-8 lg:col-span-6 lg:row-start-2 lg:self-center lg:max-w-none lg:mt-10">
@@ -92,7 +93,7 @@ function AboutPage() {
                   height={1401}
                   loading="eager"
                   fetchPriority="high"
-                  alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
+                  alt={`${providerName}, founder and ${providerCredential} at RIN Aesthetic Practice`}
                   className="aspect-[4/5] w-full object-cover object-[50%_30%]"
                 />
               </picture>
@@ -101,7 +102,7 @@ function AboutPage() {
           <div className="col-span-full lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:self-center lg:mt-10">
             <Reveal>
               <p className="pretty max-w-[62ch] md:max-lg:max-w-none font-body text-[17px] font-light leading-[1.8] text-walnut">
-                Jyl is an accomplished nurse injector with a career spanning over a decade in
+                Jyl is an accomplished {providerCredential} with a career spanning over a decade in
                 healthcare, focusing initially on perioperative services before making a seamless
                 transition to aesthetic medicine in 2020. Trained by some of the leading injectors
                 on the East Coast, she has developed an exceptional understanding of facial
@@ -157,7 +158,7 @@ function AboutPage() {
                   width={1000}
                   height={750}
                   loading="lazy"
-                  alt="Jyl during the renovation of RIN Aesthetic Practice"
+                  alt={`${providerName} during the renovation of RIN Aesthetic Practice`}
                   className="aspect-[4/3] w-full object-cover object-[50%_45%]"
                 />
               </picture>

@@ -1,3 +1,4 @@
+import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 // Titles and meta descriptions for every indexable route.
 //
 // Written from the catalog rather than from search data: the site was never
@@ -18,11 +19,11 @@ export interface PageMeta {
 export const pageMeta: Record<string, PageMeta> = {
   "/book/consultation": {
     title: "Book a Consultation | RIN Aesthetic Practice",
-    description: "Book a consultation with Jyl at RIN Aesthetic Practice in Charlottesville, Virginia. The consultation fee is shown here before you continue to booking.",
+    description: `Book a consultation with ${providerName} at RIN Aesthetic Practice in Charlottesville, Virginia. The consultation fee is shown here before you continue to booking.`,
   },
   "/": {
     title: "Medical Aesthetics in Charlottesville, VA | RIN",
-    description: "Injectables, lasers and skin treatments from nurse injector Jyl. Prices shown on every treatment. Book a consultation in Charlottesville, Virginia.",
+    description: `Injectables, lasers and skin treatments from ${providerCredential} ${providerName}. Prices shown on every treatment. Book a consultation in Charlottesville, Virginia.`,
   },
   "/treatments": {
     title: "All Treatments and Prices | RIN Aesthetic Practice",
@@ -37,12 +38,12 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Unretouched before and after photographs from our own treatment room in Charlottesville, filtered by concern. Individual results vary.",
   },
   "/about": {
-    title: "About Jyl, Nurse Injector | RIN Aesthetic Practice",
-    description: "Jyl is a nurse injector with over a decade in healthcare, treating one person at a time and telling you plainly when the answer is to do less.",
+    title: `About ${providerName}, ${providerCredentialTitle} | RIN Aesthetic Practice`,
+    description: `${providerName} is a ${providerCredential} with over a decade in healthcare, treating one person at a time and telling you plainly when the answer is to do less.`,
   },
   "/shop": {
     title: "Medical-Grade Skincare | RIN Aesthetic Practice",
-    description: "skinbetter science and Hydrinity, chosen by Jyl to support and hold your results between treatments. Ordered directly from each brand.",
+    description: `skinbetter science and Hydrinity, chosen by ${providerName} to support and hold your results between treatments. Ordered directly from each brand.`,
   },
   "/financing": {
     title: "Financing and Payment Plans | RIN Aesthetic Practice",

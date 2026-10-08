@@ -13,19 +13,20 @@
 //      currently show nothing. Leave the arrays empty rather than inventing
 //      anything.
 
+import { providerName, providerFirstName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { SITE_URL } from "@/lib/seo-head";
 
 export const providerSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
 
-  name: "Jyl Carter",
-  givenName: "Jyl",
+  name: providerName,
+  givenName: providerFirstName,
   familyName: "Carter",
 
-  jobTitle: "Nurse Injector",
+  jobTitle: providerCredentialTitle,
   description:
-    "Nurse injector and founder of RIN Aesthetic Practice in Charlottesville, Virginia, with over a decade in healthcare and a practice built on conservative, anatomy-led treatment.",
+    `${providerCredential.charAt(0).toUpperCase()}${providerCredential.slice(1)} and founder of RIN Aesthetic Practice in Charlottesville, Virginia, with over a decade in healthcare and a practice built on conservative, anatomy-led treatment.`,
 
   url: `${SITE_URL}/about`,
   // image: supplied by the About route from the imported portrait asset.
