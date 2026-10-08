@@ -55,10 +55,10 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             )}
             </div>
             <a
-              href={practice.phoneHref}
+              href={practice.smsHref}
               className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne-light md:flex md:h-[var(--band-btn-h)] md:items-center"
             >
-              {practice.phone}
+              Text {practice.phone}
             </a>
           </div>
           {treatment ? (

@@ -53,7 +53,8 @@ function ContactBlock() {
             {line}
           </span>
         ))}
-        <a href={practice.phoneHref} className="hover:text-champagne">
+        Text{" "}
+        <a href={practice.smsHref} className="hover:text-champagne">
           {practice.phone}
         </a>
         <br />

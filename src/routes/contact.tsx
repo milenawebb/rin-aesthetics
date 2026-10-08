@@ -200,15 +200,13 @@ function ContactPage() {
             </p>
           </div>
           <div>
-            <p className={label}>Call</p>
-            <a href={practice.phoneHref} className="mt-5 block text-lg font-light text-ink hover:text-walnut">
+            <p className={label}>Text</p>
+            <a href={practice.smsHref} className="mt-5 block text-lg font-light text-ink hover:text-walnut">
               {practice.phone}
             </a>
-            {practice.smsEnabled ? (
-              <a href={practice.smsHref} className="mt-2 block text-lg font-light text-ink hover:text-walnut">
-                Text us
-              </a>
-            ) : null}
+            <a href={practice.phoneHref} className="mt-2 block text-lg font-light text-ink hover:text-walnut">
+              Call
+            </a>
             <p className="mt-4 text-sm font-light text-ink/75">For anything urgent.</p>
           </div>
           <div>
