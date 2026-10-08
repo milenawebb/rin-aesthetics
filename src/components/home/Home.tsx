@@ -80,7 +80,7 @@ export function Home() {
           {/* One H1: inline and static on phones, two masked lines from tablet up. */}
           <MaskedLines
             as="h1"
-            lines={["Medical aesthetics ", "in\u00a0Charlottesville, VA"]}
+            lines={["Medical aesthetics", "in\u00a0Charlottesville, VA"]}
             delay={200}
             className="type-h1 hero-h1 hero-tablet-heading text-ink md:text-ivory"
           />
