@@ -7,6 +7,8 @@ import { practice } from "@/data/site";
 // The signature treatment's names. Every surface renders from one of these.
 export const signatureEyebrow = "A RIN Signature Treatment";
 export const signatureName = "The Skin Refinery by Candela\u2122";
+/** The Skin Refinery price as approved by the practice; used in its facts panel and concern tables. */
+export const signaturePrice = "$900 per treatment / $2,400 for course of three treatments";
 export const signatureShortName = "The Skin Refinery";
 
 export type Downtime = "none" | "minimal" | "days";
@@ -62,6 +64,8 @@ export interface Service {
   sessionsDisplay?: string;
   /** Price wording for the treatment page facts panel when it must pair with sessionsDisplay. */
   priceFact?: string;
+  /** Price wording for concern comparison tables when the list price alone would mislead. */
+  comparePrice?: string;
   tagline?: string;
   promises?: { label: string; text: string }[];
   technologiesHeading?: string;
@@ -706,8 +710,6 @@ export const services: Service[] = [
     priceBand: "low",
     downtime: "minimal",
     seriesSessions: 1,
-    sessionsDisplay: "One or three",
-    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["lips"],
     pairsWith: ["INJ-03"],
@@ -797,7 +799,8 @@ export const services: Service[] = [
     downtime: "days",
     seriesSessions: 1,
     sessionsDisplay: "One or three",
-    priceFact: "$900 or $2,400",
+    priceFact: signaturePrice,
+    comparePrice: signaturePrice,
     repeatWeeks: 26,
     concernTags: ["pigment", "redness", "texture", "fine_lines", "acne", "scarring"],
     pairsWith: ["DEV-06", "DEV-05", "SB-08", "SB-04"],
@@ -956,8 +959,6 @@ export const services: Service[] = [
     priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
-    sessionsDisplay: "One or three",
-    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring", "hair_loss", "eye_area"],
     pairsWith: ["DEV-04"],
@@ -1047,8 +1048,6 @@ export const services: Service[] = [
     priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
-    sessionsDisplay: "One or three",
-    priceFact: "$900 or $2,400",
     repeatWeeks: 26,
     concernTags: ["sun_damage", "pigment", "redness", "texture"],
     pairsWith: ["DEV-04"],

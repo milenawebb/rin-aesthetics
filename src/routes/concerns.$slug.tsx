@@ -122,7 +122,7 @@ function ConcernPage() {
                       {item.shortDescription}
                     </p>
                     <div className="mt-2 grid grid-cols-3 gap-4 md:contents">
-                      <Fact label="Price" value={listPrice(item)} />
+                      <Fact label="Price" value={item.comparePrice ?? listPrice(item)} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
                       <Fact label="Sessions" value={item.sessionsDisplay ?? sessionsLabel(item.seriesSessions)} />
                     </div>
@@ -142,6 +142,7 @@ function ConcernPage() {
               );
             })}
           </div>
+          <p className="mt-4 font-body text-[14px] font-light leading-[1.6] text-walnut">Prices are per session unless shown otherwise.</p>
           </div>
         </section>
       ) : null}
