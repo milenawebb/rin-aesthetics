@@ -131,7 +131,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/skin-laxity": {
     title: "Skin laxity and firmness treatments in Charlottesville | RIN",
-    description: "Treatments for skin laxity and firmness at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Skin that has lost its spring and firmness. Compare the treatments that rebuild it, with prices, downtime and session counts shown.",
   },
   "/concerns/lips": {
     title: "Lip treatments in Charlottesville | RIN",
@@ -151,7 +151,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/texture-and-pores": {
     title: "Texture and pores treatments in Charlottesville | RIN",
-    description: "Treatments for texture and pores at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Rough, uneven texture and enlarged pores. Compare the resurfacing options by price, downtime and how many sessions each one takes.",
   },
   "/concerns/acne-and-scarring": {
     title: "Acne and scarring treatments in Charlottesville | RIN",
