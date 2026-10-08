@@ -129,16 +129,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-6 lg:hidden">
-          {pinned ? (
             <a
               href={practice.bookingUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-label inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] bg-champagne px-5 text-ink"
+              aria-hidden={!pinned}
+              tabIndex={pinned ? undefined : -1}
+              className={`btn-label inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] bg-champagne px-5 text-ink ${pinned ? "" : "invisible"}`}
             >
               Book now
             </a>
-          ) : null}
           <button
             ref={menuBtnRef}
             type="button"
