@@ -61,6 +61,11 @@ function ContactBlock() {
         <a href={`mailto:${practice.email}`} className="hover:text-champagne">
           {practice.email}
         </a>
+        {practice.hoursLines.map((l, i) => (
+          <span key={l} className={i === 0 ? "mt-4 block" : "block"}>
+            {l}
+          </span>
+        ))}
       </address>
       <a
         href={practice.instagram}

@@ -38,7 +38,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Unretouched before and after photographs from our own treatment room in Charlottesville, filtered by concern. Individual results vary.",
   },
   "/about": {
-    title: `About ${providerName}, ${providerCredentialTitle} | RIN Aesthetic Practice`,
+    title: `About ${providerName}, ${providerCredentialTitle} | RIN`,
     description: `${providerName} is a ${providerCredential} with over a decade in healthcare, treating one person at a time and telling you plainly when the answer is to do less.`,
   },
   "/shop": {

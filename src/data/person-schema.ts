@@ -47,10 +47,6 @@ export const providerSchema = {
     },
   },
 
-  // NEEDS CLIENT: add her licence and qualifications, for example
-  // { "@type": "EducationalOccupationalCredential",
-  //   credentialCategory: "license",
-  //   name: "Registered Nurse, Commonwealth of Virginia" }
   hasCredential: [],
 
   // NEEDS CLIENT: letters she uses after her name, such as "RN", "BSN".
