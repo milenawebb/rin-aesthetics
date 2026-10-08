@@ -119,11 +119,11 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/lines-and-wrinkles": {
     title: "Lines and wrinkles treatments in Charlottesville | RIN",
-    description: "Treatments for lines and wrinkles at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Expression lines that stay visible when your face is at rest. Compare what softens them, by price, downtime and how long results last.",
   },
   "/concerns/volume-loss": {
     title: "Volume loss treatments in Charlottesville | RIN",
-    description: "Treatments for volume loss at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Flatness through the cheeks that makes a face look tired. Compare what restores it, with prices and downtime shown side by side.",
   },
   "/concerns/facial-contour": {
     title: "Facial contour and balance treatments in Charlottesville | RIN",
@@ -139,31 +139,31 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/concerns/under-eye-area": {
     title: "Under-eye treatments in Charlottesville | RIN",
-    description: "Treatments for under-eye area at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Dark circles, hollowing and puffiness under the eyes, which is delicate ground. Compare the options with prices and downtime shown.",
   },
   "/concerns/pigmentation": {
-    title: "Pigmentation and sun damage | RIN Aesthetic Practice",
-    description: "Treatments for pigmentation and sun damage at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Pigmentation and sun damage treatments in Charlottesville | RIN",
+    description: "Sun spots, melasma and uneven tone. Compare the light and laser treatments that clear them, with prices, downtime and session counts shown.",
   },
   "/concerns/redness": {
-    title: "Redness and visible vessels | RIN Aesthetic Practice",
-    description: "Treatments for redness and visible vessels at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Redness and visible vessels treatments in Charlottesville | RIN",
+    description: "Persistent flushing, rosacea and broken capillaries. Compare the treatments that calm them, with prices and downtime shown side by side.",
   },
   "/concerns/texture-and-pores": {
-    title: "Texture and pores Treatments in Charlottesville | RIN",
+    title: "Texture and pores treatments in Charlottesville | RIN",
     description: "Treatments for texture and pores at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
   },
   "/concerns/acne-and-scarring": {
-    title: "Acne and acne scarring Treatments in Charlottesville | RIN",
-    description: "Treatments for acne and acne scarring at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Acne and scarring treatments in Charlottesville | RIN",
+    description: "Active breakouts and the marks they leave behind. Compare what treats each, with prices, downtime and how many sessions to expect.",
   },
   "/concerns/dryness-and-dullness": {
-    title: "Dryness and dullness Treatments in Charlottesville | RIN",
-    description: "Treatments for dryness and dullness at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    title: "Dryness and dullness treatments in Charlottesville | RIN",
+    description: "Skin that feels tight and looks dull however much you moisturize. Compare the treatments that hydrate from within, with prices and downtime.",
   },
   "/concerns/hair-thinning": {
     title: "Hair thinning treatments in Charlottesville | RIN",
-    description: "Treatments for hair thinning at RIN Aesthetic Practice, compared by price, downtime and sessions. Not sure which is right? Start with a consultation.",
+    description: "Thinning hair, starting with a candidacy consult to see whether you are a good fit. Compare the options with prices and session counts shown.",
   },
   "/policies/service-policies": {
     title: "Service Policies | RIN Aesthetic Practice",
