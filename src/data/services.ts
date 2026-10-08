@@ -95,7 +95,7 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 16,
     concernTags: ["fine_lines", "lips", "texture"],
-    pairsWith: ["INJ-10", "SB-01"],
+    pairsWith: ["INJ-10", "SB-01", "INJ-02", "INJ-04"],
     precareId: "PC-INJECT",
     aftercareId: "AC-TOX",
     shortDescription:
@@ -166,7 +166,7 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 48,
     concernTags: ["volume_loss", "contour", "eye_area"],
-    pairsWith: ["INJ-01", "INJ-10"],
+    pairsWith: ["INJ-01", "INJ-10", "INJ-04", "INJ-05", "INJ-08"],
     precareId: "PC-INJECT",
     aftercareId: "AC-FILLER",
     shortDescription:
@@ -944,7 +944,7 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 26,
     concernTags: ["texture", "pigment", "pores", "fine_lines", "laxity", "scarring", "hair_loss", "eye_area"],
-    pairsWith: ["DEV-04", "INJ-09"],
+    pairsWith: ["DEV-04", "INJ-09", "DEV-03"],
     precareId: "PC-LASER",
     aftercareId: "AC-RESURFACE",
     shortDescription:
@@ -1028,7 +1028,7 @@ export const services: Service[] = [
     seriesSessions: 1,
     repeatWeeks: 26,
     concernTags: ["sun_damage", "pigment", "redness", "texture"],
-    pairsWith: ["DEV-04"],
+    pairsWith: ["DEV-04", "DEV-03"],
     precareId: "PC-LASER",
     aftercareId: "AC-LASER",
     shortDescription:
@@ -1203,7 +1203,7 @@ export const services: Service[] = [
     priceFact: "From $650 per session",
     repeatWeeks: 6,
     concernTags: ["texture", "scarring", "pores", "fine_lines", "laxity", "hydration", "hair_loss"],
-    pairsWith: ["HY-05", "INJ-09"],
+    pairsWith: ["HY-05", "INJ-09", "INJ-08"],
     precareId: "PC-MICRO",
     aftercareId: "AC-RESURFACE",
     shortDescription:
