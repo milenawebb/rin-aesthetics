@@ -81,8 +81,8 @@ function DesktopFooter() {
 
       {footerColumns.map((column) => (
         <div key={column.title}>
-          <h2 className="label-xs text-champagne">{column.title}</h2>
-          <ul className="mt-4 space-y-2.5 md:mt-6 md:space-y-3">
+          <div id={`footer-${column.title.toLowerCase()}`} className="label-xs text-champagne">{column.title}</div>
+          <ul aria-labelledby={`footer-${column.title.toLowerCase()}`} className="mt-4 space-y-2.5 md:mt-6 md:space-y-3">
             {column.links.map((link, i) => (
               <li key={`${column.title}-${i}`}>
                 <Link

@@ -4,7 +4,7 @@ import { redirects } from "@/data/redirects";
 import { getServiceByPath } from "@/data/lookup";
 import { SITE_URL } from "@/lib/seo-head";
 
-const SERVICE_PREFIXES = ["/concerns/", "/policies/"];
+const SERVICE_PREFIXES = ["/concerns/", "/policies/", "/book/"];
 
 // Canonical routes only: pageMeta minus the 404 entry, any redirect source,
 // and any treatment path with no live service page behind it.
