@@ -263,17 +263,6 @@ function ContactPage() {
 
         <ContactForm />
 
-        <p className="mt-16 font-body text-[15px] font-light leading-[1.75] text-walnut">
-          Buying for someone else?{" "}
-          <Link
-            to="/skincare"
-            hash="gift-cards"
-            className="text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
-          >
-            Gift cards
-          </Link>{" "}
-          can be bought for any amount and used toward any treatment or product.
-        </p>
       </div>
       <BookingBand />
     </PageShell>
