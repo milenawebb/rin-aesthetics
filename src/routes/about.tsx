@@ -12,6 +12,8 @@ import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } fro
 const ABOUT_PORTRAIT_SIZES = "(min-width: 1280px) 580px, (min-width: 1024px) 46vw, (min-width: 768px) 460px, calc(100vw - 48px)";
 /** Average color of the blueprints photo, painted behind it while it loads. */
 const BLUEPRINTS_COLOR = "#7D7C79";
+/** 20 x 15 blurred preview of the blueprints photo, cropped to its 4:3 frame. Regenerate with the photo. */
+const BLUEPRINTS_PREVIEW = "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoUAA8APtFUo0uoJKMhsAgBABoJQBOgMY7dmixHKGpaCKScAf5pAAD+psfZ84iFkgD7b1v+G+396m31mrl1mZGvI1xnMTlpIU4dZGkOavD6Uclr76vD8c1+Ww1kk7OhhYn2vIsj/IMb3eTH5j7eOuEbVlcOGcvWgluVgXhUQNrJBHpsZjQBlWSbHfRcoY4AAAA=";
 import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
 import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
 import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
@@ -149,6 +151,7 @@ function AboutPage() {
               <EarlyImage
                 pictureClassName="block overflow-hidden rounded-[2px]"
                 color={BLUEPRINTS_COLOR}
+                preview={BLUEPRINTS_PREVIEW}
                 webpSrcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
                 src={bp1000.url}
                 srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}

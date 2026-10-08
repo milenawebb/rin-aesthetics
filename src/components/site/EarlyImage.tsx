@@ -12,6 +12,8 @@ interface EarlyImageProps {
   /** Background on the picture box while the photo loads. */
   color: string;
   pictureClassName?: string;
+  /** Tiny blurred copy of the photo (data URI), cropped to the displayed frame. */
+  preview?: string;
 }
 
 /**
@@ -20,7 +22,7 @@ interface EarlyImageProps {
  * so it never competes with the hero, then fades in over 180ms once decoded.
  * Reduced motion swaps instantly. Width and height stay set, so no layout shift.
  */
-export function EarlyImage({ src, srcSet, webpSrcSet, sizes, alt, width, height, className = "", color, pictureClassName = "block" }: EarlyImageProps) {
+export function EarlyImage({ src, srcSet, webpSrcSet, sizes, alt, width, height, className = "", color, pictureClassName = "block", preview }: EarlyImageProps) {
   const boxRef = useRef<HTMLElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [load, setLoad] = useState(false);
@@ -52,7 +54,14 @@ export function EarlyImage({ src, srcSet, webpSrcSet, sizes, alt, width, height,
   }, [load]);
 
   return (
-    <picture ref={boxRef} className={pictureClassName} style={{ backgroundColor: color }}>
+    <picture ref={boxRef} className={`${pictureClassName} relative overflow-hidden`} style={{ backgroundColor: color }}>
+      {preview ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 scale-110 bg-cover bg-center blur-[14px]"
+          style={{ backgroundImage: `url(${preview})` }}
+        />
+      ) : null}
       {load ? <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} /> : null}
       <img
         ref={imgRef}
@@ -65,7 +74,7 @@ export function EarlyImage({ src, srcSet, webpSrcSet, sizes, alt, width, height,
         decoding="async"
         fetchPriority="low"
         onLoad={() => setShown(true)}
-        className={`${className} transition-opacity duration-[180ms] ease-out motion-reduce:transition-none ${shown ? "opacity-100" : "opacity-0"}`}
+        className={`${className} relative transition-opacity duration-[180ms] ease-out motion-reduce:transition-none ${shown ? "opacity-100" : "opacity-0"}`}
       />
       <noscript>
         <img src={src} srcSet={srcSet} sizes={sizes} alt="" width={width} height={height} className={className} />

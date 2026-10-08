@@ -1,6 +1,6 @@
 import { EarlyImage } from "@/components/site/EarlyImage";
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
-import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
+import { portraitPreview, portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
 import { Link } from "@tanstack/react-router";
@@ -209,6 +209,7 @@ export function Home() {
             <WipeImage from="bottom">
               <EarlyImage
                 color={portraitColor}
+                preview={portraitPreview}
                 webpSrcSet={portraitWebpSrcSet}
                 src={portraitSrc}
                 srcSet={portraitJpgSrcSet}
