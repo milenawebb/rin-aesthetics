@@ -43,6 +43,7 @@ export const businessSchema = {
   areaServed: { "@type": "City", name: "Charlottesville, Virginia" },
   image: absolute(heroDesktop.src),
   sameAs: [practice.instagram],
+  logo: `${SITE_URL}/icon-512.png`,
 };
 
 export const businessJsonLd = { type: "application/ld+json", children: JSON.stringify(businessSchema) };
