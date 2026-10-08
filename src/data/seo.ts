@@ -8,7 +8,7 @@
 // Longer titles get truncated in results; longer descriptions get rewritten
 // by Google.
 //
-// The three /book/ routes are redirects to Vagaro and need no metadata.
+// /book/consultation is a page (it states the fee before the Vagaro handoff); the other /book/ routes are redirects and need no metadata.
 
 export interface PageMeta {
   title: string;
@@ -16,6 +16,10 @@ export interface PageMeta {
 }
 
 export const pageMeta: Record<string, PageMeta> = {
+  "/book/consultation": {
+    title: "Book a Consultation | RIN Aesthetic Practice",
+    description: "Book a consultation with Jyl at RIN Aesthetic Practice in Charlottesville, Virginia. The consultation fee is shown here before you continue to booking.",
+  },
   "/": {
     title: "Medical Aesthetics in Charlottesville, VA | RIN",
     description: "Injectables, lasers and skin treatments from nurse injector Jyl. Prices shown on every treatment. Book a consultation in Charlottesville, Virginia.",
