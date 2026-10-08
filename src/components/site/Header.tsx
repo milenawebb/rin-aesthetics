@@ -68,12 +68,26 @@ export function Header() {
     closeTimer.current = window.setTimeout(() => setPanel(null), CLOSE_DELAY);
   };
 
+  const { mode, reveal } = useCompactHeader(open);
+  const pinned = mode !== "top";
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-ink">
-      <div className="site-container flex h-20 items-center justify-between">
+    <header
+      className="relative z-50 h-20 w-full bg-ink lg:sticky lg:top-0 lg:h-auto"
+      onFocusCapture={reveal}
+    >
+      <div
+        className={`bg-ink lg:static lg:translate-y-0 lg:border-0 ${
+          pinned
+            ? `compact-header fixed inset-x-0 top-0 border-b border-walnut ${mode === "hidden" ? "-translate-y-full" : "translate-y-0"}`
+            : ""
+        }`}
+      >
+      <div className={`site-container flex items-center justify-between lg:h-20 ${pinned ? "h-14" : "h-20"}`}>
         <Link to="/" className="block leading-none" onClick={() => setOpen(false)}>
-          <Logo width={118} />
+          <Logo width={pinned ? 84 : 118} className="lg:!w-[118px]" />
         </Link>
+
 
         <nav ref={navRef} aria-label="Primary" className="hidden items-center gap-10 lg:flex">
           {navLinks.map((link) => {
@@ -120,21 +134,61 @@ export function Header() {
           </a>
         </nav>
 
-        <button
-          ref={menuBtnRef}
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-expanded={open}
-          aria-label="Open menu"
-          className="label-xs text-ivory lg:hidden"
-        >
-          Menu
-        </button>
+        <div className="flex items-center gap-6 lg:hidden">
+          {pinned ? (
+            <a
+              href={practice.bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-label inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] bg-champagne px-5 text-ink"
+            >
+              Book now
+            </a>
+          ) : null}
+          <button
+            ref={menuBtnRef}
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-expanded={open}
+            aria-label="Open menu"
+            className="label-xs min-h-11 text-ivory"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
       </div>
 
       {open ? <MobileDrawer onClose={closeDrawer} returnFocus={returnFocus} /> : null}
     </header>
   );
+}
+
+/**
+ * Below 1024px: in normal flow at the top of the page; once scrolled past it, hides while
+ * scrolling down and pins (compact) the moment the visitor scrolls up. Desktop always reports "top".
+ */
+function useCompactHeader(menuOpen: boolean) {
+  const [mode, setMode] = useState<"top" | "pinned" | "hidden">("top");
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!mq.matches || y <= 0) setMode("top");
+      else if (y < last) setMode("pinned");
+      else if (y > last && y > 80) setMode((m) => (m === "top" && y <= 80 ? m : "hidden"));
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    mq.addEventListener("change", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      mq.removeEventListener("change", onScroll);
+    };
+  }, []);
+  const reveal = useCallback(() => setMode((m) => (m === "hidden" ? "pinned" : m)), []);
+  return { mode: menuOpen && mode === "hidden" ? "pinned" : mode, reveal };
 }
 
 function canHover() {
