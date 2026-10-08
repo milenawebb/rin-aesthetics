@@ -326,7 +326,7 @@ function ServicePage() {
                     <td className="font-body text-[15px] font-light leading-[1.7] text-walnut md:py-6">{o.note}</td>
                   ) : null}
                   {hasOptionLinks ? (
-                    <td className="md:w-[18%] md:py-6 md:pl-6 md:text-right">
+                    <td className="md:py-6 md:pl-6 md:text-right md:whitespace-nowrap">
                       {o.bookingUrl ? (
                         <a
                           href={o.bookingUrl}
