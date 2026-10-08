@@ -13,6 +13,8 @@ import w1123 from "@/assets/jyl-portrait-sizes/jyl-portrait-1123.webp.asset.json
 
 /** Average color of the portrait, painted behind it while it loads. */
 export const portraitColor = "#60402C";
+/** 16 x 20 blurred preview, cropped to the 4:5 home frame. Regenerate with the photo. */
+export const portraitPreview = "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABwBQCdASoQABQAPtFUo0uoJKMhsAgBABoJagCdMoR4N1/9AH//EF+MrkCvtD+XOvw35++AAP7w3d8VWQk7tAD9nNk+gd/IuqMVd+fNseSu7PtrIGGpQX8tO5J+1Hg9+w4HGhDz2ex2HZSA1aG9+B6Xdvyub81+UEO+rJHV/tq2WuJFl05oKNGWnpJWFev52Pr/8UWNC9dM7oI9OwaN4pSqqtRlF2f3rJAW7REji3b760VVaJoCzh/g00yAAA==";
 export const portraitWidth = 1123;
 export const portraitHeight = 1401;
 /** Full-size source, used as the plain fallback and for schema/preload. */
