@@ -35,7 +35,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/treatments": "Treatments",
   "/concerns": "Concerns",
   "/results": "Results",
-  "/shop": "Shop",
+  "/skincare": "Skincare",
   "/financing": "Financing",
   "/about": "About",
   "/contact": "Contact",
@@ -71,7 +71,7 @@ function buildIndex(): Entry[] {
       key: p.slug,
       label: p.name,
       group: "Products",
-      href: "/shop",
+      href: "/skincare",
       fields: [p.name, brand].map(normalize),
       names: [p.name, brand].map(normalize),
     });

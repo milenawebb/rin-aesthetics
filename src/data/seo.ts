@@ -41,7 +41,7 @@ export const pageMeta: Record<string, PageMeta> = {
     title: `About ${providerName}, ${providerCredentialTitle} | RIN`,
     description: `${providerName} is a ${providerCredential} with over a decade in healthcare, treating one person at a time and telling you plainly when the answer is to do less.`,
   },
-  "/shop": {
+  "/skincare": {
     title: "Medical-Grade Skincare | RIN Aesthetic Practice",
     description: `skinbetter science and Hydrinity, chosen by ${providerName} to support and hold your results between treatments. Ordered through RIN's store at each brand.`,
   },
