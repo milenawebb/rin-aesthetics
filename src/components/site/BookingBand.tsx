@@ -1,3 +1,4 @@
+import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
 import { consultationFeeLine } from "@/data/consultation";
 import { keepBrandTogether } from "@/data/lookup";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
@@ -71,7 +72,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             src={portraitSrc}
             srcSet={portraitJpgSrcSet}
             sizes={BAND_SIZES}
-            alt="Jyl, founder and nurse injector at RIN Aesthetic Practice"
+            alt={`${providerName}, founder and ${providerCredential} at RIN Aesthetic Practice`}
             width={1123}
             height={1401}
             loading="lazy"
