@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getBookingAction } from "@/data/lookup";
 import { practice } from "@/data/site";
-import { consultation, consultationFeeLine } from "@/data/consultation";
+import { consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { PageShell } from "@/components/site/PageShell";
 
@@ -37,9 +37,6 @@ function ConsultationPage() {
         >
           Continue to booking
         </a>
-        <p className="mt-4 font-body text-[14px] font-light leading-[1.6] text-walnut">
-          The {consultation.fee} fee is {consultation.credit}.
-        </p>
       </div>
     </PageShell>
   );
