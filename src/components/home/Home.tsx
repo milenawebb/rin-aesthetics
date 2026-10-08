@@ -127,6 +127,7 @@ export function Home() {
         </SectionLabel>
       </section>
 
+      {featuredResults.length ? (
       <section className="relative pb-[80px] md:pb-[120px]">
         <SectionLabel label={resultsSection.eyebrow}>
           <div className={grid}>
@@ -153,6 +154,7 @@ export function Home() {
           </Link>
         </div>
       </section>
+      ) : null}
 
       <section className="relative isolate overflow-hidden bg-ink">
         <div className={`${container} py-[96px] md:py-[140px]`}>

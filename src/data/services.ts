@@ -104,7 +104,6 @@ export const services: Service[] = [
       "Crow's feet at the outer corners of the eyes",
       "A brow that sits lower or heavier than it used to",
       "Dimpling and texture across the chin",
-      "NEEDS APPROVAL: confirm which areas Jyl treats. Masseter, lip flip, bunny lines and underarm sweating are commonly offered and are not listed here because I cannot confirm she does them.",
     ],
     whoItsFor: [
       "Anyone whose lines stay visible after the expression has stopped",
@@ -136,11 +135,6 @@ export const services: Service[] = [
       "Jyl treats conservatively on a first visit and reviews at two weeks, rather than using more product up front and hoping it lands well. The aim is to soften movement, not remove it. Looking like you have had nothing done is the easier of the two outcomes to achieve, and it is the one she defaults to unless you ask for something stronger.",
     faqs: [
       {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Around three to four months for most people, with Daxxify typically lasting longer. How long it lasts depends on the product, the dose and how strongly you use those muscles.",
-      },
-      {
         question: "Will I look frozen?",
         answer:
           "Not at the doses Jyl uses on a first visit. She treats conservatively and reviews at two weeks, which means the result is adjusted upward if you want more rather than waiting out a result that went too far.",
@@ -149,16 +143,6 @@ export const services: Service[] = [
         question: "Does it hurt?",
         answer:
           "Most people find it very manageable. The needle is fine and each injection takes a second. There is no numbing required for most areas.",
-      },
-      {
-        question: "What is the difference between Daxxify, Dysport and Xeomin?",
-        answer:
-          "NEEDS APPROVAL: confirm how Jyl explains this. Draft: They are all neurotoxins and they all work the same way. They differ in how quickly they take effect and how long they last. Jyl will recommend one based on what you want and how you have responded to treatment before.",
-      },
-      {
-        question: "What does the price include?",
-        answer:
-          "NEEDS APPROVAL: the catalog says From $95 but does not say what that buys. Confirm whether this is per unit, per area, or a minimum, and whether a typical first treatment costs more. The page must say, or the price misleads.",
       },
     ],
   },
@@ -233,19 +217,9 @@ export const services: Service[] = [
           "Because the amount varies so much between people that any figure would be misleading. Jyl quotes at consultation once she knows what is actually needed.",
       },
       {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Typically nine to eighteen months depending on the product, the area and how quickly you metabolize it.",
-      },
-      {
         question: "Will I look overfilled?",
         answer:
           "Not at the amounts Jyl uses. She treats conservatively and reviews, which means you can add later. The overfilled look almost always comes from doing too much in one visit.",
-      },
-      {
-        question: "Which filler do you use?",
-        answer:
-          "NEEDS APPROVAL: confirm which brands Jyl carries and how she chooses between them.",
       },
       {
         question: "Can it be reversed?",
@@ -321,11 +295,6 @@ export const services: Service[] = [
       "Jyl does not have one lip she gives everyone. She works to the shape you already have, and she will say no to a request she thinks will not suit you rather than take the booking. Most of her lip work is deliberately subtle, which is why people cannot tell it has been done.",
 
     faqs: [
-      {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: Usually six to twelve months. Lips move constantly, so filler there does not last as long as elsewhere on the face.",
-      },
       {
         question: "Will everyone be able to tell?",
         answer:
@@ -410,16 +379,6 @@ export const services: Service[] = [
 
     faqs: [
       {
-        question: "What does $2,100 include?",
-        answer:
-          "NEEDS APPROVAL: confirm exactly what the price covers, how many syringes, and what happens if more is needed.",
-      },
-      {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes.",
-      },
-      {
         question: "Can it be done in stages?",
         answer:
           "It can, but the point of doing it in one session is that the areas are planned against each other. Staged over months, you are making each decision without seeing the whole.",
@@ -503,21 +462,6 @@ export const services: Service[] = [
         answer:
           "Not for weeks. The result builds across three to six months after the final session, which is the nature of stimulating collagen rather than adding volume.",
       },
-      {
-        question: "How many sessions do I need?",
-        answer:
-          "NEEDS APPROVAL: confirm Jyl's protocol. Usually three, spaced several weeks apart, but hers is what should appear here.",
-      },
-      {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. Biostimulators generally outlast hyaluronic acid filler.",
-      },
-      {
-        question: "What is the difference between Sculptra and Radiesse?",
-        answer:
-          "NEEDS APPROVAL: confirm how Jyl explains this and how she chooses between them.",
-      },
     ],
   },
 
@@ -587,11 +531,6 @@ export const services: Service[] = [
       "Jyl would rather turn someone away at the candidacy appointment than take payment for a series that will not work. Hair loss is emotional and that makes an honest first conversation more important here than almost anywhere else.",
 
     faqs: [
-      {
-        question: "How many sessions will I need?",
-        answer:
-          "NEEDS APPROVAL: confirm Jyl's protocol and whether maintenance sessions follow the initial series.",
-      },
       {
         question: "When will I see a difference?",
         answer:
@@ -680,11 +619,6 @@ export const services: Service[] = [
         question: "How is this different from filler?",
         answer:
           "It is made from your own blood rather than hyaluronic acid, and it improves skin quality as well as adding a little volume. It is also softer, which is why it suits the under-eye.",
-      },
-      {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. It does not last as long as hyaluronic acid filler.",
       },
       {
         question: "Will I bruise?",
@@ -777,11 +711,6 @@ export const services: Service[] = [
         question: "How much downtime?",
         answer:
           "A few days of redness and roughness around the mouth. Makeup is usually fine once the skin has settled.",
-      },
-      {
-        question: "How many sessions will I need?",
-        answer:
-          "NEEDS APPROVAL: confirm whether Jyl treats this as a single session or a short series.",
       },
     ],
   },
@@ -922,11 +851,6 @@ export const services: Service[] = [
 
     faqs: [
       {
-        question: "How much downtime should I plan for?",
-        answer:
-          "NEEDS APPROVAL. Draft: A few days. Expect redness and a sandpaper texture that settles over roughly three to five days, with makeup usually fine after the first forty-eight hours.",
-      },
-      {
         question: "How is this different from a standard IPL photofacial?",
         answer:
           "A photofacial uses IPL alone. This adds two fractional laser wavelengths that reach texture, scarring and collagen. IPL cannot address those.",
@@ -1015,11 +939,6 @@ export const services: Service[] = [
       "Jyl picks the depth and the settings rather than running a protocol, and she will treat conservatively on a first session to see how your skin responds. She would rather do two measured sessions than one aggressive one.",
 
     faqs: [
-      {
-        question: "How much downtime should I plan for?",
-        answer:
-          "NEEDS APPROVAL: confirm what Jyl tells patients. Draft: a few days of redness and a rough texture, settling over roughly three to five days.",
-      },
       {
         question: "How is this different from the Skin Refinery?",
         answer:
@@ -1119,11 +1038,6 @@ export const services: Service[] = [
           "Because that is how it works. The pigment comes to the surface, darkens, and flakes away over about a week. It looks worse before it looks better.",
       },
       {
-        question: "How many sessions will I need?",
-        answer:
-          "NEEDS APPROVAL: confirm Jyl's usual recommendation for a full face and for spot treatment.",
-      },
-      {
         question: "Can I have this with a tan?",
         answer:
           "No, and that includes self-tanner. Light targets pigment, and tanned skin is pigmented everywhere. Jyl will reschedule.",
@@ -1212,16 +1126,6 @@ export const services: Service[] = [
         answer:
           "Yes, which is one of the reasons Jyl uses this peel. Many peels are a poor idea on darker skin and this one is formulated differently.",
       },
-      {
-        question: "How many will I need?",
-        answer:
-          "NEEDS APPROVAL: confirm Jyl's protocol. Usually a series of three for pigment, spaced several weeks apart.",
-      },
-      {
-        question: "What is in the kit?",
-        answer:
-          "NEEDS APPROVAL: confirm what the take-home post-care kit contains.",
-      },
     ],
   },
   {
@@ -1307,11 +1211,6 @@ export const services: Service[] = [
         question: "Exosomes or the peel? How do I choose?",
         answer:
           "Jyl chooses, based on what your skin needs. Broadly, the exosomes and platelets push the repair response further, which suits scarring. The peel adds radiance, which suits dullness and texture.",
-      },
-      {
-        question: "How many sessions will I need?",
-        answer:
-          "NEEDS APPROVAL: confirm Jyl's protocol. Usually three, spaced about six weeks apart, but hers is what should appear here.",
       },
       {
         question: "How much downtime?",
@@ -1405,11 +1304,6 @@ export const services: Service[] = [
         question: "Will it help my acne?",
         answer:
           "It clears congestion and that helps, but it is not an acne treatment on its own. For active acne Jyl will recommend something that addresses the cause.",
-      },
-      {
-        question: "What boosters do you use?",
-        answer:
-          "NEEDS APPROVAL: confirm which boosters Jyl carries and how she chooses between them.",
       },
     ],
   },

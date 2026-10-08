@@ -7,7 +7,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { Button } from "@/components/ui/button";
 import { concerns } from "@/data/concerns";
-import { gallery, galleryForConcern } from "@/data/gallery";
+import { galleryForConcern, publishedGallery } from "@/data/gallery";
 import { getServiceById } from "@/data/lookup";
 
 
@@ -30,7 +30,7 @@ const filterConcerns = concerns.filter(
 function ResultsPage() {
   const [activeId, setActiveId] = useState("all");
   const activeConcern = concerns.find((concern) => concern.id === activeId);
-  const items = activeConcern ? galleryForConcern(activeConcern.tags, serviceTags) : gallery;
+  const items = activeConcern ? galleryForConcern(activeConcern.tags, serviceTags) : publishedGallery();
 
   return (
     <PageShell>
@@ -47,7 +47,7 @@ function ResultsPage() {
           ) : null}
         </header>
 
-        <div className="mt-12 flex flex-wrap gap-x-2 gap-y-3 border-y border-greige py-5" aria-label="Filter results by concern">
+        {filterConcerns.length ? (<div className="mt-12 flex flex-wrap gap-x-2 gap-y-3 border-y border-greige py-5" aria-label="Filter results by concern">
           <FilterButton active={activeId === "all"} onClick={() => setActiveId("all")}>
             All
           </FilterButton>
@@ -60,7 +60,7 @@ function ResultsPage() {
               {concern.h1}
             </FilterButton>
           ))}
-        </div>
+        </div>) : null}
 
         <div className="mt-14">
           <GalleryGrid items={items} />

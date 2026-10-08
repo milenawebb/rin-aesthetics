@@ -35,6 +35,8 @@ export interface GalleryItem {
   // Example image with no patient in it, shown only to illustrate the
   // layout. Needs no consent and is never presentable as a result.
   standIn?: boolean;
+  // Explicit sign-off. Nothing renders anywhere until this is true.
+  published: boolean;
   // Hand-picked for the home page strip. Keep this to six at most.
   featured: boolean;
 }
@@ -52,6 +54,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
+    published: false,
     featured: true,
   },
   {
@@ -66,6 +69,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
+    published: false,
     featured: true,
   },
   {
@@ -80,6 +84,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
+    published: false,
     featured: true,
   },
   {
@@ -93,6 +98,7 @@ export const gallery: GalleryItem[] = [
     interval: "2 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: true,
   },
   {
@@ -106,6 +112,7 @@ export const gallery: GalleryItem[] = [
     interval: "2 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -119,6 +126,7 @@ export const gallery: GalleryItem[] = [
     interval: "4 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: true,
   },
   {
@@ -132,6 +140,7 @@ export const gallery: GalleryItem[] = [
     interval: "6 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: true,
   },
   {
@@ -145,6 +154,7 @@ export const gallery: GalleryItem[] = [
     interval: "12 weeks after the last",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -158,6 +168,7 @@ export const gallery: GalleryItem[] = [
     interval: "5 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -171,6 +182,7 @@ export const gallery: GalleryItem[] = [
     interval: "5 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -184,6 +196,7 @@ export const gallery: GalleryItem[] = [
     interval: "4 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -197,6 +210,7 @@ export const gallery: GalleryItem[] = [
     interval: "3 weeks",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -210,6 +224,7 @@ export const gallery: GalleryItem[] = [
     interval: "8 weeks after the last",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
   {
@@ -223,6 +238,7 @@ export const gallery: GalleryItem[] = [
     interval: "16 weeks after the last",
     consentOnFile: false,
     placeholder: true,
+    published: false,
     featured: false,
   },
 ];
@@ -239,40 +255,38 @@ export function isPublishable(item: GalleryItem): boolean {
   );
 }
 
-// A real consented pair, or a stand-in with both images. Only these render
-// as images; everything else is a greige block.
+// The only render gate: marked published, both images present and consent
+// on file. Anything else is absent from every page, never a stand-in block.
 export function isDisplayable(item: GalleryItem): boolean {
-  if (isPublishable(item)) return true;
-  return item.standIn === true && item.beforeSrc !== "" && item.afterSrc !== "";
+  return item.published && isPublishable(item);
 }
 
-export const NOTICE_STAND_IN =
-  "Example images, shown to illustrate the layout. Final photography will be from the practice.";
 export const NOTICE_REAL =
   "Unretouched photography from our own treatment room. Individual results vary.";
 
 // The line under a Results heading, chosen from what is actually displayed.
 // Null when nothing displayable is showing: no line over only greige blocks.
 export function resultsNotice(items: GalleryItem[]): string | null {
-  const displayable = items.filter(isDisplayable);
-  if (displayable.length === 0) return null;
-  const anyStandIn = displayable.some((item) => !isPublishable(item));
-  return anyStandIn ? NOTICE_STAND_IN : NOTICE_REAL;
+  return items.some(isDisplayable) ? NOTICE_REAL : null;
 }
 
 export function galleryForService(serviceId: string): GalleryItem[] {
-  return gallery.filter((g) => g.serviceId === serviceId);
+  return publishedGallery().filter((g) => g.serviceId === serviceId);
 }
 
 export function galleryForConcern(
   concernTags: string[],
   serviceTags: (serviceId: string) => string[],
 ): GalleryItem[] {
-  return gallery.filter((item) =>
+  return publishedGallery().filter((item) =>
     serviceTags(item.serviceId).some((tag) => concernTags.includes(tag)),
   );
 }
 
 export function featured(): GalleryItem[] {
-  return gallery.filter((g) => g.featured).slice(0, 6);
+  return publishedGallery().filter((g) => g.featured).slice(0, 6);
+}
+
+export function publishedGallery(): GalleryItem[] {
+  return gallery.filter(isDisplayable);
 }

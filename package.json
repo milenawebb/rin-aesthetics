@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "check:dashes": "node scripts/check-dashes.mjs",
-    "build": "bun run check:dashes && vite build",
-    "build:dev": "bun run check:dashes && vite build --mode development",
+    "check:drafts": "node scripts/check-drafts.mjs",
+    "build": "bun run check:dashes && bun run check:drafts && vite build",
+    "build:dev": "bun run check:dashes && bun run check:drafts && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
