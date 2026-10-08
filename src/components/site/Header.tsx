@@ -1,6 +1,7 @@
+import { consultation } from "@/data/consultation";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
-import { navLinks, practice } from "@/data/site";
+import { navLinks } from "@/data/site";
 import { Logo } from "./Logo";
 import { navMenus, type NavMenu } from "./navMenus";
 import { MegaPanel } from "./MegaPanel";
@@ -119,7 +120,7 @@ export function Header() {
             <DesktopSearch />
           </div>
           <a
-            href={practice.bookingUrl}
+            href={consultation.bookingUrl}
             target="_blank"
             rel="noreferrer"
             className="btn-label rounded-[2px] bg-champagne px-6 py-3 text-ink transition-colors hover:bg-ivory"
@@ -130,7 +131,7 @@ export function Header() {
 
         <div className="flex items-center gap-6 lg:hidden">
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noreferrer"
               aria-hidden={!pinned}

@@ -1,3 +1,4 @@
+import { consultation } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { businessJsonLd } from "@/lib/business-schema";
 import { BookingBand } from "@/components/site/BookingBand";
@@ -179,7 +180,7 @@ function ContactPage() {
           <div>
             <p className={label}>Book</p>
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noopener"
               className="btn-label mt-5 inline-flex items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory shadow-none transition-colors hover:bg-walnut"

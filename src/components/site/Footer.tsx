@@ -82,8 +82,10 @@ function ContactBlock() {
 
 function DesktopFooter() {
   return (
-    <div className="hidden md:grid md:grid-cols-2 md:gap-14 lg:grid-cols-[1.2fr_repeat(4,0.75fr)]">
-      <ContactBlock />
+    <div className="hidden md:grid md:grid-cols-2 md:gap-14 lg:grid-cols-[minmax(0,1.5fr)_repeat(4,minmax(0,1fr))] lg:gap-8">
+      <div className="md:col-span-2 lg:col-span-1">
+        <ContactBlock />
+      </div>
 
       {footerColumns.map((column) => (
         <div key={column.title}>
