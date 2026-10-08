@@ -26,7 +26,7 @@ export function ConcernRows() {
                   params={{ slug: concernPathSlug(concern) }}
                   className="concern-row group flex h-[96px] items-center gap-4 transition-colors"
                 >
-                  <span className="w-[56px] shrink-0 pl-1 font-body text-[12px] font-medium text-champagne transition-colors">
+                  <span className="w-[56px] shrink-0 pl-1 font-body text-[12px] font-medium text-champagne-light transition-colors">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="concern-row-name flex-1 font-body text-[22px] font-extralight leading-[1.15] tracking-[-0.02em] text-ink md:text-[32px]">

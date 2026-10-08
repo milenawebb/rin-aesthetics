@@ -43,6 +43,10 @@
   --color-greige: #cfc5b8;
   --color-ivory: #f5f0e8;
   --color-olive: #7d8a6a;
+  /* Text on light grounds (ivory, white). The brand values above stay for dark grounds. */
+  --color-champagne-light: #83682d;
+  --color-olive-light: #657056;
+  --color-ink-soft: #524d47;
   /* Single typeface for the whole site. Swap this one line to move to the
      licensed face when files land. */
   --font-display: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
@@ -303,7 +307,7 @@
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-olive);
+  color: var(--color-olive-light);
   /* optical alignment: pull tracked caps back into the text edge */
   margin-left: -0.09em;
 }

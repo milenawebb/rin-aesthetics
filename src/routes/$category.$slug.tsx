@@ -47,8 +47,8 @@ const btnPrimary =
 const h2 = "type-h2 text-ink";
 const section = "section-space site-container";
 
-function Label({ children }: { children: ReactNode }) {
-  return <p className="label-xs text-champagne">{children}</p>;
+function Label({ children, onDark = false }: { children: ReactNode; onDark?: boolean }) {
+  return <p className={`label-xs ${onDark ? "text-champagne" : "text-champagne-light"}`}>{children}</p>;
 }
 
 function LineList({ items }: { items: string[] }) {
@@ -77,7 +77,7 @@ function CareTimeline({ groups, id }: { groups: CareGroup[]; id: string }) {
   const restId = `care-rest-${id}`;
   const renderGroup = (g: CareGroup, i: number) => (
     <div key={`${g.offsetHours}-${i}`} className="mt-8">
-      <p className="label-xs text-walnut/70">{g.label}</p>
+      <p className="label-xs text-walnut">{g.label}</p>
       <CareBullets items={g.bullets} className="mt-4" />
     </div>
   );
@@ -342,7 +342,7 @@ function ServicePage() {
           <div className="site-container band-space">
             <div className={technologyLead[service.id] ? "md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-center md:gap-12 lg:gap-16" : undefined}>
               <div>
-                <Label>What's in it</Label>
+                <Label onDark>What's in it</Label>
                 {service.technologiesHeading ? (
                   <h2 className="type-h2 mt-6 text-ivory">
                     {service.technologiesHeading}
@@ -418,7 +418,7 @@ function ServicePage() {
           <ol className="step-counter mt-12">
             {service.steps.map((step) => (
               <li key={step.title} className="grid gap-2 border-t border-greige py-8 md:grid-cols-[20px_minmax(0,1fr)] md:gap-x-6 md:gap-y-0 lg:grid-cols-[120px_1fr] lg:gap-10">
-                <span className="step-number label-xs text-champagne" aria-hidden />
+                <span className="step-number label-xs text-champagne-light" aria-hidden />
                 <div>
                   <h3 className="font-body text-[19px] font-medium text-ink">{step.title}</h3>
                   <p className="measure mt-3 font-body text-[16px] font-light leading-[1.75] text-walnut">{step.body}</p>
@@ -493,7 +493,7 @@ function ServicePage() {
               <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
                 {service.howJylApproaches}
               </p>
-              <Link to="/about" className="label-xs mt-8 inline-block text-champagne transition-colors hover:text-ink">
+              <Link to="/about" className="label-xs mt-8 inline-block text-champagne-light transition-colors hover:text-ink">
                 More about Jyl
               </Link>
             </div>
@@ -537,7 +537,7 @@ function ServicePage() {
                   className="group -mx-4 block border-b border-greige md:-mx-6"
                 >
                   <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 px-4 py-8 transition-colors duration-300 group-hover:bg-white md:px-6 lg:grid lg:grid-cols-[200px_1fr_auto] lg:gap-10">
-                    <span className="label-xs w-full text-olive lg:w-auto">{item.category}</span>
+                    <span className="label-xs w-full text-olive-light lg:w-auto">{item.category}</span>
                     <span className="contents lg:flex lg:flex-row lg:items-baseline lg:gap-10">
                       <span className="font-body text-[22px] font-extralight leading-[1.25] tracking-[-0.02em] text-ink transition-transform duration-300 group-hover:translate-x-2 min-w-0 lg:min-w-[280px]">
                         {item.shortName}
@@ -556,7 +556,7 @@ function ServicePage() {
           </div>) : null}
           {relatedProducts.length ? (
             <div className="mt-12">
-              <p className="label-xs mb-6 text-olive">Daily care</p>
+              <p className="label-xs mb-6 text-olive-light">Daily care</p>
               <ProductList items={relatedProducts} />
             </div>
           ) : null}

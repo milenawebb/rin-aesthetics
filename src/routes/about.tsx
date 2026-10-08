@@ -213,7 +213,7 @@ function AboutPage() {
                   key={n}
                   className="flex aspect-[4/5] w-[78%] shrink-0 items-center justify-center rounded-[2px] bg-greige md:w-auto"
                 >
-                  <span className="eyebrow text-walnut">Practice photo</span>
+                  <span className="eyebrow text-ink-soft">Practice photo</span>
                 </div>
               ))}
             </div>
@@ -244,7 +244,7 @@ function AboutPage() {
               <figcaption className="mt-auto pt-8">
                 <span className="block font-body text-[14px] font-light text-walnut">{r.name}</span>
                 {r.source ? (
-                  <span className="mt-1 block font-body text-[12px] font-light text-greige">
+                  <span className="mt-1 block font-body text-[12px] font-light text-walnut">
                     {r.source}
                   </span>
                 ) : null}
@@ -268,14 +268,14 @@ function AboutPage() {
         <div className="site-container">
           <div className={`min-w-0 ${wrap}`}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
-          <p className="eyebrow text-olive">Medical oversight</p>
+          <p className="eyebrow text-olive-light">Medical oversight</p>
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
             All clinical providers at RIN Aesthetic Practice operate under the oversight of our
             Medical Director in accordance with Virginia requirements. To contact our Medical
             Director for any reason, please email our office at{" "}
             <a
               href={`mailto:${practice.email}`}
-              className="border-b border-champagne text-ink transition-colors hover:text-champagne"
+              className="border-b border-champagne text-ink transition-colors hover:text-champagne-light"
             >
               {practice.email}
             </a>

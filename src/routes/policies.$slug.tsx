@@ -32,7 +32,7 @@ function renderText(text: string) {
   return parts.map((part, i) => {
     if (/^[\w.+-]+@[\w-]+\.[\w.]+$/.test(part)) {
       return (
-        <a key={i} href={`mailto:${part}`} className="text-champagne underline underline-offset-4">
+        <a key={i} href={`mailto:${part}`} className="text-champagne-light underline underline-offset-4">
           {part}
         </a>
       );
@@ -40,7 +40,7 @@ function renderText(text: string) {
     if (/^https?:\/\//.test(part)) {
       const clean = part.replace(/[.,;]$/, "");
       return (
-        <a key={i} href={clean} target="_blank" rel="noopener" className="text-champagne underline underline-offset-4">
+        <a key={i} href={clean} target="_blank" rel="noopener" className="text-champagne-light underline underline-offset-4">
           {part}
         </a>
       );
@@ -93,7 +93,7 @@ function PolicyPage() {
                           href={`#${item.id}`}
                           aria-current={active === item.id ? "true" : undefined}
                           className={`block font-body text-[13px] leading-[1.5] transition-colors ${
-                            active === item.id ? "text-ink" : "text-walnut/70 hover:text-ink"
+                            active === item.id ? "text-ink" : "text-walnut hover:text-ink"
                           }`}
                         >
                           {item.heading}

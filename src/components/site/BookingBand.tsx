@@ -47,7 +47,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             </div>
             <a
               href={practice.phoneHref}
-              className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne md:flex md:h-[var(--band-btn-h)] md:items-center"
+              className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne-light md:flex md:h-[var(--band-btn-h)] md:items-center"
             >
               {practice.phone}
             </a>

@@ -34,7 +34,7 @@ export function ResultTile({
   if (!isDisplayable(item)) {
     return (
       <div className="flex aspect-[4/5] w-full items-center justify-center rounded-[2px] bg-greige px-4 text-center">
-        <span className="label-xs text-ink/55">Before and after</span>
+        <span className="label-xs text-ink-soft">Before and after</span>
       </div>
     );
   }

@@ -15,7 +15,7 @@ export function ProductList({ items, showBrand = true }: { items: Product[]; sho
         const url = buyUrl(p);
         const body = (
           <div className={`grid grid-cols-1 items-baseline gap-2 py-7 transition-colors duration-300 md:gap-10 ${cols}`}>
-            {showBrand ? <span className="label-xs text-olive">{brands[p.brand]?.name ?? ""}</span> : null}
+            {showBrand ? <span className="label-xs text-olive-light">{brands[p.brand]?.name ?? ""}</span> : null}
             <span className="font-body text-[19px] font-medium leading-[1.35] text-ink">{p.name}</span>
             <span className="font-body text-[15px] font-light leading-[1.7] text-walnut">{p.shortDescription}</span>
           </div>
