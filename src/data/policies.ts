@@ -52,7 +52,7 @@ export const policies: Policy[] = [
         "heading": "Cancellations and no-shows",
         "paragraphs": [
           "At RIN Aesthetic Practice we have a 48 hour Cancellation / No Show Policy in place to ensure guests can get in for appointments in a timely manner and to respect our providers' time.",
-          "We require a major credit card to hold your appointment. Please provide us with a 48 hour notice to cancel your scheduled appointment. If you cancel within the 48 hours for a neurotoxin appointment, you will be charged $100. If you cancel within the 48 hours for a dermal filler or a lip filler appointment you will be charged $300. Thank you for respecting our small business's time."
+          "We require a major credit card to hold your appointment. Please provide us with a 48 hour notice to cancel your scheduled appointment. If you cancel within the 48 hours for a neurotoxin appointment, you will be charged $100. If you cancel within the 48 hours for a dermal filler or a lip filler appointment you will be charged $300. If you cancel within the 48 hours for The Refinement, our Hydrafacial treatment, you will be charged $75. Thank you for respecting our small business's time."
         ]
       },
       {
