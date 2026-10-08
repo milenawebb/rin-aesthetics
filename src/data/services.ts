@@ -1315,6 +1315,12 @@ export interface BookingAction {
   slug: string;
   priceDisplay: string;
   shortDescription: string;
+  /** Vagaro link for booking this follow-up from the treatments it serves. */
+  bookingUrl?: string;
+  /** Follow-up fact wording on the treatments it serves, when "Complimentary" would overstate. */
+  factLabel?: string;
+  /** Practice-supplied terms shown beneath the booking actions on the treatments it serves. */
+  terms?: string;
 }
 
 // Not pages. These are booking links and reminder triggers only.
@@ -1332,6 +1338,9 @@ export const bookingActions: BookingAction[] = [
     slug: "book/follow-up",
     priceDisplay: "Free",
     shortDescription: "A complimentary touch-up after your initial tox, usually between weeks two and three.",
+    bookingUrl: "https://www.vagaro.com/cl/l2ywfsZ5SB6GaRQ-9V~wzprv9mIzsRx4jreqf~XrOU0=",
+    factLabel: "Usually complimentary",
+    terms: "Refinements are usually complimentary between 14 and 21 days after treatment. Restrictions apply.",
   },
   {
     id: "DEV-04",
@@ -1339,6 +1348,7 @@ export const bookingActions: BookingAction[] = [
     slug: "book/device-follow-up",
     priceDisplay: "Free",
     shortDescription: "A complimentary review of your results and next steps, usually four to five weeks after treatment.",
+    bookingUrl: "https://www.vagaro.com/cl/ZSDI-MkD9kAfAtYilDRCo5AQ1uiAQCOT7gCjtjdjwz8=",
   },
 ];
 
