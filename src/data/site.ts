@@ -14,6 +14,9 @@ export const practice = {
   location: "Charlottesville, Virginia",
   phone: "(434) 217-5300",
   phoneHref: "tel:+14342175300",
+  /** Set to true once the practice confirms this number receives and monitors texts. */
+  smsEnabled: false,
+  smsHref: "sms:+14342175300",
   email: "info@rinaestheticsva.com",
   address: "340 Towncenter Ln, Suite 200B, Charlottesville, VA 22911",
   addressLines: ["340 Towncenter Ln, Suite 200B", "Charlottesville, VA 22911"],

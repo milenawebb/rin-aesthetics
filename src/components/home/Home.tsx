@@ -9,6 +9,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { ResultsRail } from "@/components/home/ResultsRail";
 import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
+import { concerns } from "@/data/concerns";
 import { useInView } from "@/hooks/use-in-view";
 import { heroDesktop, heroDesktopMedia, heroMobile, heroSizes, heroTablet, heroTabletMedia } from "@/lib/hero";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
@@ -119,6 +120,14 @@ export function Home() {
             </p>
           </div>
           <ConcernRows />
+          <div className="mt-10">
+            <Link
+              to="/concerns"
+              className="eyebrow inline-block border-b border-champagne pb-1 text-ink transition-transform duration-[400ms] hover:translate-x-[3px]"
+            >
+              View all {concerns.length} concerns
+            </Link>
+          </div>
         </SectionLabel>
       </section>
 

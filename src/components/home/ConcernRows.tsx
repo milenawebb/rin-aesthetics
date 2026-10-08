@@ -3,14 +3,16 @@ import { useInView } from "@/hooks/use-in-view";
 import { concerns } from "@/data/concerns";
 import { concernPathSlug, servicesFor } from "@/data/lookup";
 
-const HOME_CONCERN_COUNT = 6;
+/** The homepage shortlist, in display order. Ids only; unmatched ids render nothing. */
+const HOME_CONCERN_IDS = ["lines-and-wrinkles", "volume-loss", "skin-laxity", "lips", "pigmentation", "acne-and-scarring"];
+const homeConcerns = HOME_CONCERN_IDS.flatMap((id) => concerns.filter((c) => c.id === id));
 
 export function ConcernRows() {
   const { ref, inView } = useInView<HTMLUListElement>("0px 0px -20% 0px");
 
   return (
     <ul ref={ref} className="mt-14 border-t border-greige">
-      {concerns.slice(0, HOME_CONCERN_COUNT).map((concern, i) => {
+      {homeConcerns.map((concern, i) => {
         const count = servicesFor(concern).length;
         return (
           <li key={concern.id} className="border-b border-greige">
