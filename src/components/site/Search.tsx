@@ -1,7 +1,6 @@
-import { consultationFeeLine } from "@/data/consultation";
+import { consultation, consultationFeeLine } from "@/data/consultation";
 import { useRouter } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
-import { practice } from "@/data/site";
 import { QUICK_LINKS, search, type SearchResult } from "@/lib/search";
 
 type Tone = "light" | "dark";

@@ -1,7 +1,6 @@
 import { consultation, consultationFeeLine } from "@/data/consultation";
 import { concerns, type Concern } from "@/data/concerns";
 import { services } from "@/data/services";
-import { practice } from "@/data/site";
 
 export type MenuLink =
   | { label: string; to: "/concerns/$slug"; params: { slug: string } }
