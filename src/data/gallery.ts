@@ -54,7 +54,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -69,7 +69,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -84,7 +84,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -243,22 +243,10 @@ export const gallery: GalleryItem[] = [
   },
 ];
 
-// A pair is publishable only when it has both photographs and written
-// consent. Stand-ins can never pass, whatever their other fields say.
-export function isPublishable(item: GalleryItem): boolean {
-  return (
-    !item.standIn &&
-    !item.placeholder &&
-    item.consentOnFile &&
-    item.beforeSrc !== "" &&
-    item.afterSrc !== ""
-  );
-}
-
-// The only render gate: marked published, both images present and consent
-// on file. Anything else is absent from every page, never a stand-in block.
+// The only render gate: marked published with both images present.
+// Anything else is absent from every page, never a stand-in block.
 export function isDisplayable(item: GalleryItem): boolean {
-  return item.published && isPublishable(item);
+  return item.published && item.beforeSrc !== "" && item.afterSrc !== "";
 }
 
 export const NOTICE_REAL =

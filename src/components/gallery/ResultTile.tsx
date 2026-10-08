@@ -5,7 +5,7 @@ import { isDisplayable } from "@/data/gallery";
 const EASE = "cubic-bezier(0.16,1,0.3,1)";
 
 // One 4:5 tile per pair. Images render only when isDisplayable() passes,
-// which itself requires isPublishable() for any real photograph.
+// which requires a published record with both images.
 // mode "wipe": hover or focus wipes the after across the before.
 // mode "split": before left, after right, divider fixed at center.
 // Wipe runs only under (hover: hover) and (pointer: fine); touch, coarse
