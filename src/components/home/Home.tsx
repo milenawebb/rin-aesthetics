@@ -12,7 +12,6 @@ import { ResultsRail } from "@/components/home/ResultsRail";
 import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { concerns } from "@/data/concerns";
-import { useInView } from "@/hooks/use-in-view";
 import { heroDesktop, heroDesktopMedia, heroMobile, heroSizes, heroTablet, heroTabletMedia } from "@/lib/hero";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
@@ -46,8 +45,6 @@ const body =
 const btn = "btn-label rounded-[2px]";
 
 export function Home() {
-  const { ref: bandRef, inView: bandIn } = useInView<HTMLDivElement>("0px 0px -20% 0px");
-
   return (
     <>
       <section className="relative bg-ivory md:flex md:items-center md:justify-center lg:h-[85vh] lg:min-h-[520px] lg:overflow-hidden">
@@ -158,11 +155,7 @@ export function Home() {
         </div>
       </section>
 
-      <section ref={bandRef} className="relative isolate overflow-hidden">
-        <div
-          className={`curtain absolute inset-0 -z-10 bg-ink ${bandIn ? "is-in" : ""}`}
-          aria-hidden="true"
-        />
+      <section className="relative isolate overflow-hidden bg-ink">
         <div className={`${container} py-[96px] md:py-[140px]`}>
           <p className="eyebrow text-champagne">{signature.label}</p>
           <div className="mt-8 lg:grid lg:grid-cols-[55fr_45fr] lg:gap-x-24">

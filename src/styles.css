@@ -307,7 +307,7 @@
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-olive);
+  color: var(--color-olive-light);
   /* optical alignment: pull tracked caps back into the text edge */
   margin-left: -0.09em;
 }
