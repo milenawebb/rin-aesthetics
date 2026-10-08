@@ -53,7 +53,7 @@ function ShopPage() {
                   <a
                     href={pkg.bookingUrl}
                     target="_blank"
-                    rel="noopener"
+                    rel="sponsored noopener"
                     className="btn-label mt-8 inline-block rounded-[2px] bg-ink px-6 py-3 text-ivory transition-colors hover:bg-walnut"
                   >
                     Book this package
@@ -74,7 +74,7 @@ function ShopPage() {
           <a
             href={giftCards.purchaseUrl}
             target="_blank"
-            rel="noopener"
+            rel="sponsored noopener"
             className="btn-label mt-8 inline-block rounded-[2px] bg-ink px-6 py-3 text-ivory transition-colors hover:bg-walnut"
           >
             Buy a gift card
@@ -104,7 +104,7 @@ function ShopPage() {
                   <a
                     href={brand.storeUrl}
                     target="_blank"
-                    rel="noopener"
+                    rel="sponsored noopener"
                     className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
                   >
                     Shop {brand.name}

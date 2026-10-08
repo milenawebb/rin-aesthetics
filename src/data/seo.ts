@@ -43,7 +43,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/shop": {
     title: "Medical-Grade Skincare | RIN Aesthetic Practice",
-    description: `skinbetter science and Hydrinity, chosen by ${providerName} to support and hold your results between treatments. Ordered directly from each brand.`,
+    description: `skinbetter science and Hydrinity, chosen by ${providerName} to support and hold your results between treatments. Ordered through RIN's store at each brand.`,
   },
   "/financing": {
     title: "Financing and Payment Plans | RIN Aesthetic Practice",
