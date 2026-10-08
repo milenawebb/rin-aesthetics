@@ -1,4 +1,5 @@
 import { consultation } from "@/data/consultation";
+import { practice } from "@/data/site";
 // Generated from rin-catalog-and-quiz.xlsx. Do not hand-edit structure.
 // Content fields left empty are filled in Stage 3. Any section whose field is
 // empty must render nothing at all, never an empty heading or a placeholder.
@@ -18,6 +19,8 @@ export interface ServiceOption {
   note: string;
   /** Says what the price buys, e.g. "per treatment". When set, the treatment page fact and booking band list every option as "price basis". */
   basis?: string;
+  /** Vagaro link for this option when it is booked as its own service. */
+  bookingUrl?: string;
 }
 
 export interface Faq {
@@ -75,6 +78,7 @@ export const services: Service[] = [
     slug: "injectables/neurotoxin",
     category: "Injectables",
     priceDisplay: "From $95",
+    bookingUrl: "https://www.vagaro.com/cl/oJhUXCS18eUY0OafSGBnzBheXAxdmPEU67ev0S5fCBo=",
     priceBand: "low",
     downtime: "none",
     seriesSessions: 1,
@@ -160,7 +164,8 @@ export const services: Service[] = [
     shortName: "Dermal Fillers",
     slug: "injectables/dermal-fillers",
     category: "Injectables",
-    priceDisplay: "Price on consultation",
+    priceDisplay: "From $750",
+    bookingUrl: "https://www.vagaro.com/cl/lrY4qYA62~pt84oWEUA5oc5VFwhWk8ss1m4k-pWh-0M=",
     priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
@@ -254,6 +259,7 @@ export const services: Service[] = [
     slug: "injectables/lip-filler",
     category: "Injectables",
     priceDisplay: "$800",
+    bookingUrl: "https://www.vagaro.com/cl/Dy195-OeMuqxQuGmCzSgdYZPAjqXqFRWeVCV5G2hiV8=",
     priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
@@ -341,7 +347,8 @@ export const services: Service[] = [
     shortName: "Full Facial Balancing",
     slug: "injectables/full-facial-balancing",
     category: "Injectables",
-    priceDisplay: "$2,100",
+    priceDisplay: "From $2,100",
+    bookingUrl: "https://www.vagaro.com/cl/EaXXG~~C5eZNw9XA6YjslDJh9ETtZBkcPtffOUjTfwk=",
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 1,
@@ -429,6 +436,7 @@ export const services: Service[] = [
     slug: "injectables/biostimulators",
     category: "Injectables",
     priceDisplay: "From $750",
+    bookingUrl: "https://www.vagaro.com/cl/Y6p5CPA7D10p7qNuP3Zck3kn4t~ozUkGWY079v3jYKM=",
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 3,
@@ -516,6 +524,7 @@ export const services: Service[] = [
     slug: "injectables/prp-hair-restoration",
     category: "Injectables",
     priceDisplay: "From $750",
+    bookingUrl: "https://www.vagaro.com/cl/DcrXs5bmTCFM8t4uNjXs7M5pkTOkGAw7VKRGJr9Djuc=",
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 3,
@@ -603,6 +612,7 @@ export const services: Service[] = [
     slug: "injectables/ez-gel-prp",
     category: "Injectables",
     priceDisplay: "From $750",
+    bookingUrl: "https://www.vagaro.com/cl/vrr2MmtkpEDl1N0eVc370qWxEpkT3phUPeN1dy4rWLo=",
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 2,
@@ -684,97 +694,13 @@ export const services: Service[] = [
 
   // ---------------------------------------------------------------- INJ-09
   {
-    id: "INJ-09",
-    name: "Skin Booster Skinvive",
-    shortName: "Skinvive",
-    slug: "injectables/skinvive",
-    category: "Injectables",
-    priceDisplay: "$600",
-    priceBand: "mid",
-    downtime: "none",
-    seriesSessions: 1,
-    repeatWeeks: 26,
-    concernTags: ["hydration", "texture", "dryness", "fine_lines"],
-    pairsWith: ["INJ-01", "HY-01"],
-    precareId: "PC-INJECT",
-    aftercareId: "AC-TOX",
-    shortDescription:
-      "Micro-droplet hydration that improves smoothness and glow rather than adding volume.",
-    options: [],
-
-    intro: [
-      "Skinvive is hyaluronic acid placed in tiny droplets just under the surface. It does not shape or fill anything. It hydrates the skin from within, and the result is smoothness and light rather than volume.",
-      "It is the treatment for someone whose face does not need changing but whose skin looks tired.",
-    ],
-
-    helpsWith: [
-      "Skin that looks dull or flat",
-      "Dryness that skincare has not solved",
-      "Fine surface lines on the cheeks",
-      "Rough or uneven texture",
-    ],
-
-    whoItsFor: [
-      "Anyone happy with their face who wants better skin",
-      "Patients who want a result with no downtime",
-      "Anyone nervous about injectables who wants somewhere gentle to start",
-    ],
-
-    notFor:
-      "This adds no volume and changes no shape. If what is bothering you is hollowing or a line at rest, this will not address it and Jyl will point you elsewhere.",
-
-    steps: [
-      {
-        title: "Consultation",
-        body: "Jyl confirms that skin quality rather than structure is what you want improved.",
-      },
-      {
-        title: "The appointment",
-        body: "A series of very small injections across the treated area. Numbing first. About 30 minutes.",
-      },
-      {
-        title: "The first day",
-        body: "Small bumps where the droplets were placed, which settle within a day. No real downtime beyond that.",
-      },
-      {
-        title: "The following weeks",
-        body: "Hydration and smoothness build over the first month.",
-      },
-    ],
-
-    howJylApproaches:
-      "Jyl often suggests this to people who came in asking for filler and do not need it. If the complaint is that the skin looks tired rather than that the face has changed, this is usually the honest answer.",
-
-    faqs: [
-      {
-        question: "Will it change my face?",
-        answer:
-          "No. It adds no volume and no shape. It improves the skin itself.",
-      },
-      {
-        question: "How long does it last?",
-        answer:
-          "NEEDS APPROVAL: confirm the range Jyl quotes. Draft: around six months.",
-      },
-      {
-        question: "Is there downtime?",
-        answer:
-          "Small bumps at the injection points for a few hours to a day. Most people go straight back to normal.",
-      },
-      {
-        question: "Can I have it with other treatments?",
-        answer:
-          "Yes. It pairs well with neurotoxin, which addresses movement while this addresses the skin itself.",
-      },
-    ],
-  },
-  {
     id: "DEV-01",
     name: "Non-ablative Fractional Treatment (Lips)",
     shortName: "Fractional Treatment for Lips",
     slug: "devices/fractional-lips",
     category: "Device & Laser",
     priceDisplay: "$250",
+    bookingUrl: "https://www.vagaro.com/cl/FQEJBr8i36817xn1S8VUPrn8o-r~6qtSq5O6zlKQt9w=",
     priceBand: "low",
     downtime: "minimal",
     seriesSessions: 1,
@@ -863,6 +789,7 @@ export const services: Service[] = [
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
+    bookingUrl: "https://www.vagaro.com/cl/BiM8RHaX0zn~cvNh8XVJCPdU8RrAer~mdxKidGajqWc=",
     priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
@@ -876,7 +803,7 @@ export const services: Service[] = [
 
     options: [
       { name: "Single treatment", price: "$900", note: "", basis: "per treatment" },
-      { name: "Course of three", price: "$2,700", note: "", basis: "for a course of three" },
+      { name: "Course of three", price: "$2,400", note: "", basis: "for a course of three" },
     ],
     eyebrow: signatureEyebrow,
     tagline: "Tone. Texture. Clarity. Luminosity.",
@@ -1020,6 +947,7 @@ export const services: Service[] = [
     slug: "devices/fractional-laser",
     category: "Device & Laser",
     priceDisplay: "$675",
+    bookingUrl: "https://www.vagaro.com/cl/wA3IJpyiZNGqrZWDIAi0x2qdxNJIFo4GW10RjRVhLDg=",
     priceBand: "high",
     downtime: "days",
     seriesSessions: 1,
@@ -1108,6 +1036,7 @@ export const services: Service[] = [
     slug: "devices/ipl",
     category: "Device & Laser",
     priceDisplay: "$250 spot, $450 full face or chest",
+    bookingUrl: "https://www.vagaro.com/cl/856gXqXuAqkIZi27wmXlrglQwl8vyDKCLTpBTakNO1c=",
     priceBand: "mid",
     downtime: "minimal",
     seriesSessions: 1,
@@ -1205,6 +1134,7 @@ export const services: Service[] = [
     slug: "skin-treatments/vi-peel",
     category: "Skin Treatments",
     priceDisplay: "From $350",
+    bookingUrl: "https://www.vagaro.com/cl/708PeMzMK8Q9hjEQZaiK7h0sui1l71qN8Hy5F9dtGyc=",
     priceBand: "mid",
     downtime: "days",
     seriesSessions: 3,
@@ -1292,6 +1222,7 @@ export const services: Service[] = [
     slug: "skin-treatments/microneedling",
     category: "Skin Treatments",
     priceDisplay: "From $650",
+    bookingUrl: "https://www.vagaro.com/cl/VXWEpHv3~1omKTx~xtQeESAMnwYePSKhjcEL7L3wT~0=",
     priceBand: "high",
     downtime: "minimal",
     seriesSessions: 3,
@@ -1305,12 +1236,14 @@ export const services: Service[] = [
     options: [
       {
         name: "With exosomes or PRP",
-        price: "$675",
+        price: "From $650",
+        bookingUrl: "https://www.vagaro.com/cl/VXWEpHv3~1omKTx~xtQeESAMnwYePSKhjcEL7L3wT~0=",
         note: "Growth factors applied straight after needling to amplify the repair response.",
       },
       {
         name: "With biphasic peel",
-        price: "$650",
+        price: "From $650",
+        bookingUrl: "https://www.vagaro.com/cl/zjUokQKEcZqZURFWwj91MR6iSSgIulBCojy-~~~JMak=",
         note: "A peel layered with the needling for renewal plus radiance.",
       },
     ],
@@ -1389,6 +1322,7 @@ export const services: Service[] = [
     slug: "hydrafacials/the-refinement",
     category: "Hydrafacials",
     priceDisplay: "$195",
+    bookingUrl: "https://www.vagaro.com/cl/ONFVFLDYaKDE-NBvFHKbCUio6JeE4GNPjhbQYKM4~t0=",
     priceBand: "low",
     downtime: "none",
     seriesSessions: 1,
@@ -1506,5 +1440,5 @@ export const bookingActions: BookingAction[] = [
 
 /** Booking link for a service: its own Vagaro URL when set, otherwise the general booking page. */
 export function serviceBookingUrl(service: { bookingUrl?: string }): string {
-  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : "https://www.vagaro.com/rinaesthetics";
+  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : practice.bookingUrl;
 }

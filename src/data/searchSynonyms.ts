@@ -101,12 +101,6 @@ export const searchSynonyms: Record<string, string[]> = {
   "vampire facial": ["injectables/ez-gel-prp"],
   "natural filler": ["injectables/ez-gel-prp"],
 
-  // Skinvive
-  skinvive: ["injectables/skinvive"],
-  "skin booster": ["injectables/skinvive"],
-  "hydration injection": ["injectables/skinvive"],
-  "glow injection": ["injectables/skinvive"],
-  "microdroplet": ["injectables/skinvive"],
 
   // Fractional treatment for lips
   "lip lines": ["devices/fractional-lips", "concerns/lips"],

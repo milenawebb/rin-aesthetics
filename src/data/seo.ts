@@ -67,7 +67,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/injectables/full-facial-balancing": {
     title: "Full Facial Balancing in Charlottesville, VA | RIN",
-    description: "Three to four syringes across the face to harmonize proportions rather than treat one area. $2,100. Prices, downtime and aftercare shown.",
+    description: "Three to four syringes across the face to harmonize proportions rather than treat one area. From $2,100. Prices, downtime and aftercare shown.",
   },
   "/injectables/biostimulators": {
     title: "Biostimulators in Charlottesville, VA | RIN",
@@ -80,10 +80,6 @@ export const pageMeta: Record<string, PageMeta> = {
   "/injectables/ez-gel-prp": {
     title: "EZ Gel and PRP in Charlottesville, VA | RIN",
     description: "A filler-like volumizer made from your own blood, used under the eyes, cheeks, lips and laugh lines. From $750. Prices and downtime shown.",
-  },
-  "/injectables/skinvive": {
-    title: "Skinvive in Charlottesville, VA | RIN",
-    description: "Micro-droplet hydration that improves smoothness and glow rather than adding volume. $600. Prices, downtime and aftercare shown before you book.",
   },
   "/devices/fractional-lips": {
     title: "Fractional Treatment for Lips in Charlottesville, VA | RIN",

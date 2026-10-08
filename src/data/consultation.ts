@@ -6,6 +6,7 @@ export const consultation = {
   name: "Consultation",
   fee: "$100",
   credit: "applied toward a completed service",
+  bookingUrl: "https://www.vagaro.com/cl/qOsbZw~R7GgpJHHtOtWjrw8gsG5OrBdwClG9sr5BVcc=",
 } as const;
 
 /** The short line shown beside every call to action that books a consultation. */
