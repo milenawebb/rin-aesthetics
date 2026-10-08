@@ -1,7 +1,7 @@
 import { consultation } from "@/data/consultation";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { navLinks, practice } from "@/data/site";
+import { navLinks } from "@/data/site";
 import { Logo } from "./Logo";
 import { drawerExtraLinks, menuGroups, navMenus, type NavMenu } from "./navMenus";
 import { FeatureLinkEl, menuLinkProps } from "./MegaPanel";

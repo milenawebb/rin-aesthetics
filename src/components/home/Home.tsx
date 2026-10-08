@@ -14,7 +14,7 @@ import { featured } from "@/data/gallery";
 import { ConcernRows } from "@/components/home/ConcernRows";
 import { concerns } from "@/data/concerns";
 import { heroDesktop, heroDesktopMedia, heroMobile, heroSizes, heroTablet, heroTabletMedia } from "@/lib/hero";
-import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
+import { GOOGLE_REVIEWS_URL } from "@/data/site";
 import { getServiceById, splitSlug } from "@/data/lookup";
 import {
   concernsSection,
