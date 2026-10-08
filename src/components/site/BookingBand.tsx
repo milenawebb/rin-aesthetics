@@ -51,7 +51,6 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             {treatment ? null : (
               <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
             )}
-            <CancellationNote className="mt-3" />
             </div>
             <a
               href={practice.smsHref}
@@ -60,6 +59,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
               Text {practice.phone}
             </a>
           </div>
+          <CancellationNote className="mt-3" />
           {treatment ? (
             <a
               href={consultation.bookingUrl}
