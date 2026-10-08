@@ -18,18 +18,18 @@
   font-family: "Manrope Fallback";
   font-weight: 200 250;
   src: local("Arial"), local("Helvetica"), local("Liberation Sans");
-  size-adjust: 90%;
-  ascent-override: 109.22%;
-  descent-override: 30.74%;
+  size-adjust: 97.3%;
+  ascent-override: 109.56%;
+  descent-override: 30.83%;
   line-gap-override: 0%;
 }
 @font-face {
   font-family: "Manrope Fallback";
   font-weight: 251 600;
   src: local("Arial"), local("Helvetica"), local("Liberation Sans");
-  size-adjust: 102.25%;
-  ascent-override: 104.25%;
-  descent-override: 29.34%;
+  size-adjust: 100.9%;
+  ascent-override: 105.65%;
+  descent-override: 29.73%;
   line-gap-override: 0%;
 }
 
