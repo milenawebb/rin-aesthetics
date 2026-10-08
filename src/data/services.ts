@@ -692,7 +692,6 @@ export const services: Service[] = [
     ],
   },
 
-  // ---------------------------------------------------------------- INJ-09
   {
     id: "DEV-01",
     name: "Non-ablative Fractional Treatment (Lips)",

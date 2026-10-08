@@ -59,7 +59,7 @@ export function SearchResults({
           Tell me what bothers you and I will tell you what will help.
         </p>
         <a
-          href={practice.bookingUrl}
+          href={consultation.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-label mt-5 inline-block rounded-[2px] bg-champagne px-6 py-3 text-ink"
