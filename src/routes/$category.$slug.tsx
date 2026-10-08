@@ -13,7 +13,6 @@ import { practice } from "@/data/site";
 import { redirects } from "@/data/redirects";
 import { ProductList } from "@/components/site/ProductList";
 import { products } from "@/data/products";
-import { serviceInPackage } from "@/data/shop";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
@@ -197,16 +196,6 @@ function ServicePage() {
                 </div>
               ))}
             </dl>
-          ) : null}
-          {serviceInPackage(service.name) ? (
-            <p className="mt-6 font-body text-[15px] font-light text-walnut">
-              <Link
-                to="/shop"
-                className="text-ink underline decoration-greige underline-offset-[6px] transition-colors hover:decoration-champagne"
-              >
-                Also available as part of a package
-              </Link>
-            </p>
           ) : null}
           {chips.length ? (
             <ul className="mt-8 flex flex-wrap gap-2">
