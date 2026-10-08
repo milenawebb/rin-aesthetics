@@ -2,6 +2,7 @@ import { providerName, providerCredential, providerCredentialTitle } from "@/dat
 import { consultation, consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
+import { CancellationNote } from "@/components/site/CancellationNote";
 import { resultsNotice } from "@/data/gallery";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
@@ -253,6 +254,7 @@ function ServicePage() {
             </a>
           </div>
           <p className="-mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
+          <CancellationNote className="-mt-5" />
           {firstConcern ? (
             <Link
               to="/concerns/$slug"
