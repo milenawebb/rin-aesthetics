@@ -16,9 +16,9 @@
 @font-face {
   font-family: "Manrope Fallback";
   src: local("Arial"), local("Helvetica"), local("Liberation Sans");
-  size-adjust: 100.2%;
-  ascent-override: 106.39%;
-  descent-override: 29.94%;
+  size-adjust: 102.25%;
+  ascent-override: 104.25%;
+  descent-override: 29.34%;
   line-gap-override: 0%;
 }
 
