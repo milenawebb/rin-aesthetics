@@ -57,8 +57,6 @@ export interface Service {
   displayName?: string;
   /** Label for this treatment's booking buttons when it differs from the default. */
   bookLabel?: string;
-  /** Sessions wording for this treatment's own page only; tables keep the computed label. */
-  sessionsDisplay?: string;
   /** Name the booking system lists this treatment under, while it differs from ours. */
   bookingListedAs?: string;
   tagline?: string;
