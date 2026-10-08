@@ -13,4 +13,6 @@ export const redirects: Record<string, string> = {
   "/concerns/thinning-hair": "/concerns/hair-thinning",
   // Shop renamed to Skincare.
   "/shop": "/skincare",
+  // Skinvive is not offered. Permanent, and part of the launch redirect map.
+  "/injectables/skinvive": "/treatments",
 };

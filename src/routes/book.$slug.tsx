@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getBookingAction } from "@/data/lookup";
 import { practice } from "@/data/site";
-import { consultationFeeLine } from "@/data/consultation";
+import { consultation, consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { PageShell } from "@/components/site/PageShell";
 
@@ -30,7 +30,7 @@ function ConsultationPage() {
           {consultationFeeLine}
         </p>
         <a
-          href={practice.bookingUrl}
+          href={consultation.bookingUrl}
           target="_blank"
           rel="noopener"
           className="btn-label mt-8 inline-flex w-full items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut md:w-auto"

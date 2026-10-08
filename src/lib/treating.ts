@@ -18,4 +18,4 @@ export const treatingWebpSrcSet = `${w480.url} 480w, ${w720.url} 720w, ${w936.ur
 export const treatingAlt = `${providerName} performing a facial injectable treatment in the practice treatment room.`;
 
 /** Facial injectable services that show the treating photo instead of the portrait. */
-export const TREATING_PHOTO_SERVICE_IDS = new Set(["INJ-01", "INJ-02", "INJ-03", "INJ-04", "INJ-05", "INJ-08", "INJ-09"]);
+export const TREATING_PHOTO_SERVICE_IDS = new Set(["INJ-01", "INJ-02", "INJ-03", "INJ-04", "INJ-05", "INJ-08"]);

@@ -1,5 +1,5 @@
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
-import { consultationFeeLine } from "@/data/consultation";
+import { consultation, consultationFeeLine } from "@/data/consultation";
 import { keepBrandTogether } from "@/data/lookup";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
@@ -43,7 +43,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10 [--band-btn-h:53px]">
             <div className="flex w-full flex-col md:w-auto">
             <a
-              href={treatment ? treatment.bookingUrl : practice.bookingUrl}
+              href={treatment ? treatment.bookingUrl : consultation.bookingUrl}
               target="_blank"
               rel="noopener"
               className="btn-label inline-flex w-full md:w-auto items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut"
@@ -63,7 +63,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           </div>
           {treatment ? (
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noopener"
               className="mt-6 inline-block font-body text-[15px] font-light text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink"

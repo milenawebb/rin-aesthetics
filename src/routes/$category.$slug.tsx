@@ -1,5 +1,5 @@
 import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
-import { consultationFeeLine } from "@/data/consultation";
+import { consultation, consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
@@ -142,6 +142,7 @@ function ServicePage() {
 
 
   const hasNotes = service.options.some((o) => o.note.trim().length > 0);
+  const hasOptionLinks = service.options.some((o) => o.bookingUrl);
   const basisLines = service.options.filter((o) => o.basis).map((o) => `${o.price} ${o.basis}`);
   const facts = [
     { label: "Price", value: basisLines[0] ?? service.priceDisplay },
@@ -243,7 +244,7 @@ function ServicePage() {
               {service.bookLabel ?? "Book this treatment"}
             </a>
             <a
-              href={practice.bookingUrl}
+              href={consultation.bookingUrl}
               target="_blank"
               rel="noopener"
               className="btn-label inline-flex items-center justify-center rounded-[2px] border border-greige px-8 py-4 text-ink transition-colors hover:border-ink"
@@ -313,6 +314,7 @@ function ServicePage() {
                 <th>Option</th>
                 <th>Price</th>
                 {hasNotes ? <th>Note</th> : null}
+                {hasOptionLinks ? <th>Book</th> : null}
               </tr>
             </thead>
             <tbody>
@@ -322,6 +324,20 @@ function ServicePage() {
                   <td className="font-body text-[17px] text-ink md:w-[15%] md:py-6">{o.price}</td>
                   {hasNotes ? (
                     <td className="font-body text-[15px] font-light leading-[1.7] text-walnut md:py-6">{o.note}</td>
+                  ) : null}
+                  {hasOptionLinks ? (
+                    <td className="md:py-6 md:pl-6 md:text-right md:whitespace-nowrap">
+                      {o.bookingUrl ? (
+                        <a
+                          href={o.bookingUrl}
+                          target="_blank"
+                          rel="noopener"
+                          className="font-body text-[15px] font-medium text-ink underline decoration-greige underline-offset-4 transition-colors hover:decoration-champagne"
+                        >
+                          Book {o.name.charAt(0).toLowerCase() + o.name.slice(1)}
+                        </a>
+                      ) : null}
+                    </td>
                   ) : null}
                 </tr>
               ))}

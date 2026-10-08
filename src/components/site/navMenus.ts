@@ -1,7 +1,6 @@
-import { consultationFeeLine } from "@/data/consultation";
+import { consultation, consultationFeeLine } from "@/data/consultation";
 import { concerns, type Concern } from "@/data/concerns";
 import { services } from "@/data/services";
-import { practice } from "@/data/site";
 
 export type MenuLink =
   | { label: string; to: "/concerns/$slug"; params: { slug: string } }
@@ -135,7 +134,7 @@ const concernsFeature: FeaturePanel = {
   eyebrow: "Not sure where to start",
   title: "Book a consultation",
   body: "Tell me what bothers you when you look in the mirror and I will tell you honestly what will help, what will not, and what it would take.",
-  link: { label: "Book a consultation", kind: "external", href: practice.bookingUrl },
+  link: { label: "Book a consultation", kind: "external", href: consultation.bookingUrl },
   note: consultationFeeLine,
 };
 
