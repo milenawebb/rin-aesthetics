@@ -267,7 +267,7 @@ function ServicePage() {
               rel="noopener"
               className="font-body text-[15px] text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink hover:decoration-champagne"
             >
-              Book your follow-up
+              Book a follow-up
             </a>
           ) : null}
           {firstConcern ? (

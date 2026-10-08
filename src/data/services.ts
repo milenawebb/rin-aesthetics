@@ -539,7 +539,7 @@ export const services: Service[] = [
     priceFact: "From $750 each",
     repeatWeeks: 26,
     concernTags: ["hair_loss"],
-    pairsWith: ["INJ-06"],
+    pairsWith: [],
     precareId: "PC-INJECT",
     aftercareId: "AC-PRP",
     shortDescription:
@@ -1021,7 +1021,7 @@ export const services: Service[] = [
     shortName: "SWT IPL",
     slug: "devices/ipl",
     category: "Device & Laser",
-    priceDisplay: "$250 spot, $450 full face or chest",
+    priceDisplay: "From $250 spot, $450 full face or chest",
     bookingUrl: "https://www.vagaro.com/cl/856gXqXuAqkIZi27wmXlrglQwl8vyDKCLTpBTakNO1c=",
     priceBand: "mid",
     downtime: "minimal",
