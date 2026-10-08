@@ -16,6 +16,8 @@ export interface ServiceOption {
   name: string;
   price: string;
   note: string;
+  /** Says what the price buys, e.g. "per treatment". When set, the treatment page fact and booking band list every option as "price basis". */
+  basis?: string;
 }
 
 export interface Faq {
@@ -870,9 +872,12 @@ export const services: Service[] = [
     precareId: "PC-LASER",
     aftercareId: "AC-LASER",
     shortDescription:
-      "Her signature treatment. Three Candela technologies combined in one customized session.",
+      "RIN's signature treatment. Three Candela technologies combined in one customized session.",
 
-    options: [],
+    options: [
+      { name: "Single treatment", price: "$900", note: "", basis: "per treatment" },
+      { name: "Course of three", price: "$2,700", note: "", basis: "for a course of three" },
+    ],
     eyebrow: signatureEyebrow,
     tagline: "Tone. Texture. Clarity. Luminosity.",
 

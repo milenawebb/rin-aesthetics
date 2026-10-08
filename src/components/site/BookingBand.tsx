@@ -8,7 +8,7 @@ import { practice } from "@/data/site";
 
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
-  treatment?: { name: string; price: string; bookingUrl: string; bookLabel?: string | undefined; listedAs?: string | undefined };
+  treatment?: { name: string; price: string; priceLines?: string[] | undefined; bookingUrl: string; bookLabel?: string | undefined; listedAs?: string | undefined };
   /** Page-specific copy for the consultation variant (concern pages). */
   heading?: string;
   line?: string;
@@ -28,7 +28,13 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           <h2 className="type-h2 text-ink">
             {heading}
           </h2>
-          {line ? (
+          {treatment?.priceLines ? (
+            <div className="mt-4">
+              {treatment.priceLines.map((l) => (
+                <p key={l} className="font-body text-[16px] font-light leading-[1.75] text-walnut">{l}</p>
+              ))}
+            </div>
+          ) : line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
           {treatment?.listedAs ? (
