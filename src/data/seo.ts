@@ -23,7 +23,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/": {
     title: "Medical Aesthetics in Charlottesville, VA | RIN",
-    description: `Injectables, lasers and skin treatments from ${providerCredential} ${providerName}. Prices shown on every treatment. Book a consultation in Charlottesville, Virginia.`,
+    description: `Injectables, lasers and skin treatments from ${providerCredential} ${providerName}. Prices on every treatment. Book a consultation in Charlottesville, VA.`,
   },
   "/treatments": {
     title: "All Treatments and Prices | RIN Aesthetic Practice",
@@ -39,7 +39,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   "/about": {
     title: `About ${providerName}, ${providerCredentialTitle} | RIN`,
-    description: `${providerName} is a ${providerCredential} with over a decade in healthcare, treating one person at a time and telling you plainly when the answer is to do less.`,
+    description: `${providerName} is a ${providerCredential} with over a decade in healthcare, treating one person at a time and saying plainly when the answer is to do less.`,
   },
   "/skincare": {
     title: "Medical-Grade Skincare | RIN Aesthetic Practice",

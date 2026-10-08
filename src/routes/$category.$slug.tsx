@@ -19,7 +19,7 @@ import { galleryForService } from "@/data/gallery";
 import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageGroups, seriesById, type CareGroup, type CareSeries } from "@/data/careEmails";
-import { keepBrandTogether } from "@/data/lookup";
+import { keepBrandTogether, listPrice } from "@/data/lookup";
 import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
@@ -595,7 +595,7 @@ function ServicePage() {
                       </span>
                     </span>
                     <span className="ml-auto whitespace-nowrap font-body text-[15px] font-light text-ink lg:ml-0 lg:whitespace-normal lg:text-right">
-                      {item.priceDisplay}
+                      {listPrice(item)}
                     </span>
                   </div>
                 </Link>
