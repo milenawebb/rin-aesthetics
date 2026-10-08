@@ -39,7 +39,7 @@ export interface Service {
   downtime: Downtime;
   seriesSessions: number;
   repeatWeeks: number | null;
-  concernTags: string[];
+  concernTags: string[]; 
   pairsWith: string[];
   precareId: string;
   aftercareId: string;
