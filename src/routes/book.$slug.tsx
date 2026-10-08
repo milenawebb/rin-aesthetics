@@ -1,17 +1,16 @@
 import { CancellationNote } from "@/components/site/CancellationNote";
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getBookingAction } from "@/data/lookup";
-import { practice } from "@/data/site";
 import { consultation, consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { PageShell } from "@/components/site/PageShell";
 
 // Booking actions are not pages, except the consultation: it states the fee before the Vagaro handoff.
-// Every other slug sends the visitor straight to Vagaro.
+// Every other slug sends the visitor to the treatments directory.
 export const Route = createFileRoute("/book/$slug")({
   loader: ({ params }) => {
     if (!getBookingAction(params.slug)) throw notFound();
-    if (params.slug !== "consultation") throw redirect({ href: practice.bookingUrl, statusCode: 302 });
+    if (params.slug !== "consultation") throw redirect({ to: "/treatments", statusCode: 302 });
     return null;
   },
   head: ({ params }) => {

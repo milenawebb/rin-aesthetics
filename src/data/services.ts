@@ -1,5 +1,4 @@
 import { consultation } from "@/data/consultation";
-import { practice } from "@/data/site";
 // Generated from rin-catalog-and-quiz.xlsx. Do not hand-edit structure.
 // Content fields left empty are filled in Stage 3. Any section whose field is
 // empty must render nothing at all, never an empty heading or a placeholder.
@@ -1415,5 +1414,5 @@ export const bookingActions: BookingAction[] = [
 
 /** Booking link for a service: its own Vagaro URL when set, otherwise the general booking page. */
 export function serviceBookingUrl(service: { bookingUrl?: string }): string {
-  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : practice.bookingUrl;
+  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : consultation.bookingUrl;
 }

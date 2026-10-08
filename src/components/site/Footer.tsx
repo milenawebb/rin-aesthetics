@@ -2,6 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { footerColumns, practice } from "@/data/site";
 import { Logo } from "./Logo";
 
+/** Policies render as a quiet row at the foot; the other groups form the column grid. */
+const linkColumns = footerColumns.filter((c) => c.title !== "Policies");
+const policyLinks = footerColumns.find((c) => c.title === "Policies")?.links ?? [];
+
 function InstagramIcon() {
   return (
     <svg
@@ -82,12 +86,12 @@ function ContactBlock() {
 
 function DesktopFooter() {
   return (
-    <div className="hidden md:grid md:grid-cols-2 md:gap-14 lg:grid-cols-[minmax(0,1.5fr)_repeat(4,minmax(0,1fr))] lg:gap-8">
-      <div className="md:col-span-2 lg:col-span-1">
+    <div className="hidden md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-14 lg:grid-cols-[max-content_repeat(3,minmax(0,1fr))] lg:gap-x-12">
+      <div className="md:col-span-3 lg:col-span-1">
         <ContactBlock />
       </div>
 
-      {footerColumns.map((column) => (
+      {linkColumns.map((column) => (
         <div key={column.title}>
           <div id={`footer-${column.title.toLowerCase()}`} className="label-xs text-champagne">{column.title}</div>
           <ul aria-labelledby={`footer-${column.title.toLowerCase()}`} className="mt-4 space-y-2.5 md:mt-6 md:space-y-3">
@@ -112,7 +116,7 @@ function DesktopFooter() {
 function MobileAccordion() {
   return (
     <div className="md:hidden mt-12">
-      {footerColumns.map((column) => (
+      {linkColumns.map((column) => (
         <details key={column.title} className="footer-accordion group">
           <summary className="footer-accordion-summary flex h-[60px] cursor-pointer items-center justify-between border-b border-[#3A3128] focus-visible:outline focus-visible:outline-1 focus-visible:outline-champagne focus-visible:outline-offset-0">
             <span className="font-body text-[13px] font-medium uppercase tracking-[0.16em] text-ivory">
@@ -154,6 +158,23 @@ export function Footer() {
         </div>
 
         <DesktopFooter />
+
+        {policyLinks.length > 0 && (
+          <nav aria-label="Policies" className="mt-12 md:mt-16">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              {policyLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="font-body text-[13px] font-light text-footer-credit transition-colors hover:text-ivory"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         <div className="mt-12 flex flex-col items-start gap-2 border-t border-walnut pt-8 md:mt-16 md:flex-row md:items-baseline md:justify-between md:gap-8">
           <p className="font-body text-[13px] font-light text-[#A39A8C]">
