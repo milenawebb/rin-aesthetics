@@ -17,8 +17,8 @@ import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as FindYourTreatmentRouteImport } from './routes/find-your-treatment'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SkincareRouteImport } from './routes/skincare'
 import { Route as CategorySlugRouteImport } from './routes/$category.$slug'
 import { Route as BookSlugRouteImport } from './routes/book.$slug'
 import { Route as ConcernsIndexRouteImport } from './routes/concerns.index'
@@ -67,14 +67,14 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ShopRoute = ShopRouteImport.update({
-  id: '/shop',
-  path: '/shop',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkincareRoute = SkincareRouteImport.update({
+  id: '/skincare',
+  path: '/skincare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategorySlugRoute = CategorySlugRouteImport.update({
@@ -122,8 +122,8 @@ export interface FileRoutesByFullPath {
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
-  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skincare': typeof SkincareRoute
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
@@ -140,8 +140,8 @@ export interface FileRoutesByTo {
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
-  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skincare': typeof SkincareRoute
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
@@ -160,8 +160,8 @@ export interface FileRoutesById {
   '/find-your-treatment': typeof FindYourTreatmentRoute
   '/results': typeof ResultsRoute
   '/robots.txt': typeof RobotsDottxtRoute
-  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skincare': typeof SkincareRoute
   '/$category/$slug': typeof CategorySlugRoute
   '/book/$slug': typeof BookSlugRoute
   '/concerns/$slug': typeof ConcernsSlugRoute
@@ -181,8 +181,8 @@ export interface FileRouteTypes {
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
-    | '/shop'
     | '/sitemap.xml'
+    | '/skincare'
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
@@ -199,8 +199,8 @@ export interface FileRouteTypes {
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
-    | '/shop'
     | '/sitemap.xml'
+    | '/skincare'
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
@@ -218,8 +218,8 @@ export interface FileRouteTypes {
     | '/find-your-treatment'
     | '/results'
     | '/robots.txt'
-    | '/shop'
     | '/sitemap.xml'
+    | '/skincare'
     | '/$category/$slug'
     | '/book/$slug'
     | '/concerns/$slug'
@@ -238,8 +238,8 @@ export interface RootRouteChildren {
   FindYourTreatmentRoute: typeof FindYourTreatmentRoute
   ResultsRoute: typeof ResultsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
-  ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SkincareRoute: typeof SkincareRoute
   CategorySlugRoute: typeof CategorySlugRoute
   BookSlugRoute: typeof BookSlugRoute
   PoliciesSlugRoute: typeof PoliciesSlugRoute
@@ -305,18 +305,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/shop': {
-      id: '/shop'
-      path: '/shop'
-      fullPath: '/shop'
-      preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skincare': {
+      id: '/skincare'
+      path: '/skincare'
+      fullPath: '/skincare'
+      preLoaderRoute: typeof SkincareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$category/$slug': {
@@ -394,8 +394,8 @@ const rootRouteChildren: RootRouteChildren = {
   FindYourTreatmentRoute: FindYourTreatmentRoute,
   ResultsRoute: ResultsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
-  ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SkincareRoute: SkincareRoute,
   CategorySlugRoute: CategorySlugRoute,
   BookSlugRoute: BookSlugRoute,
   PoliciesSlugRoute: PoliciesSlugRoute,
