@@ -150,7 +150,7 @@ function ServicePage() {
     { label: "Downtime", value: downtimeLabel[service.downtime] },
     { label: "Sessions", value: service.sessionsDisplay ?? sessionsLabel(service.seriesSessions) },
     ...(followUp
-      ? [{ label: "Follow-up", value: followUp.priceDisplay === "Free" ? "Complimentary" : followUp.priceDisplay }]
+      ? [{ label: "Follow-up", value: followUp.factLabel ?? (followUp.priceDisplay === "Free" ? "Complimentary" : followUp.priceDisplay) }]
       : []),
   ].filter((fact) => fact.value.trim().length > 0);
 
@@ -255,6 +255,19 @@ function ServicePage() {
           </div>
           <p className="-mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
           <CancellationNote className="-mt-5" />
+          {followUp?.terms ? (
+            <p className="-mt-5 font-body text-[14px] font-light leading-[1.6] text-walnut">{followUp.terms}</p>
+          ) : null}
+          {followUp?.bookingUrl ? (
+            <a
+              href={followUp.bookingUrl}
+              target="_blank"
+              rel="noopener"
+              className="font-body text-[15px] text-walnut underline decoration-greige underline-offset-4 transition-colors hover:text-ink hover:decoration-champagne"
+            >
+              Book your follow-up
+            </a>
+          ) : null}
           {firstConcern ? (
             <Link
               to="/concerns/$slug"
