@@ -53,7 +53,7 @@ function PolicyPage() {
   const { slug } = Route.useLoaderData();
   const policy = findPolicy(slug)!;
   const toc = policy.sections
-    .map((s, i) => ({ heading: s.heading, id: (s as { id?: string }).id ?? anchor(i) }))
+    .map((s, i) => ({ heading: s.heading, id: s.id ?? anchor(i) }))
     .filter((s): s is { heading: string; id: string } => Boolean(s.heading));
   const [active, setActive] = useState<string | undefined>(toc[0]?.id);
 
@@ -138,7 +138,7 @@ function PolicyPage() {
                   const hasBullets = (section.bullets?.length ?? 0) > 0;
                   if (!section.heading && !hasParas && !hasBullets) return null;
                   return (
-                    <section key={i} id={(section as { id?: string }).id ?? anchor(i)} className="scroll-mt-[120px] space-y-5">
+                    <section key={i} id={section.id ?? anchor(i)} className="scroll-mt-[120px] space-y-5">
                       {section.heading ? (
                         <h2 className="type-h3 text-ink">
                           {section.heading}

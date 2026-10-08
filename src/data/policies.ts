@@ -18,6 +18,7 @@
 // Still outstanding: the cookie list.
 
 export interface PolicySection {
+  id?: string;
   heading?: string;
   paragraphs?: string[];
   bullets?: string[];
