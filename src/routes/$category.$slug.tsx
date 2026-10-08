@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { seoHead } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
@@ -258,6 +259,7 @@ function ServicePage() {
               Book a consultation
             </a>
           </div>
+          <p className="-mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
           {firstConcern ? (
             <Link
               to="/concerns/$slug"

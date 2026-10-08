@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { keepBrandTogether } from "@/data/lookup";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 
@@ -15,7 +16,7 @@ type Props = {
 /** The one closing booking band, used on every page. */
 export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }: Props) {
   const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : (headingCopy ?? "Book a consultation");
-  const line = treatment ? treatment.price : (lineCopy ?? "Consultations are thorough and obligation-free.");
+  const line = treatment ? treatment.price : (lineCopy ?? null);
   return (
     <section className="booking-band border-t border-greige bg-ivory">
       <div className="site-container">
@@ -29,7 +30,8 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           {line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
-          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-center md:gap-x-10">
+          <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10 [--band-btn-h:53px]">
+            <div className="flex w-full flex-col md:w-auto">
             <a
               href={treatment ? treatment.bookingUrl : practice.bookingUrl}
               target="_blank"
@@ -38,9 +40,13 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             >
               {treatment ? "Book this treatment" : "Book a consultation"}
             </a>
+            {treatment ? null : (
+              <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
+            )}
+            </div>
             <a
               href={practice.phoneHref}
-              className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne"
+              className="font-body text-[16px] font-light text-ink transition-colors hover:text-champagne md:flex md:h-[var(--band-btn-h)] md:items-center"
             >
               {practice.phone}
             </a>
@@ -54,6 +60,9 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
             >
               or book a consultation first
             </a>
+          ) : null}
+          {treatment ? (
+            <p className="mt-2 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
           ) : null}
         </div>
         <picture className="block md:justify-self-end lg:col-span-4 lg:col-start-9">

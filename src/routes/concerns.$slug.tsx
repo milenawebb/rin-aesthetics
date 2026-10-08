@@ -239,7 +239,7 @@ function ConcernPage() {
 
       <BookingBand
         heading="Not sure which of these is right?"
-        line="Jyl will look at your skin and tell you which of these is worth doing, and which is not. The consultation fee goes toward whatever you book."
+        line="Jyl will look at your skin and tell you which of these is worth doing, and which is not."
       />
     </PageShell>
   );

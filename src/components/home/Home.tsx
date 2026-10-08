@@ -1,3 +1,4 @@
+import { consultationFeeLine } from "@/data/consultation";
 import { portraitColor, portraitSrc, portraitJpgSrcSet, portraitWebpSrcSet } from "@/lib/portrait";
 import { BookingBand } from "@/components/site/BookingBand";
 import { resultsNotice } from "@/data/gallery";
@@ -101,6 +102,7 @@ export function Home() {
               Find your treatment
             </Link>
           </div>
+          <p className="mt-4 font-body text-[13px] font-light leading-[1.6] text-walnut md:text-ivory/80">{consultationFeeLine}</p>
         </div>
       </section>
 

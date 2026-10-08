@@ -1,3 +1,4 @@
+import { consultation } from "@/data/consultation";
 // Generated from rin-catalog-and-quiz.xlsx. Do not hand-edit structure.
 // Content fields left empty are filled in Stage 3. Any section whose field is
 // empty must render nothing at all, never an empty heading or a placeholder.
@@ -1463,8 +1464,8 @@ export const bookingActions: BookingAction[] = [
     id: "INJ-06",
     name: "Consultation",
     slug: "book/consultation",
-    priceDisplay: "$100",
-    shortDescription: "A full assessment with the provider. The fee goes toward your completed service.",
+    priceDisplay: consultation.fee,
+    shortDescription: `A full assessment with the provider. The fee is ${consultation.credit}.`,
   },
   {
     id: "INJ-10",
