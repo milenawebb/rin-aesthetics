@@ -1,5 +1,6 @@
 import { seoHead } from "@/lib/seo-head";
 import { createFileRoute } from "@tanstack/react-router";
+import { businessJsonLd } from "@/lib/business-schema";
 import { PageShell } from "@/components/site/PageShell";
 import { Home } from "@/components/home/Home";
 import { heroDesktop, heroDesktopMedia, heroMobile, heroMobileMedia, heroSizes, heroTablet, heroTabletMedia } from "@/lib/hero";
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/")({
       { rel: "preload", as: "image", type: "image/webp", imageSrcSet: heroTablet.webp, imageSizes: heroSizes, media: heroTabletMedia, fetchPriority: "high" },
       { rel: "preload", as: "image", type: "image/webp", imageSrcSet: heroDesktop.webp, imageSizes: heroSizes, media: heroDesktopMedia, fetchPriority: "high" },
     ],
+    scripts: [businessJsonLd],
   }),
   component: Index,
 });

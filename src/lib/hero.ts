@@ -23,6 +23,7 @@ export const heroMobileMedia = "(max-width: 767px)";
 export const heroDesktop = {
   webp: `${d1280w.url} 1280w, ${d1746w.url} 1746w`,
   jpg: `${d1280j.url} 1280w, ${d1746j.url} 1746w`,
+  src: d1746j.url,
 };
 export const heroTablet = {
   webp: `${t900w.url} 900w, ${t1352w.url} 1352w`,

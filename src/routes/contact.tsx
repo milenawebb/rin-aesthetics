@@ -1,4 +1,5 @@
-import { seoHead, SITE_URL } from "@/lib/seo-head";
+import { seoHead } from "@/lib/seo-head";
+import { businessJsonLd } from "@/lib/business-schema";
 import { BookingBand } from "@/components/site/BookingBand";
 import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -16,24 +17,6 @@ import storefrontWebp from "@/assets/rin-storefront.webp.asset.json";
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(practice.address)}`;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "RIN Aesthetic Practice",
-  url: SITE_URL,
-  telephone: "+1-434-217-5300",
-  email: practice.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "340 Towncenter Ln, Suite 200B",
-    addressLocality: "Charlottesville",
-    addressRegion: "VA",
-    postalCode: "22911",
-    addressCountry: "US",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 38.1258994, longitude: -78.4453277 },
-  sameAs: [practice.instagram],
-};
 
 const seo = seoHead("/contact");
 
@@ -41,7 +24,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: seo.meta,
     links: seo.links,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(schema) }],
+    scripts: [businessJsonLd],
   }),
   component: ContactPage,
 });

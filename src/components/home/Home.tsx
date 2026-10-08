@@ -77,14 +77,12 @@ export function Home() {
           }}
         />
         <div className="site-container hero-tablet-panel relative z-10 py-12 md:flex md:flex-col md:justify-center md:py-0 md:text-left">
-          <h1 className="type-h1 text-ink md:hidden">
-            Medical aesthetics in Charlottesville, VA
-          </h1>
+          {/* One H1: inline and static on phones, two masked lines from tablet up. */}
           <MaskedLines
             as="h1"
-            lines={["Medical aesthetics", "in\u00a0Charlottesville, VA"]}
+            lines={["Medical aesthetics ", "in\u00a0Charlottesville, VA"]}
             delay={200}
-            className="type-h1 hero-tablet-heading hidden text-ivory md:block"
+            className="type-h1 hero-h1 hero-tablet-heading text-ink md:text-ivory"
           />
           <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-4">
             <a
@@ -225,7 +223,7 @@ export function Home() {
           </div>
           <div className="col-span-12 self-center px-6 lg:col-span-6 lg:col-start-7 lg:px-0">
             <MaskedLines
-              as="h3"
+              as="h2"
               lines={[provider.name]}
               className="type-h2 text-ink"
             />
