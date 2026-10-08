@@ -104,7 +104,7 @@ function ShopPage() {
                   <a
                     href={brand.storeUrl}
                     target="_blank"
-                    rel="noopener"
+                    rel="sponsored noopener"
                     className="font-body text-[15px] font-medium text-ink underline decoration-champagne underline-offset-4 transition-colors hover:text-walnut"
                   >
                     Shop {brand.name}

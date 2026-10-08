@@ -23,7 +23,7 @@ export function ProductList({ items, showBrand = true }: { items: Product[]; sho
         return (
           <li key={p.id} className="border-t border-greige">
             {url ? (
-              <a href={url} target="_blank" rel="noopener" className="group block hover:bg-white">
+              <a href={url} target="_blank" rel="sponsored noopener" className="group block hover:bg-white">
                 {body}
               </a>
             ) : (
