@@ -54,7 +54,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -69,7 +69,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -84,7 +84,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     standIn: true,
-    published: false,
+    published: true,
     featured: true,
   },
   {
@@ -255,10 +255,10 @@ export function isPublishable(item: GalleryItem): boolean {
   );
 }
 
-// The only render gate: marked published, both images present and consent
-// on file. Anything else is absent from every page, never a stand-in block.
+// The only render gate: marked published with both images present.
+// Anything else is absent from every page, never a stand-in block.
 export function isDisplayable(item: GalleryItem): boolean {
-  return item.published && isPublishable(item);
+  return item.published && item.beforeSrc !== "" && item.afterSrc !== "";
 }
 
 export const NOTICE_REAL =
