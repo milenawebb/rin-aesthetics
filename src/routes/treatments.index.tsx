@@ -8,7 +8,7 @@ import { MaskedLines } from "@/components/site/MaskedLines";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
 import { services, serviceBookingUrl } from "@/data/services";
-import { downtimeLabel, priceValue, splitSlug } from "@/data/lookup";
+import { downtimeLabel, listPrice, priceValue, splitSlug } from "@/data/lookup";
 
 
 const categoryOrder = ["Injectables", "Device & Laser", "Skin Treatments", "Hydrafacials"];
@@ -102,7 +102,7 @@ function TreatmentsIndex() {
                       {item.shortDescription}
                     </p>
                     <div className="mt-2 grid grid-cols-2 gap-4 md:contents">
-                      <Fact label="Price" value={item.priceDisplay} />
+                      <Fact label="Price" value={listPrice(item)} />
                       <Fact label="Downtime" value={downtimeLabel[item.downtime]} />
                     </div>
                     <div role="cell" className="md:text-right">
