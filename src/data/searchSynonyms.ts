@@ -75,6 +75,16 @@ export const searchSynonyms: Record<string, string[]> = {
   // Biostimulators
   sculptra: ["injectables/biostimulators"],
   radiesse: ["injectables/biostimulators"],
+  // Neck Rejuvenation
+  "neck rejuvenation": ["injectables/neck-rejuvenation"],
+  "neck lines": ["injectables/neck-rejuvenation"],
+  "necklace lines": ["injectables/neck-rejuvenation"],
+  "crepey neck": ["injectables/neck-rejuvenation"],
+  "tech neck": ["injectables/neck-rejuvenation"],
+  "neck tightening": ["injectables/neck-rejuvenation"],
+  "hyperdilute radiesse": ["injectables/neck-rejuvenation"],
+  "radiesse neck": ["injectables/neck-rejuvenation"],
+  decolletage: ["injectables/neck-rejuvenation"],
   biostimulator: ["injectables/biostimulators"],
   biostimulators: ["injectables/biostimulators"],
   "collagen stimulator": ["injectables/biostimulators"],

@@ -72,6 +72,11 @@ export interface Service {
   technologiesIntro?: string;
   technologies?: { badge: string; name: string; description: string; bullets: string[] }[];
   howJylApproachesHeading?: string;
+  /** Further care series shown after the main one, for treatments delivered by more than one method. */
+  extraPrecareIds?: string[];
+  extraAftercareIds?: string[];
+  /** Short headed subsections describing each way the treatment is delivered. */
+  approaches?: { heading: string; body: string }[];
 }
 
 export const services: Service[] = [
@@ -464,6 +469,57 @@ export const services: Service[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------- INJ-09
+  {
+    id: "INJ-09",
+    name: "Full Neck Rejuvenation",
+    shortName: "Neck Rejuvenation",
+    slug: "injectables/neck-rejuvenation",
+    category: "Injectables",
+    priceDisplay: "From $900",
+    bookingUrl: "https://www.vagaro.com/cl/hAe~J8K0xU0FeHSxAt1HoGj5H2iT0WzMt8TGdqGKdcA=",
+    priceBand: "high",
+    downtime: "days",
+    seriesSessions: 1,
+    sessionsDisplay: "Varies by approach",
+    repeatWeeks: null,
+    concernTags: ["laxity", "fine_lines", "texture"],
+    pairsWith: ["DEV-05", "INJ-05", "SKN-02"],
+    precareId: "PC-INJECT",
+    aftercareId: "AC-BIOSTIM",
+    extraPrecareIds: ["PC-LASER"],
+    extraAftercareIds: ["AC-RESURFACE"],
+    shortDescription:
+      "Fractional laser or a hyperdilute biostimulator, used to firm and smooth the neck.",
+    options: [],
+    intro: [
+      "The neck ages differently from the face and is usually treated later. The skin is thinner, it has less support beneath it, and it folds horizontally every time you look down. Sun reaches it at a different angle, so pigment and rough texture often show there before anywhere else.",
+      "RIN treats the neck two ways. Which one suits you depends on what is actually bothering you, and that is what the consultation is for.",
+    ],
+    approaches: [
+      {
+        heading: "With fractional laser",
+        body: "The Candela 1940 and 1550 fractional laser heats narrow columns of skin and leaves the skin between them untouched, so the area repairs from the inside out. On the neck the settings are more conservative than on the face, because the skin there is thinner and takes longer to recover.",
+      },
+      {
+        heading: "With a hyperdilute biostimulator",
+        body: "Radiesse is a calcium hydroxylapatite product. Diluted well past the concentration used to add volume, and placed just beneath the skin, it stops behaving like a filler and works as a stimulant instead, prompting the skin to build its own collagen over the following weeks. It treats skin quality rather than shape, which is usually what the neck needs.",
+      },
+    ],
+    helpsWith: [
+      "Horizontal lines across the neck",
+      "Crepey, thinning texture",
+      "Loss of firmness along the jawline and under the chin",
+      "Sun damage carried down onto the chest",
+    ],
+    whoItsFor: [],
+    notFor: "",
+    steps: [],
+    howJylApproaches: "",
+    faqs: [],
+  },
+
 
   // ---------------------------------------------------------------- INJ-07
   {

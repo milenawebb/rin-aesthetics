@@ -73,6 +73,10 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Biostimulators in Charlottesville, VA | RIN",
     description: "Stimulates your own collagen gradually over a series, for subtle long-lasting change. From $750. Prices, downtime and aftercare shown before you book.",
   },
+  "/injectables/neck-rejuvenation": {
+    title: "Neck Rejuvenation in Charlottesville | RIN Aesthetic Practice",
+    description: "Fractional laser or a hyperdilute biostimulator for horizontal lines, crepey texture and loss of firmness on the neck. From $900 at RIN Aesthetic Practice in Charlottesville.",
+  },
   "/injectables/prp-hair-restoration": {
     title: "PRP Hair Restoration in Charlottesville, VA | RIN",
     description: "Uses your own platelets to stimulate growth in thinning areas. Starts with a candidacy consult. From $750. Prices and downtime shown.",

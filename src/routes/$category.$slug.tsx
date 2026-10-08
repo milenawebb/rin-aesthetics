@@ -134,8 +134,8 @@ function ServicePage() {
     .find((b) => b !== undefined);
   const results = galleryForService(service.id);
 
-  const pre = careLines(seriesById(service.precareId));
-  const after = careLines(seriesById(service.aftercareId));
+  const pre = [service.precareId, ...(service.extraPrecareIds ?? [])].flatMap((id) => careLines(seriesById(id)));
+  const after = [service.aftercareId, ...(service.extraAftercareIds ?? [])].flatMap((id) => careLines(seriesById(id)));
   const careColumns = [
     { heading: "Before your visit", items: pre },
     { heading: "After your treatment", items: after },
@@ -290,6 +290,19 @@ function ServicePage() {
               >
                 <p className="label-xs text-ink">{promise.label}</p>
                 <p className="mt-3 font-body text-[15px] font-light leading-[1.7] text-walnut">{promise.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {service.approaches && service.approaches.length ? (
+        <section className={section}>
+          <div className="grid gap-14 md:grid-cols-2 md:gap-20">
+            {service.approaches.map((a) => (
+              <div key={a.heading}>
+                <h2 className={h2}>{a.heading}</h2>
+                <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">{a.body}</p>
               </div>
             ))}
           </div>
