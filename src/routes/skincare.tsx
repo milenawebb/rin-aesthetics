@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ProductList } from "@/components/site/ProductList";
-import { brands, products } from "@/data/products";
+import { brands, products, skincareIntro } from "@/data/products";
 
 
 const seo = seoHead("/skincare");
@@ -26,6 +26,11 @@ function ShopPage() {
         <h1 className="type-h1 text-ink">
           Skincare
         </h1>
+        <div className="measure mt-6 space-y-4">
+          {skincareIntro.map((t) => (
+            <p key={t} className="font-body text-[17px] font-light leading-[1.75] text-walnut">{t}</p>
+          ))}
+        </div>
       </section>
 
       {Object.values(brands).map((brand) => {
@@ -54,9 +59,18 @@ function ShopPage() {
                 {brand.note}
               </p>
             ) : null}
-            <div className="mt-10">
-              <ProductList items={items} showBrand={false} />
-            </div>
+            {brand.groups.map((g) => {
+              const groupItems = g.ids
+                .map((id) => items.find((p) => p.id === id))
+                .filter((p): p is (typeof items)[number] => Boolean(p));
+              if (!groupItems.length) return null;
+              return (
+                <div key={g.name} className="mt-12">
+                  <h3 className="label-xs mb-4 text-olive-light">{g.name}</h3>
+                  <ProductList items={groupItems} showBrand={false} />
+                </div>
+              );
+            })}
           </section>
         );
       })}
