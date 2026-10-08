@@ -135,7 +135,7 @@ export function Header() {
               rel="noreferrer"
               aria-hidden={!pinned}
               tabIndex={pinned ? undefined : -1}
-              className={`btn-label inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] bg-champagne px-5 text-ink ${pinned ? "" : "invisible"}`}
+              className={`btn-label inline-flex min-h-11 w-[118px] items-center justify-center rounded-[2px] bg-champagne text-ink ${pinned ? "" : "invisible"}`}
             >
               Book now
             </a>
