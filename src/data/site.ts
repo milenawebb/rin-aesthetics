@@ -16,6 +16,8 @@ export const practice = {
   /** Used only by the single Call fallback on Contact. Every other number links to smsHref. */
   phoneHref: "tel:+14342175300",
   smsHref: "sms:+14342175300",
+  /** Visible opening hours. Structured data carries only the fixed days, in business-schema.ts. */
+  hoursLines: ["Wednesday, Thursday and Friday, 10am to 5pm", "Select Mondays and Saturdays, by appointment"],
   email: "info@rinaestheticsva.com",
   address: "340 Towncenter Ln, Suite 200B, Charlottesville, VA 22911",
   addressLines: ["340 Towncenter Ln, Suite 200B", "Charlottesville, VA 22911"],

@@ -234,6 +234,12 @@ function ContactPage() {
           <p className="mt-6 max-w-[68ch] text-lg font-normal text-champagne-light">
             Please use the entrance that faces the Sherwin Williams store.
           </p>
+          <h3 className={`${label} mt-10`}>Hours</h3>
+          <p className="mt-4 text-lg font-light leading-relaxed text-ink">
+            {practice.hoursLines.map((l) => (
+              <span key={l} className="block">{l}</span>
+            ))}
+          </p>
           <a
             href={directionsUrl}
             target="_blank"

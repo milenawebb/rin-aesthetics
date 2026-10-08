@@ -39,6 +39,14 @@ export const businessSchema = {
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 38.1258994, longitude: -78.4453277 },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+      opens: "10:00",
+      closes: "17:00",
+    },
+  ],
   priceRange: priceRange(),
   areaServed: { "@type": "City", name: "Charlottesville, Virginia" },
   image: absolute(heroDesktop.src),

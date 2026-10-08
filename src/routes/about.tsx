@@ -1,5 +1,5 @@
 import { EarlyImage } from "@/components/site/EarlyImage";
-import { providerName, providerCredential, providerCredentialTitle } from "@/data/provider";
+import { providerName, providerCredential, providerCredentialTitle, medicalDirectorName, medicalDirectorCredential } from "@/data/provider";
 import { seoHead, SITE_URL } from "@/lib/seo-head";
 import { BookingBand } from "@/components/site/BookingBand";
 import { createFileRoute } from "@tanstack/react-router";
@@ -269,9 +269,14 @@ function AboutPage() {
           <div className={`min-w-0 ${wrap}`}>
         <Reveal className="col-span-full rounded-[2px] border border-greige bg-white p-8">
           <p className="eyebrow text-olive-light">Medical oversight</p>
+          {medicalDirectorCredential ? (
+            <p className="mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
+              {medicalDirectorName}, {medicalDirectorCredential}
+            </p>
+          ) : null}
           <p className="pretty mt-6 font-body text-[15px] font-light leading-[26px] text-walnut">
             All clinical providers at RIN Aesthetic Practice operate under the oversight of our
-            Medical Director in accordance with Virginia requirements. To contact our Medical
+            Medical Director, {medicalDirectorName}, in accordance with Virginia requirements. To contact our Medical
             Director for any reason, please email our office at{" "}
             <a
               href={`mailto:${practice.email}`}
