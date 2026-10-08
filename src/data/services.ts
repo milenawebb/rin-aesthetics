@@ -3,6 +3,13 @@ import { consultation } from "@/data/consultation";
 // Content fields left empty are filled in Stage 3. Any section whose field is
 // empty must render nothing at all, never an empty heading or a placeholder.
 
+// The signature treatment's names. Every surface renders from one of these.
+export const signatureEyebrow = "A RIN Signature Treatment";
+export const signatureName = "The Skin Refinery by Candela\u2122";
+export const signatureShortName = "The Skin Refinery";
+// Delete this (and its one use in DEV-03) once Vagaro lists the treatment under our name.
+export const signatureBookingName = "The Candela Light & Bright Experience";
+
 export type Downtime = "none" | "minimal" | "days";
 
 export interface ServiceOption {
@@ -44,6 +51,12 @@ export interface Service {
   howJylApproaches: string;
   faqs: Faq[];
   eyebrow?: string;
+  /** Full display name for the H1 and homepage card only (may carry a trademark). */
+  displayName?: string;
+  /** Label for this treatment's booking buttons when it differs from the default. */
+  bookLabel?: string;
+  /** Name the booking system lists this treatment under, while it differs from ours. */
+  bookingListedAs?: string;
   tagline?: string;
   promises?: { label: string; text: string }[];
   technologiesHeading?: string;
@@ -840,8 +853,11 @@ export const services: Service[] = [
   },
   {
     id: "DEV-03",
-    name: "The Skin Refinery by RIN",
-    shortName: "The Skin Refinery by RIN",
+    name: signatureShortName,
+    shortName: signatureShortName,
+    displayName: signatureName,
+    bookLabel: `Book ${signatureShortName}`,
+    bookingListedAs: signatureBookingName,
     slug: "devices/skin-refinery",
     category: "Device & Laser",
     priceDisplay: "$900",
@@ -857,7 +873,7 @@ export const services: Service[] = [
       "Her signature treatment. Three Candela technologies combined in one customized session.",
 
     options: [],
-    eyebrow: "RIN SIGNATURE TREATMENT",
+    eyebrow: signatureEyebrow,
     tagline: "Tone. Texture. Clarity. Luminosity.",
 
     intro: [

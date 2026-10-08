@@ -27,11 +27,10 @@ import {
 
 const signatureService = getServiceById(signature.serviceId);
 const signaturePath = signatureService ? splitSlug(signatureService.slug) : null;
-const signatureLines = signatureService
-  ? signatureService.name.endsWith(" by RIN")
-    ? [signatureService.name.slice(0, -7), "by\u00a0RIN"]
-    : [signatureService.name]
-  : [];
+const signatureFull = signatureService ? (signatureService.displayName ?? signatureService.name) : "";
+const signatureLines = signatureFull.includes(" by ")
+  ? [signatureFull.slice(0, signatureFull.indexOf(" by ")), `by\u00a0${signatureFull.slice(signatureFull.indexOf(" by ") + 4)}`]
+  : signatureFull ? [signatureFull] : [];
 const featuredResults = featured();
 
 

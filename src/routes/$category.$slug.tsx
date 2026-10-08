@@ -179,7 +179,7 @@ function ServicePage() {
         <div className={`site-container pt-[56px] md:pt-[96px] ${media ? "pb-[56px] md:pb-[80px]" : "pb-0"}`}>
           {eyebrow ? <Label>{eyebrow}</Label> : null}
           <h1 className="type-h1 mt-6 max-w-[22ch] text-ink">
-            <span>{keepBrandTogether(service.name)}</span>
+            <span>{keepBrandTogether(service.displayName ?? service.name)}</span>
           </h1>
           {subtitle ? (
             <p className="measure mt-5 font-body text-[20px] font-extralight leading-[1.4] text-walnut">
@@ -195,6 +195,9 @@ function ServicePage() {
                 </div>
               ))}
             </dl>
+          ) : null}
+          {service.bookingListedAs ? (
+            <p className="mt-4 font-body text-[15px] font-light text-walnut">Listed in booking as {service.bookingListedAs}</p>
           ) : null}
           {serviceInPackage(service.name) ? (
             <p className="mt-6 font-body text-[15px] font-light text-walnut">
@@ -249,7 +252,7 @@ function ServicePage() {
         <div className="flex flex-col items-start gap-6">
           <div className="flex flex-col gap-3 sm:flex-row">
             <a href={serviceBookingUrl(service)} target="_blank" rel="noopener" className={btnPrimary}>
-              Book this treatment
+              {service.bookLabel ?? "Book this treatment"}
             </a>
             <a
               href={practice.bookingUrl}
@@ -563,7 +566,7 @@ function ServicePage() {
         </section>
       ) : null}
 
-      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, bookingUrl: serviceBookingUrl(service) }} />
+      <BookingBand treatment={{ name: service.name, price: service.priceDisplay, bookingUrl: serviceBookingUrl(service), bookLabel: service.bookLabel, listedAs: service.bookingListedAs }} />
     </PageShell>
   );
 }

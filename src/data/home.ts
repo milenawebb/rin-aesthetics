@@ -42,9 +42,9 @@ export const resultsSection = {
 } as const;
 
 export const signature = {
-  label: "Signature",
+  label: "A RIN Signature Treatment",
   serviceId: "DEV-03",
-  cta: "About The Skin Refinery by RIN",
+  cta: "About The Skin Refinery",
   body: [
     "Our signature treatment, exclusive to RIN. Three Candela technologies in one customized session, layered in the order your skin needs rather than sold as a fixed package.",
     "One appointment covers what usually takes three. Jyl decides the mix after looking at your skin, so two people paying the same price rarely leave with the same treatment.",

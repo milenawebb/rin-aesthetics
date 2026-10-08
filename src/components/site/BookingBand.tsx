@@ -8,7 +8,7 @@ import { practice } from "@/data/site";
 
 type Props = {
   /** Treatment-specific variant: pass the service name, price and booking URL. */
-  treatment?: { name: string; price: string; bookingUrl: string };
+  treatment?: { name: string; price: string; bookingUrl: string; bookLabel?: string | undefined; listedAs?: string | undefined };
   /** Page-specific copy for the consultation variant (concern pages). */
   heading?: string;
   line?: string;
@@ -16,7 +16,7 @@ type Props = {
 
 /** The one closing booking band, used on every page. */
 export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }: Props) {
-  const heading = treatment ? `Book your ${keepBrandTogether(treatment.name)}` : (headingCopy ?? "Book a consultation");
+  const heading = treatment ? (treatment.bookLabel ?? `Book your ${keepBrandTogether(treatment.name)}`) : (headingCopy ?? "Book a consultation");
   const line = treatment ? treatment.price : (lineCopy ?? null);
   return (
     <section className="booking-band border-t border-greige bg-ivory">
@@ -31,6 +31,9 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
           {line ? (
             <p className="measure mt-4 font-body text-[16px] font-light leading-[1.75] text-walnut">{line}</p>
           ) : null}
+          {treatment?.listedAs ? (
+            <p className="mt-2 font-body text-[14px] font-light leading-[1.6] text-walnut">Listed in booking as {treatment.listedAs}</p>
+          ) : null}
           <div className="mt-8 flex flex-col items-start gap-y-6 md:flex-row md:flex-wrap md:items-start md:gap-x-10 [--band-btn-h:53px]">
             <div className="flex w-full flex-col md:w-auto">
             <a
@@ -39,7 +42,7 @@ export function BookingBand({ treatment, heading: headingCopy, line: lineCopy }:
               rel="noopener"
               className="btn-label inline-flex w-full md:w-auto items-center justify-center rounded-[2px] bg-ink px-8 py-4 text-ivory transition-colors hover:bg-walnut"
             >
-              {treatment ? "Book this treatment" : "Book a consultation"}
+              {treatment ? (treatment.bookLabel ?? "Book this treatment") : "Book a consultation"}
             </a>
             {treatment ? null : (
               <p className="mt-3 font-body text-[14px] font-light leading-[1.6] text-walnut">{consultationFeeLine}</p>
