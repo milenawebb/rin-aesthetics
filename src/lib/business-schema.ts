@@ -17,8 +17,7 @@ function priceRange(): string | undefined {
     }
   }
   if (amounts.length === 0) return undefined;
-  const fmt = (n: number) => `$${n.toLocaleString("en-US")}`;
-  return `${fmt(Math.min(...amounts))} to ${fmt(Math.max(...amounts))}`;
+  return `$${Math.min(...amounts)}-$${Math.max(...amounts)}`;
 }
 
 const absolute = (url: string) => (url.startsWith("http") ? url : `${SITE_URL}${url}`);
