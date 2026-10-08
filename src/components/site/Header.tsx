@@ -170,10 +170,14 @@ export function Header() {
  */
 function useCompactHeader(menuOpen: boolean) {
   const [mode, setMode] = useState<"top" | "pinned" | "hidden">("top");
+  const menuRef = useRef(menuOpen);
+  menuRef.current = menuOpen;
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1023px)");
     let last = window.scrollY;
     const onScroll = () => {
+      // The open menu locks page scrolling; keep the header as it was until it closes.
+      if (menuRef.current) return;
       const y = window.scrollY;
       if (!mq.matches || y <= 0) setMode("top");
       else if (y < last) setMode("pinned");
