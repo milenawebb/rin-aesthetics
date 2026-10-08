@@ -196,6 +196,9 @@ function ServicePage() {
               ))}
             </dl>
           ) : null}
+          {service.bookingListedAs ? (
+            <p className="mt-4 font-body text-[15px] font-light text-walnut">Listed in booking as {service.bookingListedAs}</p>
+          ) : null}
           {serviceInPackage(service.name) ? (
             <p className="mt-6 font-body text-[15px] font-light text-walnut">
               <Link
