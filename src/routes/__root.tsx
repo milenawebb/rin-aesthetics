@@ -95,11 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#14130F" },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      // Self-hosted Manrope (Latin, weights 200 to 600 in one variable file). Preloaded because
+      // every above-the-fold word uses it; the @font-face lives in src/styles.css.
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap",
+        rel: "preload",
+        href: "/fonts/manrope-latin-200-600.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
       {
         rel: "stylesheet",
