@@ -1415,5 +1415,5 @@ export const bookingActions: BookingAction[] = [
 
 /** Booking link for a service: its own Vagaro URL when set, otherwise the general booking page. */
 export function serviceBookingUrl(service: { bookingUrl?: string }): string {
-  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : practice.bookingUrl;
+  return service.bookingUrl && service.bookingUrl.trim() ? service.bookingUrl : consultation.bookingUrl;
 }
