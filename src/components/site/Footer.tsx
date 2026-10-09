@@ -164,7 +164,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-6 border-t border-walnut pt-12 md:mt-16 md:pt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           {policyLinks.length > 0 && (
             <nav aria-label="Policies">
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-2 md:flex md:flex-wrap">
+              <ul className="grid grid-cols-3 gap-x-4 gap-y-2 md:flex md:flex-wrap md:gap-x-6 lg:gap-x-5">
                 {policyLinks.map((link) => (
                   <li key={link.to}>
                     <Link
