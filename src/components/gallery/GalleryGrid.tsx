@@ -67,11 +67,11 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
   };
 
   // One or two results center at desktop instead of leaving empty grid cells:
-  // one spans the middle half of a 4 column track from tablet up, two each span 3 of 8.
+  // one spans the middle half of a 4 column track on tablet and, at desktop, takes the exact width of one of the pair (3 of 8 columns plus their 2 gaps), two each span 3 of 8.
   const count = items.length;
   const layout =
     count === 1
-      ? { grid: "sm:grid-cols-4", item: () => "sm:col-span-2 sm:col-start-2" }
+      ? { grid: "sm:grid-cols-4 lg:flex lg:justify-center", item: () => "sm:col-span-2 sm:col-start-2 lg:w-[calc((100%-14rem)*3/8+4rem)]" }
       : count === 2
         ? { grid: "lg:grid-cols-8", item: (i: number) => (i === 0 ? "lg:col-span-3 lg:col-start-2" : "lg:col-span-3") }
         : { grid: "lg:grid-cols-3", item: () => "" };
