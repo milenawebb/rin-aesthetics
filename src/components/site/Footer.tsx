@@ -44,7 +44,7 @@ function ChevronIcon() {
 
 /** Footer hours wording. Reads the shared hours and formats them for the footer only. */
 const [weekdayLine = "", selectLine = ""] = practice.hoursLines;
-const weekdayDays = weekdayLine.split(", 10am")[0];
+const weekdayDays = weekdayLine.split(", 10am")[0] ?? "";
 const weekdayTime = weekdayLine.slice(weekdayDays.length + 2);
 const footerSelect = selectLine.replace(/, by appointment$/, "");
 
