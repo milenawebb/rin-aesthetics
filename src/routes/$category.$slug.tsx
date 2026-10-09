@@ -20,7 +20,7 @@ import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageGroups, seriesById, type CareGroup, type CareSeries } from "@/data/careEmails";
 import { keepBrandTogether, listPrice } from "@/data/lookup";
-import { jylAtWorkPhoto, serviceHeroPhoto, serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
+import { jylAtWorkPhoto, serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
   concernsForService,
@@ -119,7 +119,6 @@ function ServicePage() {
 
   // A service with a captioned device photo in its technology band shows the device there only.
   const media = technologyLead[service.id] ? undefined : serviceMedia[service.id];
-  const heroPhoto = serviceHeroPhoto[service.id];
   const jylAtWork = jylAtWorkPhoto[service.id];
   const eyebrow = service.eyebrow ?? service.category;
   const subtitle = service.tagline ?? service.shortDescription;
@@ -222,14 +221,7 @@ function ServicePage() {
       </section>
 
       {/* 2. Hero image */}
-      {heroPhoto ? (
-        <section className="site-container pb-[56px] md:pb-[88px]">
-          <picture className="block aspect-[16/9] w-full overflow-hidden rounded-[2px] bg-greige">
-            <source type="image/webp" srcSet={heroPhoto.webp} />
-            <img src={heroPhoto.jpg} alt={heroPhoto.alt} width={heroPhoto.width} height={heroPhoto.height} loading="eager" fetchPriority="high" className="h-full w-full object-cover object-center" />
-          </picture>
-        </section>
-      ) : media ? (
+      {media ? (
         <section className="site-container pb-[56px] md:pb-[88px]">
           <div className="flex aspect-[16/9] w-full items-center justify-center bg-ivory p-10">
             <img src={media.src} alt={media.alt} width={media.width} height={media.height} loading="eager" fetchPriority="high" className="h-full w-auto max-w-full object-contain" />
