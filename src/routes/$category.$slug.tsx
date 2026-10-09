@@ -494,7 +494,7 @@ function ServicePage() {
       {/* 9. Results */}
       {results.length ? (
         <section className={section}>
-          <div className="site-container">
+          <div>
             <h2 className={h2}>Results</h2>
             {resultsNotice(results) ? (
               <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">

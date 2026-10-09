@@ -66,18 +66,28 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1);
   };
 
+  // One or two results center at desktop instead of leaving empty grid cells:
+  // one spans the middle half of a 4 column track, two each span 3 of 8.
+  const count = items.length;
+  const layout =
+    count === 1
+      ? { grid: "lg:grid-cols-4", item: () => "sm:col-span-2 lg:col-start-2" }
+      : count === 2
+        ? { grid: "lg:grid-cols-8", item: (i: number) => (i === 0 ? "lg:col-span-3 lg:col-start-2" : "lg:col-span-3") }
+        : { grid: "lg:grid-cols-3", item: () => "" };
+
   const navBtn =
     "flex h-11 w-11 items-center justify-center rounded-[2px] border border-greige text-ink transition-colors hover:border-ink";
 
   return (
     <>
-      <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => {
+      <div className={`grid gap-x-8 gap-y-14 sm:grid-cols-2 ${layout.grid}`}>
+        {items.map((item, i) => {
           const service = getServiceById(item.serviceId);
           if (!service) return null;
           const pos = openable.indexOf(item);
           return (
-            <article key={item.id}>
+            <article key={item.id} className={layout.item(i)}>
               <ResultTile
                 item={item}
                 treatmentName={service.name}
