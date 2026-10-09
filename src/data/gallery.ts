@@ -37,6 +37,9 @@ export interface GalleryItem {
   standIn?: boolean;
   // Explicit sign-off. Nothing renders anywhere until this is true.
   published: boolean;
+  // Concern tags this result must not appear under, even though its treatment
+  // carries them. Empty or absent means it inherits every treatment tag.
+  excludeConcernTags?: string[];
   // Hand-picked for the home page strip. Keep this to six at most.
   featured: boolean;
 }
@@ -86,6 +89,8 @@ export const gallery: GalleryItem[] = [
     standIn: true,
     published: true,
     featured: true,
+    // Pigmentation and sun damage, Hair thinning, Under-eye area, Acne and scarring.
+    excludeConcernTags: ["pigment", "sun_damage", "hair_loss", "eye_area", "acne", "scarring"],
   },
   {
     id: "tox-01",
@@ -267,7 +272,7 @@ export function galleryForConcern(
   serviceTags: (serviceId: string) => string[],
 ): GalleryItem[] {
   return publishedGallery().filter((item) =>
-    serviceTags(item.serviceId).some((tag) => concernTags.includes(tag)),
+    serviceTags(item.serviceId).some((tag) => concernTags.includes(tag) && !item.excludeConcernTags?.includes(tag)),
   );
 }
 
