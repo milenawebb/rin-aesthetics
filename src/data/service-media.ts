@@ -37,3 +37,26 @@ export const technologyLead: Record<string, { src: string; alt: string; caption:
     caption: "Candela Nordlys, the platform behind each of these treatments.",
   },
 };
+
+import laserJawlineJpg from "@/assets/laser-jawline-1080.jpg.asset.json";
+import laserJawlineWebp from "@/assets/laser-jawline-1080.webp.asset.json";
+import laserPerioralJpg from "@/assets/laser-perioral-1080.jpg.asset.json";
+import laserPerioralWebp from "@/assets/laser-perioral-1080.webp.asset.json";
+import hydrafacialJpg from "@/assets/hydrafacial-1080.jpg.asset.json";
+import hydrafacialWebp from "@/assets/hydrafacial-1080.webp.asset.json";
+import jylLaserJpg from "@/assets/jyl-laser-1215.jpg.asset.json";
+import jylLaserWebp from "@/assets/jyl-laser-1215.webp.asset.json";
+
+export interface Photo { jpg: string; webp: string; alt: string; width: number; height: number }
+
+/** Treatment photograph under the heading, cropped centered to the 16:9 frame. Keyed by service id. */
+export const serviceHeroPhoto: Record<string, Photo> = {
+  "DEV-05": { jpg: laserJawlineJpg.url, webp: laserJawlineWebp.url, width: 1080, height: 1440, alt: "A fractional laser handpiece being guided along a man's cheek, with the red aiming beam visible." },
+  "DEV-01": { jpg: laserPerioralJpg.url, webp: laserPerioralWebp.url, width: 1080, height: 1440, alt: "A fractional laser handpiece held at a man's upper lip, with an eye shield in place." },
+  "HYD-01": { jpg: hydrafacialJpg.url, webp: hydrafacialWebp.url, width: 1080, height: 1440, alt: "A Hydrafacial tip being drawn across a woman's forehead, lit blue." },
+};
+
+const jylLaser: Photo = { jpg: jylLaserJpg.url, webp: jylLaserWebp.url, width: 1215, height: 1620, alt: "Jyl Carter, in laser safety glasses, holding a Candela 1550 handpiece to a patient's face. The patient is wearing eye shields." };
+
+/** Replaces the portrait in "How Jyl approaches this" on these services only. */
+export const jylAtWorkPhoto: Record<string, Photo> = { "DEV-05": jylLaser, "DEV-01": jylLaser };

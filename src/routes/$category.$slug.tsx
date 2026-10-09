@@ -220,7 +220,14 @@ function ServicePage() {
       </section>
 
       {/* 2. Hero image */}
-      {media ? (
+      {heroPhoto ? (
+        <section className="site-container pb-[56px] md:pb-[88px]">
+          <picture className="block aspect-[16/9] w-full overflow-hidden rounded-[2px] bg-greige">
+            <source type="image/webp" srcSet={heroPhoto.webp} />
+            <img src={heroPhoto.jpg} alt={heroPhoto.alt} width={heroPhoto.width} height={heroPhoto.height} loading="eager" fetchPriority="high" className="h-full w-full object-cover object-center" />
+          </picture>
+        </section>
+      ) : media ? (
         <section className="site-container pb-[56px] md:pb-[88px]">
           <div className="flex aspect-[16/9] w-full items-center justify-center bg-ivory p-10">
             <img src={media.src} alt={media.alt} width={media.width} height={media.height} loading="eager" fetchPriority="high" className="h-full w-auto max-w-full object-contain" />
@@ -511,7 +518,12 @@ function ServicePage() {
       {service.howJylApproaches ? (
         <section className={section}>
           <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
-            {TREATING_PHOTO_SERVICE_IDS.has(service.id) ? (
+            {jylAtWork ? (
+              <picture className="block aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-greige">
+                <source type="image/webp" srcSet={jylAtWork.webp} />
+                <img src={jylAtWork.jpg} alt={jylAtWork.alt} width={jylAtWork.width} height={jylAtWork.height} loading="lazy" className="h-full w-full object-cover" />
+              </picture>
+            ) : TREATING_PHOTO_SERVICE_IDS.has(service.id) ? (
               <GradedImage
                 src={treatingSrc}
                 srcSet={treatingJpgSrcSet}
