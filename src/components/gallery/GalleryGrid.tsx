@@ -16,7 +16,15 @@ const AFTER_PEEK = 32;
 
 // Every grid uses the same tile as the home rail: hover or focus wipe,
 // split fallback on touch and reduced motion (handled inside ResultTile).
-export function GalleryGrid({ items }: { items: GalleryItem[] }) {
+export function GalleryGrid({
+  items,
+  align = "center",
+}: {
+  items: GalleryItem[];
+  // "left" keeps one or two results flush with the left content edge
+  // instead of centering them. Used by the Results page only.
+  align?: "center" | "left";
+}) {
   const openable = items.filter(
     (item) => isDisplayable(item) && getServiceById(item.serviceId),
   );
@@ -71,9 +79,9 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const count = items.length;
   const layout =
     count === 1
-      ? { grid: "sm:grid-cols-4 lg:flex lg:justify-center", item: () => "sm:col-span-2 sm:col-start-2 lg:w-[calc((100%-14rem)*3/8+4rem)]" }
+      ? { grid: `sm:grid-cols-4 lg:flex${align === "left" ? "" : " lg:justify-center"}`, item: () => `sm:col-span-2${align === "left" ? "" : " sm:col-start-2"} lg:w-[calc((100%-14rem)*3/8+4rem)]` }
       : count === 2
-        ? { grid: "lg:grid-cols-8", item: (i: number) => (i === 0 ? "lg:col-span-3 lg:col-start-2" : "lg:col-span-3") }
+        ? { grid: "lg:grid-cols-8", item: (i: number) => (i === 0 ? `lg:col-span-3${align === "left" ? "" : " lg:col-start-2"}` : "lg:col-span-3") }
         : { grid: "lg:grid-cols-3", item: () => "" };
 
   const navBtn =

@@ -63,7 +63,7 @@ function ResultsPage() {
         </div>) : null}
 
         <div className="mt-14">
-          <GalleryGrid items={items} />
+          <GalleryGrid items={items} align="left" />
         </div>
       </main>
       <BookingBand />
