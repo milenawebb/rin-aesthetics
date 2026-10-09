@@ -65,18 +65,20 @@ function ContactBlock() {
         <a href={`mailto:${practice.email}`} className="hover:text-champagne">
           {practice.email}
         </a>
-        {practice.hoursLines.map((l, i) => (
-          <span key={l} className={i === 0 ? "mt-4 block" : "block"}>
+      </address>
+      <p className="mt-6 font-body text-[15px] leading-[1.75] text-greige">
+        {practice.hoursLines.map((l) => (
+          <span key={l} className="block">
             {l}
           </span>
         ))}
-      </address>
+      </p>
       <a
         href={practice.instagram}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="RIN Aesthetic Practice on Instagram"
-        className="mt-10 inline-flex h-11 w-11 items-center justify-center text-ivory transition-colors duration-[400ms] hover:text-champagne focus-visible:text-champagne md:mt-8"
+        className="mt-[15px] inline-flex h-11 w-11 items-center justify-start text-ivory transition-colors duration-[400ms] hover:text-champagne focus-visible:text-champagne"
       >
         <InstagramIcon />
       </a>
@@ -86,7 +88,7 @@ function ContactBlock() {
 
 function DesktopFooter() {
   return (
-    <div className="hidden md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-14 lg:grid-cols-[max-content_repeat(3,minmax(0,1fr))] lg:gap-x-12">
+    <div className="hidden md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-12 lg:grid-cols-[minmax(0,1.25fr)_repeat(3,minmax(max-content,1fr))] lg:gap-x-10">
       <div className="md:col-span-3 lg:col-span-1">
         <ContactBlock />
       </div>
@@ -115,11 +117,11 @@ function DesktopFooter() {
 
 function MobileAccordion() {
   return (
-    <div className="md:hidden mt-12">
+    <div className="md:hidden mt-10">
       {linkColumns.map((column) => (
         <details key={column.title} className="footer-accordion group">
           <summary className="footer-accordion-summary flex h-[60px] cursor-pointer items-center justify-between border-b border-[#3A3128] focus-visible:outline focus-visible:outline-1 focus-visible:outline-champagne focus-visible:outline-offset-0">
-            <span className="font-body text-[13px] font-medium uppercase tracking-[0.16em] text-ivory">
+            <span className="font-body text-[13px] font-medium uppercase tracking-[0.16em] text-champagne">
               {column.title}
             </span>
             <ChevronIcon />
@@ -159,38 +161,39 @@ export function Footer() {
 
         <DesktopFooter />
 
-        {policyLinks.length > 0 && (
-          <nav aria-label="Policies" className="mt-12 md:mt-16">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
-              {policyLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="font-body text-[13px] font-light text-footer-credit transition-colors hover:text-ivory"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-
-        <div className="mt-12 flex flex-col items-start gap-2 border-t border-walnut pt-8 md:mt-16 md:flex-row md:items-baseline md:justify-between md:gap-8">
-          <p className="font-body text-[13px] font-light text-[#A39A8C]">
-            © {new Date().getFullYear()} RIN Aesthetic Practice. {practice.location}.
-          </p>
-          <p className="font-body text-[13px] font-light text-footer-credit">
-            Developed by{" "}
-            <a
-              href="https://fifthexit.com"
-              target="_blank"
-              rel="noopener"
-              className="underline-offset-4 hover:underline focus-visible:underline"
-            >
-              fifthexit
-            </a>
-          </p>
+        <div className="mt-12 flex flex-col gap-6 border-t border-walnut pt-12 md:mt-16 md:pt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          {policyLinks.length > 0 && (
+            <nav aria-label="Policies">
+              <ul className="grid grid-cols-3 gap-x-4 gap-y-2 md:flex md:flex-wrap md:gap-x-6 lg:gap-x-5">
+                {policyLinks.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="font-body text-[13px] font-light text-footer-credit transition-colors hover:text-ivory"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-8 lg:justify-end">
+            <p className="font-body text-[13px] font-light text-[#A39A8C]">
+              © {new Date().getFullYear()} RIN Aesthetic Practice. {practice.location}.
+            </p>
+            <p className="font-body text-[13px] font-light text-footer-credit">
+              Developed by{" "}
+              <a
+                href="https://fifthexit.com"
+                target="_blank"
+                rel="noopener"
+                className="underline-offset-4 hover:underline focus-visible:underline"
+              >
+                fifthexit
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
