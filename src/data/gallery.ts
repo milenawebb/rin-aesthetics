@@ -92,9 +92,9 @@ export const gallery: GalleryItem[] = [
     standIn: true,
     published: true,
     featured: true,
-    // Pigmentation and sun damage, Hair thinning, Under-eye area, Acne and scarring.
+    // Concern pages this result shows on: Lines and wrinkles, and Skin laxity and firmness.
     alsoShowOn: ["INJ-09"],
-    excludeConcernTags: ["pigment", "sun_damage", "hair_loss", "eye_area", "acne", "scarring"],
+    excludeConcernTags: ["pigment", "sun_damage", "hair_loss", "eye_area", "acne", "scarring", "texture", "pores"],
   },
   {
     id: "tox-01",
