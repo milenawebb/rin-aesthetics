@@ -11,7 +11,7 @@ export const practice = {
   wordmark: "RIN",
   wordmarkSub: "Aesthetic Practice",
   tagline: "Refined. Intentional. Natural.",
-  location: "Charlottesville, Virginia",
+  location: "Charlottesville, VA",
   phone: "(434) 217-5300",
   /** Used only by the single Call fallback on Contact. Every other number links to smsHref. */
   phoneHref: "tel:+14342175300",
