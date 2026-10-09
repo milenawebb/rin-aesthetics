@@ -39,4 +39,4 @@
 
 - [x] Merge the four supplied concern records by ID without changing other fields or records
 - [x] Verify filled and empty pages, capture screenshots and redness FAQ schema, and run the dash check
-- [ ] Show the neck result on Full Neck Rejuvenation (waiting: practice confirms that page first)
+- [x] Show the neck result on Full Neck Rejuvenation

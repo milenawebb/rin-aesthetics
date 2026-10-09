@@ -40,6 +40,9 @@ export interface GalleryItem {
   // Concern tags this result must not appear under, even though its treatment
   // carries them. Empty or absent means it inherits every treatment tag.
   excludeConcernTags?: string[];
+  // Further treatment ids whose pages also show this result. The caption still
+  // names serviceId. Empty or absent means only its own treatment page.
+  alsoShowOn?: string[];
   // Hand-picked for the home page strip. Keep this to six at most.
   featured: boolean;
 }
@@ -90,6 +93,7 @@ export const gallery: GalleryItem[] = [
     published: true,
     featured: true,
     // Pigmentation and sun damage, Hair thinning, Under-eye area, Acne and scarring.
+    alsoShowOn: ["INJ-09"],
     excludeConcernTags: ["pigment", "sun_damage", "hair_loss", "eye_area", "acne", "scarring"],
   },
   {
@@ -264,7 +268,7 @@ export function resultsNotice(items: GalleryItem[]): string | null {
 }
 
 export function galleryForService(serviceId: string): GalleryItem[] {
-  return publishedGallery().filter((g) => g.serviceId === serviceId);
+  return publishedGallery().filter((g) => g.serviceId === serviceId || g.alsoShowOn?.includes(serviceId));
 }
 
 export function galleryForConcern(
