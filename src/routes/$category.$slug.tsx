@@ -20,7 +20,7 @@ import { bookingActions, serviceBookingUrl } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { hasContent, pageGroups, seriesById, type CareGroup, type CareSeries } from "@/data/careEmails";
 import { keepBrandTogether, listPrice } from "@/data/lookup";
-import { serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
+import { jylAtWorkPhoto, serviceHeroPhoto, serviceMedia, technologyLead, technologyMedia } from "@/data/service-media";
 import {
   concernPathSlug,
   concernsForService,
@@ -119,6 +119,8 @@ function ServicePage() {
 
   // A service with a captioned device photo in its technology band shows the device there only.
   const media = technologyLead[service.id] ? undefined : serviceMedia[service.id];
+  const heroPhoto = serviceHeroPhoto[service.id];
+  const jylAtWork = jylAtWorkPhoto[service.id];
   const eyebrow = service.eyebrow ?? service.category;
   const subtitle = service.tagline ?? service.shortDescription;
   const chips = concernsForService(service);
