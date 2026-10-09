@@ -18,11 +18,12 @@ const AFTER_PEEK = 32;
 // split fallback on touch and reduced motion (handled inside ResultTile).
 export function GalleryGrid({
   items,
-  align = "center",
+  align = "left",
 }: {
   items: GalleryItem[];
-  // "left" keeps one or two results flush with the left content edge
-  // instead of centering them. Used by the Results page only.
+  // "left" (the default) keeps one or two results flush with the left
+  // content edge instead of centering them. "center" is still accepted
+  // but nothing currently passes it.
   align?: "center" | "left";
 }) {
   const openable = items.filter(
