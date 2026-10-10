@@ -62,6 +62,7 @@ export const gallery: GalleryItem[] = [
     standIn: true,
     published: true,
     featured: true,
+    excludeConcernTags: ["volume_loss"],
   },
   {
     id: "lips-02",
@@ -77,6 +78,7 @@ export const gallery: GalleryItem[] = [
     standIn: true,
     published: true,
     featured: true,
+    excludeConcernTags: ["volume_loss"],
   },
   {
     id: "neck-01",
