@@ -451,6 +451,52 @@ function ServicePage() {
         </section>
       ) : null}
 
+      {service.howJylApproaches ? (
+        <section className={section}>
+          <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
+            {jylAtWork ? (
+              <picture className="block aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-greige">
+                <source type="image/webp" srcSet={jylAtWork.webp} />
+                <img src={jylAtWork.jpg} alt={jylAtWork.alt} width={jylAtWork.width} height={jylAtWork.height} loading="lazy" className="h-full w-full object-cover" />
+              </picture>
+            ) : TREATING_PHOTO_SERVICE_IDS.has(service.id) ? (
+              <GradedImage
+                src={treatingSrc}
+                srcSet={treatingJpgSrcSet}
+                webpSrcSet={treatingWebpSrcSet}
+                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
+                alt={treatingAlt}
+                color={treatingColor}
+                width={treatingWidth}
+                height={treatingHeight}
+                className="aspect-[3/4] w-full"
+              />
+            ) : (
+              <GradedImage
+                src={portraitSrc}
+                srcSet={portraitJpgSrcSet}
+                webpSrcSet={portraitWebpSrcSet}
+                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
+                alt={`${providerName}, ${providerCredential}, at RIN Aesthetic Practice`}
+                color={portraitColor}
+                width={1123}
+                height={1401}
+                className="aspect-[3/4] w-full"
+              />
+            )}
+            <div>
+              <h2 className={h2}>{service.howJylApproachesHeading ?? "How Jyl approaches this"}</h2>
+              <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
+                {service.howJylApproaches}
+              </p>
+              <Link to="/about" className="label-xs mt-8 inline-block text-champagne-light transition-colors hover:text-ink">
+                More about Jyl
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* 7. What to expect */}
       {service.steps.length ? (
         <section className={section}>
@@ -505,52 +551,6 @@ function ServicePage() {
           </div>
           <div className="mt-12">
             <GalleryGrid items={results} />
-          </div>
-        </section>
-      ) : null}
-
-      {service.howJylApproaches ? (
-        <section className={section}>
-          <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
-            {jylAtWork ? (
-              <picture className="block aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-greige">
-                <source type="image/webp" srcSet={jylAtWork.webp} />
-                <img src={jylAtWork.jpg} alt={jylAtWork.alt} width={jylAtWork.width} height={jylAtWork.height} loading="lazy" className="h-full w-full object-cover" />
-              </picture>
-            ) : TREATING_PHOTO_SERVICE_IDS.has(service.id) ? (
-              <GradedImage
-                src={treatingSrc}
-                srcSet={treatingJpgSrcSet}
-                webpSrcSet={treatingWebpSrcSet}
-                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
-                alt={treatingAlt}
-                color={treatingColor}
-                width={treatingWidth}
-                height={treatingHeight}
-                className="aspect-[3/4] w-full"
-              />
-            ) : (
-              <GradedImage
-                src={portraitSrc}
-                srcSet={portraitJpgSrcSet}
-                webpSrcSet={portraitWebpSrcSet}
-                sizes="(min-width: 1280px) 480px, (min-width: 768px) 40vw, calc(100vw - 48px)"
-                alt={`${providerName}, ${providerCredential}, at RIN Aesthetic Practice`}
-                color={portraitColor}
-                width={1123}
-                height={1401}
-                className="aspect-[3/4] w-full"
-              />
-            )}
-            <div>
-              <h2 className={h2}>{service.howJylApproachesHeading ?? "How Jyl approaches this"}</h2>
-              <p className="measure mt-6 font-body text-[16px] font-light leading-[1.75] text-walnut">
-                {service.howJylApproaches}
-              </p>
-              <Link to="/about" className="label-xs mt-8 inline-block text-champagne-light transition-colors hover:text-ink">
-                More about Jyl
-              </Link>
-            </div>
           </div>
         </section>
       ) : null}
