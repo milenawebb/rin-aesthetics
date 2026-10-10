@@ -24,7 +24,7 @@ export const brands: Record<string, Brand> = {
   skinbetter: {
     id: "skinbetter",
     name: "skinbetter science",
-    storeUrl: "",
+    storeUrl: "https://skinbetter.com/?businessPartner_id=10442399&utm_source=replika&utm_medium=replika&utm_campaign=10442399&replika_param=eyJtZXJjaGlkIjoiZjM2MzI1ZDU3MDAxYWI2ZTI4ZWNjZTMxNTY1MmY3OWQiLCJ1c2VyaWQiOiIzMzA5NCIsImJvYXJkaWQiOiIyMzMzMTAzIiwidHJhY2tpZCI6IjM0NDAzMjkiLCJpc3Nob3B1cmwiOiJ0cnVlIiwicHJvdmlkZXIiOmZhbHNlfQ%3d%3d#PageName=Dose",
     note: "A physician-dispensed line, not sold in shops. Best known for AlphaRet, which combines a retinoid and an AHA in one step. Ordered through RIN's store at skinbetter.",
     groups: [
       { name: "Cleansers", ids: ["SB-13", "SB-14"] },
