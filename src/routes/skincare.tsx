@@ -4,6 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { BookingBand } from "@/components/site/BookingBand";
 import { ProductList } from "@/components/site/ProductList";
 import { brands, products, skincareIntro } from "@/data/products";
+import { practice } from "@/data/site";
 
 
 const seo = seoHead("/skincare");
