@@ -54,6 +54,18 @@ function ShopPage() {
                 </>
               ) : null}
             </h2>
+            {brand.storeUrl ? null : (
+              <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-walnut">
+                Available in the practice.{" "}
+                <a
+                  href={practice.smsHref}
+                  className="text-walnut underline decoration-champagne underline-offset-4 transition-colors hover:text-ink"
+                >
+                  Text Jyl
+                </a>{" "}
+                to ask what suits your skin.
+              </p>
+            )}
             {brand.note ? (
               <p className="measure mt-5 font-body text-[16px] font-light leading-[1.75] text-walnut">
                 {brand.note}
