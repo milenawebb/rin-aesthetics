@@ -54,6 +54,9 @@ export interface GalleryItem {
   // Who supplied the photographs. Absent means "rin". Candela images are
   // not RIN patients and are credited on every card and in the notice.
   source?: GallerySource;
+  // CSS object-position for both photos inside the 4:5 tile. Absent means
+  // "center". Before and after share it so the pair lines up in the wipe.
+  focus?: string;
 }
 
 export type GallerySource = "rin" | "candela";
@@ -79,6 +82,7 @@ export function afterAltText(item: GalleryItem): string {
 export const gallery: GalleryItem[] = [
   {
     id: "candela-01",
+    focus: "center 75%",
     serviceId: "DEV-06",
     beforeSrc: candela01Before.url,
     afterSrc: candela01After.url,
@@ -89,7 +93,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     published: true,
-    featured: false,
+    featured: true,
     source: "candela",
     alsoShowOn: ["DEV-05"],
     // Concern pages: Pigmentation and sun damage only.
@@ -97,6 +101,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: "candela-02",
+    focus: "center 70%",
     serviceId: "DEV-06",
     beforeSrc: candela02Before.url,
     afterSrc: candela02After.url,
@@ -107,7 +112,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     published: true,
-    featured: false,
+    featured: true,
     source: "candela",
     alsoShowOn: ["DEV-05"],
     // Concern pages: Pigmentation and sun damage only.
@@ -115,6 +120,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: "candela-03",
+    focus: "center 70%",
     serviceId: "DEV-06",
     beforeSrc: candela03Before.url,
     afterSrc: candela03After.url,
@@ -125,7 +131,7 @@ export const gallery: GalleryItem[] = [
     consentOnFile: false,
     placeholder: false,
     published: true,
-    featured: false,
+    featured: true,
     source: "candela",
     alsoShowOn: ["DEV-05"],
     // Concern pages: Pigmentation and sun damage only.
