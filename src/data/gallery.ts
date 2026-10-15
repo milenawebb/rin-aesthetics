@@ -10,6 +10,12 @@ import lips02Before from "@/assets/lips-02-before.jpg.asset.json";
 import lips02After from "@/assets/lips-02-after.jpg.asset.json";
 import neck01Before from "@/assets/neck-01-before.jpg.asset.json";
 import neck01After from "@/assets/neck-01-after.jpg.asset.json";
+import lips03Before from "@/assets/lips-03-before.jpg.asset.json";
+import lips03After from "@/assets/lips-03-after.jpg.asset.json";
+import face01Before from "@/assets/face-01-before.jpg.asset.json";
+import face01After from "@/assets/face-01-after.jpg.asset.json";
+import jaw01Before from "@/assets/jaw-01-before.jpg.asset.json";
+import jaw01After from "@/assets/jaw-01-after.jpg.asset.json";
 
 // Before and after gallery.
 //
@@ -57,6 +63,8 @@ export interface GalleryItem {
   // CSS object-position for both photos inside the 4:5 tile. Absent means
   // "center". Before and after share it so the pair lines up in the wipe.
   focus?: string;
+  // Tile-only fit. Contain preserves the whole photo; absent means cover.
+  fit?: "cover" | "contain";
 }
 
 export type GallerySource = "rin" | "candela";
@@ -129,6 +137,60 @@ export const gallery: GalleryItem[] = [
     // Concern pages this result shows on: Lines and wrinkles, and Skin laxity and firmness.
     alsoShowOn: ["INJ-09"],
     excludeConcernTags: ["pigment", "sun_damage", "hair_loss", "eye_area", "acne", "scarring", "texture", "pores"],
+  },
+  {
+    id: "lips-03",
+    serviceId: "INJ-03",
+    beforeSrc: lips03Before.url,
+    afterSrc: lips03After.url,
+    beforeAlt: "Lips before lip filler.",
+    afterAlt: "The same lips after lip filler, fuller and more defined.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    standIn: false,
+    published: true,
+    featured: true,
+    source: "rin",
+    excludeConcernTags: ["volume_loss"],
+    fit: "contain",
+  },
+  {
+    id: "face-01",
+    serviceId: "INJ-04",
+    beforeSrc: face01Before.url,
+    afterSrc: face01After.url,
+    beforeAlt: "Three-quarter view of a woman's face before treatment.",
+    afterAlt: "The same face after full facial balancing.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    standIn: false,
+    published: true,
+    featured: true,
+    source: "rin",
+    excludeConcernTags: ["laxity"],
+    focus: "center bottom",
+  },
+  {
+    id: "jaw-01",
+    serviceId: "INJ-02",
+    beforeSrc: jaw01Before.url,
+    afterSrc: jaw01After.url,
+    beforeAlt: "Side profile of the jawline and chin before treatment.",
+    afterAlt: "The same profile after dermal filler to the jawline and chin.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    standIn: false,
+    published: true,
+    featured: true,
+    source: "rin",
+    excludeConcernTags: ["volume_loss", "eye_area"],
+    focus: "right center",
   },
   {
     id: "candela-01",

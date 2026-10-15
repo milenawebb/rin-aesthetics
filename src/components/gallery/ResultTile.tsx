@@ -39,7 +39,9 @@ export function ResultTile({
     );
   }
 
-  const objectPosition = item.focus ?? "center";
+  const contained = item.fit === "contain";
+  const objectPosition = contained ? "center" : item.focus ?? "center";
+  const imageFit = contained ? "object-contain bg-greige" : "object-cover";
 
   const dot = (
     <span
@@ -58,10 +60,10 @@ export function ResultTile({
     const split = (
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-greige">
         <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
-          <img src={item.beforeSrc} alt={beforeAltText(item)} loading="lazy" className="h-full w-full object-cover" style={{ objectPosition }} />
+          <img src={item.beforeSrc} alt={beforeAltText(item)} loading="lazy" className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
         </div>
         <div className="absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-          <img src={item.afterSrc} alt={afterAltText(item)} loading="lazy" className="h-full w-full object-cover" style={{ objectPosition }} />
+          <img src={item.afterSrc} alt={afterAltText(item)} loading="lazy" className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
         </div>
         <span aria-hidden className="pointer-events-none absolute inset-y-0 left-1/2 w-px bg-champagne" />
         {shade}
@@ -100,12 +102,12 @@ export function ResultTile({
       onBlur={() => setRevealed(false)}
       className="relative block aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-greige outline-none focus-visible:ring-1 focus-visible:ring-champagne focus-visible:ring-offset-2"
     >
-      <img src={item.beforeSrc} alt={beforeAltText(item)} loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition }} />
+      <img src={item.beforeSrc} alt={beforeAltText(item)} loading="lazy" className={`absolute inset-0 h-full w-full ${imageFit}`} style={{ objectPosition }} />
       <img
         src={item.afterSrc}
         alt={afterAltText(item)}
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
+        className={`absolute inset-0 h-full w-full ${imageFit}`}
         style={{
           objectPosition,
           clipPath: revealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
