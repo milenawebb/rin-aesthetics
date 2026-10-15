@@ -1,3 +1,9 @@
+import candela01Before from "@/assets/candela-01-before.jpg.asset.json";
+import candela01After from "@/assets/candela-01-after.jpg.asset.json";
+import candela02Before from "@/assets/candela-02-before.jpg.asset.json";
+import candela02After from "@/assets/candela-02-after.jpg.asset.json";
+import candela03Before from "@/assets/candela-03-before.jpg.asset.json";
+import candela03After from "@/assets/candela-03-after.jpg.asset.json";
 import lips01Before from "@/assets/lips-01-before.jpg.asset.json";
 import lips01After from "@/assets/lips-01-after.jpg.asset.json";
 import lips02Before from "@/assets/lips-02-before.jpg.asset.json";
@@ -58,15 +64,73 @@ export function sourceOf(item: GalleryItem): GallerySource {
 
 export const CANDELA_CREDIT = "Clinical image courtesy of Candela. Not a RIN patient.";
 
+function joinAlt(alt: string): string {
+  return `${alt.replace(/\.$/, "")}. ${CANDELA_CREDIT}`;
+}
+
 // Alt text as rendered: Candela images carry the credit after the alt.
 export function beforeAltText(item: GalleryItem): string {
-  return sourceOf(item) === "candela" ? `${item.beforeAlt}. ${CANDELA_CREDIT}` : item.beforeAlt;
+  return sourceOf(item) === "candela" ? joinAlt(item.beforeAlt) : item.beforeAlt;
 }
 export function afterAltText(item: GalleryItem): string {
-  return sourceOf(item) === "candela" ? `${item.afterAlt}. ${CANDELA_CREDIT}` : item.afterAlt;
+  return sourceOf(item) === "candela" ? joinAlt(item.afterAlt) : item.afterAlt;
 }
 
 export const gallery: GalleryItem[] = [
+  {
+    id: "candela-01",
+    serviceId: "DEV-06",
+    beforeSrc: candela01Before.url,
+    afterSrc: candela01After.url,
+    beforeAlt: "Face with freckles across the cheeks and nose, before treatment.",
+    afterAlt: "The same face after treatment, with fewer visible freckles.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    published: true,
+    featured: false,
+    source: "candela",
+    alsoShowOn: ["DEV-05"],
+    // Concern pages: Pigmentation and sun damage only.
+    excludeConcernTags: ["redness", "texture"],
+  },
+  {
+    id: "candela-02",
+    serviceId: "DEV-06",
+    beforeSrc: candela02Before.url,
+    afterSrc: candela02After.url,
+    beforeAlt: "Side view of a cheek with brown spots, before treatment.",
+    afterAlt: "The same cheek after treatment, with the brown spots faded.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    published: true,
+    featured: false,
+    source: "candela",
+    alsoShowOn: ["DEV-05"],
+    // Concern pages: Pigmentation and sun damage only.
+    excludeConcernTags: ["redness", "texture"],
+  },
+  {
+    id: "candela-03",
+    serviceId: "DEV-06",
+    beforeSrc: candela03Before.url,
+    afterSrc: candela03After.url,
+    beforeAlt: "Face with freckles across the forehead, cheeks and nose, before treatment.",
+    afterAlt: "The same face after treatment, with fewer visible freckles.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    published: true,
+    featured: false,
+    source: "candela",
+    alsoShowOn: ["DEV-05"],
+    // Concern pages: Pigmentation and sun damage only.
+    excludeConcernTags: ["redness", "texture"],
+  },
   {
     id: "lips-01",
     serviceId: "INJ-03",
