@@ -45,6 +45,25 @@ export interface GalleryItem {
   alsoShowOn?: string[];
   // Hand-picked for the home page strip. Keep this to six at most.
   featured: boolean;
+  // Who supplied the photographs. Absent means "rin". Candela images are
+  // not RIN patients and are credited on every card and in the notice.
+  source?: GallerySource;
+}
+
+export type GallerySource = "rin" | "candela";
+
+export function sourceOf(item: GalleryItem): GallerySource {
+  return item.source ?? "rin";
+}
+
+export const CANDELA_CREDIT = "Clinical image courtesy of Candela. Not a RIN patient.";
+
+// Alt text as rendered: Candela images carry the credit after the alt.
+export function beforeAltText(item: GalleryItem): string {
+  return sourceOf(item) === "candela" ? `${item.beforeAlt}. ${CANDELA_CREDIT}` : item.beforeAlt;
+}
+export function afterAltText(item: GalleryItem): string {
+  return sourceOf(item) === "candela" ? `${item.afterAlt}. ${CANDELA_CREDIT}` : item.afterAlt;
 }
 
 export const gallery: GalleryItem[] = [
@@ -263,10 +282,21 @@ export function isDisplayable(item: GalleryItem): boolean {
 export const NOTICE_REAL =
   "Unretouched photography from our own treatment room. Individual results vary.";
 
+export const NOTICE_CANDELA =
+  "Clinical images courtesy of Candela, the device manufacturer. These are not RIN patients. Individual results vary.";
+
+export const NOTICE_MIXED =
+  "Images marked courtesy of Candela are supplied by the device manufacturer. All others are from our own treatment room. Individual results vary.";
+
 // The line under a Results heading, chosen from what is actually displayed.
-// Null when nothing displayable is showing: no line over only greige blocks.
+// Null when nothing displayable is showing.
 export function resultsNotice(items: GalleryItem[]): string | null {
-  return items.some(isDisplayable) ? NOTICE_REAL : null;
+  const shown = items.filter(isDisplayable);
+  if (!shown.length) return null;
+  const candela = shown.filter((g) => sourceOf(g) === "candela").length;
+  if (candela === 0) return NOTICE_REAL;
+  if (candela === shown.length) return NOTICE_CANDELA;
+  return NOTICE_MIXED;
 }
 
 export function galleryForService(serviceId: string): GalleryItem[] {
