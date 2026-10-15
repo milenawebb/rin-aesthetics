@@ -82,7 +82,7 @@ export function afterAltText(item: GalleryItem): string {
 export const gallery: GalleryItem[] = [
   {
     id: "candela-01",
-    focus: "center 55%",
+    focus: "center 75%",
     serviceId: "DEV-06",
     beforeSrc: candela01Before.url,
     afterSrc: candela01After.url,
@@ -120,7 +120,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: "candela-03",
-    focus: "center 55%",
+    focus: "center 70%",
     serviceId: "DEV-06",
     beforeSrc: candela03Before.url,
     afterSrc: candela03After.url,
