@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { GalleryItem } from "@/data/gallery";
+import { CANDELA_CREDIT, sourceOf } from "@/data/gallery";
 import { getServiceById, splitSlug } from "@/data/lookup";
 
 export function GalleryCaption({ item, linked = true }: { item: GalleryItem; linked?: boolean }) {
@@ -9,6 +10,7 @@ export function GalleryCaption({ item, linked = true }: { item: GalleryItem; lin
   const details = `${item.sessions}, ${item.interval}`;
 
   return (
+    <>
     <p className="mt-4 font-body text-[14px] font-light leading-[1.7] text-walnut">
       {linked ? (
         <Link
@@ -23,5 +25,13 @@ export function GalleryCaption({ item, linked = true }: { item: GalleryItem; lin
       )}
       {`, ${details}`}
     </p>
+    <SourceCredit item={item} />
+    </>
   );
+}
+
+// Second caption line for records not photographed at RIN.
+export function SourceCredit({ item }: { item: GalleryItem }) {
+  if (sourceOf(item) !== "candela") return null;
+  return <p className="mt-1 font-body text-[14px] font-light leading-[1.7] text-walnut">{CANDELA_CREDIT}</p>;
 }

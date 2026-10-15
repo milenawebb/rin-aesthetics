@@ -1,3 +1,4 @@
+import { afterAltText, beforeAltText } from "@/data/gallery";
 import { useEffect, useRef, useState, type TouchEvent } from "react";
 import type { GalleryItem } from "@/data/gallery";
 import { isDisplayable } from "@/data/gallery";
@@ -152,11 +153,11 @@ export function GalleryGrid({
               >
                 <div className="grid gap-6 md:grid-cols-2">
                   <figure ref={beforeRef}>
-                    <img src={selected.beforeSrc} alt={selected.beforeAlt} className="h-auto w-full rounded-[2px]" />
+                    <img src={selected.beforeSrc} alt={beforeAltText(selected)} className="h-auto w-full rounded-[2px]" />
                     <figcaption className="label-xs mt-3 text-walnut">Before</figcaption>
                   </figure>
                   <figure>
-                    <img src={selected.afterSrc} alt={selected.afterAlt} className="h-auto w-full rounded-[2px]" />
+                    <img src={selected.afterSrc} alt={afterAltText(selected)} className="h-auto w-full rounded-[2px]" />
                     <figcaption className="label-xs mt-3 text-walnut">After</figcaption>
                   </figure>
                 </div>
