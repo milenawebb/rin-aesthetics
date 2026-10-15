@@ -1,5 +1,11 @@
 # Treatment spacing
 
+# New RIN result pairs
+
+- [x] Crop and publish the six approved photos without retouching
+- [x] Add the three result records and optional shared tile fit
+- [x] Verify placements, full lip framing, notices, and checks at both widths
+
 - [x] Match the tag-to-intro gap to the subtitle-to-facts gap
 - [x] Stack phone facts while preserving tablet and desktop columns
 - [x] Audit empty treatment sections and verify three widths and the dash check

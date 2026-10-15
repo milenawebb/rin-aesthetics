@@ -16,7 +16,7 @@
 - Treatment headers without a device image use one spacing owner before the intro; facts stack below the tablet breakpoint. Why: avoids doubled section spacing and orphan fact cells.
 - Service URLs are /<category>/<slug> taken from Service.slug via one dynamic route; redirects.ts entries are 301s in that route; /book/consultation is a page stating the consultation fee before linking to Vagaro, other /book/* send to Vagaro. Why: routes stay generated from data.
 
-- Gallery records are the single source for results placements; service and concern matches derive from service IDs, and every surface reads publishedGallery(), which admits only records marked published with both images; unpublished records, filters and sections are absent, never stand-in blocks. Why: nothing unfinished renders and consent is enforced at render time.
+- Gallery placements derive from service IDs through publishedGallery(): only published pairs with both images render, never unfinished blocks. ResultTile shares optional fit (cover by default, contain centered) across grid and Home, not enlarged views. Why: wide photos preserve treated areas without changing other results.
 - Editorial markers (NEEDS APPROVAL, TODO, Draft:, and similar) are blocked from renderable source by scripts/check-drafts.mjs, run before every build. Why: internal notes must never reach a visitor.
 - Contact submissions are written by a server function before email is attempted, and delivery status is stored on each record. Why: a provider failure must never lose a visitor message.
 - Gutter-labeled sections use the shared structural 96px label column and 32px gap at 1280px and wider. Why: label spacing must stay identical across pages without positional offsets.
