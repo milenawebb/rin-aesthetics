@@ -45,11 +45,12 @@ export const wordpressRedirects: Record<string, string> = {
 
   // Products, all of which are packages
   "/product/signature-hydrafacial/": "/hydrafacials/the-refinement",
-  "/product/matrix-pro-face-and-neck-package/": "/skincare",
+  "/product/matrix-pro-face-and-neck-package/": "/treatments#device-and-laser",
   "/product/signature-skin-tightening-package/": "/skincare",
   "/product/sculpt-lift-tighten-package/": "/skincare",
   "/product-category/hydrafacial/": "/hydrafacials/the-refinement",
-  "/product-category/device-packages/": "/skincare",
+  "/product-category/device-packages/": "/treatments#device-and-laser",
+  "/brand/dose-aesthetics-wellness/": "/skincare",
 
   // Financing
   "/payment-plans/": "/financing",
