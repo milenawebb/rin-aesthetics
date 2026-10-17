@@ -6,6 +6,11 @@ export const SITE_URL: string =
   import.meta.env["VITE_SITE_URL"] ?? "https://rinaestheticsva.com";
 
 // Shared head tags for every indexable route. Title and description come only from src/data/seo.ts.
+// The share image is the site's own static file, one og:image per page.
+const SHARE_IMAGE_URL = `${SITE_URL}/media/rin-share.jpg`;
+const SHARE_IMAGE_ALT =
+  "The reception at RIN Aesthetic Practice, with the gold RIN sign";
+
 export function seoHead(path: string) {
   const { title, description } = metaFor(path);
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
