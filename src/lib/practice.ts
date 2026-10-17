@@ -14,9 +14,8 @@ function photo(name: string, alt: string, color: string) {
   return { key: name, alt, color, src: url(name, 800, "jpg"), srcSet: set(name, "jpg"), webpSrcSet: set(name, "webp") };
 }
 
-// Alt text is held empty until the proposed strings are approved.
 export const practicePhotos = [
-  photo("reception", "", "#A19383"),
-  photo("laser-room", "", "#AC9E92"),
-  photo("treatment-room", "", "#BBA590"),
+  photo("reception", "The reception area at RIN Aesthetic Practice in Charlottesville.", "#A19383"),
+  photo("laser-room", "The laser treatment room at RIN Aesthetic Practice.", "#AC9E92"),
+  photo("treatment-room", "A private treatment room at RIN Aesthetic Practice.", "#BBA590"),
 ];
