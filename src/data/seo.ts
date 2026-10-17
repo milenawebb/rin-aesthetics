@@ -22,7 +22,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description: `Book a consultation with ${providerName} at RIN Aesthetic Practice in Charlottesville, Virginia. The fee is shown before you continue to booking.`,
   },
   "/": {
-    title: "Medical Aesthetics in Charlottesville, VA | RIN",
+    title: "RIN Aesthetic Practice | Medical Aesthetics in Charlottesville, VA",
     description: `Injectables, lasers and skin treatments from ${providerCredential} ${providerName}. Prices on every treatment. Book a consultation in Charlottesville, VA.`,
   },
   "/treatments": {
