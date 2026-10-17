@@ -9,7 +9,16 @@ const seo = seoHead("/");
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: seo.meta,
+    meta: [
+      ...seo.meta,
+      // Video link preview for iMessage and similar apps. Home only; the
+      // hosting-injected og:image stays as the still-image fallback.
+      { property: "og:video", content: "https://rinaestheticsva.com/media/rin-preview.mp4" },
+      { property: "og:video:secure_url", content: "https://rinaestheticsva.com/media/rin-preview.mp4" },
+      { property: "og:video:type", content: "video/mp4" },
+      { property: "og:video:width", content: "1280" },
+      { property: "og:video:height", content: "720" },
+    ],
     links: [
       ...seo.links,
       // Only the hero crop that this screen width paints is preloaded, at the size it needs.
