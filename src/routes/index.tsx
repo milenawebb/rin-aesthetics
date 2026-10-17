@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
     meta: [
       ...seo.meta,
       // Video link preview for iMessage and similar apps. Home only; the
-      // hosting-injected og:image stays as the still-image fallback.
+      // shared og:image stays as the still-image fallback.
       { property: "og:video", content: "https://rinaestheticsva.com/media/rin-preview.mp4" },
       { property: "og:video:secure_url", content: "https://rinaestheticsva.com/media/rin-preview.mp4" },
       { property: "og:video:type", content: "video/mp4" },
