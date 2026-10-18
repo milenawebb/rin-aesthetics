@@ -1,5 +1,11 @@
 # Treatment spacing
 
+# Additional lip result and publication
+
+- [ ] Store lips-04 originals as same-size metadata-free JPEGs and add the record
+- [ ] Verify placement, order, framing and checks
+- [ ] Publish the new pair together with shared scrolling rows and verify live pages
+
 # Shared results rows
 
 - [x] Reuse ResultsRail across Home, Results, treatment and concern placements
