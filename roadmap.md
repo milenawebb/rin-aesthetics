@@ -2,9 +2,9 @@
 
 # Additional lip result and publication
 
-- [ ] Store lips-04 originals as same-size metadata-free JPEGs and add the record
-- [ ] Verify placement, order, framing and checks
-- [ ] Publish the new pair together with shared scrolling rows and verify live pages
+- [x] Store lips-04 originals as same-size metadata-free JPEGs and add the record
+- [x] Verify placement, order, framing and checks
+- [x] Publish the new pair together with shared scrolling rows and verify live pages
 
 # Shared results rows
 
