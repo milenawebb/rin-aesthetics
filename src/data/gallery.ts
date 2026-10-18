@@ -55,7 +55,7 @@ export interface GalleryItem {
   // Further treatment ids whose pages also show this result. The caption still
   // names serviceId. Empty or absent means only its own treatment page.
   alsoShowOn?: string[];
-  // Hand-picked for the home page strip. Keep this to six at most.
+  // Hand-picked for the home page strip, without a count limit.
   featured: boolean;
   // Who supplied the photographs. Absent means "rin". Candela images are
   // not RIN patients and are credited on every card and in the notice.
@@ -445,7 +445,7 @@ export function galleryForConcern(
 }
 
 export function featured(): GalleryItem[] {
-  return publishedGallery().filter((g) => g.featured).slice(0, 6);
+  return publishedGallery().filter((g) => g.featured);
 }
 
 export function publishedGallery(): GalleryItem[] {

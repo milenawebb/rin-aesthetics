@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { GalleryCaption } from "@/components/gallery/GalleryPair";
 import { ResultTile } from "@/components/gallery/ResultTile";
+import { ResultsRail } from "@/components/home/ResultsRail";
 
 // Space of the After photo left showing below the Before on phones.
 const AFTER_PEEK = 32;
@@ -19,12 +20,9 @@ const AFTER_PEEK = 32;
 // split fallback on touch and reduced motion (handled inside ResultTile).
 export function GalleryGrid({
   items,
-  align = "left",
 }: {
   items: GalleryItem[];
-  // "left" (the default) keeps one or two results flush with the left
-  // content edge instead of centering them. "center" is still accepted
-  // but nothing currently passes it.
+  // Retained for callers; horizontal rows are always left-aligned.
   align?: "center" | "left";
 }) {
   const openable = items.filter(
@@ -76,28 +74,17 @@ export function GalleryGrid({
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1);
   };
 
-  // One or two results center at desktop instead of leaving empty grid cells:
-  // one spans the middle half of a 4 column track on tablet and, at desktop, takes the exact width of one of the pair (3 of 8 columns plus their 2 gaps), two each span 3 of 8.
-  const count = items.length;
-  const layout =
-    count === 1
-      ? { grid: `sm:grid-cols-4 lg:flex${align === "left" ? "" : " lg:justify-center"}`, item: () => `sm:col-span-2${align === "left" ? "" : " sm:col-start-2"} lg:w-[calc((100%-14rem)*3/8+4rem)]` }
-      : count === 2
-        ? { grid: "lg:grid-cols-8", item: (i: number) => (i === 0 ? `lg:col-span-3${align === "left" ? "" : " lg:col-start-2"}` : "lg:col-span-3") }
-        : { grid: "lg:grid-cols-3", item: () => "" };
-
   const navBtn =
     "flex h-11 w-11 items-center justify-center rounded-[2px] border border-greige text-ink transition-colors hover:border-ink";
 
   return (
     <>
-      <div className={`grid gap-x-8 gap-y-14 sm:grid-cols-2 ${layout.grid}`}>
-        {items.map((item, i) => {
+      <ResultsRail cases={items} renderItem={(item) => {
           const service = getServiceById(item.serviceId);
           if (!service) return null;
           const pos = openable.indexOf(item);
           return (
-            <article key={item.id} className={layout.item(i)}>
+            <>
               <ResultTile
                 item={item}
                 treatmentName={service.name}
@@ -105,10 +92,9 @@ export function GalleryGrid({
                 onOpen={pos >= 0 ? () => setIndex(pos) : undefined}
               />
               <GalleryCaption item={item} />
-            </article>
+            </>
           );
-        })}
-      </div>
+        }} />
 
       <Dialog open={selected !== null} onOpenChange={(open) => !open && setIndex(null)}>
         <DialogContent

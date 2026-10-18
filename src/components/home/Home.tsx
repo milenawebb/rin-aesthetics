@@ -143,7 +143,7 @@ export function Home() {
             ) : null}
           </div>
         </SectionLabel>
-        <div className="site-bleed-right mt-14 overflow-x-clip lg:site-container">
+        <div className="site-container mt-14">
           <ResultsRail cases={featuredResults} />
         </div>
         <div className={`${container} mt-10`}>
