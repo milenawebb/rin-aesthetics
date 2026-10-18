@@ -2,10 +2,10 @@
 
 # Shared results rows
 
-- [ ] Reuse ResultsRail across Home, Results, treatment and concern placements
-- [ ] Remove the featured count limit without changing records
-- [ ] Verify scrolling, arrows, filters, wipe and enlarged view at 390, 820 and 1440
-- [ ] Run dash and draft checks
+- [x] Reuse ResultsRail across Home, Results, treatment and concern placements
+- [x] Remove the featured count limit without changing records
+- [x] Verify scrolling, arrows, filters, wipe and enlarged view at 390, 820 and 1440
+- [x] Run dash and draft checks
 
 # New RIN result pairs
 
