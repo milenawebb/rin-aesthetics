@@ -12,6 +12,8 @@ import neck01Before from "@/assets/neck-01-before.jpg.asset.json";
 import neck01After from "@/assets/neck-01-after.jpg.asset.json";
 import lips03Before from "@/assets/lips-03-before.jpg.asset.json";
 import lips03After from "@/assets/lips-03-after.jpg.asset.json";
+import lips04Before from "@/assets/lips-04-before.jpg.asset.json";
+import lips04After from "@/assets/lips-04-after.jpg.asset.json";
 import face01Before from "@/assets/face-01-before.jpg.asset.json";
 import face01After from "@/assets/face-01-after.jpg.asset.json";
 import jaw01Before from "@/assets/jaw-01-before.jpg.asset.json";
@@ -145,6 +147,24 @@ export const gallery: GalleryItem[] = [
     afterSrc: lips03After.url,
     beforeAlt: "Lips before lip filler.",
     afterAlt: "The same lips after lip filler, fuller and more defined.",
+    sessions: "",
+    interval: "",
+    consentOnFile: false,
+    placeholder: false,
+    standIn: false,
+    published: true,
+    featured: true,
+    source: "rin",
+    excludeConcernTags: ["volume_loss"],
+    fit: "contain",
+  },
+  {
+    id: "lips-04",
+    serviceId: "INJ-03",
+    beforeSrc: lips04Before.url,
+    afterSrc: lips04After.url,
+    beforeAlt: "Lips before lip filler.",
+    afterAlt: "The same lips after lip filler, fuller and smoother.",
     sessions: "",
     interval: "",
     consentOnFile: false,
