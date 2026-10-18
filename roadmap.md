@@ -1,5 +1,12 @@
 # Treatment spacing
 
+# Shared results rows
+
+- [x] Reuse ResultsRail across Home, Results, treatment and concern placements
+- [x] Remove the featured count limit without changing records
+- [x] Verify scrolling, arrows, filters, wipe and enlarged view at 390, 820 and 1440
+- [x] Run dash and draft checks
+
 # New RIN result pairs
 
 - [x] Crop and publish the six approved photos without retouching
