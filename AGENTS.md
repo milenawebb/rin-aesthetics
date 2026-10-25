@@ -17,6 +17,7 @@
 - Service URLs are /<category>/<slug> taken from Service.slug via one dynamic route; redirects.ts entries are 301s in that route; /book/consultation is a page stating the consultation fee before linking to Vagaro, other /book/* send to Vagaro. Why: routes stay generated from data.
 
 - Gallery placements derive from service IDs through publishedGallery(), showing only published pairs with both images. ResultTile shares optional fit across rows, not enlarged views. ResultsRail owns sizing, scroll, snap, keyboard, arrows and resets; GalleryGrid retains captions and dialog. Why: consistent rows preserve framing and enlarged views.
+- ResultTile uses ResultPhoto with separate page and row intersection gates and source-keyed responsive WebP/JPEG copies; originals remain in gallery records and enlarged views. Why: offscreen rows and lateral cards must not fetch during initial load, without changing photo framing or record data.
 - Editorial markers (NEEDS APPROVAL, TODO, Draft:, and similar) are blocked from renderable source by scripts/check-drafts.mjs, run before every build. Why: internal notes must never reach a visitor.
 - Contact submissions are written by a server function before email is attempted, and delivery status is stored on each record. Why: a provider failure must never lose a visitor message.
 - Gutter-labeled sections use the shared structural 96px label column and 32px gap at 1280px and wider. Why: label spacing must stay identical across pages without positional offsets.
