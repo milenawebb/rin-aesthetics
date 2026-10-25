@@ -1,5 +1,11 @@
 # Treatment spacing
 
+# Result photo performance
+
+- [ ] Defer row photos until vertically and horizontally near view, with smaller WebP and JPEG variants
+- [ ] Verify initial Home downloads and scrolling-photo behavior without changing records or framing
+- [ ] Report the hero render-delay cause without changing the hero
+
 # Additional lip result and publication
 
 - [x] Store lips-04 originals as same-size metadata-free JPEGs and add the record
