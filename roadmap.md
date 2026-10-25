@@ -2,9 +2,9 @@
 
 # Result photo performance
 
-- [ ] Defer row photos until vertically and horizontally near view, with smaller WebP and JPEG variants
-- [ ] Verify initial Home downloads and scrolling-photo behavior without changing records or framing
-- [ ] Report the hero render-delay cause without changing the hero
+- [x] Defer row photos until vertically and horizontally near view, with smaller WebP and JPEG variants
+- [x] Verify initial Home downloads and scrolling-photo behavior without changing records or framing
+- [x] Investigate hero render delay without changing the hero; the supplied 1740ms delay was not reproduced and needs its trace for exact attribution
 
 # Additional lip result and publication
 
