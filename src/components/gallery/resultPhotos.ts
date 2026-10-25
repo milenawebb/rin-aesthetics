@@ -80,6 +80,7 @@ import p19_2 from "@/assets/result-sizes/neck-01-after-625.jpg.asset.json";
 import p19_3 from "@/assets/result-sizes/neck-01-after-625.webp.asset.json";
 
 export const resultPhotoSizes = "(min-width: 1240px) 335px, (min-width: 768px) calc((100vw - 152px) / 3.25), calc(100vw - 80px)";
+export const resultSplitPhotoSizes = "(min-width: 1240px) 168px, (min-width: 768px) calc((100vw - 152px) / 6.5), calc((100vw - 80px) / 2)";
 
 export const resultPhotos: Record<string, { src: string; jpg: string; webp: string }> = {
   "/__l5e/assets-v1/8465b213-60a4-4fe4-b2aa-3e53552a6114/candela-01-before.jpg": { src: p0_0.url, jpg: `${p0_0.url} 400w, ${p0_2.url} 552w`, webp: `${p0_1.url} 400w, ${p0_3.url} 552w` },

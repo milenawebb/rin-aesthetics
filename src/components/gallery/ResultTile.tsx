@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { GalleryItem } from "@/data/gallery";
 import { afterAltText, beforeAltText, isDisplayable } from "@/data/gallery";
 import { ResultPhoto } from "./ResultPhoto";
+import { resultSplitPhotoSizes } from "./resultPhotos";
 
 const EASE = "cubic-bezier(0.16,1,0.3,1)";
 
@@ -61,10 +62,10 @@ export function ResultTile({
     const split = (
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-greige">
         <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
-          <ResultPhoto src={item.beforeSrc} alt={beforeAltText(item)} className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
+          <ResultPhoto src={item.beforeSrc} alt={beforeAltText(item)} sizes={resultSplitPhotoSizes} className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
         </div>
         <div className="absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-          <ResultPhoto src={item.afterSrc} alt={afterAltText(item)} className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
+          <ResultPhoto src={item.afterSrc} alt={afterAltText(item)} sizes={resultSplitPhotoSizes} className={`h-full w-full ${imageFit}`} style={{ objectPosition }} />
         </div>
         <span aria-hidden className="pointer-events-none absolute inset-y-0 left-1/2 w-px bg-champagne" />
         {shade}

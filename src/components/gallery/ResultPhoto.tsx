@@ -3,11 +3,12 @@ import { resultPhotos, resultPhotoSizes } from "./resultPhotos";
 
 // Both axes must be near view: the page viewport and the clipped scrolling row.
 // No source is emitted by SSR, so native lazy-load distance cannot fetch early.
-export function ResultPhoto({ src, alt, className, style }: {
+export function ResultPhoto({ src, alt, className, style, sizes = resultPhotoSizes }: {
   src: string;
   alt: string;
   className: string;
   style?: CSSProperties;
+  sizes?: string;
 }) {
   const ref = useRef<HTMLImageElement>(null);
   const [ready, setReady] = useState(false);
@@ -43,12 +44,12 @@ export function ResultPhoto({ src, alt, className, style }: {
 
   return (
     <picture className="contents">
-      {ready && photo ? <source type="image/webp" srcSet={photo.webp} sizes={resultPhotoSizes} /> : null}
+      {ready && photo ? <source type="image/webp" srcSet={photo.webp} sizes={sizes} /> : null}
       <img
         ref={ref}
         src={ready ? photo?.src ?? src : undefined}
         srcSet={ready ? photo?.jpg : undefined}
-        sizes={resultPhotoSizes}
+        sizes={sizes}
         alt={alt}
         decoding="async"
         fetchPriority="low"
