@@ -12,8 +12,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { practice } from "@/data/site";
 import { submitContactForm } from "@/lib/contact.functions";
 import { contactFormSchema, type ContactFormInput } from "@/lib/contact-schema";
-import storefrontJpg from "@/assets/rin-storefront.jpg.asset.json";
-import storefrontWebp from "@/assets/rin-storefront.webp.asset.json";
+import storefrontJpg from "@/assets/rin-storefront.jpg";
+import storefrontWebp from "@/assets/rin-storefront.webp";
 
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(practice.address)}`;
@@ -255,9 +255,9 @@ function ContactPage() {
             Get directions
           </a>
           <picture>
-            <source srcSet={storefrontWebp.url} type="image/webp" />
+            <source srcSet={storefrontWebp} type="image/webp" />
             <img
-              src={storefrontJpg.url}
+              src={storefrontJpg}
               width={1368}
               height={1100}
               loading="lazy"

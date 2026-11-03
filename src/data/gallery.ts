@@ -1,23 +1,23 @@
-import candela01Before from "@/assets/candela-01-before.jpg.asset.json";
-import candela01After from "@/assets/candela-01-after.jpg.asset.json";
-import candela02Before from "@/assets/candela-02-before.jpg.asset.json";
-import candela02After from "@/assets/candela-02-after.jpg.asset.json";
-import candela03Before from "@/assets/candela-03-before.jpg.asset.json";
-import candela03After from "@/assets/candela-03-after.jpg.asset.json";
-import lips01Before from "@/assets/lips-01-before.jpg.asset.json";
-import lips01After from "@/assets/lips-01-after.jpg.asset.json";
-import lips02Before from "@/assets/lips-02-before.jpg.asset.json";
-import lips02After from "@/assets/lips-02-after.jpg.asset.json";
-import neck01Before from "@/assets/neck-01-before.jpg.asset.json";
-import neck01After from "@/assets/neck-01-after.jpg.asset.json";
-import lips03Before from "@/assets/lips-03-before.jpg.asset.json";
-import lips03After from "@/assets/lips-03-after.jpg.asset.json";
-import lips04Before from "@/assets/lips-04-before.jpg.asset.json";
-import lips04After from "@/assets/lips-04-after.jpg.asset.json";
-import face01Before from "@/assets/face-01-before.jpg.asset.json";
-import face01After from "@/assets/face-01-after.jpg.asset.json";
-import jaw01Before from "@/assets/jaw-01-before.jpg.asset.json";
-import jaw01After from "@/assets/jaw-01-after.jpg.asset.json";
+import candela01Before from "@/assets/candela-01-before.jpg";
+import candela01After from "@/assets/candela-01-after.jpg";
+import candela02Before from "@/assets/candela-02-before.jpg";
+import candela02After from "@/assets/candela-02-after.jpg";
+import candela03Before from "@/assets/candela-03-before.jpg";
+import candela03After from "@/assets/candela-03-after.jpg";
+import lips01Before from "@/assets/lips-01-before.jpg";
+import lips01After from "@/assets/lips-01-after.jpg";
+import lips02Before from "@/assets/lips-02-before.jpg";
+import lips02After from "@/assets/lips-02-after.jpg";
+import neck01Before from "@/assets/neck-01-before.jpg";
+import neck01After from "@/assets/neck-01-after.jpg";
+import lips03Before from "@/assets/lips-03-before.jpg";
+import lips03After from "@/assets/lips-03-after.jpg";
+import lips04Before from "@/assets/lips-04-before.jpg";
+import lips04After from "@/assets/lips-04-after.jpg";
+import face01Before from "@/assets/face-01-before.jpg";
+import face01After from "@/assets/face-01-after.jpg";
+import jaw01Before from "@/assets/jaw-01-before.jpg";
+import jaw01After from "@/assets/jaw-01-after.jpg";
 
 // Before and after gallery.
 //
@@ -93,8 +93,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "lips-01",
     serviceId: "INJ-03",
-    beforeSrc: lips01Before.url,
-    afterSrc: lips01After.url,
+    beforeSrc: lips01Before,
+    afterSrc: lips01After,
     beforeAlt: "Lip filler result, before treatment",
     afterAlt: "Lip filler result, two weeks after one session",
     sessions: "1 session",
@@ -109,8 +109,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "lips-02",
     serviceId: "INJ-03",
-    beforeSrc: lips02Before.url,
-    afterSrc: lips02After.url,
+    beforeSrc: lips02Before,
+    afterSrc: lips02After,
     beforeAlt: "Lip filler result, before treatment",
     afterAlt: "Lip filler result, two weeks after one session",
     sessions: "1 session",
@@ -125,8 +125,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "neck-01",
     serviceId: "DEV-05",
-    beforeSrc: neck01Before.url,
-    afterSrc: neck01After.url,
+    beforeSrc: neck01Before,
+    afterSrc: neck01After,
     beforeAlt: "Neck texture, before treatment",
     afterAlt: "Neck texture, eight weeks after one session",
     sessions: "1 session",
@@ -143,8 +143,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "lips-03",
     serviceId: "INJ-03",
-    beforeSrc: lips03Before.url,
-    afterSrc: lips03After.url,
+    beforeSrc: lips03Before,
+    afterSrc: lips03After,
     beforeAlt: "Lips before lip filler.",
     afterAlt: "The same lips after lip filler, fuller and more defined.",
     sessions: "",
@@ -161,8 +161,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "lips-04",
     serviceId: "INJ-03",
-    beforeSrc: lips04Before.url,
-    afterSrc: lips04After.url,
+    beforeSrc: lips04Before,
+    afterSrc: lips04After,
     beforeAlt: "Lips before lip filler.",
     afterAlt: "The same lips after lip filler, fuller and smoother.",
     sessions: "",
@@ -179,8 +179,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "face-01",
     serviceId: "INJ-04",
-    beforeSrc: face01Before.url,
-    afterSrc: face01After.url,
+    beforeSrc: face01Before,
+    afterSrc: face01After,
     beforeAlt: "Three-quarter view of a woman's face before treatment.",
     afterAlt: "The same face after full facial balancing.",
     sessions: "",
@@ -197,8 +197,8 @@ export const gallery: GalleryItem[] = [
   {
     id: "jaw-01",
     serviceId: "INJ-02",
-    beforeSrc: jaw01Before.url,
-    afterSrc: jaw01After.url,
+    beforeSrc: jaw01Before,
+    afterSrc: jaw01After,
     beforeAlt: "Side profile of the jawline and chin before treatment.",
     afterAlt: "The same profile after dermal filler to the jawline and chin.",
     sessions: "",
@@ -216,8 +216,8 @@ export const gallery: GalleryItem[] = [
     id: "candela-01",
     focus: "center 75%",
     serviceId: "DEV-06",
-    beforeSrc: candela01Before.url,
-    afterSrc: candela01After.url,
+    beforeSrc: candela01Before,
+    afterSrc: candela01After,
     beforeAlt: "Face with freckles across the cheeks and nose, before treatment.",
     afterAlt: "The same face after treatment, with fewer visible freckles.",
     sessions: "",
@@ -235,8 +235,8 @@ export const gallery: GalleryItem[] = [
     id: "candela-02",
     focus: "center 70%",
     serviceId: "DEV-06",
-    beforeSrc: candela02Before.url,
-    afterSrc: candela02After.url,
+    beforeSrc: candela02Before,
+    afterSrc: candela02After,
     beforeAlt: "Side view of a cheek with brown spots, before treatment.",
     afterAlt: "The same cheek after treatment, with the brown spots faded.",
     sessions: "",
@@ -254,8 +254,8 @@ export const gallery: GalleryItem[] = [
     id: "candela-03",
     focus: "center 70%",
     serviceId: "DEV-06",
-    beforeSrc: candela03Before.url,
-    afterSrc: candela03After.url,
+    beforeSrc: candela03Before,
+    afterSrc: candela03After,
     beforeAlt: "Face with freckles across the forehead, cheeks and nose, before treatment.",
     afterAlt: "The same face after treatment, with fewer visible freckles.",
     sessions: "",

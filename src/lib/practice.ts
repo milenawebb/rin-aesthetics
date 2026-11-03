@@ -1,10 +1,10 @@
 // About "Where you will be" photos: three 1200 x 900 (4:3) originals, served as WebP with
 // JPEG fallback at 400, 600, 800 and 1200 wide. Regenerate the sizes when a photo is replaced.
-const files = import.meta.glob<{ url: string }>("@/assets/practice-sizes/*.asset.json", { eager: true, import: "default" });
+const files = import.meta.glob<string>("@/assets/practice-sizes/*.{jpg,webp}", { eager: true, import: "default" });
 
 const WIDTHS = [400, 600, 800, 1200];
 const url = (name: string, w: number, ext: string) =>
-  files[`/src/assets/practice-sizes/practice-${name}-${w}.${ext}.asset.json`]!.url;
+  files[`/src/assets/practice-sizes/practice-${name}-${w}.${ext}`]!;
 const set = (name: string, ext: string) => WIDTHS.map((w) => `${url(name, w, ext)} ${w}w`).join(", ");
 
 /** Phone rail shows each at 78% of the screen; tablet and up shows three across the container. */
