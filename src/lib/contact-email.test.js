@@ -7,8 +7,8 @@ const input = { name: "RIN delivery test", email: "info@rinaestheticsva.com", me
 describe("direct contact email", () => {
   it("sends the existing envelope directly to Resend with escaped multiline content", async () => {
     let destination = "";
-    let payload: Record<string, unknown> = {};
-    const request: typeof fetch = async (url, options) => {
+    let payload = {};
+    const request = async (url, options) => {
       destination = String(url);
       payload = JSON.parse(String(options?.body));
       return Response.json({ id: "test-message-id" });
@@ -24,8 +24,8 @@ describe("direct contact email", () => {
   });
 
   it("never reports success for rejected or interrupted sends", async () => {
-    const reject: typeof fetch = async () => new Response(null, { status: 403 });
-    const interrupt: typeof fetch = async () => { throw new Error("offline"); };
+    const reject = async () => new Response(null, { status: 403 });
+    const interrupt = async () => { throw new Error("offline"); };
     for (const request of [reject, interrupt]) {
       expect((await sendContactEmail(input, "test-only", request)).sent).toBe(false);
     }
