@@ -15,10 +15,10 @@ const ABOUT_PORTRAIT_SIZES = "(min-width: 1280px) 580px, (min-width: 1024px) 46v
 const BLUEPRINTS_COLOR = "#7D7C79";
 /** 20 x 15 blurred preview of the blueprints photo, cropped to its 4:3 frame. Regenerate with the photo. */
 const BLUEPRINTS_PREVIEW = "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoUAA8APtFUo0uoJKMhsAgBABoJQBOgMY7dmixHKGpaCKScAf5pAAD+psfZ84iFkgD7b1v+G+396m31mrl1mZGvI1xnMTlpIU4dZGkOavD6Uclr76vD8c1+Ww1kk7OhhYn2vIsj/IMb3eTH5j7eOuEbVlcOGcvWgluVgXhUQNrJBHpsZjQBlWSbHfRcoY4AAAA=";
-import bp640w from "@/assets/rin-blueprints-640.webp.asset.json";
-import bp1000w from "@/assets/rin-blueprints-1000.webp.asset.json";
-import bp640 from "@/assets/rin-blueprints-640.jpg.asset.json";
-import bp1000 from "@/assets/rin-blueprints-1000.jpg.asset.json";
+import bp640w from "@/assets/rin-blueprints-640.webp";
+import bp1000w from "@/assets/rin-blueprints-1000.webp";
+import bp640 from "@/assets/rin-blueprints-640.jpg";
+import bp1000 from "@/assets/rin-blueprints-1000.jpg";
 import { GOOGLE_REVIEWS_URL, practice } from "@/data/site";
 
 
@@ -153,9 +153,9 @@ function AboutPage() {
                 pictureClassName="block overflow-hidden rounded-[2px]"
                 color={BLUEPRINTS_COLOR}
                 preview={BLUEPRINTS_PREVIEW}
-                webpSrcSet={`${bp640w.url} 640w, ${bp1000w.url} 1000w`}
-                src={bp1000.url}
-                srcSet={`${bp640.url} 640w, ${bp1000.url} 1000w`}
+                webpSrcSet={`${bp640w} 640w, ${bp1000w} 1000w`}
+                src={bp1000}
+                srcSet={`${bp640} 640w, ${bp1000} 1000w`}
                 sizes="(max-width: 1023px) 100vw, 560px"
                 width={1000}
                 height={750}
