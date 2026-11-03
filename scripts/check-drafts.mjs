@@ -12,6 +12,7 @@ const strings = /"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|`(?:[^`\\]|\\.)*`|>([^<
 
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
+    if (name === ".oj-cache") continue;
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
     else if (/\.(ts|tsx)$/.test(name) && !name.endsWith(".gen.ts")) out.push(p);

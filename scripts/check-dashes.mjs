@@ -2,7 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 
 const scanRoot = process.cwd();
-const excludedDirs = new Set(["node_modules", "dist", "build", ".git", ".output", ".vinxi", ".nitro"]);
+const excludedDirs = new Set(["node_modules", "dist", "build", ".git", ".output", ".vinxi", ".nitro", ".oj-cache"]);
 const excludedFiles = new Set(["bun.lock", "bun.lockb", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"]);
 const literalDash = String.fromCodePoint(0x2014);
 const forbiddenText = [
@@ -28,7 +28,9 @@ async function scan(directory) {
 
     if (excludedFiles.has(entry.name)) continue;
 
-    const content = await readFile(path, "utf8").catch(() => null);
+    const content = await readFile(path)
+      .then((bytes) => new TextDecoder("utf-8", { fatal: true }).decode(bytes))
+      .catch(() => null);
     if (content === null) continue;
 
     content.split(/\r?\n/).forEach((line, index) => {
