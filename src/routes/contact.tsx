@@ -83,10 +83,10 @@ function ContactForm() {
       const result = await sendContact({ data: parsed.data });
       setStatus({ kind: result.sent ? "success" : "error", message: result.message });
       if (result.sent) form.reset();
-    } catch (error) {
+    } catch {
       setStatus({
         kind: "error",
-        message: error instanceof Error ? error.message : "Your message could not be sent. Please email or text the practice instead.",
+        message: "Your message could not be sent. Please text (434) 217-5300 instead.",
       });
     } finally {
       setIsSending(false);

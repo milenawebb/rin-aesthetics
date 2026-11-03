@@ -1,5 +1,11 @@
 # Treatment spacing
 
+# Direct contact email
+
+- [x] Save the separate standalone Resend key without changing existing credentials
+- [x] Switch to direct email-only delivery and preserve existing records and protections
+- [ ] Verify preview submission, delivery, unchanged record count, and checks
+
 # Result photo performance
 
 - [x] Defer row photos until vertically and horizontally near view, with smaller WebP and JPEG variants
@@ -50,14 +56,14 @@
 - [x] Add Follow as the fourth contact route
 - [x] Replace the storefront image and preserve its full frame
 - [x] Store validated contact submissions in Lovable Cloud
-- [ ] Send each submission to the practice through Resend, blocked until the Resend connection is linked
+- [x] Replace stored submissions with direct email-only delivery through the owner's Resend account
 - [x] Add visible success and failure states with spam protection
 - [x] Verify desktop, mobile, persistence, failure behavior, and clean build
 
 # Launch checklist
 
 - [x] Contact form recipient set to info@rinaestheticsva.com
-- [ ] Connect Resend and verify a sending subdomain (root rinaestheticsva.com already has MX records for hosted mail). The From address in the send code must be on the exact verified domain, including subdomain: a verified send.rinaestheticsva.com cannot send From info@rinaestheticsva.com (403 domain mismatch). Reply-to stays the visitor's address.
+- [ ] Confirm direct Resend delivery from website@rinaestheticsva.com to info@rinaestheticsva.com
 
 
 # Concern content batch 2
