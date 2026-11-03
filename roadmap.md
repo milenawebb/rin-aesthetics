@@ -4,7 +4,7 @@
 
 - [x] Save the separate standalone Resend key without changing existing credentials
 - [x] Switch to direct email-only delivery and preserve existing records and protections
-- [ ] Verify preview submission, delivery, unchanged record count, and checks
+- [x] Verify preview submission accepted by Resend, unchanged record count, failure state, and checks
 
 # Result photo performance
 
@@ -63,7 +63,7 @@
 # Launch checklist
 
 - [x] Contact form recipient set to info@rinaestheticsva.com
-- [ ] Confirm direct Resend delivery from website@rinaestheticsva.com to info@rinaestheticsva.com
+- [ ] Confirm inbox arrival of the preview test; blocked because the sending-only key cannot read delivery logs, so the owner must confirm receipt
 
 
 # Concern content batch 2
