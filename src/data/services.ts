@@ -1224,7 +1224,7 @@ export const services: Service[] = [
 
     intro: [
       "Fine needles create controlled micro-injuries, and the skin responds by rebuilding collagen. The needling is only half of it. What goes on immediately afterwards, while those channels are open, is what decides the result.",
-      "Two options: exosomes or your own platelets, which push the healing response further, or a biphasic peel, which adds radiance alongside the renewal. Jyl will tell you which suits your skin. Nanoneedling is also available, depending on your goals.",
+      "Two options: exosomes or your own platelets, which push the healing response further, or a biphasic peel, which adds radiance alongside the renewal. Jyl will tell you which suits your skin. \n\n\nNanoneedling is also available, depending on your goals.",
     ],
 
     helpsWith: [
